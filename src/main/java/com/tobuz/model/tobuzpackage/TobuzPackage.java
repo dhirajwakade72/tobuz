@@ -49,7 +49,7 @@ public class TobuzPackage extends BaseEntity {
 
 	private Integer noOfContactsAccess = 10;
 
-	public static Model.Finder<Long, TobuzPackage> find = new Model.Finder<Long, TobuzPackage>(TobuzPackage.class);
+	/*public static Model.Finder<Long, TobuzPackage> find = new Model.Finder<Long, TobuzPackage>(TobuzPackage.class);*/
 
 	public Integer getNoOfContactsAccess() {
 		return noOfContactsAccess;

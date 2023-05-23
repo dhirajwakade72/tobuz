@@ -30,7 +30,7 @@ public class TobuzPackageServiceInfo extends BaseEntity{
 	private Country country;
 	
 
-	public static Model.Finder<Long, TobuzPackageServiceInfo> find = new Model.Finder<Long, TobuzPackageServiceInfo>(TobuzPackageServiceInfo.class);
+	/*public static Model.Finder<Long, TobuzPackageServiceInfo> find = new Model.Finder<Long, TobuzPackageServiceInfo>(TobuzPackageServiceInfo.class);*/
 
 
 	public TobuzPackage getTobuzPackage() {

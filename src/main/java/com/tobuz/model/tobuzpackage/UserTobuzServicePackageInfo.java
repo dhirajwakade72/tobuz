@@ -41,7 +41,7 @@ public class UserTobuzServicePackageInfo extends BaseEntity{
 	
 	private Integer noOfListings = 0;
 	
-	public static Model.Finder<Long, UserTobuzServicePackageInfo> find = new Model.Finder<Long, UserTobuzServicePackageInfo>(UserTobuzServicePackageInfo.class);
+	/*public static Model.Finder<Long, UserTobuzServicePackageInfo> find = new Model.Finder<Long, UserTobuzServicePackageInfo>(UserTobuzServicePackageInfo.class);*/
 
 	public AppUser getUser() {
 		return user;
