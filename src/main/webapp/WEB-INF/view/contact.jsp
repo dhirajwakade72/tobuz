@@ -687,11 +687,11 @@
 $( document ).ready(function() {
 	$(".alert-danger").hide();
 	$(".alert-success").hide();
-	
+
 	 $( "#saveSubmitBtn" ).click(function(event) {
-		 
+
 		 function saveContact (event){
-				
+
 				var name = $("#name").val();
 				var email = $("#email").val();
 				var phone = $("#phone").val();
@@ -703,7 +703,7 @@ $( document ).ready(function() {
 				console.log ("email :"+email);
 				console.log ("phone :"+phone);
 				console.log ("message :"+message);
-				
+
 				const validateEmail = (email) => {
 					  return String(email)
 					    .toLowerCase()
@@ -718,10 +718,10 @@ $( document ).ready(function() {
 							 event.preventDefault();
 							 return;
 					  }
-					  if( $.trim(phoneNo) == ''){
+					  if( $.trim(phone) == ''){
 							 $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter Phone No </strong> ");
-							 
+
 							 event.preventDefault();
 							 return;
 						}
@@ -731,16 +731,16 @@ $( document ).ready(function() {
 							 event.preventDefault();
 							 return;
 						}
-					  
+
 
 					  jQuery(document).ready(function($){
 					  	  var getUrl = window.location;
 					  		 var url = getUrl .protocol + "//" + getUrl.host + "/saveContact" ;
-					  			
+
 					  	console.log ("url >>>>>>>"+url);
 
 					 	  var  data =  { "name": name, "email" : email,"phone":phone , "city":city , "message":message };
-					 	  
+
 					    $.ajax({
 				 	        type: "POST",
 				 	        contentType: "application/json",
@@ -751,16 +751,16 @@ $( document ).ready(function() {
 				 	        cache: false,
 				 	        timeout: 600000,
 				 	        success: function (data) {
-				 		
+
 				 				 $(".alert-danger").hide();
 				 	        	$(".alert-success").show();
 				 				 $(".alert-success").html("<strong>Sent Successfully </strong> ");
 				 				  window.scrollTo(0, 0);
-				 				 event.preventDefault();
+                                 event.preventDefault();
 				 				 return;
 				 	        },
 				 	        error: function (e) {
-				 	        	
+
 				 	        	$(".alert-success").hide();
 				 	        	 $(".alert-danger").show();
 				 				 $(".alert-danger").html("<strong>Error in Sent</strong> ");
@@ -768,14 +768,14 @@ $( document ).ready(function() {
 				 				 event.preventDefault();
 				 				 return;
 
-				 	        }
-				 	       event.preventDefault();
+				 	        },
+
 				 	    });
-					    
-					    
+                        event.preventDefault();
+
 					  });
 			}
-		 
+            saveContact(event);
 	 });
 });
 

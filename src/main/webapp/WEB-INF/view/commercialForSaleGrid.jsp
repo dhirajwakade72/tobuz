@@ -517,26 +517,26 @@
   </label>
 </div>
 <div class="form-check">
-  <input data-toggle="modal"  class="form-check-input" type="checkbox" value=""  onClick="getTopBusinessListingsByCategory(this,'28')" id="flexCheckDefault">
-  <label data-toggle="modal" class="form-check-label" for="flexCheckDefault">
+  <input data-toggle="modal"  class="form-check-input" type="checkbox" value=""  onClick="getTopBusinessListingsByCategory(this,'28')" id="chkIndustrialWarehouse">
+  <label data-toggle="modal" class="form-check-label" for="chkIndustrialWarehouse">
    Industrial / Warehouse
   </label>
 </div>
 <div class="form-check">
-  <input data-toggle="modal"  class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'30')" value="" id="flexCheckDefault">
-  <label data-toggle="modal" class="form-check-label" for="flexCheckDefault">
+  <input data-toggle="modal"  class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'30')" value="" id="chkLandDevelopment">
+  <label data-toggle="modal" class="form-check-label" for="chkLandDevelopment">
    Land / Development
   </label>
 </div>
 <div class="form-check">
-  <input data-toggle="modal" class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'26')" value="" id="flexCheckDefault">
-  <label data-toggle="modal"  class="form-check-label" for="flexCheckDefault">
+  <input data-toggle="modal" class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'26')" value="" id="chkOffices">
+  <label data-toggle="modal"  class="form-check-label" for="chkOffices">
    Offices
   </label>
 </div>
 <div class="form-check">
-  <input data-toggle="modal"  class="form-check-input" type="checkbox"  onClick="getTopBusinessListingsByCategory(this,'27')"  value="" id="flexCheckDefault">
-  <label data-toggle="modal"  class="form-check-label" for="flexCheckDefault">
+  <input data-toggle="modal"  class="form-check-input" type="checkbox"  onClick="getTopBusinessListingsByCategory(this,'27')"  value="" id="chkRetail">
+  <label data-toggle="modal"  class="form-check-label" for="chkRetail">
     Retail
   </label>
 </div>
