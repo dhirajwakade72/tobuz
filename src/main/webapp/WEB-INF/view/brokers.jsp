@@ -459,7 +459,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#" id="clearAll">Clear all</a></span>
 </div>
 <!-- bfs sidebar filter title finish -->
 
@@ -1072,6 +1072,7 @@ Neethu Joseph
   
 </body>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	 -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="js/jquery.slim.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
@@ -1174,6 +1175,13 @@ function addListings(){
 	
 		window.location.href =url;
 		}
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
+    });
+});
 
 </script>
 </html>

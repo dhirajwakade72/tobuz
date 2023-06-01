@@ -1376,6 +1376,7 @@ public class TobuzBusinessService {
 		contactUs.setName(contactDTO.getName());
 		contactUs.setEmail(contactDTO.getEmail());
 		contactUs.setMessage(contactDTO.getMessage());
+		contactUs.setPhone(contactDTO.getPhone());
 		contactUs.setCreatedOn( new Timestamp(contactDTO.getCreatedOn().getTime()));
 		contactUs.setLastUpdate( new Timestamp(contactDTO.getLastUpdate().getTime()));
 		contactUs = contactUsRepository.save(contactUs);
