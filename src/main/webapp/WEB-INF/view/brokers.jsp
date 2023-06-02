@@ -674,7 +674,7 @@ Neethu Joseph
 <!-- bfs next page button finish -->
 <!-- bfs pagination start -->
 <div class="pagination-area">
-<span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field"/></span><span class="number-text">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></span>
+<span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field" id="pageNumber" value="1" /></span><span class="number-text" id="totalPage">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true" id="nextPage"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true" id="previousPage"></i></a></span>
 </div>
 <!-- bfs pagination finish -->
 </div>
@@ -1178,8 +1178,29 @@ function addListings(){
 
 /* If user clicks Clear All link then clear all the filters */
 $(document).ready(function() {
+
+    var currentPageNumber = 1;
+
     $("#clearAll").click(function() {
         $("input[type='checkbox']").prop("checked", false);
+    });
+
+    $("#nextPage").click(function(event) {
+        event.preventDefault();
+
+        if(currentPageNumber < 171) {
+            currentPageNumber++;
+            $("#pageNumber").val(currentPageNumber);
+        }
+    });
+
+    $("#previousPage").click(function(event) {
+        event.preventDefault();
+
+        if (currentPageNumber > 1) {
+            currentPageNumber--;
+            $("#pageNumber").val(currentPageNumber);
+        }
     });
 });
 
