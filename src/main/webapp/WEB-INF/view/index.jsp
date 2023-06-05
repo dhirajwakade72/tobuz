@@ -1282,8 +1282,8 @@ Broker <label class="radio-button">
 <li><a href="blog">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
 <li><a href="contact">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="termCondition.jsp">Terms Of Service</a></li>
+<li><a href="privacyPolicy.jsp">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
