@@ -532,7 +532,7 @@ Marketing Services
 <!-- bfs Location title and search bar start -->
 <div class="Categories">Location
 <div class="searchbox">
-<input type="text" class="input-1">
+<input type="text" class="input-1" id="searchLocation">
 <div class="Location-sale search-sale">
 <div class="fas"><i class="fa fa-search"></i></div>
 </div>
@@ -541,6 +541,7 @@ Marketing Services
 <div class="clear"></div>
 <form class="catagories-filter">
 <!-- checkbox start -->
+<div id="locationDiv">
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
@@ -576,6 +577,7 @@ Marketing Services
 <a data-toggle="modal" data-target="#myModal-1" class="more-filter">+ 13more</a>
 <!-- location popup link finish -->
 </form>
+</div>
 </div>
 </div>
 <!-- bfs sidebar filter area finish -->
@@ -1144,6 +1146,79 @@ $(".input-1").focus().toggleClass("active-width").val('');
 $(document).ready(function() {
     $("#clearAll").click(function() {
         $("input[type='checkbox']").prop("checked", false);
+    });
+
+    var states = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+      "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+      "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+      "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+      "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+      "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu",
+      "Delhi", "Lakshadweep", "Puducherry", "India"
+    ];
+
+    $("#searchLocation").on("input", function() {
+          var inputValue = $('#searchLocation').val(); // Get the value from the input field
+
+          if (inputValue.trim() !== "") {
+            var matchedStates = states.filter(function(state) {
+                // Case-insensitive matching
+                return state.toLowerCase().includes(inputValue.toLowerCase());
+            });
+
+            if (matchedStates.length > 0) {
+                var result = "";
+                matchedStates.forEach(function(state) {
+                    result += "<input data-toggle='modal' style='margin-left: 10px' class='form-check-input' type='checkbox' value='' id='" + state.trim() +"'>"
+                          + "<label data-toggle='modal' style='margin-left: 30px' class='form-check-label' for='" + state.trim() + "'>"
+                          +  state
+                          + "</label><br />";
+                });
+
+                $("#locationDiv").html(result); // Display the matched states in the result div
+            } else {
+                $("#locationDiv").html("<p>No matching location found.</p>"); // Display a message if no matches found
+            }
+          } else {
+            var result = "";
+            result += "<div id='location'>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkIndia'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkIndia'>"
+                    + "India"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAndhraPradesh'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkAndhraPradesh'>"
+                    + "Andhra Pradesh"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkArunachalPradesh'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkArunachalPradesh'>"
+                    + "Arunachal Pradesh"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAssam'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkAssam'>"
+                    + "Assam"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkBihar'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkBihar'>"
+                    + "Bihar"
+                    + "</label>"
+                    + "</div>"
+                    + "<a data-toggle='modal' data-target='#myModal-1' class='more-filter'>+ 13more</a>"
+                    + "</div>";
+
+                    $("#locationDiv").html(result);
+          }
+
     });
 });
 
