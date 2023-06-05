@@ -546,7 +546,7 @@
 <!-- bfs Sort By finish -->
 </div>
 </div>
-<div class="row">
+<div class="row" id="r">
 <!-- bfs grid 1 start -->
 <div class="col-lg-4 col-xl-4 col-md-4 seller-a">
 <a href="#">
@@ -667,6 +667,48 @@ Neethu Joseph
 </a>
 </div>
 <!-- bfs grid 6 finish -->
+</div>
+
+<div class="row-1" id="r1" style="display: none;">
+    <div class="col-lg-4 col-xl-4 col-md-4 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area">
+    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+    </div>
+    <div class="imges-area">
+    <div class="name-seller">
+    Mahesh Sharma
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+</div>
+
+<div class="row-2" id="r2" style="display: none;">
+    <div class="col-lg-4 col-xl-4 col-md-4 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area">
+    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+    </div>
+    <div class="imges-area">
+    <div class="name-seller">
+    Test Sharma
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
 </div>
 <br/>
 <!-- bfs next page button start -->
@@ -1191,6 +1233,8 @@ $(document).ready(function() {
         if(currentPageNumber < 171) {
             currentPageNumber++;
             $("#pageNumber").val(currentPageNumber);
+
+            test(currentPageNumber);
         }
     });
 
@@ -1200,9 +1244,36 @@ $(document).ready(function() {
         if (currentPageNumber > 1) {
             currentPageNumber--;
             $("#pageNumber").val(currentPageNumber);
+
+            test(currentPageNumber);
         }
     });
 });
+
+function test(currentPageNumber) {
+
+    var x = document.getElementById("r");
+    var y = document.getElementById("r1");
+    var z = document.getElementById("r2");
+
+    if(currentPageNumber == 1) {
+        $(x).show();
+        $(y).hide();
+        $(z).hide();
+    }
+
+    if(currentPageNumber == 2) {
+        $(y).show();
+        $(x).hide();
+        $(z).hide();
+    }
+
+    if(currentPageNumber == 3) {
+        $(z).show();
+        $(x).hide();
+        $(y).hide();
+    }
+}
 
 </script>
 </html>
