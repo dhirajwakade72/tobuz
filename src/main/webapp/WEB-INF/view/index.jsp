@@ -447,7 +447,7 @@ Searchbar scrolling top desktop finish
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale.jsp">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress.jsp">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -1282,8 +1282,8 @@ Broker <label class="radio-button">
 <li><a href="blog">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
 <li><a href="contact">Contact</a></li>
-<li><a href="termCondition.jsp">Terms Of Service</a></li>
-<li><a href="privacyPolicy.jsp">Privacy Policy</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
