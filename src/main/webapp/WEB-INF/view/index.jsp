@@ -44,8 +44,8 @@
 
 
 <div class="topbar desktop-view">
-<div class="container" style="float: right">
-<div class="row">
+<div class="container">
+<div class="row justify-content-between">
 <div class="col-lg-3 col-xl-2 col-md-3">
 <!-- social icon desktop start -->
 <div class="social-icon">
