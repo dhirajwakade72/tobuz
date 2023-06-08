@@ -1319,7 +1319,7 @@ Broker <label class="radio-button">
 </div>
 <!-- footer mobile bottom bar area finish -->
 <!-- whatsapp icon area start -->
-<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float-icon" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=971503744318&text=Hi,%20I%20am%20looking%20for%0D%0ABusiness%20to%20Buy%0D%0ABusiness%20to%20Sell%0D%0ABusiness%20Valuation%0D%0ABusiness%20Setup%0D%0ABusiness%20Advisory%20Service" class="float-icon" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 <!-- whatsapp icon area finish -->
