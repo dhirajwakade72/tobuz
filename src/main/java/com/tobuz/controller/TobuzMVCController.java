@@ -371,8 +371,13 @@ public class TobuzMVCController {
 		      modelAndView.setViewName("myListingsSllerDashboard");
 		      return modelAndView;
 		  }
-		
-		
+
+		@RequestMapping(value="/buyersInvestorsGrid",method=RequestMethod.GET)
+		public ModelAndView buyersInvestorsGrid () {
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.setViewName("buyersInvestorsGrid");
+			return modelAndView;
+		}
 	  
 		
 		public static HttpSession getSession() {

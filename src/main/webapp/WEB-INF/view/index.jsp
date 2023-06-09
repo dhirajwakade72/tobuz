@@ -455,7 +455,7 @@ Searchbar scrolling top desktop finish
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -467,9 +467,9 @@ Searchbar scrolling top desktop finish
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
-          <a class="dropdown-item" href="business-setup.html">Business Setup</a>
-          <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
+          <a class="dropdown-item" href="business-setup">Business Setup</a>
+          <a class="dropdown-item" href="business-valuation">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
         </div>
 	</li>
@@ -1265,10 +1265,10 @@ Broker <label class="radio-button">
 <ul>
 <li><a href="createBusinessListings">Sell Your Business</a></li>
 <li><a href="#">Invest Or Buy Business</a></li>
-<li><a href="#">Business Services</a></li>
+<li><a href="businesServices">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
