@@ -418,14 +418,61 @@
 	 <img src="images/plus.png" width="15" height="15" style="margin-right:5px;"/> Add Listing  
 	 </li>
 	 <!-- Add Listing mobile Finish -->
-	 <!-- mobile menu start -->
-    <li class="nav-item"> <a class="nav-link active" href="/">Home</a></li>
-    <li class="nav-item"> <a class="nav-link" href="businessForSale">Buy a Business</a></li>
-	<li class="nav-item"> <a class="nav-link" href="#">Sell a Business</a></li>
-	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item"> <a class="nav-link" href="#">Business Advisory</a></li>
-	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
-	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
+	<!-- Code for mobile menu for display header menus -->
+        <!-- mobile menu start -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Buy a Business
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="businessForSale">Business For Sale</a>
+                  <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
+                  <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+                  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sell a Business
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+                  <a class="dropdown-item" href="brokers.html">Brokers</a>
+                  <a class="dropdown-item" href="businesServices">Business Services</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="realEstate">Real Estate</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Investors
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+                  <a class="dropdown-item" href="business-setup.html">Business Setup</a>
+                  <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
+                  <a class="dropdown-item" href="#">Business Loan</a>
+                </div>
+            </li>
+
+            <li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
+            <li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
+            <li class="nav-item"> <a class="nav-link" href="contact">Contact</a></li>
+    	<!-- mobile menu finish -->
+	<!-- End code for mobile menu -->
+
+
 	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">

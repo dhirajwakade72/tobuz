@@ -639,33 +639,33 @@
 <div class="col-lg-6 col-xl-4 col-md-6">
 <div class="new-tag">New</div>
 <div class="sale-image-area">
-image start
+<!--image start-->
 <img src="images/Commercial.jpg" width="100%" title="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India" alt="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India"/>
-image finish
+<!--image finish-->
 <div class="pd10">
-meta start
+<!--meta start-->
 <div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India</a></div>
-meta finish
-title start
+<!--meta finish-->
+<!--title start-->
 <div class="title"><a href="">Running Resturant For Sale</a></div>
-title finish
-price start
+<!--title finish-->
+<!--price start-->
 <div class="price-location-area">
  <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
- price finish
- location start
+ <!--price finish-->
+ <!--location start-->
 	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Alwar, India</div>
 </div>
-location finish
-text start
+<!--location finish-->
+<!--text start-->
 <div class="p-area">1.8 yrs old runining restaurent on prime location for sale on urgent basis ,Regular coutomers</div>
-text finish
-Contact Business start
+<!--text finish-->
+<!--Contact Business start-->
 <p><button type="button" class="btn Business-btn">Contact Business</button>
-Contact Business finish
-wishlist start
+<!--Contact Business finish-->
+<!--wishlist start-->
 	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   wishlist finish
+	   <!--wishlist finish-->
 	   </p>
 </div>
 </div>
@@ -749,8 +749,8 @@ wishlist start
 </div>
 </div>
 </div>
-bfs grid 5 finish
-bfs grid 6 start
+<!--bfs grid 5 finish-->
+<!--bfs grid 6 start-->
 <div class="col-lg-6 col-xl-4 col-md-6">
 <div class="sale-image-area">
 <img src="images/Commercial-5.jpg" width="100%" title="Running Salon For Sale In Chandigarh" alt="Running Salon For Sale In Chandigarh"/>
@@ -767,7 +767,7 @@ bfs grid 6 start
 	   </p>
 </div>
 </div>
-</div> -->
+</div>
 <!-- bfs grid 6 finish -->
 </div>
 <br/>
