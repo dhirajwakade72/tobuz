@@ -2444,3 +2444,11 @@ width:100% !important;
     padding: 10px;
     margin-bottom: 10px;
 }
+
+#google_translate_element .goog-te-gadget {
+    font-size: 0px;
+}
+
+#google_translate_element .goog-te-gadget>span {
+    display: none;
+}
