@@ -467,7 +467,7 @@
 <!-- bfs Location title and search bar start -->
 <div class="Categories">Location
 <div class="searchbox">
-<input type="text" class="input-1">
+<input type="text" class="input-1" id="searchLocation">
 <div class="Location-sale search-sale">
 <div class="fas"><i class="fa fa-search"></i></div>
 </div>
@@ -476,33 +476,34 @@
 <div class="clear"></div>
 <form class="catagories-filter">
 <!-- checkbox start -->
+<div id="locationDiv">
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkIndia">
+  <label data-toggle="modal" class="form-check-label" for="chkIndia">
     India
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkAndhraPradesh">
+  <label data-toggle="modal" class="form-check-label" for="chkAndhraPradesh">
     Andhra Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkArunachalPradesh">
+  <label data-toggle="modal" class="form-check-label" for="chkArunachalPradesh">
     Arunachal Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkAssam">
+  <label data-toggle="modal" class="form-check-label" for="chkAssam">
     Assam
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkBihar">
+  <label data-toggle="modal" class="form-check-label" for="chkBihar">
     Bihar
   </label>
 </div>
@@ -510,6 +511,7 @@
 <!-- location popup link start -->
 <a data-toggle="modal" data-target="#myModal-1" class="more-filter">+ 13more</a>
 <!-- location popup link finish -->
+</div>
 </form>
 </div>
 </div>
@@ -528,10 +530,10 @@
 <!-- bfs title finish -->
 <div class="col-lg-5 col-xl-5 col-md-5 desktop-view">
 <!-- bfs grid start -->
-<span class="grid-area"><a href="businessForSale"><span class="Grid-active">Grid</span></a> 
+<span class="grid-area"><a href="javascript:sortByListOrGrid('grid')" id="gridFilter"><span class="Grid-active" value="grid">Grid</span></a>
 <!-- bfs grid finish -->
 <!-- bfs list start -->
-<a href="business-for-sale-list.html"><span class="List">List</span></a></span>
+<a href="javascript:sortByListOrGrid('list')" id="listFilter"><span class="List" value="list">List</span></a></span>
 <!-- bfs list finish -->
 <!-- bfs Sort By start -->
 <div class="Sort"><span class="sort-text">Sort By:</span>
@@ -596,7 +598,7 @@ Akhilesh Thakur
 </div>
 <div class="imges-area">
 <div class="name-seller">
-Neethu Joseph 
+Neethu Joseph
 </div>
 <div class="tell-seller">
 <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
@@ -656,7 +658,7 @@ Akhilesh Thakur
 </div>
 <div class="imges-area">
 <div class="name-seller">
-Neethu Joseph 
+Neethu Joseph
 </div>
 <div class="tell-seller">
 <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
@@ -711,6 +713,7 @@ Neethu Joseph
     </div>
 </div>
 <br/>
+
 <!-- bfs next page button start -->
 <div class="next-btn-area"><a class="next-btn">Next</a></div>
 <!-- bfs next page button finish -->
@@ -870,69 +873,69 @@ Neethu Joseph
 		<div class="catagories-popup-area">
 		
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkIndia1">
+  <label class="form-check-label" for="chkIndia1">
    India
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkAndamanAndNicobarIslands">
+  <label class="form-check-label" for="chkAndamanAndNicobarIslands">
    Andaman and Nicobar Islands
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkAndhraPradesh1">
+  <label class="form-check-label" for="chkAndhraPradesh1">
     Andhra Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkArunachalPradesh1">
+  <label class="form-check-label" for="chkArunachalPradesh1">
    Arunachal Pradesh
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkAssam1">
+  <label class="form-check-label" for="chkAssam1">
     Assam
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkBihar1">
+  <label class="form-check-label" for="chkBihar1">
   Bihar
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkChandigarh">
+  <label class="form-check-label" for="chkChandigarh">
    Chandigarh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkChhattisgarh">
+  <label class="form-check-label" for="chkChhattisgarh">
    Chhattisgarh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkDadraAndNagarHaveli">
+  <label class="form-check-label" for="chkDadraAndNagarHaveli">
   Dadra and Nagar Haveli
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkDamanAndDiu">
+  <label class="form-check-label" for="chkDamanAndDiu">
   Daman and Diu
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkDelhi">
+  <label class="form-check-label" for="chkDelhi">
    Delhi
   </label>
 </div>
@@ -940,68 +943,68 @@ Neethu Joseph
 		<div class="catagories-popup-area">
 		
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkGoa">
+  <label class="form-check-label" for="chkGoa">
     Goa
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkGujarat">
+  <label class="form-check-label" for="chkGujarat">
    Gujarat
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkHaryana">
+  <label class="form-check-label" for="chkHaryana">
    Haryana
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkHimachalPradesh">
+  <label class="form-check-label" for="chkHimachalPradesh">
    Himachal Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkJammuAndKashmir">
+  <label class="form-check-label" for="chkJammuAndKashmir">
     Jammu and Kashmir
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkJharkhand">
+  <label class="form-check-label" for="chkJharkhand">
    Jharkhand
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkKarnataka">
+  <label class="form-check-label" for="chkKarnataka">
     Karnataka
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkKerala">
+  <label class="form-check-label" for="chkKerala">
     Kerala
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkLakshadweep">
+  <label class="form-check-label" for="chkLakshadweep">
     Lakshadweep
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkMadhyaPradesh">
+  <label class="form-check-label" for="chkMadhyaPradesh">
    Madhya Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkMaharashtra">
+  <label class="form-check-label" for="chkMaharashtra">
    Maharashtra
   </label>
 </div>
@@ -1009,68 +1012,68 @@ Neethu Joseph
 		<div class="catagories-popup-area">
 		
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkManipur">
+  <label class="form-check-label" for="chkManipur">
   Manipur
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkMeghalaya">
+  <label class="form-check-label" for="chkMeghalaya">
    Meghalaya
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkMizoram">
+  <label class="form-check-label" for="chkMizoram">
    Mizoram
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkNagaland">
+  <label class="form-check-label" for="chkNagaland">
    Nagaland
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkOdisha">
+  <label class="form-check-label" for="chkOdisha">
    Odisha
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkPuducherry">
+  <label class="form-check-label" for="chkPuducherry">
     Puducherry
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkPunjab">
+  <label class="form-check-label" for="chkPunjab">
    Punjab
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkRajasthan">
+  <label class="form-check-label" for="chkRajasthan">
    Rajasthan
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkSikkim">
+  <label class="form-check-label" for="chkSikkim">
     Sikkim
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkTamilNadu">
+  <label class="form-check-label" for="chkTamilNadu">
    Tamil Nadu
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkTelangana">
+  <label class="form-check-label" for="chkTelangana">
   Telangana
   </label>
 </div>
@@ -1078,26 +1081,26 @@ Neethu Joseph
 		<div class="catagories-popup-area">
 		
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkTripura">
+  <label class="form-check-label" for="chkTripura">
     Tripura
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkWestBengal">
+  <label class="form-check-label" for="chkWestBengal">
    West Bengal
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkUttarakhand">
+  <label class="form-check-label" for="chkUttarakhand">
    Uttarakhand
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkUttarPradesh">
+  <label class="form-check-label" for="chkUttarPradesh">
     Uttar Pradesh
   </label>
 </div>
@@ -1128,6 +1131,80 @@ $(this).toggleClass("bg-green");
 $(".fas").toggleClass("color-white");
 $(".input-1").focus().toggleClass("active-width").val('');
 });
+
+    var states = [
+          "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+          "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+          "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+          "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+          "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+          "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu",
+          "Delhi", "Lakshadweep", "Puducherry", "India"
+        ];
+
+        $("#searchLocation").on("input", function() {
+              var inputValue = $('#searchLocation').val(); // Get the value from the input field
+
+              if (inputValue.trim() !== "") {
+                var matchedStates = states.filter(function(state) {
+                    // Case-insensitive matching
+                    return state.toLowerCase().includes(inputValue.toLowerCase());
+                });
+
+                if (matchedStates.length > 0) {
+                    var result = "";
+                    matchedStates.forEach(function(state) {
+                        result += "<input data-toggle='modal' style='margin-left: 10px' class='form-check-input' type='checkbox' value='' id='" + state.trim() +"'>"
+                              + "<label data-toggle='modal' style='margin-left: 30px' class='form-check-label' for='" + state.trim() + "'>"
+                              +  state
+                              + "</label><br />";
+                    });
+
+                    $("#locationDiv").html(result); // Display the matched states in the result div
+                } else {
+                    $("#locationDiv").html("<p>No matching location found.</p>"); // Display a message if no matches found
+                }
+              } else {
+                var result = "";
+                result += "<div id='location'>"
+                        + "<div class='form-check'>"
+                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkIndia'>"
+                        + "<label data-toggle='modal'  class='form-check-label' for='chkIndia'>"
+                        + "India"
+                        + "</label>"
+                        + "</div>"
+                        + "<div class='form-check'>"
+                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAndhraPradesh'>"
+                        + "<label data-toggle='modal'  class='form-check-label' for='chkAndhraPradesh'>"
+                        + "Andhra Pradesh"
+                        + "</label>"
+                        + "</div>"
+                        + "<div class='form-check'>"
+                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkArunachalPradesh'>"
+                        + "<label data-toggle='modal'  class='form-check-label' for='chkArunachalPradesh'>"
+                        + "Arunachal Pradesh"
+                        + "</label>"
+                        + "</div>"
+                        + "<div class='form-check'>"
+                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAssam'>"
+                        + "<label data-toggle='modal'  class='form-check-label' for='chkAssam'>"
+                        + "Assam"
+                        + "</label>"
+                        + "</div>"
+                        + "<div class='form-check'>"
+                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkBihar'>"
+                        + "<label data-toggle='modal'  class='form-check-label' for='chkBihar'>"
+                        + "Bihar"
+                        + "</label>"
+                        + "</div>"
+                        + "<a data-toggle='modal' data-target='#myModal-1' class='more-filter'>+ 13more</a>"
+                        + "</div>";
+
+                        $("#locationDiv").html(result);
+              }
+
+        });
+
 });
 </script>
 <script>
@@ -1273,6 +1350,38 @@ function test(currentPageNumber) {
         $(x).hide();
         $(y).hide();
     }
+}
+
+function sortByListOrGrid(option) {
+    var container = document.getElementById('container');
+    var view = "";
+
+    if(option == 'grid') {
+
+        var gridChild = $('#gridFilter .Grid');
+        gridChild.removeClass('Grid');
+        gridChild.addClass('Grid-active');
+
+        var listChild = $('#listFilter .List-active');
+        listChild.removeClass('List-active');
+        listChild.addClass('List');
+
+        view = 'grid';
+    }
+
+    if(option == 'list') {
+        var listChild = $('#listFilter .List');
+        listChild.removeClass('List');
+        listChild.addClass('List-active');
+
+        var gridChild = $('#gridFilter .Grid-active');
+        gridChild.removeClass('Grid-active');
+        gridChild.addClass('Grid');
+
+        view = 'list';
+    }
+
+    container.className = view;
 }
 
 </script>

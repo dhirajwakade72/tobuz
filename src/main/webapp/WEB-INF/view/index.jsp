@@ -44,16 +44,16 @@
 
 
 <div class="topbar desktop-view">
-<div class="container" style="float: right">
-<div class="row">
+<div class="container">
+<div class="row justify-content-between">
 <div class="col-lg-3 col-xl-2 col-md-3">
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -447,7 +447,7 @@ Searchbar scrolling top desktop finish
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale.jsp">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress.jsp">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -1282,8 +1282,8 @@ Broker <label class="radio-button">
 <li><a href="blog">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
 <li><a href="contact">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -1297,10 +1297,10 @@ Broker <label class="radio-button">
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
@@ -1319,7 +1319,7 @@ Broker <label class="radio-button">
 </div>
 <!-- footer mobile bottom bar area finish -->
 <!-- whatsapp icon area start -->
-<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float-icon" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=971503744318&text=Hi,%20I%20am%20looking%20for%0D%0ABusiness%20to%20Buy%0D%0ABusiness%20to%20Sell%0D%0ABusiness%20Valuation%0D%0ABusiness%20Setup%0D%0ABusiness%20Advisory%20Service" class="float-icon" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 <!-- whatsapp icon area finish -->

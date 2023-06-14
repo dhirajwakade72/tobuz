@@ -2432,3 +2432,23 @@ width:100% !important;
     transform-style: preserve-3d;
 }
 .my-payment a{color:#000; text-decoration:underline;}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.card {
+    color: green;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#google_translate_element .goog-te-gadget {
+    font-size: 0px;
+}
+
+#google_translate_element .goog-te-gadget>span {
+    display: none;
+}
