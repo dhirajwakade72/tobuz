@@ -491,7 +491,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#" id="clearAll">Clear all</a></span>
 </div>
 
 <!-- bfs sidebar filter title finish -->
@@ -1825,6 +1825,13 @@ function getTopBusinessListingsByCategory (obj ,id){
 	
 	
 }
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
+    });
+});
 
 </script>
 </html>
