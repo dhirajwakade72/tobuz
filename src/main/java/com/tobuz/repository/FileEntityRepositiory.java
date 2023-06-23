@@ -49,9 +49,9 @@ public interface FileEntityRepositiory  extends JpaRepository<FileEntity, Long> 
 	@Query(value = "select f.file_path, b.title , b.listing_description ,blo.total_business_sale_price  , b.suggested_title , b.id from file_entity f join business_listing b "
 			+ "			on f.business_listing_id = b.id "
 			+ "			join Business_Listing_Out_Let blo on   b.business_listing_out_let_id  = blo.id "
-			+ "			where f.business_listing_id is not null and blo.total_business_sale_price is not null and category_id =:id and b.listing_type= :lType  order by f.id desc limit 200  "
+			+ "			where f.business_listing_id is not null and blo.total_business_sale_price is not null and (:ids IS NULL OR b.category_id IN :ids) and b.listing_type= :lType  order by f.id desc limit 200  "
 			+ "			", nativeQuery = true)
-    public List<Object[]> getTopBusinessListingsByCategory(long id , String lType);
+    public List<Object[]> getTopBusinessListingsByCategory(List<Long> ids , String lType);
     
     @Query(value = " FROM FileEntity where businessListing =?1  AND fileType ='IMAGE'")
 	  public List<FileEntity> findByListingId(BusinessListing businessListing);

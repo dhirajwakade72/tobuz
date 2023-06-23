@@ -749,9 +749,15 @@ public class TobuzBusinessService {
 		
 		
 		
-		public List<BusinessListingDTO> getTopBusinessListingsByCategory(long catId,String listingType) {
+		public List<BusinessListingDTO> getTopBusinessListingsByCategory(List<String> catId,String listingType) {
 			List<BusinessListingDTO> business = new ArrayList<BusinessListingDTO>();
-			List<Object[]> businessList = fileRepository.getTopBusinessListingsByCategory(catId,listingType);
+			List<Long> longList = new ArrayList<>();
+			if(catId != null && !catId.isEmpty()) {
+				for (String str : catId) {
+					longList.add(Long.parseLong(str));
+				}
+			}
+			List<Object[]> businessList = fileRepository.getTopBusinessListingsByCategory(longList,listingType);
 			if (null != businessList) {
 				try {
 					for (Object[] objArray : businessList) {

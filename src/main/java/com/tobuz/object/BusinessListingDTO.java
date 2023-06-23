@@ -89,7 +89,8 @@ public class BusinessListingDTO implements Serializable{
 			private String userRole;
 			
 			private String createdOn;
-			
+
+			private List<String> categoryIds;
 			
 	
 	public String getBusinessTurnover() {
@@ -405,6 +406,11 @@ public class BusinessListingDTO implements Serializable{
 		this.createdOn = createdOn;
 	}
 
-	
+	public List<String> getCategoryIds() {
+		return categoryIds;
+	}
 
+	public void setCategoryIds(List<String> categoryIds) {
+		this.categoryIds = categoryIds;
+	}
 }
