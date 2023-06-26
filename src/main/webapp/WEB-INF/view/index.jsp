@@ -44,16 +44,16 @@
 
 
 <div class="topbar desktop-view">
-<div class="container" style="float: right">
-<div class="row">
+<div class="container">
+<div class="row justify-content-between">
 <div class="col-lg-3 col-xl-2 col-md-3">
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -1216,10 +1216,10 @@ Broker <label class="radio-button">
 
 <div class="input-group">
 <!-- Signup for email alerts input start -->
-  <input type="search" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" />
+  <input type="email" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" id="emailAddressForAlerts" />
   <!-- Signup for email alerts input finish -->
   <!-- Signup for email alerts button start -->
-  <button type="button" class="btn aleart-button">Submit</button>
+  <button type="button" class="btn aleart-button" id="btnSubmitForEmailAlerts" onClick="signupForEmailAlerts();">Submit</button>
   <!-- Signup for email alerts button finish -->
 </div>
 
@@ -1297,10 +1297,10 @@ Broker <label class="radio-button">
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
@@ -1319,7 +1319,7 @@ Broker <label class="radio-button">
 </div>
 <!-- footer mobile bottom bar area finish -->
 <!-- whatsapp icon area start -->
-<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float-icon" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=971503744318&text=Hi,%20I%20am%20looking%20for%0D%0ABusiness%20to%20Buy%0D%0ABusiness%20to%20Sell%0D%0ABusiness%20Valuation%0D%0ABusiness%20Setup%0D%0ABusiness%20Advisory%20Service" class="float-icon" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 <!-- whatsapp icon area finish -->
@@ -1327,6 +1327,7 @@ Broker <label class="radio-button">
 <!-- footer area finish -->
 </body>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
  <script src="/js/jquery.slim.min.js"></script>
    <script src="/js/popper.min.js"></script>
    <script src="/js/bootstrap.bundle.min.js"></script>
@@ -1698,6 +1699,25 @@ $(function() {
   
 });
 
+$(document).ready(function() {
+    $('#btnSubmitForEmailAlerts').click(function(event) {
+        var email = $('#emailAddressForAlerts').val();
+
+        if(email.trim() === '') {
+            alert('Enter email...!!');
+        } else {
+            event.preventDefault();
+            var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            if (!emailRegex.test(email)) {
+              alert('Email is invalid');
+              // You can perform further actions here, such as submitting the form
+              // this.submit();
+            }
+        }
+    });
+});
+
 function moveToRegister (){
 	  var getUrl = window.location;
 	  var url = getUrl .protocol + "//" + getUrl.host + "/register" ;
@@ -1725,6 +1745,25 @@ function contactbuyer (id){
 
 }
 
+function signupForEmailAlerts() {
+
+    var emailForAlerts = document.getElementById('emailAddressForAlerts').value;
+
+    $.ajax({
+        type: 'POST',
+        url : '/saveNewsletter',
+
+        data : {
+            text: emailForAlerts
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 
 </script>
  <div class="modal" id="myModal">

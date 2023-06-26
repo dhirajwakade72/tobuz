@@ -67,8 +67,14 @@ public interface UserRepository  extends JpaRepository<AppUser, Long> {
 	    		+ " "
 	    		+ " ", nativeQuery = true)
 	    public List<Object[]> getAllAdminPayments();
-	    
-	    
-	    
-	    
+
+		@Query(value = "select au.id from app_user au where au.email = ?1", nativeQuery = true)
+	    public Integer getUserIdFromAppUser(String email);
+
+		@Query(value = "select r.id from role r where r.app_user_id = ?1", nativeQuery = true)
+		public Integer getRoleIdFromRole(Integer appUserId);
+
+		//@Query(value = "select au.address_id from app_user au where id = ?1", nativeQuery = true)
+		@Query(value = "select a.city_id from address a join app_user au on a.id = au.address_id where au.email = ?1", nativeQuery = true)
+		public Integer getCityIdFromCity(String email);
 }
