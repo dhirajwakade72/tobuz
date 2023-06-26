@@ -594,7 +594,7 @@ Marketing Services
 </div>
 <!-- bfs title finish -->
 </div>
-<div class="row">
+<div class="row" id="row-1">
 <!-- bfs grid 1 start -->
 <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
 <a href="#">
@@ -676,13 +676,96 @@ Ajay Pandey Business Consultants
 </div>
 <!-- bfs grid 4 finish -->
 </div>
+
+<div class="r2" id="row-2" style="display: none;">
+    <!-- bfs grid 1 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    DRG land Services Accountants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 1 finish -->
+    <!-- bfs grid 2 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    Ajay Pandey Business Consultants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 2 finish -->
+    <!-- bfs grid 3 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    DRG land Services Accountants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 3 finish -->
+    <!-- bfs grid 4 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    Ajay Pandey Business Consultants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 4 finish -->
+</div>
 <br/>
 <!-- bfs next page button start -->
 <div class="next-btn-area"><a class="next-btn">Next</a></div>
 <!-- bfs next page button finish -->
 <!-- bfs pagination start -->
 <div class="pagination-area">
-<span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field"/></span><span class="number-text">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></span>
+<span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field" id="pageNumber" value="1"/></span><span class="number-text" id="totalPage">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true" id="nextPage"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true" id="previousPage"></i></a></span>
 </div>
 <!-- bfs pagination finish -->
 </div>
@@ -1144,6 +1227,9 @@ $(".input-1").focus().toggleClass("active-width").val('');
 
 /* If user clicks Clear All link then clear all the filters */
 $(document).ready(function() {
+
+    var currentPageNumber = 1;
+
     $("#clearAll").click(function() {
         $("input[type='checkbox']").prop("checked", false);
     });
@@ -1220,7 +1306,45 @@ $(document).ready(function() {
           }
 
     });
+
+    $("#nextPage").click(function(event) {
+        event.preventDefault();
+
+        if(currentPageNumber < 171) {
+            currentPageNumber++;
+            $("#pageNumber").val(currentPageNumber);
+
+            showDataWithPageNumber(currentPageNumber);
+        }
+    });
+
+    $("#previousPage").click(function(event) {
+        event.preventDefault();
+
+        if (currentPageNumber > 1) {
+            currentPageNumber--;
+            $("#pageNumber").val(currentPageNumber);
+
+            showDataWithPageNumber(currentPageNumber);
+        }
+    });
 });
+
+function showDataWithPageNumber(currentPageNumber) {
+
+    var x = document.getElementById("row-1");
+    var y = document.getElementById("row-2");
+
+    if(currentPageNumber == 1) {
+        $(x).show();
+        $(y).hide();
+    }
+
+    if(currentPageNumber == 2) {
+        $(y).show();
+        $(x).hide();
+    }
+}
 
 </script>
 </html>

@@ -5,6 +5,7 @@ import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toCollection;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
@@ -14,6 +15,8 @@ import java.util.TreeSet;
 
 import javax.servlet.http.HttpSession;
 
+import com.tobuz.model.NewsLetterSubscription;
+import com.tobuz.repository.NewsLetterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -102,6 +105,9 @@ public class TobuzBusinessService {
 	
 	@Autowired
 	SubCategoryRepository subCategoryRepository;
+
+	@Autowired
+	NewsLetterRepository newsLetterRepository;
 	
 	public List<BusinessListingDTO> getTopTenBusiness()   
 	{  
@@ -1509,6 +1515,22 @@ public List<MessageDTO> getUserMessages(){
 	return business;
 }
 
+@Transactional
+public NewsLetterSubscription saveNewsletter(String email) {
+	Integer appUserId = userRepository.getUserIdFromAppUser(email);
+	Integer roleId = userRepository.getRoleIdFromRole(appUserId);
+	Integer cityId = userRepository.getCityIdFromCity(email);
 
+	NewsLetterSubscription newsLetterSubscription = new NewsLetterSubscription();
+	newsLetterSubscription.setIsActive(true);
+	newsLetterSubscription.setEmail(email);
+	newsLetterSubscription.setAppUserId(appUserId);
+	newsLetterSubscription.setRoleId(roleId);
+	newsLetterSubscription.setCityId(cityId);
+	newsLetterSubscription.setCreatedOn(Timestamp.valueOf(LocalDateTime.now()));
+	newsLetterSubscription.setLastUpdate(Timestamp.valueOf(LocalDateTime.now()));
+
+	return newsLetterRepository.save(newsLetterSubscription);
+}
 
 }
