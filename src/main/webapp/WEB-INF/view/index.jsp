@@ -1216,10 +1216,10 @@ Broker <label class="radio-button">
 
 <div class="input-group">
 <!-- Signup for email alerts input start -->
-  <input type="search" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" />
+  <input type="email" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" id="emailAddressForAlerts" />
   <!-- Signup for email alerts input finish -->
   <!-- Signup for email alerts button start -->
-  <button type="button" class="btn aleart-button">Submit</button>
+  <button type="button" class="btn aleart-button" id="btnSubmitForEmailAlerts" onClick="signupForEmailAlerts();">Submit</button>
   <!-- Signup for email alerts button finish -->
 </div>
 
@@ -1327,6 +1327,7 @@ Broker <label class="radio-button">
 <!-- footer area finish -->
 </body>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
  <script src="/js/jquery.slim.min.js"></script>
    <script src="/js/popper.min.js"></script>
    <script src="/js/bootstrap.bundle.min.js"></script>
@@ -1698,6 +1699,25 @@ $(function() {
   
 });
 
+$(document).ready(function() {
+    $('#btnSubmitForEmailAlerts').click(function(event) {
+        var email = $('#emailAddressForAlerts').val();
+
+        if(email.trim() === '') {
+            alert('Enter email...!!');
+        } else {
+            event.preventDefault();
+            var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            if (!emailRegex.test(email)) {
+              alert('Email is invalid');
+              // You can perform further actions here, such as submitting the form
+              // this.submit();
+            }
+        }
+    });
+});
+
 function moveToRegister (){
 	  var getUrl = window.location;
 	  var url = getUrl .protocol + "//" + getUrl.host + "/register" ;
@@ -1725,6 +1745,25 @@ function contactbuyer (id){
 
 }
 
+function signupForEmailAlerts() {
+
+    var emailForAlerts = document.getElementById('emailAddressForAlerts').value;
+
+    $.ajax({
+        type: 'POST',
+        url : '/saveNewsletter',
+
+        data : {
+            text: emailForAlerts
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 
 </script>
  <div class="modal" id="myModal">
