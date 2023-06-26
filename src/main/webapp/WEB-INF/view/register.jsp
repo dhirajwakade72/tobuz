@@ -706,7 +706,7 @@ Searchbar scrolling top desktop finish
 <div class="row justify-content-md-center">
 <!-- Google start -->
 <div class="col-md-4 col-lg-4 col-xl-4">
-<a href="#"><div class="facebook-register-button"><img src="images/google-plus.png" width="25" title="Google" alt="Google" class="ragister-icon" height="25"/> <span class="ragister-icon">| </span>Sign in with Google</div></a>
+<a href="#"><div class="facebook-register-button"><img src="images/google.png" width="25" title="Google" alt="Google" class="ragister-icon" height="25"/> <span class="ragister-icon">| </span>Sign in with Google</div></a>
 </div>
 <!-- Google finish -->
 <!-- Facebook start -->

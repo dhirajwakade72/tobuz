@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.tobuz.model.NewsLetterSubscription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.tobuz.model.BusinessListing;
 import com.tobuz.object.BusinessAdvertDTO;
@@ -735,5 +736,12 @@ public class TobuzRestController {
 		vo.setData(obj);
 		return new ResponseEntity<>(vo, HttpStatus.OK);
 
+	}
+
+	@RequestMapping(value = "/saveNewsletter", method = RequestMethod.POST)
+	@ResponseBody
+	//@RequestParam("text") here text is a variable it must be same name as used into ajax variable
+	public NewsLetterSubscription saveNewsletter(@RequestParam("text") String email) {
+		return businessService.saveNewsletter(email);
 	}
 }
