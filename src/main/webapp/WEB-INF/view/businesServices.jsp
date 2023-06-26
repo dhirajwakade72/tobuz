@@ -532,7 +532,7 @@ Marketing Services
 <!-- bfs Location title and search bar start -->
 <div class="Categories">Location
 <div class="searchbox">
-<input type="text" class="input-1">
+<input type="text" class="input-1" id="searchLocation">
 <div class="Location-sale search-sale">
 <div class="fas"><i class="fa fa-search"></i></div>
 </div>
@@ -541,6 +541,7 @@ Marketing Services
 <div class="clear"></div>
 <form class="catagories-filter">
 <!-- checkbox start -->
+<div id="locationDiv">
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
@@ -578,6 +579,7 @@ Marketing Services
 </form>
 </div>
 </div>
+</div>
 <!-- bfs sidebar filter area finish -->
 </div>
 <!-- bfs sidebar finish -->
@@ -592,7 +594,7 @@ Marketing Services
 </div>
 <!-- bfs title finish -->
 </div>
-<div class="row">
+<div class="row" id="row-1">
 <!-- bfs grid 1 start -->
 <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
 <a href="#">
@@ -674,13 +676,96 @@ Ajay Pandey Business Consultants
 </div>
 <!-- bfs grid 4 finish -->
 </div>
+
+<div class="r2" id="row-2" style="display: none;">
+    <!-- bfs grid 1 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    DRG land Services Accountants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 1 finish -->
+    <!-- bfs grid 2 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    Ajay Pandey Business Consultants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 2 finish -->
+    <!-- bfs grid 3 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    DRG land Services Accountants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 3 finish -->
+    <!-- bfs grid 4 start -->
+    <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
+    <a href="#">
+    <div class="seller-person-list">
+    <div class="imges-area-1">
+    <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+    </div>
+    <div class="imges-area-2">
+    <div class="name-seller-1">
+    Ajay Pandey Business Consultants - 2
+    </div>
+    <div class="tell-seller">
+    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919717555052">+91-9717555052</a></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Mirzapur,Uttar Pradesh India</p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    <!-- bfs grid 4 finish -->
+</div>
 <br/>
 <!-- bfs next page button start -->
 <div class="next-btn-area"><a class="next-btn">Next</a></div>
 <!-- bfs next page button finish -->
 <!-- bfs pagination start -->
 <div class="pagination-area">
-<span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field"/></span><span class="number-text">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></span>
+<span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field" id="pageNumber" value="1"/></span><span class="number-text" id="totalPage">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true" id="nextPage"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true" id="previousPage"></i></a></span>
 </div>
 <!-- bfs pagination finish -->
 </div>
@@ -1142,10 +1227,124 @@ $(".input-1").focus().toggleClass("active-width").val('');
 
 /* If user clicks Clear All link then clear all the filters */
 $(document).ready(function() {
+
+    var currentPageNumber = 1;
+
     $("#clearAll").click(function() {
         $("input[type='checkbox']").prop("checked", false);
     });
+
+    var states = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+      "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+      "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+      "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+      "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+      "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu",
+      "Delhi", "Lakshadweep", "Puducherry", "India"
+    ];
+
+    $("#searchLocation").on("input", function() {
+          var inputValue = $('#searchLocation').val(); // Get the value from the input field
+
+          if (inputValue.trim() !== "") {
+            var matchedStates = states.filter(function(state) {
+                // Case-insensitive matching
+                return state.toLowerCase().includes(inputValue.toLowerCase());
+            });
+
+            if (matchedStates.length > 0) {
+                var result = "";
+                matchedStates.forEach(function(state) {
+                    result += "<input data-toggle='modal' style='margin-left: 10px' class='form-check-input' type='checkbox' value='' id='" + state.trim() +"'>"
+                          + "<label data-toggle='modal' style='margin-left: 30px' class='form-check-label' for='" + state.trim() + "'>"
+                          +  state
+                          + "</label><br />";
+                });
+
+                $("#locationDiv").html(result); // Display the matched states in the result div
+            } else {
+                $("#locationDiv").html("<p>No matching location found.</p>"); // Display a message if no matches found
+            }
+          } else {
+            var result = "";
+            result += "<div id='location'>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkIndia'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkIndia'>"
+                    + "India"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAndhraPradesh'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkAndhraPradesh'>"
+                    + "Andhra Pradesh"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkArunachalPradesh'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkArunachalPradesh'>"
+                    + "Arunachal Pradesh"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAssam'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkAssam'>"
+                    + "Assam"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkBihar'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkBihar'>"
+                    + "Bihar"
+                    + "</label>"
+                    + "</div>"
+                    + "<a data-toggle='modal' data-target='#myModal-1' class='more-filter'>+ 13more</a>"
+                    + "</div>";
+
+                    $("#locationDiv").html(result);
+          }
+
+    });
+
+    $("#nextPage").click(function(event) {
+        event.preventDefault();
+
+        if(currentPageNumber < 171) {
+            currentPageNumber++;
+            $("#pageNumber").val(currentPageNumber);
+
+            showDataWithPageNumber(currentPageNumber);
+        }
+    });
+
+    $("#previousPage").click(function(event) {
+        event.preventDefault();
+
+        if (currentPageNumber > 1) {
+            currentPageNumber--;
+            $("#pageNumber").val(currentPageNumber);
+
+            showDataWithPageNumber(currentPageNumber);
+        }
+    });
 });
+
+function showDataWithPageNumber(currentPageNumber) {
+
+    var x = document.getElementById("row-1");
+    var y = document.getElementById("row-2");
+
+    if(currentPageNumber == 1) {
+        $(x).show();
+        $(y).hide();
+    }
+
+    if(currentPageNumber == 2) {
+        $(y).show();
+        $(x).hide();
+    }
+}
 
 </script>
 </html>

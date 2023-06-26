@@ -491,7 +491,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#" id="clearAll">Clear all</a></span>
 </div>
 
 <!-- bfs sidebar filter title finish -->
@@ -615,10 +615,10 @@
 <!-- bfs title finish -->
 <div class="col-lg-6 col-xl-5 col-md-12 desktop-view">
 <!-- bfs grid start -->
-<span class="grid-area"><a href="businessForSale"><span class="Grid-active">Grid</span></a> 
+<span class="grid-area"><a href="javascript:sortByListOrGrid('grid')" id="gridFilter"><span class="Grid-active" value="grid">Grid</span></a>
 <!-- bfs grid finish -->
 <!-- bfs list start -->
-<a href="business-for-sale-list.html"><span class="List">List</span></a></span>
+<a href="javascript:sortByListOrGrid('list')" id="listFilter"><span class="List" value="list">List</span></a></span>
 <!-- bfs list finish -->
 <!-- bfs Sort By start -->
 <div class="Sort"><span class="sort-text">Sort By:</span>
@@ -1788,6 +1788,33 @@ $(".fas").toggleClass("color-white");
 $(".input-1").focus().toggleClass("active-width").val('');
 });
 });
+
+function sortByListOrGrid(option) {
+    var paginationContainer = document.querySelectorAll(".pagination-container");
+    var listFilter = document.querySelector("#listFilter > span");
+    var gridFilter = document.querySelector("#gridFilter > span");
+    if (option === "grid") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("list");
+            container.classList.add("grid");
+        })
+        listFilter.classList.remove("List-active");
+        listFilter.classList.add("List");
+        gridFilter.classList.remove("Grid");
+        gridFilter.classList.add("Grid-active");
+    }
+    if (option === "list") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("grid");
+            container.classList.add("list");
+        })
+        listFilter.classList.remove("List");
+        listFilter.classList.add("List-active");
+        gridFilter.classList.remove("Grid-active");
+        gridFilter.classList.add("Grid");
+    }
+}
+
 </script>
 <script>
 var x, i, j, l, ll, selElmnt, a, b, c;
@@ -2007,6 +2034,45 @@ function getTopBusinessListingsByCategory (obj ,id){
 	
 	
 }
+
+function sortByListOrGrid(option) {
+    var container = document.getElementById('container');
+    var view = "";
+
+    if(option == 'grid') {
+
+        var gridChild = $('#gridFilter .Grid');
+        gridChild.removeClass('Grid');
+        gridChild.addClass('Grid-active');
+
+        var listChild = $('#listFilter .List-active');
+        listChild.removeClass('List-active');
+        listChild.addClass('List');
+
+        view = 'grid';
+    }
+
+    if(option == 'list') {
+        var listChild = $('#listFilter .List');
+        listChild.removeClass('List');
+        listChild.addClass('List-active');
+
+        var gridChild = $('#gridFilter .Grid-active');
+        gridChild.removeClass('Grid-active');
+        gridChild.addClass('Grid');
+
+        view = 'list';
+    }
+
+    container.className = view;
+}
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
+    });
+});
 
 function showPageNumber(currentPageNumber) {
 
