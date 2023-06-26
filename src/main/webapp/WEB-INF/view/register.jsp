@@ -721,7 +721,7 @@ Searchbar scrolling top desktop finish
 <!-- Linkedin finish -->
 </div>
 <!-- Already have an account? start -->
-<p class="an-account">Already have an account? <a href="#" style="color:#0070cc;">Click here</a> to login.</p>
+<p class="an-account">Already have an account? <a href="login.jsp" style="color:#0070cc;">Click here</a> to login.</p>
 <!-- Already have an account? finish -->
 </div>
 </div>
