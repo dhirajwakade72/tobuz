@@ -1,19 +1,11 @@
 package com.tobuz.service;
 
-import static java.util.Comparator.comparingLong;
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.toCollection;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.TreeSet;
-
-import javax.servlet.http.HttpSession;
-
+import com.tobuz.model.*;
+import com.tobuz.model.tobuzpackage.TobuzPackage;
+import com.tobuz.model.tobuzpackage.TobuzPackageService;
+import com.tobuz.object.*;
+import com.tobuz.projection.BusinessByFilter;
+import com.tobuz.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,47 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.tobuz.model.AppUser;
-import com.tobuz.model.BusinessAdvisor;
-import com.tobuz.model.BusinessListing;
-import com.tobuz.model.BusinessListingFeatureInfo;
-import com.tobuz.model.Category;
-import com.tobuz.model.ContactUs;
-import com.tobuz.model.Country;
-import com.tobuz.model.FileEntity;
-import com.tobuz.model.ListingFor;
-import com.tobuz.model.ListingType;
-import com.tobuz.model.Role;
-import com.tobuz.model.SubCategory;
-import com.tobuz.model.UserRole;
-import com.tobuz.model.tobuzpackage.TobuzPackage;
-import com.tobuz.model.tobuzpackage.TobuzPackageService;
-import com.tobuz.object.BusinessAdvertDTO;
-import com.tobuz.object.BusinessListingDTO;
-import com.tobuz.object.BusinessServiceTypeDTO;
-import com.tobuz.object.CategoryDTO;
-import com.tobuz.object.ContactDTO;
-import com.tobuz.object.MessageDTO;
-import com.tobuz.object.PaymentDTO;
-import com.tobuz.object.RegisterDTO;
-import com.tobuz.object.SubCategoryDTO;
-import com.tobuz.object.TestimonialDTO;
-import com.tobuz.object.TobuzPackageDTO;
-import com.tobuz.object.TobuzfeatureDTO;
-import com.tobuz.object.UserDTO;
-import com.tobuz.object.UserPackageInfoDTO;
-import com.tobuz.object.UserRequestDTO;
-import com.tobuz.repository.BusinessListingRepository;
-import com.tobuz.repository.CategoryRepository;
-import com.tobuz.repository.ContactUsRepository;
-import com.tobuz.repository.CountryRepository;
-import com.tobuz.repository.FileEntityRepositiory;
-import com.tobuz.repository.MessageRepository;
-import com.tobuz.repository.RoleRepository;
-import com.tobuz.repository.SubCategoryRepository;
-import com.tobuz.repository.TobuzFeatureRepository;
-import com.tobuz.repository.TobuzPackageRepository;
-import com.tobuz.repository.UserRepository;
+import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
+import java.util.*;
+
+import static java.util.Comparator.comparingLong;
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toCollection;
 
 @Service  
 
@@ -1513,6 +1471,45 @@ public List<MessageDTO> getUserMessages(){
 		System.out.println("contacts : "+business.size());
 	}
 	return business;
+}
+
+public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessListingDTO){
+		List<BusinessListingDTO> businessListingDTOList = new ArrayList<>();
+	List<Long> longList = new ArrayList<>();
+	if(businessListingDTO.getCategoryIds() != null && !businessListingDTO.getCategoryIds().isEmpty()) {
+		for (String str : businessListingDTO.getCategoryIds()) {
+			longList.add(Long.parseLong(str));
+		}
+	}
+	List<BusinessByFilter> businessByFilter = null;
+	if (Objects.isNull(businessListingDTO.getSortByTitle())){
+		boolean bPrice =  businessListingDTO.getSortByPrice();
+		businessByFilter = fileEntityRepositiory.getBusinessByPriceFilter(longList, businessListingDTO.getListingType(), businessListingDTO.getFranchiseType(), bPrice);
+	}else {
+		boolean isTitle = businessListingDTO.getSortByTitle();
+		businessByFilter =fileEntityRepositiory.getBusinessByTitleFilter(longList, businessListingDTO.getListingType(), businessListingDTO.getFranchiseType(), isTitle);
+	}
+
+	if(Objects.nonNull(businessByFilter)){
+		try {
+			for (BusinessByFilter data : businessByFilter){
+				BusinessListingDTO response = new BusinessListingDTO();
+					response.setFilePath(data.getFilePath());
+					response.setTitle(data.getTitle());
+					response.setDescription(data.getListingDescription());
+					response.setPrice(data.getPrice());
+					response.setSuggestedTitle(data.getSuggestedTitle());
+					response.setBusinessListingId(data.getSuggestedTitle());
+				businessListingDTOList.add(response);
+			}
+		} catch (NumberFormatException e){
+			e.printStackTrace();
+		}
+		System.out.println("BusinessByFilter List size : "+ businessByFilter.size());
+	} else {
+		System.out.println("BusinessByFilter List size : NULL");
+	}
+	return businessListingDTOList;
 }
 
 

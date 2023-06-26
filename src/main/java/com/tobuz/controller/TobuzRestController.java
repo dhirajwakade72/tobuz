@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -735,5 +736,11 @@ public class TobuzRestController {
 		vo.setData(obj);
 		return new ResponseEntity<>(vo, HttpStatus.OK);
 
+	}
+
+	@RequestMapping(value = "/getBusinessByFilter", method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE ,produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<BusinessListingDTO> getBusinessByFilter(@RequestBody BusinessListingDTO businessListingDTO){
+		return businessService.getBusinessByFilter(businessListingDTO);
 	}
 }

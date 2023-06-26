@@ -91,8 +91,35 @@ public class BusinessListingDTO implements Serializable{
 			private String createdOn;
 
 			private List<String> categoryIds;
-			
-	
+
+			private String franchiseType;
+			private Boolean sortByTitle;
+			private Boolean sortByPrice;
+
+	public Boolean getSortByPrice() {
+		return sortByPrice;
+	}
+
+	public void setSortByPrice(Boolean sortByPrice) {
+		this.sortByPrice = sortByPrice;
+	}
+
+	public Boolean getSortByTitle() {
+		return sortByTitle;
+	}
+
+	public void setSortByTitle(Boolean sortByTitle) {
+		this.sortByTitle = sortByTitle;
+	}
+
+	public String getFranchiseType() {
+		return franchiseType;
+	}
+
+	public void setFranchiseType(String franchiseType) {
+		this.franchiseType = franchiseType;
+	}
+
 	public String getBusinessTurnover() {
 				return businessTurnover;
 			}
