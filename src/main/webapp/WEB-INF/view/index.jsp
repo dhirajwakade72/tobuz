@@ -44,8 +44,8 @@
 
 
 <div class="topbar desktop-view">
-<div class="container" style="float: right">
-<div class="row">
+<div class="container">
+<div class="row justify-content-between">
 <div class="col-lg-3 col-xl-2 col-md-3">
 <!-- social icon desktop start -->
 <div class="social-icon">
@@ -455,7 +455,7 @@ Searchbar scrolling top desktop finish
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -467,9 +467,9 @@ Searchbar scrolling top desktop finish
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
-          <a class="dropdown-item" href="business-setup.html">Business Setup</a>
-          <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
+          <a class="dropdown-item" href="business-setup">Business Setup</a>
+          <a class="dropdown-item" href="business-valuation">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
         </div>
 	</li>
@@ -1216,10 +1216,10 @@ Broker <label class="radio-button">
 
 <div class="input-group">
 <!-- Signup for email alerts input start -->
-  <input type="search" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" />
+  <input type="email" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" id="emailAddressForAlerts" />
   <!-- Signup for email alerts input finish -->
   <!-- Signup for email alerts button start -->
-  <button type="button" class="btn aleart-button">Submit</button>
+  <button type="button" class="btn aleart-button" id="btnSubmitForEmailAlerts" onClick="signupForEmailAlerts();">Submit</button>
   <!-- Signup for email alerts button finish -->
 </div>
 
@@ -1265,10 +1265,10 @@ Broker <label class="radio-button">
 <ul>
 <li><a href="createBusinessListings">Sell Your Business</a></li>
 <li><a href="#">Invest Or Buy Business</a></li>
-<li><a href="#">Business Services</a></li>
+<li><a href="businesServices">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
@@ -1327,6 +1327,7 @@ Broker <label class="radio-button">
 <!-- footer area finish -->
 </body>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
  <script src="/js/jquery.slim.min.js"></script>
    <script src="/js/popper.min.js"></script>
    <script src="/js/bootstrap.bundle.min.js"></script>
@@ -1698,6 +1699,25 @@ $(function() {
   
 });
 
+$(document).ready(function() {
+    $('#btnSubmitForEmailAlerts').click(function(event) {
+        var email = $('#emailAddressForAlerts').val();
+
+        if(email.trim() === '') {
+            alert('Enter email...!!');
+        } else {
+            event.preventDefault();
+            var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            if (!emailRegex.test(email)) {
+              alert('Email is invalid');
+              // You can perform further actions here, such as submitting the form
+              // this.submit();
+            }
+        }
+    });
+});
+
 function moveToRegister (){
 	  var getUrl = window.location;
 	  var url = getUrl .protocol + "//" + getUrl.host + "/register" ;
@@ -1725,6 +1745,25 @@ function contactbuyer (id){
 
 }
 
+function signupForEmailAlerts() {
+
+    var emailForAlerts = document.getElementById('emailAddressForAlerts').value;
+
+    $.ajax({
+        type: 'POST',
+        url : '/saveNewsletter',
+
+        data : {
+            text: emailForAlerts
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 
 </script>
  <div class="modal" id="myModal">
