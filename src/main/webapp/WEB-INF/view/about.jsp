@@ -503,7 +503,7 @@
 <!-- reach area start -->
 <div class="col-sm-12">
 <div class="what-area"><img src="images/vission.png" title="vision" alt="vision"/></div>
-<div class="what-vission-area"><div class="vission-area">Tobuz’ s vision is to innovate the best platform for trading businesses and commercial properties online. We are proud of our commitment to providing maximum customer satisfaction through our extensively skilled team.</div></div>
+<div class="what-vission-area"><div class="vission-area">Tobuz's vision is to innovate the best platform for trading businesses and commercial properties online. We are proud of our commitment to providing maximum customer satisfaction through our extensively skilled team.</div></div>
 </div>
 <!-- reach area finish -->
 </div>
