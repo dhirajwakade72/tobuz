@@ -590,7 +590,7 @@
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Investors</h2>
 <ul>
-<li><a href="business-advisory.html">Business Advisory</a></li>
+<li><a href="businessAdvisory">Business Advisory</a></li>
 <li><a href="business-setup.html">Business Setup</a></li>
 <li><a href="business-valuation.html">Business Valuation</a></li>
 <li><a href="#">Business Loan</a></li>
@@ -603,11 +603,11 @@
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
 <li><a href="commercialForSaleGrid">Commercial for sale</a></li>
-<li><a href="buyers-investors-grid.html">Buyers/Investors</a></li>
+<li><a href="buyersInvestorsGrid">Buyers/Investors</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="brokers">Brokers</a></li>
 <li><a href="businesServices">Business Services</a></li>
-<li><a href="distress-sale.html">Distress Sale</a></li>
+<li><a href="distress">Distress Sale</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->

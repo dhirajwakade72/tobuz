@@ -420,14 +420,56 @@
 	 </li>
 	 <!-- Add Listing mobile Finish -->
 	 <!-- mobile menu start -->
-    <li class="nav-item"> <a class="nav-link" href="index">Home</a></li>
-    <li class="nav-item"> <a class="nav-link" href="buy-a-business.html">Buy a Business</a></li>
-	<li class="nav-item"> <a class="nav-link" href="sell-a-business.html">Sell a Business</a></li>
-	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item"> <a class="nav-link" href="businessAdvisory">Business Advisory</a></li>
-	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
-	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
-	<!-- mobile menu finish -->
+                 <li class="nav-item">
+                     <a class="nav-link" href="index.html">Home</a>
+                 </li>
+
+                 <li class="nav-item dropdown">
+                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Buy a Business
+                     </a>
+
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="businessForSale">Business For Sale</a>
+                       <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
+                       <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+                       <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
+                     </div>
+                 </li>
+
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Sell a Business
+                     </a>
+
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+                       <a class="dropdown-item" href="brokers.html">Brokers</a>
+                       <a class="dropdown-item" href="businesServices">Business Services</a>
+                     </div>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="realEstate">Real Estate</a>
+                 </li>
+
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Investors
+                     </a>
+
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+                       <a class="dropdown-item" href="business-setup.html">Business Setup</a>
+                       <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
+                       <a class="dropdown-item" href="#">Business Loan</a>
+                     </div>
+                 </li>
+
+                 <li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="contact">Contact</a></li>
+         	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">
 	<span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span> 
@@ -515,6 +557,7 @@
 </form>
 </div>
 </div>
+
 <!-- bfs sidebar filter area finish -->
 </div>
 <!-- bfs sidebar finish -->
@@ -548,171 +591,547 @@
 <!-- bfs Sort By finish -->
 </div>
 </div>
-<div class="row" id="r">
-<!-- bfs grid 1 start -->
-<div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-<a href="#">
-<div class="seller-person-list">
-<div class="imges-area">
-<img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
-</div>
-<div class="imges-area">
-<div class="name-seller">
-Mahesh Sharma
-</div>
-<div class="tell-seller">
-<p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<!-- bfs grid 1 finish -->
-<!-- bfs grid 2 start -->
-<div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-<a href="#">
-<div class="seller-person-list">
-<div class="imges-area">
-<img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
-</div>
-<div class="imges-area">
-<div class="name-seller">
-Akhilesh Thakur
-</div>
-<div class="tell-seller">
-<p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<!-- bfs grid 2 finish -->
-<!-- bfs grid 3 start -->
-<div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-<a href="#">
-<div class="seller-person-list">
-<div class="imges-area">
-<img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
-</div>
-<div class="imges-area">
-<div class="name-seller">
-Neethu Joseph
-</div>
-<div class="tell-seller">
-<p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<!-- bfs grid 3 finish -->
-<!-- bfs grid 4 start -->
-<div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-<a href="#">
-<div class="seller-person-list">
-<div class="imges-area">
-<img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
-</div>
-<div class="imges-area">
-<div class="name-seller">
-Mahesh Sharma
-</div>
-<div class="tell-seller">
-<p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<!-- bfs grid 4 finish -->
-<!-- bfs grid 5 start -->
-<div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-<a href="#">
-<div class="seller-person-list">
-<div class="imges-area">
-<img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
-</div>
-<div class="imges-area">
-<div class="name-seller">
-Akhilesh Thakur
-</div>
-<div class="tell-seller">
-<p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<!-- bfs grid 5 finish -->
-<!-- bfs grid 6 start -->
-<div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-<a href="#">
-<div class="seller-person-list">
-<div class="imges-area">
-<img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
-</div>
-<div class="imges-area">
-<div class="name-seller">
-Neethu Joseph
-</div>
-<div class="tell-seller">
-<p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<!-- bfs grid 6 finish -->
-</div>
 
-<div class="row-1" id="r1" style="display: none;">
-    <div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-    <a href="#">
-    <div class="seller-person-list">
-    <div class="imges-area">
-    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
-    </div>
-    <div class="imges-area">
-    <div class="name-seller">
-    Mahesh Sharma
-    </div>
-    <div class="tell-seller">
-    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
-    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-    </div>
-    </div>
-    </div>
-    </a>
-    </div>
-</div>
+<div class="row" id="row-1">
+    <div class="grid pagination-container" >
+        <!-- bfs grid 1 start -->
+        <div class="card">
+            <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                <a href="#">
+                    <div class="seller-person-list">
+                        <div class="imges-area">
+                            <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                        </div>
+                        <div class="imges-area">
+                            <div class="name-seller">
+                                Mahesh Sharma
+                            </div>
+                            <div class="tell-seller">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- bfs grid 1 finish -->
+        <!-- bfs grid 2 start -->
+        <div class="card">
+            <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                <a href="#">
+                    <div class="seller-person-list">
+                        <div class="imges-area">
+                            <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                        </div>
+                        <div class="imges-area">
+                            <div class="name-seller">
+                                Akhilesh Thakur
+                            </div>
+                            <div class="tell-seller">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- bfs grid 2 finish -->
 
-<div class="row-2" id="r2" style="display: none;">
-    <div class="col-lg-4 col-xl-4 col-md-4 seller-a">
-    <a href="#">
-    <div class="seller-person-list">
-    <div class="imges-area">
-    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+        <!-- bfs grid 3 start -->
+        <div class="card"><div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+            <a href="#">
+                <div class="seller-person-list">
+                    <div class="imges-area">
+                        <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                    </div>
+                    <div class="imges-area">
+                        <div class="name-seller">
+                            Neethu Joseph
+                        </div>
+                        <div class="tell-seller">
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                        </div>
+                    </div>
+                </div>
+            </a></div>
+        </div>
+        <!-- bfs grid 3 finish -->
+
+        <!-- bfs grid 4 start -->
+        <div class="card">
+        <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+            <a href="#">
+                <div class="seller-person-list">
+                    <div class="imges-area">
+                        <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                    </div>
+                    <div class="imges-area">
+                        <div class="name-seller">
+                            Mahesh Sharma
+                        </div>
+                        <div class="tell-seller">
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </div>
+        <!-- bfs grid 4 finish -->
+
+        <!-- bfs grid 5 start -->
+        <div class="card">
+        <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+            <a href="#">
+                <div class="seller-person-list">
+                    <div class="imges-area">
+                        <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                    </div>
+                    <div class="imges-area">
+                        <div class="name-seller">
+                            Akhilesh Thakur
+                        </div>
+                        <div class="tell-seller">
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                        </div>
+                    </div>
+                </div>
+            </a></div>
+        </div>
+        <!-- bfs grid 5 finish -->
+
+        <!-- bfs grid 6 start -->
+        <div class="card">
+        <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+            <a href="#">
+                <div class="seller-person-list">
+                    <div class="imges-area">
+                       <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                    </div>
+                    <div class="imges-area">
+                        <div class="name-seller">
+                            Neethu Joseph
+                        </div>
+                        <div class="tell-seller">
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                        </div>
+                    </div>
+                </div>
+            </a></div>
+        </div>
+        <!-- bfs grid 6 finish -->
     </div>
-    <div class="imges-area">
-    <div class="name-seller">
-    Test Sharma
-    </div>
-    <div class="tell-seller">
-    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
-    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
-    </div>
-    </div>
-    </div>
-    </a>
+    <div class="list pagination-container" style="display: none;">
+        <!-- bfs grid 1 start -->
+                <div class="card">
+                    <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                        <a href="#">
+                            <div class="seller-person-list">
+                                <div class="imges-area">
+                                    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                                </div>
+                                <div class="imges-area">
+                                    <div class="name-seller">
+                                        Mahesh Sharma
+                                    </div>
+                                    <div class="tell-seller">
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- bfs grid 1 finish -->
+                <!-- bfs grid 2 start --><div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                                <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Akhilesh Thakur
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div></div>
+                <!-- bfs grid 2 finish -->
+
+                <!-- bfs grid 3 start --><div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                                <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Neethu Joseph
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                </div>
+                <!-- bfs grid 3 finish -->
+
+                <!-- bfs grid 4 start -->
+                <div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                                <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Mahesh Sharma
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                </div>
+                <!-- bfs grid 4 finish -->
+
+                <!-- bfs grid 5 start -->
+                <div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                                <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Akhilesh Thakur
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                </div>
+                <!-- bfs grid 5 finish -->
+
+                <!-- bfs grid 6 start -->
+                <div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                               <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Neethu Joseph
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                </div>
+                <!-- bfs grid 6 finish -->
     </div>
 </div>
 <br/>
+
+<!-- Logic for second page from paging -->
+    <div id="row-2" class="row" style="display: none;">
+        <div class="grid pagination-container">
+            <!-- bfs grid 1 start -->
+            <div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                                <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Mahesh Sharma - 2
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- bfs grid 1 finish -->
+            <!-- bfs grid 2 start -->
+            <div class="card">
+                <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                    <a href="#">
+                        <div class="seller-person-list">
+                            <div class="imges-area">
+                                <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                            </div>
+                            <div class="imges-area">
+                                <div class="name-seller">
+                                    Akhilesh Thakur - 2
+                                </div>
+                                <div class="tell-seller">
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- bfs grid 2 finish -->
+
+            <!-- bfs grid 3 start -->
+            <div class="card"><div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                <a href="#">
+                    <div class="seller-person-list">
+                        <div class="imges-area">
+                            <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                        </div>
+                        <div class="imges-area">
+                            <div class="name-seller">
+                                Neethu Joseph - 2
+                            </div>
+                            <div class="tell-seller">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+            </div>
+            <!-- bfs grid 3 finish -->
+
+            <!-- bfs grid 4 start -->
+            <div class="card">
+            <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                <a href="#">
+                    <div class="seller-person-list">
+                        <div class="imges-area">
+                            <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                        </div>
+                        <div class="imges-area">
+                            <div class="name-seller">
+                                Mahesh Sharma - 2
+                            </div>
+                            <div class="tell-seller">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <!-- bfs grid 4 finish -->
+
+            <!-- bfs grid 5 start -->
+            <div class="card">
+            <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                <a href="#">
+                    <div class="seller-person-list">
+                        <div class="imges-area">
+                            <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                        </div>
+                        <div class="imges-area">
+                            <div class="name-seller">
+                                Akhilesh Thakur - 2
+                            </div>
+                            <div class="tell-seller">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+            </div>
+            <!-- bfs grid 5 finish -->
+
+            <!-- bfs grid 6 start -->
+            <div class="card">
+            <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                <a href="#">
+                    <div class="seller-person-list">
+                        <div class="imges-area">
+                           <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                        </div>
+                        <div class="imges-area">
+                            <div class="name-seller">
+                                Neethu Joseph - 2
+                            </div>
+                            <div class="tell-seller">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+            </div>
+            <!-- bfs grid 6 finish -->
+        </div>
+        <div class="grid pagination-container" style="display: none;">
+            <!-- bfs grid 1 start -->
+                    <div class="card">
+                        <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                            <a href="#">
+                                <div class="seller-person-list">
+                                    <div class="imges-area">
+                                        <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                                    </div>
+                                    <div class="imges-area">
+                                        <div class="name-seller">
+                                            Mahesh Sharma - 2
+                                        </div>
+                                        <div class="tell-seller">
+                                            <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- bfs grid 1 finish -->
+                    <!-- bfs grid 2 start --><div class="card">
+                    <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                        <a href="#">
+                            <div class="seller-person-list">
+                                <div class="imges-area">
+                                    <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                                </div>
+                                <div class="imges-area">
+                                    <div class="name-seller">
+                                        Akhilesh Thakur - 2
+                                    </div>
+                                    <div class="tell-seller">
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div></div>
+                    <!-- bfs grid 2 finish -->
+
+                    <!-- bfs grid 3 start --><div class="card">
+                    <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                        <a href="#">
+                            <div class="seller-person-list">
+                                <div class="imges-area">
+                                    <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                                </div>
+                                <div class="imges-area">
+                                    <div class="name-seller">
+                                        Neethu Joseph - 2
+                                    </div>
+                                    <div class="tell-seller">
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></div>
+                    </div>
+                    <!-- bfs grid 3 finish -->
+
+                    <!-- bfs grid 4 start -->
+                    <div class="card">
+                    <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                        <a href="#">
+                            <div class="seller-person-list">
+                                <div class="imges-area">
+                                    <img src="images/Mahesh-Sharma.jpg" width="100%" title="Mahesh-Sharma" alt="Mahesh-Sharma"/>
+                                </div>
+                                <div class="imges-area">
+                                    <div class="name-seller">
+                                        Mahesh Sharma - 2
+                                    </div>
+                                    <div class="tell-seller">
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919810262160">+91-9810262160</a></p>
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></div>
+                    </div>
+                    <!-- bfs grid 4 finish -->
+
+                    <!-- bfs grid 5 start -->
+                    <div class="card">
+                    <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                        <a href="#">
+                            <div class="seller-person-list">
+                                <div class="imges-area">
+                                    <img src="images/Akhilesh-Thakur.jpg" width="100%" title="Akhilesh Thakur" alt="Akhilesh Thakur"/>
+                                </div>
+                                <div class="imges-area">
+                                    <div class="name-seller">
+                                        Akhilesh Thakur - 2
+                                    </div>
+                                    <div class="tell-seller">
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+911234567890">+91-1234567890</a></p>
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></div>
+                    </div>
+                    <!-- bfs grid 5 finish -->
+
+                    <!-- bfs grid 6 start -->
+                    <div class="card">
+                    <div class="col-lg-10 col-xl-10 col-md-10 seller-a">
+                        <a href="#">
+                            <div class="seller-person-list">
+                                <div class="imges-area">
+                                   <img src="images/Neethu-Joseph.jpg" width="100%" title="Neethu Joseph " alt="Neethu Joseph"/>
+                                </div>
+                                <div class="imges-area">
+                                    <div class="name-seller">
+                                        Neethu Joseph - 2
+                                    </div>
+                                    <div class="tell-seller">
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919447714841">+91-9447714841</a></p>
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></div>
+                    </div>
+                    <!-- bfs grid 6 finish -->
+        </div>
+    </div>
+    <br/>
+
+<!-- End logic for second page -->
 
 <!-- bfs next page button start -->
 <div class="next-btn-area"><a class="next-btn">Next</a></div>
@@ -1133,77 +1552,77 @@ $(".input-1").focus().toggleClass("active-width").val('');
 });
 
     var states = [
-          "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
-          "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
-          "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
-          "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
-          "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
-          "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu",
-          "Delhi", "Lakshadweep", "Puducherry", "India"
-        ];
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+      "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+      "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+      "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+      "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+      "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu",
+      "Delhi", "Lakshadweep", "Puducherry", "India"
+    ];
 
-        $("#searchLocation").on("input", function() {
-              var inputValue = $('#searchLocation').val(); // Get the value from the input field
+    $("#searchLocation").on("input", function() {
+          var inputValue = $('#searchLocation').val(); // Get the value from the input field
 
-              if (inputValue.trim() !== "") {
-                var matchedStates = states.filter(function(state) {
-                    // Case-insensitive matching
-                    return state.toLowerCase().includes(inputValue.toLowerCase());
+          if (inputValue.trim() !== "") {
+            var matchedStates = states.filter(function(state) {
+                // Case-insensitive matching
+                return state.toLowerCase().includes(inputValue.toLowerCase());
+            });
+
+            if (matchedStates.length > 0) {
+                var result = "";
+                matchedStates.forEach(function(state) {
+                    result += "<input data-toggle='modal' style='margin-left: 10px' class='form-check-input' type='checkbox' value='' id='" + state.trim() +"'>"
+                          + "<label data-toggle='modal' style='margin-left: 30px' class='form-check-label' for='" + state.trim() + "'>"
+                          +  state
+                          + "</label><br />";
                 });
 
-                if (matchedStates.length > 0) {
-                    var result = "";
-                    matchedStates.forEach(function(state) {
-                        result += "<input data-toggle='modal' style='margin-left: 10px' class='form-check-input' type='checkbox' value='' id='" + state.trim() +"'>"
-                              + "<label data-toggle='modal' style='margin-left: 30px' class='form-check-label' for='" + state.trim() + "'>"
-                              +  state
-                              + "</label><br />";
-                    });
+                $("#locationDiv").html(result); // Display the matched states in the result div
+            } else {
+                $("#locationDiv").html("<p>No matching location found.</p>"); // Display a message if no matches found
+            }
+          } else {
+            var result = "";
+            result += "<div id='location'>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkIndia'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkIndia'>"
+                    + "India"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAndhraPradesh'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkAndhraPradesh'>"
+                    + "Andhra Pradesh"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkArunachalPradesh'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkArunachalPradesh'>"
+                    + "Arunachal Pradesh"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAssam'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkAssam'>"
+                    + "Assam"
+                    + "</label>"
+                    + "</div>"
+                    + "<div class='form-check'>"
+                    + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkBihar'>"
+                    + "<label data-toggle='modal'  class='form-check-label' for='chkBihar'>"
+                    + "Bihar"
+                    + "</label>"
+                    + "</div>"
+                    + "<a data-toggle='modal' data-target='#myModal-1' class='more-filter'>+ 13more</a>"
+                    + "</div>";
 
-                    $("#locationDiv").html(result); // Display the matched states in the result div
-                } else {
-                    $("#locationDiv").html("<p>No matching location found.</p>"); // Display a message if no matches found
-                }
-              } else {
-                var result = "";
-                result += "<div id='location'>"
-                        + "<div class='form-check'>"
-                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkIndia'>"
-                        + "<label data-toggle='modal'  class='form-check-label' for='chkIndia'>"
-                        + "India"
-                        + "</label>"
-                        + "</div>"
-                        + "<div class='form-check'>"
-                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAndhraPradesh'>"
-                        + "<label data-toggle='modal'  class='form-check-label' for='chkAndhraPradesh'>"
-                        + "Andhra Pradesh"
-                        + "</label>"
-                        + "</div>"
-                        + "<div class='form-check'>"
-                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkArunachalPradesh'>"
-                        + "<label data-toggle='modal'  class='form-check-label' for='chkArunachalPradesh'>"
-                        + "Arunachal Pradesh"
-                        + "</label>"
-                        + "</div>"
-                        + "<div class='form-check'>"
-                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkAssam'>"
-                        + "<label data-toggle='modal'  class='form-check-label' for='chkAssam'>"
-                        + "Assam"
-                        + "</label>"
-                        + "</div>"
-                        + "<div class='form-check'>"
-                        + "<input data-toggle='modal'  class='form-check-input' type='checkbox' value='' id='chkBihar'>"
-                        + "<label data-toggle='modal'  class='form-check-label' for='chkBihar'>"
-                        + "Bihar"
-                        + "</label>"
-                        + "</div>"
-                        + "<a data-toggle='modal' data-target='#myModal-1' class='more-filter'>+ 13more</a>"
-                        + "</div>";
+                    $("#locationDiv").html(result);
+          }
 
-                        $("#locationDiv").html(result);
-              }
-
-        });
+    });
 
 });
 </script>
@@ -1311,7 +1730,7 @@ $(document).ready(function() {
             currentPageNumber++;
             $("#pageNumber").val(currentPageNumber);
 
-            test(currentPageNumber);
+            showDataWithPageNumber(currentPageNumber);
         }
     });
 
@@ -1322,66 +1741,51 @@ $(document).ready(function() {
             currentPageNumber--;
             $("#pageNumber").val(currentPageNumber);
 
-            test(currentPageNumber);
+            showDataWithPageNumber(currentPageNumber);
         }
     });
 });
 
-function test(currentPageNumber) {
+function showDataWithPageNumber(currentPageNumber) {
 
-    var x = document.getElementById("r");
-    var y = document.getElementById("r1");
-    var z = document.getElementById("r2");
+    var firstPageData = document.getElementById("row-1");
+    var secondPageData = document.getElementById("row-2");
 
     if(currentPageNumber == 1) {
-        $(x).show();
-        $(y).hide();
-        $(z).hide();
+        $(firstPageData).show();
+        $(secondPageData).hide();
     }
 
     if(currentPageNumber == 2) {
-        $(y).show();
-        $(x).hide();
-        $(z).hide();
-    }
-
-    if(currentPageNumber == 3) {
-        $(z).show();
-        $(x).hide();
-        $(y).hide();
+        $(secondPageData).show();
+        $(firstPageData).hide();
     }
 }
 
 function sortByListOrGrid(option) {
-    var container = document.getElementById('container');
-    var view = "";
-
-    if(option == 'grid') {
-
-        var gridChild = $('#gridFilter .Grid');
-        gridChild.removeClass('Grid');
-        gridChild.addClass('Grid-active');
-
-        var listChild = $('#listFilter .List-active');
-        listChild.removeClass('List-active');
-        listChild.addClass('List');
-
-        view = 'grid';
+    var paginationContainer = document.querySelectorAll(".pagination-container");
+    var listFilter = document.querySelector("#listFilter > span");
+    var gridFilter = document.querySelector("#gridFilter > span");
+    if (option === "grid") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("list");
+            container.classList.add("grid");
+        })
+        listFilter.classList.remove("List-active");
+        listFilter.classList.add("List");
+        gridFilter.classList.remove("Grid");
+        gridFilter.classList.add("Grid-active");
     }
-
-    if(option == 'list') {
-        var listChild = $('#listFilter .List');
-        listChild.removeClass('List');
-        listChild.addClass('List-active');
-
-        var gridChild = $('#gridFilter .Grid-active');
-        gridChild.removeClass('Grid-active');
-        gridChild.addClass('Grid');
-
-        view = 'list';
+    if (option === "list") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("grid");
+            container.classList.add("list");
+        })
+        listFilter.classList.remove("List");
+        listFilter.classList.add("List-active");
+        gridFilter.classList.remove("Grid-active");
+        gridFilter.classList.add("Grid");
     }
-
-    container.className = view;
 }
 
 </script>
