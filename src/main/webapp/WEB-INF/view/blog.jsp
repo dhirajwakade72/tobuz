@@ -452,7 +452,7 @@
 <p class="date-autar">Posted on February 14, 2022 by <a href="#" style="color:#014a8e">Nitin Gupta</a></p>
 <!-- date and author finsh -->
 <!-- social share area start -->
-<p><span class="social-share"><a href="#"><img src="images/google.png" width="25" height="25" title="Google" alt="Google"/></a> <a href="#"><img src="images/facebook-icon.png" width="25" height="25" title="Facebook" alt="Facebook"/></a> <a href="#"><img src="images/linkedin-icon.png" width="25" height="25" title="Linkedin" alt="Linkedin"/></a> <a href="#"><img src="images/twitter.png" width="25" height="25" title="Twitter" alt="Twitter"/></a></span></p>
+<p><span class="social-share"><a href="#"><img src="images/google.png" width="25" height="25" title="Google" alt="Google"/></a> <a href="https://www.facebook.com/tobuz/"><img src="images/facebook-icon.png" width="25" height="25" title="Facebook" alt="Facebook"/></a> <a href="https://www.linkedin.com/company/tobuz/"><img src="images/linkedin-icon.png" width="25" height="25" title="Linkedin" alt="Linkedin"/></a> <a href="https://twitter.com/Tobuzcom"><img src="images/twitter.png" width="25" height="25" title="Twitter" alt="Twitter"/></a></span></p>
 <!-- social share area finsh -->
 <div class="clear"></div>
 <div class="row">
@@ -593,10 +593,10 @@ downfalls. This is why many business owners tend not to risk more or get unexpec
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
