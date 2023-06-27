@@ -92,7 +92,7 @@ public class BusinessListingDTO implements Serializable{
 
 			private List<String> categoryIds;
 
-			private String franchiseType;
+			private List<String> franchiseType;
 			private Boolean sortByTitle;
 			private Boolean sortByPrice;
 
@@ -112,11 +112,11 @@ public class BusinessListingDTO implements Serializable{
 		this.sortByTitle = sortByTitle;
 	}
 
-	public String getFranchiseType() {
+	public List<String> getFranchiseType() {
 		return franchiseType;
 	}
 
-	public void setFranchiseType(String franchiseType) {
+	public void setFranchiseType(List<String> franchiseType) {
 		this.franchiseType = franchiseType;
 	}
 

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -738,9 +739,12 @@ public class TobuzRestController {
 
 	}
 
-	@RequestMapping(value = "/getBusinessByFilter", method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE ,produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/getBusinessByFilter",produces = {
+			"application/json" }, method = RequestMethod.POST)
 	@ResponseBody
 	public List<BusinessListingDTO> getBusinessByFilter(@RequestBody BusinessListingDTO businessListingDTO){
+		businessListingDTO.setCategoryIds(null);
 		return businessService.getBusinessByFilter(businessListingDTO);
+
 	}
 }

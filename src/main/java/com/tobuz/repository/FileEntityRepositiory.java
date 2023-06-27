@@ -2,8 +2,6 @@ package com.tobuz.repository;
 
 import java.util.List;
 
-import com.avaje.ebeaninternal.server.lib.util.Str;
-import com.tobuz.object.BusinessListingDTO;
 import com.tobuz.projection.BusinessByFilter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -75,70 +73,17 @@ public interface FileEntityRepositiory  extends JpaRepository<FileEntity, Long> 
 			+ "			where f.business_listing_id is not null and blo.total_business_sale_price is not null   and fbl.user_id=:userId  "
 			+ "			 limit 20", nativeQuery = true)
     public List<Object[]> getFavouriteBusiness(long userId);
-    
+    @Query(value = "SELECT f.file_path AS FilePath, b.title AS Title, b.listing_description AS ListingDescription, blo.total_business_sale_price AS Price, b.suggested_title AS SuggestedTitle, b.id AS Id FROM file_entity f JOIN business_listing b ON f.business_listing_id = b.id JOIN Business_Listing_Out_Let blo ON b.business_listing_out_let_id = blo.id WHERE f.business_listing_id IS NOT NULL AND blo.total_business_sale_price IS NOT NULL AND (:id IS NULL OR b.category_id = :id) AND (b.listing_type = :lType OR :lType IS NULL) ORDER BY CASE WHEN :isTitleASC IS NOT NULL THEN b.title END ASC,CASE WHEN :isTitleASC IS NOT NULL THEN b.title END DESC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END ASC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END DESC LIMIT 200", nativeQuery = true)
+	public List<BusinessByFilter> getBusinessByFilter(@Param("id") Long id, @Param("lType") String lType, @Param("isTitleASC") Boolean isTitleASC, @Param("isPricASC") Boolean isPricASC);
 
-	@Query(value = "select\n" +
-			"    f.file_path as FilePath,\n" +
-			"    b.title as Title,\n" +
-			"    b.listing_description as ListingDescription,\n" +
-			"    blo.total_business_sale_price as Price,\n" +
-			"    b.suggested_title as SuggestedTitle ,\n" +
-			"    b.id as Id\n" +
-			"from\n" +
-			"    file_entity f\n" +
-			"join business_listing b on\n" +
-			"    f.business_listing_id = b.id\n" +
-			"join Business_Listing_Out_Let blo on\n" +
-			"    b.business_listing_out_let_id = blo.id\n" +
-			"where\n" +
-			"    f.business_listing_id is not null\n" +
-			"    and blo.total_business_sale_price is not null\n" +
-			"    and (b.category_id in (:ids)\n" +
-			"        or :ids is null)\n" +
-			"    and (b.listing_type = :lType\n" +
-			"        or :lType is null)\n" +
-			"    and (b.franchise_for = :fType\n" +
-			"        or :fType is null)\n" +
-			"order by\n" +
-			"    case\n" +
-			"        when :isTrue = true then b.title\n" +
-			"    end asc,\n" +
-			"    case\n" +
-			"        when :isTrue = false then b.title\n" +
-			"    end desc\n" +
-			"limit 200", nativeQuery = true)
-	public List<BusinessByFilter> getBusinessByTitleFilter(@Param("ids") List<Long> ids, @Param("lType") String lType, @Param("fType") String fType, @Param("isTrue") boolean isTrue);
+	@Query(value = "SELECT f.file_path AS FilePath, b.title AS Title, b.listing_description AS ListingDescription, blo.total_business_sale_price AS Price, b.suggested_title AS SuggestedTitle, b.id AS Id FROM file_entity f JOIN business_listing b ON f.business_listing_id = b.id JOIN Business_Listing_Out_Let blo ON b.business_listing_out_let_id = blo.id WHERE f.business_listing_id IS NOT NULL AND blo.total_business_sale_price IS NOT NULL AND (b.category_id = :id OR :id IS NULL) AND (b.listing_type = :lType OR :lType IS NULL) AND AND (b.franchise_for = :fType OR :fType IS NULL) ORDER BY CASE WHEN :isTitleASC IS NOT NULL THEN b.title END ASC,CASE WHEN :isTitleASC IS NOT NULL THEN b.title END DESC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END ASC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END DESC LIMIT 200", nativeQuery = true)
+	public List<BusinessByFilter> getBusinessWithFranchiseFilter(@Param("id") Long id, @Param("lType") String lType,@Param("fType") String fType, @Param("isTitleASC") Boolean isTitleASC, @Param("isPricASC") Boolean isPricASC);
+
+	@Query(value = "SELECT f.file_path AS FilePath, b.title AS Title, b.listing_description AS ListingDescription, blo.total_business_sale_price AS Price, b.suggested_title AS SuggestedTitle, b.id AS Id FROM file_entity f JOIN business_listing b ON f.business_listing_id = b.id JOIN Business_Listing_Out_Let blo ON b.business_listing_out_let_id = blo.id WHERE f.business_listing_id IS NOT NULL AND blo.total_business_sale_price IS NOT NULL AND (b.listing_type = :lType OR :lType IS NULL) AND AND (b.franchise_for = :fType OR :fType IS NULL) ORDER BY CASE WHEN :isTitleASC IS NOT NULL THEN b.title END ASC,CASE WHEN :isTitleASC IS NOT NULL THEN b.title END DESC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END ASC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END DESC LIMIT 200", nativeQuery = true)
+	public List<BusinessByFilter> getBusinessWithFranchiseFilter(@Param("lType") String lType,@Param("fType") String fType, @Param("isTitleASC") Boolean isTitleASC, @Param("isPricASC") Boolean isPricASC);
 
 
-	@Query(value = "select\n" +
-			"    f.file_path as FilePath,\n" +
-			"    b.title as Title,\n" +
-			"    b.listing_description as ListingDescription,\n" +
-			"    blo.total_business_sale_price as Price,\n" +
-			"    b.suggested_title as SuggestedTitle,\n" +
-			"    b.id as Id\n" +
-			"from\n" +
-			"    file_entity f\n" +
-			"join business_listing b on\n" +
-			"    f.business_listing_id = b.id\n" +
-			"join Business_Listing_Out_Let blo on\n" +
-			"    b.business_listing_out_let_id = blo.id\n" +
-			"where\n" +
-			"    f.business_listing_id is not null\n" +
-			"    and blo.total_business_sale_price is not null\n" +
-			"    and (b.category_id in (:ids)\n" +
-			"        or :ids is null)\n" +
-			"    and (b.listing_type = :lType\n" +
-			"        or :lType is null)\n" +
-			"    and (b.franchise_for = :fType\n" +
-			"        or :fType is null)\n" +
-			"order by\n" +
-			"    case\n" +
-			"        when :bPrice = true then blo.total_business_sale_price\n" +
-			"    end asc,\n" +
-			"    case\n" +
-			"        when :bPrice = false then blo.total_business_sale_price\n" +
-			"    end desc\n" +
-			"limit 200", nativeQuery = true)
-	public List<BusinessByFilter> getBusinessByPriceFilter(@Param("ids") List<Long> ids, @Param("lType") String lType, @Param("fType") String fType, @Param("bPrice") boolean bPrice);
+	@Query(value = "SELECT f.file_path AS FilePath, b.title AS Title, b.listing_description AS ListingDescription, blo.total_business_sale_price AS Price, b.suggested_title AS SuggestedTitle, b.id AS Id FROM file_entity f JOIN business_listing b ON f.business_listing_id = b.id JOIN Business_Listing_Out_Let blo ON b.business_listing_out_let_id = blo.id WHERE f.business_listing_id IS NOT NULL AND blo.total_business_sale_price IS NOT NULL AND (b.listing_type = :lType OR :lType IS NULL) ORDER BY CASE WHEN :isTitleASC IS NOT NULL THEN b.title END ASC,CASE WHEN :isTitleASC IS NOT NULL THEN b.title END DESC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END ASC,CASE WHEN :isPricASC IS NOT NULL THEN blo.total_business_sale_price END DESC LIMIT 200", nativeQuery = true)
+	public List<BusinessByFilter> getBusinessByFilter(@Param("lType") String lType, @Param("isTitleASC") Boolean isTitleASC, @Param("isPricASC") Boolean isPricASC);
+
 }
