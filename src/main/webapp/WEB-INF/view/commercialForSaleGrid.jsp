@@ -1873,7 +1873,7 @@ function getTopBusinessListingsByCategory (obj ,id){
 			}
 		});
 		}
-			
+
 	
 	
 }

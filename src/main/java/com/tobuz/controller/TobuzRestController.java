@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.tobuz.model.NewsLetterSubscription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -104,7 +106,7 @@ public class TobuzRestController {
 	@ResponseBody
 	public List<BusinessListingDTO> getTopBusinessListingsByCategory(@RequestBody BusinessListingDTO businessListing) {
 		System.out.println("<<<<<<<<<<<<getTopBusinessListingsByCategory>>>>>>>>>>>");
-		return businessService.getTopBusinessListingsByCategory(Long.parseLong(businessListing.getCategoryId()),
+		return businessService.getTopBusinessListingsByCategory(businessListing.getCategoryIds(),
 				businessListing.getListingType());
 	}
 
@@ -145,7 +147,7 @@ public class TobuzRestController {
 		System.out.println(" EMAIL " + registerDTO.getEmail());
 		System.out.println(" PASSWORD " + registerDTO.getPassword());
 		registerDTO = businessService.findLoginInfo(registerDTO.getEmail(), registerDTO.getPassword());
-		
+
 		if (registerDTO.getName().equalsIgnoreCase("ADMIN")) {
 			registerDTO.setRole("ADMIN");
 			return ResponseEntity.ok(registerDTO);
@@ -613,10 +615,10 @@ public class TobuzRestController {
 	public List <BusinessAdvertDTO> getAdvertListingsForTypeAndUser(@PathVariable String type) {
 		System.out.println("type : " + type);
 		return businessService.getAdvertListingsForTypeAndUser(type);
-		
+
 	}
-	
-	
+
+
 	@RequestMapping(value = "/getBusineeListingbyListingId/{id}", produces = {
 			"application/json" }, method = RequestMethod.GET)
 	@ResponseBody
@@ -709,7 +711,7 @@ public class TobuzRestController {
 		return attr.getRequest().getSession(true); // true == allow create
 	}
 
-	
+
 	@GetMapping({ "/getUserMessages" })
 	public ResponseEntity<Vo> getUserMessages() {
 		List<String[]> obj = new ArrayList<>();
@@ -727,7 +729,7 @@ public class TobuzRestController {
 				String subject = bDto.getSubject();
 				String ceatedDate = bDto.getCreatedOn();
 				String buttons = "<img src=/images/view.jpg onclick='viewMessage(\"+bDto.getId()+\")'  style=' width: 24px !important; height: 24px !important;'  alt=view/>  ";
-				
+
 				String mStringArray[] = { (i + 1) + "", id+"",name, email, code, mobile, ceatedDate , subject ,buttons};
 				obj.add(mStringArray);
 
@@ -738,6 +740,15 @@ public class TobuzRestController {
 
 	}
 
+	@RequestMapping(value = "/getBusinessByFilter",produces = {
+			"application/json" }, method = RequestMethod.POST)
+	@ResponseBody
+	public List<BusinessListingDTO> getBusinessByFilter(@RequestBody BusinessListingDTO businessListingDTO){
+		businessListingDTO.setCategoryIds(null);
+		return businessService.getBusinessByFilter(businessListingDTO);
+
+	}
+}
 	@RequestMapping(value = "/saveNewsletter", method = RequestMethod.POST)
 	@ResponseBody
 	//@RequestParam("text") here text is a variable it must be same name as used into ajax variable

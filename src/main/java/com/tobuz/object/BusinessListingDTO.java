@@ -89,9 +89,37 @@ public class BusinessListingDTO implements Serializable{
 			private String userRole;
 			
 			private String createdOn;
-			
-			
-	
+
+			private List<String> categoryIds;
+
+			private List<String> franchiseType;
+			private Boolean sortByTitle;
+			private Boolean sortByPrice;
+
+	public Boolean getSortByPrice() {
+		return sortByPrice;
+	}
+
+	public void setSortByPrice(Boolean sortByPrice) {
+		this.sortByPrice = sortByPrice;
+	}
+
+	public Boolean getSortByTitle() {
+		return sortByTitle;
+	}
+
+	public void setSortByTitle(Boolean sortByTitle) {
+		this.sortByTitle = sortByTitle;
+	}
+
+	public List<String> getFranchiseType() {
+		return franchiseType;
+	}
+
+	public void setFranchiseType(List<String> franchiseType) {
+		this.franchiseType = franchiseType;
+	}
+
 	public String getBusinessTurnover() {
 				return businessTurnover;
 			}
@@ -405,6 +433,11 @@ public class BusinessListingDTO implements Serializable{
 		this.createdOn = createdOn;
 	}
 
-	
+	public List<String> getCategoryIds() {
+		return categoryIds;
+	}
 
+	public void setCategoryIds(List<String> categoryIds) {
+		this.categoryIds = categoryIds;
+	}
 }
