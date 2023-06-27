@@ -1786,7 +1786,7 @@ jQuery(document).ready(function($){
 
 function renderCards(page,data){
 	
-  $('#card-container').empty();
+  //$('#card-container').empty();
 
   var startIndex = (page - 1) * 6;
   var endIndex =startIndex+6;
