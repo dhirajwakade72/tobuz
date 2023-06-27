@@ -748,7 +748,7 @@ public class TobuzRestController {
 		return businessService.getBusinessByFilter(businessListingDTO);
 
 	}
-}
+
 	@RequestMapping(value = "/saveNewsletter", method = RequestMethod.POST)
 	@ResponseBody
 	//@RequestParam("text") here text is a variable it must be same name as used into ajax variable
