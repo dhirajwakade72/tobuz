@@ -557,7 +557,7 @@
 </form>
 </div>
 </div>
-</div>
+
 <!-- bfs sidebar filter area finish -->
 </div>
 <!-- bfs sidebar finish -->
