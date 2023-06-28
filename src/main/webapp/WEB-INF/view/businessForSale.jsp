@@ -461,7 +461,7 @@
 	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">
-	<span class="icon-social"><a href="#"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-linkedin"></i></a></span> 
+	<span class="icon-social"><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></span>
 	 </li>
 	 <!-- social icon area finish -->
   </ul>
@@ -956,10 +956,10 @@ bfs grid 6 finish
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
