@@ -1517,6 +1517,8 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
         }
 	}
 
+
+
 	return businessListingDTOList;
 }
 
