@@ -1083,6 +1083,18 @@ bfs grid 6 finish
     Under Construction Projects
   </label>
 </div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'26')" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+   Offices
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox"  onClick="getTopBusinessListingsByCategory(this,'27')"  value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Retail
+  </label>
+</div>
 <!-- <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'19')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
@@ -1624,6 +1636,8 @@ for (i = 0; i < l; i++) {
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
+            console.log("Internal :::::" +s.options[i].innerHTML);
+            myFunction(s.options[i].innerHTML);
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
@@ -1720,14 +1734,54 @@ jQuery(document).ready(function($){
 });
 });
 
-function getTopBusinessListingsByCategory (obj ,id){
+var categoriesIds = [];
+var sortByTitle;
+var sortByPrice;
+
+function getTopBusinessListingsByCategory(obj, id){
 	  var getUrl = window.location;
-		 var url = getUrl .protocol + "//" + getUrl.host + "/getTopBusinessListingsByCategory" ;
-		
+      var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+        if(!obj.checked) {
+            categoriesIds.splice($.inArray(id, categoriesIds), 1);
+            var obj = {"categoryIds":categoriesIds,"businessType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
+            $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 				   var currentPage = 1;
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
+        }
 		if( obj.checked ){
-			console.log ("url >>>>>>>"+url);
-			 var obj = {"categoryId":id};
-			$.ajax({
+			categoriesIds.push(id);
+			var obj = {"categoryIds":categoriesIds,"businessType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
+			$.ajax(
+			{
 			   url: url,
 			   type: 'POST',
 			   data: JSON.stringify(obj),
@@ -1736,8 +1790,6 @@ function getTopBusinessListingsByCategory (obj ,id){
 		       cache: false,
 		       timeout: 600000,
 			   success: function(data) {
-			     
-		    
 				   var currentPage = 1;
 
 				   // Render the cards for the initial page
@@ -1763,15 +1815,73 @@ function getTopBusinessListingsByCategory (obj ,id){
 				     // Update the active page link
 				     $('.page-item').removeClass('active');
 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
-												
-				
+
+
 				 })
 			}
 		});
 		}
-			
-	
-	
+}
+
+function myFunction(value) {
+    console.log("Value of result :::::::::::" +value);
+        if (value == "A to Z") {
+          sortByTitle = true;
+          if(sortByPrice != null){
+            sortByPrice = null;
+          }
+        } else if (value == "Z to A") {
+          sortByTitle = false;
+          if(sortByPrice != null){
+                  sortByPrice = null;
+          }
+        } else if (value == "High To Low") {
+          sortByPrice = true;
+           if(sortByTitle != null){
+                        sortByTitle = null;
+           }
+        } else {
+          sortByPrice = false;
+           if(sortByTitle != null){
+                              sortByTitle = null;
+           }
+        }
+             var obj = {"categoryIds":categoriesIds,"sortByPrice":sortByPrice,
+            			 "sortByTitle":sortByTitle,"businessType":"COMMERCIAL"};
+             var getUrl = window.location;
+                  var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+             $.ajax({
+                url: url,
+             	type: 'POST',
+             	data: JSON.stringify(obj),
+             	contentType: "application/json",
+             	dataType:"json",
+                cache: false,
+        	    timeout: 600000,
+             	success: function(data)
+             	    {
+             				   var currentPage = 1;
+             				   // Render the cards for the initial page
+             				   renderCards(currentPage,data);
+             				   // Add event listeners to the page links
+             				   $('.page-link').click(function(event) {
+             				     event.preventDefault();
+             				     var targetPage = $(event.target).text();
+             				     // Update the current page and render the new cards
+             				     if (targetPage === 'Previous') {
+             				       currentPage--;
+             				     } else if (targetPage === 'Next') {
+             				       currentPage++;
+             				     } else {
+             				       currentPage = parseInt(targetPage);
+             				     }
+             				     renderCards(currentPage,data);
+             				     // Update the active page link
+             				     $('.page-item').removeClass('active');
+             				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+             				 })
+             		}
+             	});
 }
 
 
