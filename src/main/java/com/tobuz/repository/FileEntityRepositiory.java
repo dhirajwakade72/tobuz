@@ -2,6 +2,7 @@ package com.tobuz.repository;
 
 import java.util.List;
 
+import com.tobuz.object.CategoryDTO;
 import com.tobuz.projection.BusinessByFilter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
