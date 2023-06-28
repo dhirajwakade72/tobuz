@@ -96,6 +96,16 @@ public class BusinessListingDTO implements Serializable{
 			private Boolean sortByTitle;
 			private Boolean sortByPrice;
 
+			private String searchKey;
+
+	public String getSearchKey() {
+		return searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+
 	public Boolean getSortByPrice() {
 		return sortByPrice;
 	}
