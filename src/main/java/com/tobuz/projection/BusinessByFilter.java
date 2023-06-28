@@ -4,7 +4,7 @@ public interface BusinessByFilter {
     String getFilePath();
     String getTitle();
     String getListingDescription();
-    double getPrice();
+    Double getPrice();
     String getSuggestedTitle();
-    long getId();
+    Long getId();
 }

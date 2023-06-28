@@ -744,7 +744,6 @@ public class TobuzRestController {
 			"application/json" }, method = RequestMethod.POST)
 	@ResponseBody
 	public List<BusinessListingDTO> getBusinessByFilter(@RequestBody BusinessListingDTO businessListingDTO){
-		businessListingDTO.setCategoryIds(null);
 		return businessService.getBusinessByFilter(businessListingDTO);
 
 	}

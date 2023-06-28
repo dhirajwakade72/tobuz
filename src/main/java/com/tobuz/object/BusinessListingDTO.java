@@ -12,7 +12,7 @@ public class BusinessListingDTO implements Serializable{
 	private String filePath ;
 	private String title;
 	private String description ;
-	private double price ;
+	private Double price ;
 	
 	private String businessType ;
 	private String categoryList ;
@@ -96,6 +96,16 @@ public class BusinessListingDTO implements Serializable{
 			private Boolean sortByTitle;
 			private Boolean sortByPrice;
 
+			private String searchKey;
+
+	public String getSearchKey() {
+		return searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+
 	public Boolean getSortByPrice() {
 		return sortByPrice;
 	}
@@ -162,10 +172,10 @@ public class BusinessListingDTO implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String getBusinessType() {
