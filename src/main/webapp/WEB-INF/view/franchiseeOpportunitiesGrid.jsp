@@ -491,7 +491,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="franchiseeOpportunitiesGrid">Clear all</a></span>
 </div>
 
 <!-- bfs sidebar filter title finish -->
@@ -504,13 +504,13 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick="addFranchiseType(this,'SALE')">
   <label class="form-check-label" for="flexCheckDefault">
    Sale
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick="addFranchiseType(this,'RESALE')">
   <label class="form-check-label" for="flexCheckDefault">
    Resale
   </label>
@@ -1826,6 +1826,7 @@ for (i = 0; i < l; i++) {
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
+            myFunction(s.options[i].innerHTML);
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
@@ -1850,6 +1851,237 @@ for (i = 0; i < l; i++) {
       this.classList.toggle("select-arrow-active");
     });
 }
+var categoriesIds = [];
+var sortByTitle;
+var sortByPrice;
+var franchiseTypeList = [];
+
+function addFranchiseType(obj, franchiseType){
+    var getUrl = window.location;
+          var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+            if(!obj.checked) {
+                franchiseTypeList.splice($.inArray(franchiseType, franchiseTypeList), 1);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                $.ajax({
+                        url: url,
+                     	type: 'POST',
+                     	data: JSON.stringify(obj),
+                     	contentType: "application/json",
+                     	dataType:"json",
+                        cache: false,
+                	    timeout: 600000,
+                     	success: function(data)
+                     	    {
+                     				   var currentPage = 1;
+                     				   // Render the cards for the initial page
+                     				   renderCards(currentPage,data);
+                     				   // Add event listeners to the page links
+                     				   $('.page-link').click(function(event) {
+                     				     event.preventDefault();
+                     				     var targetPage = $(event.target).text();
+                     				     // Update the current page and render the new cards
+                     				     if (targetPage === 'Previous') {
+                     				       currentPage--;
+                     				     } else if (targetPage === 'Next') {
+                     				       currentPage++;
+                     				     } else {
+                     				       currentPage = parseInt(targetPage);
+                     				     }
+                     				     renderCards(currentPage,data);
+                     				     // Update the active page link
+                     				     $('.page-item').removeClass('active');
+                     				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                     				 })
+                     		}
+                     	});
+            }
+    		if( obj.checked ){
+    			franchiseTypeList.push(franchiseType);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+    			$.ajax(
+    			{
+    			   url: url,
+    			   type: 'POST',
+    			   data: JSON.stringify(obj),
+    		       contentType: "application/json",
+    		       dataType:"json",
+    		       cache: false,
+    		       timeout: 600000,
+    			   success: function(data) {
+    				   var currentPage = 1;
+
+    				   // Render the cards for the initial page
+    				   renderCards(currentPage,data);
+
+    				   // Add event listeners to the page links
+    				   $('.page-link').click(function(event) {
+    				     event.preventDefault();
+
+    				     var targetPage = $(event.target).text();
+
+    				     // Update the current page and render the new cards
+    				     if (targetPage === 'Previous') {
+    				       currentPage--;
+    				     } else if (targetPage === 'Next') {
+    				       currentPage++;
+    				     } else {
+    				       currentPage = parseInt(targetPage);
+    				     }
+    				     renderCards(currentPage,data);
+    				     // Update the active page link
+    				     $('.page-item').removeClass('active');
+    				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+    				 })
+    			}
+    		});
+    		}
+    	  console.log("franchiseTypeList :::::::::::"+franchiseTypeList);
+
+}
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
+    });
+});
+
+function myFunction(value) {
+    if (value == "A to Z") {
+              sortByTitle = true;
+              if(sortByPrice != null){
+                sortByPrice = null;
+              }
+            } else if (value == "Z to A") {
+              sortByTitle = false;
+              if(sortByPrice != null){
+                      sortByPrice = null;
+              }
+            } else if (value == "High To Low") {
+              sortByPrice = true;
+               if(sortByTitle != null){
+                            sortByTitle = null;
+               }
+            } else {
+              sortByPrice = false;
+               if(sortByTitle != null){
+                                  sortByTitle = null;
+               }
+            }
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var getUrl = window.location;
+                      var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+                 $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 				   var currentPage = 1;
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
+}
+
+function getTopBusinessListingsByCategory(obj, id){
+	  var getUrl = window.location;
+      var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+        if(!obj.checked) {
+            categoriesIds.splice($.inArray(id, categoriesIds), 1);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+            $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 				   var currentPage = 1;
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
+        }
+		if( obj.checked ){
+			categoriesIds.push(id);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+			$.ajax(
+			{
+			   url: url,
+			   type: 'POST',
+			   data: JSON.stringify(obj),
+		       contentType: "application/json",
+		       dataType:"json",
+		       cache: false,
+		       timeout: 600000,
+			   success: function(data) {
+				   var currentPage = 1;
+				   // Render the cards for the initial page
+				   renderCards(currentPage,data);
+				   // Add event listeners to the page links
+				   $('.page-link').click(function(event) {
+				     event.preventDefault();
+				     var targetPage = $(event.target).text();
+				     // Update the current page and render the new cards
+				     if (targetPage === 'Previous') {
+				       currentPage--;
+				     } else if (targetPage === 'Next') {
+				       currentPage++;
+				     } else {
+				       currentPage = parseInt(targetPage);
+				     }
+				     renderCards(currentPage,data);
+				     // Update the active page link
+				     $('.page-item').removeClass('active');
+				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+				 })
+			}
+		});
+		}
+}
+
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,
   except the current select box:*/
@@ -1959,61 +2191,6 @@ function contactbuyer (id){
 	 var url = getUrl .protocol + "//" + getUrl.host + "/contactSeller" ;
 	 window.location.replace(url);
 
-}
-
-function getTopBusinessListingsByCategory (obj ,id){
-	
-	  var getUrl = window.location;
-		 var url = getUrl .protocol + "//" + getUrl.host + "/getTopBusinessListingsByCategory" ;
-		
-		if( obj.checked ){
-			console.log ("url >>>>>>>"+url);
-			 var obj = {"categoryId":id ,"listingType":"FRANCHISE"};
-			$.ajax({
-			   url: url,
-			   type: 'POST',
-			   data: JSON.stringify(obj),
-		       contentType: "application/json",
-		       dataType:"json",
-		       cache: false,
-		       timeout: 600000,
-			   success: function(data) {
-			     
-		    
-				   var currentPage = 1;
-
-				   // Render the cards for the initial page
-				   renderCards(currentPage,data);
-
-				   // Add event listeners to the page links
-				   $('.page-link').click(function(event) {
-				     event.preventDefault();
-
-				     var targetPage = $(event.target).text();
-
-				     // Update the current page and render the new cards
-				     if (targetPage === 'Previous') {
-				       currentPage--;
-				     } else if (targetPage === 'Next') {
-				       currentPage++;
-				     } else {
-				       currentPage = parseInt(targetPage);
-				     }
-
-				     renderCards(currentPage,data);
-
-				     // Update the active page link
-				     $('.page-item').removeClass('active');
-				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
-												
-				
-				 })
-			}
-		});
-		}
-			
-	
-	
 }
 
 
