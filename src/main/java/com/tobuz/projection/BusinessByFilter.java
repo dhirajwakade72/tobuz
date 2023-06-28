@@ -7,4 +7,8 @@ public interface BusinessByFilter {
     Double getPrice();
     String getSuggestedTitle();
     Long getId();
+
+    String getCountryId();
+
+    String getStateId();
 }

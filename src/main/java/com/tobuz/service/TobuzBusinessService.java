@@ -5,6 +5,9 @@ import com.tobuz.model.tobuzpackage.TobuzPackage;
 import com.tobuz.model.tobuzpackage.TobuzPackageService;
 import com.tobuz.object.*;
 import com.tobuz.projection.BusinessByFilter;
+import com.tobuz.projection.BusinessServiseTypeList;
+import com.tobuz.projection.CategoryByFilter;
+import com.tobuz.projection.CountryList;
 import com.tobuz.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -1517,6 +1520,9 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
         }
 	}
 
+	if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCategoryIds().isEmpty()){
+
+	}
 
 
 	return businessListingDTOList;
@@ -1554,4 +1560,57 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 		return newsLetterRepository.save(newsLetterSubscription);
 	}
 
+	public List<CategoryDTO> getAllCategoryList(){
+
+		List<CategoryByFilter> categoryByFilterList = new ArrayList<>();
+		categoryByFilterList= categoryRepository.getAllCategoryList();
+		List<CategoryDTO> categoryDTOList = new ArrayList<>();
+
+		for (CategoryByFilter data : categoryByFilterList) {
+			CategoryDTO response = new CategoryDTO();
+			response.setId(data.getId());
+			response.setName(data.getName());
+			response.setCommercial(data.getIsCommercial());
+			categoryDTOList.add(response);
+		}
+
+		return categoryDTOList;
+	}
+
+	public List<Country> getAllCountryList(){
+
+		List<CountryList> countryLists = new ArrayList<>();
+		countryLists= countryRepository.getAllCountryList();
+		List<Country> countryDTOList = new ArrayList<>();
+
+		for (CountryList data : countryLists) {
+			Country response = new Country();
+			response.setId(data.getId());
+			response.setName(data.getName());
+			response.setCurrencyCode(data.getCurrencyCode());
+			response.setDialingCode(data.getDialingCode());
+			response.setShortName(data.getShortName());
+			response.setIsoCode(data.getIsoCode());
+			countryDTOList.add(response);
+		}
+
+		return countryDTOList;
+	}
+
+	public List<BusinessServiceTypeDTO> getAllBusinessServiseTypeList(){
+
+		List<BusinessServiseTypeList> businessServiseTypeLists = new ArrayList<>();
+		businessServiseTypeLists= businessListingRepository.getAllBusinessServiseTypeList();
+		List<BusinessServiceTypeDTO> businessServiceTypeDTOList = new ArrayList<>();
+
+		for (BusinessServiseTypeList data : businessServiseTypeLists) {
+			BusinessServiceTypeDTO response = new BusinessServiceTypeDTO();
+			response.setId(data.getId());
+			response.setServiceType(data.getBusinessServiceType());
+
+			businessServiceTypeDTOList.add(response);
+		}
+
+		return businessServiceTypeDTOList;
+	}
 }

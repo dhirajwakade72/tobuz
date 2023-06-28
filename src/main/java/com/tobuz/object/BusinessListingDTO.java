@@ -98,6 +98,27 @@ public class BusinessListingDTO implements Serializable{
 
 			private String searchKey;
 
+			private List<String> countryIds;
+
+			private List<String> stateIds;
+
+
+	public List<String> getCountryIds() {
+		return countryIds;
+	}
+
+	public void setCountryIds(List<String> countryIds) {
+		this.countryIds = countryIds;
+	}
+
+	public List<String> getStateIds() {
+		return stateIds;
+	}
+
+	public void setStateIds(List<String> stateIds) {
+		this.stateIds = stateIds;
+	}
+
 	public String getSearchKey() {
 		return searchKey;
 	}

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.tobuz.model.Country;
 import com.tobuz.model.NewsLetterSubscription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -753,5 +754,23 @@ public class TobuzRestController {
 	//@RequestParam("text") here text is a variable it must be same name as used into ajax variable
 	public NewsLetterSubscription saveNewsletter(@RequestParam("text") String email) {
 		return businessService.saveNewsletter(email);
+	}
+
+	@RequestMapping(value = "/getAllCategoryList", method = RequestMethod.GET)
+	@ResponseBody
+	public List<CategoryDTO> getAllCategoryList() {
+		return businessService.getAllCategoryList();
+	}
+
+	@RequestMapping(value = "/getAllCountryList", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Country> getAllCountryList() {
+		return businessService.getAllCountryList();
+	}
+
+	@RequestMapping(value = "/getAllBusinessServiseTypeList", method = RequestMethod.GET)
+	@ResponseBody
+	public List<BusinessServiceTypeDTO> getAllBusinessServiseTypeList() {
+		return businessService.getAllBusinessServiseTypeList();
 	}
 }
