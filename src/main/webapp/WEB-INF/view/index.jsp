@@ -50,10 +50,10 @@
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
-<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
-<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -479,7 +479,7 @@ Searchbar scrolling top desktop finish
 	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">
-	<span class="icon-social"><a href="#"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-linkedin"></i></a></span> 
+	<span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span>
 	 </li>
 	 <!-- social icon area finish -->
   </ul>
@@ -1239,9 +1239,9 @@ Broker <label class="radio-button">
 <h2>For Investors</h2>
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
-<li><a href="#">Investment Opportunities</a></li>
-<li><a href="#">Business Seeking Loan</a></li>
-<li><a href="#">Business Assets For Sale</a></li>
+<li><a href="businessForSale">Investment Opportunities</a></li>
+<li><a href="businessForSale">Business Seeking Loan</a></li>
+<li><a href="realEstate">Business Assets For Sale</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchise Opportunities</a></li>
 </ul>
 </div>
@@ -1250,12 +1250,12 @@ Broker <label class="radio-button">
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Businesses</h2>
 <ul>
-<li><a href="#">Individual Investors</a></li>
-<li><a href="#">Business Buyers</a></li>
-<li><a href="#">Venture Capital Firms</a></li>
-<li><a href="#">Private Equity Firms</a></li>
-<li><a href="#">Business Lenders</a></li>
-<li><a href="#">Financial Advisors</a></li>
+<li><a href="buyersInvestorsGrid">Individual Investors</a></li>
+<li><a href="buyersInvestorsGrid">Business Buyers</a></li>
+<li><a href="contact">Venture Capital Firms</a></li>
+<li><a href="contact">Private Equity Firms</a></li>
+<li><a href="contact">Business Lenders</a></li>
+<li><a href="contact">Financial Advisors</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
@@ -1264,12 +1264,12 @@ Broker <label class="radio-button">
 <h2>Get Started</h2>
 <ul>
 <li><a href="createBusinessListings">Sell Your Business</a></li>
-<li><a href="#">Invest Or Buy Business</a></li>
+<li><a href="buyersInvestorsGrid">Invest Or Buy Business</a></li>
 <li><a href="businesServices">Business Services</a></li>
-<li><a href="#">Business Brokers</a></li>
+<li><a href="brokers">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="distress">Distress Business Sale</a></li>
-<li><a href="#">Buy Or Sell Commercial Properties</a></li>
+<li><a href="realEstate">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
 <!-- footer area 3 finish -->
@@ -1297,10 +1297,10 @@ Broker <label class="radio-button">
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
-<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
-<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
