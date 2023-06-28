@@ -1227,6 +1227,13 @@ $(".input-1").focus().toggleClass("active-width").val('');
 
 /* If user clicks Clear All link then clear all the filters */
 $(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
+    });
+});
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
 
     var currentPageNumber = 1;
 
