@@ -88,6 +88,12 @@ public interface UserRepository  extends JpaRepository<AppUser, Long> {
 	@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName " +
 			" from business_service_type bst join business_advisor ba on bst.id = ba.business_service_type_id" +
 			" join app_user au ON au.id = ba.adviosr_by_user_id join address a on au.address_id = a.id " +
+			" join state s on s.id = a.state_id join country c on c.id = a.country_id limit 200", nativeQuery = true)
+	public List<BrokerList> getBrokerList();
+
+	@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName " +
+			" from business_service_type bst join business_advisor ba on bst.id = ba.business_service_type_id" +
+			" join app_user au ON au.id = ba.adviosr_by_user_id join address a on au.address_id = a.id " +
 			" join state s on s.id = a.state_id join country c on c.id = a.country_id limit 300", nativeQuery = true)
 	public List<Object[]> getAllBrokerList();
 }

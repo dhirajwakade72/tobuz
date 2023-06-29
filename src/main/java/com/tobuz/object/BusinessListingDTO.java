@@ -98,6 +98,31 @@ public class BusinessListingDTO implements Serializable{
 
 			private String searchKey;
 
+			private List<String> countryIds;
+
+			private List<String> stateIds;
+
+	private Long countryId;
+
+	private Long stateId;
+
+
+	public List<String> getCountryIds() {
+		return countryIds;
+	}
+
+	public void setCountryIds(List<String> countryIds) {
+		this.countryIds = countryIds;
+	}
+
+	public List<String> getStateIds() {
+		return stateIds;
+	}
+
+	public void setStateIds(List<String> stateIds) {
+		this.stateIds = stateIds;
+	}
+
 	public String getSearchKey() {
 		return searchKey;
 	}
@@ -449,5 +474,21 @@ public class BusinessListingDTO implements Serializable{
 
 	public void setCategoryIds(List<String> categoryIds) {
 		this.categoryIds = categoryIds;
+	}
+
+	public Long getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(Long countryId) {
+		this.countryId = countryId;
+	}
+
+	public Long getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(Long stateId) {
+		this.stateId = stateId;
 	}
 }
