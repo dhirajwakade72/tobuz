@@ -763,10 +763,6 @@
 <!-- bfs grid 6 finish -->
 </div>
 <br/>
-<!-- bfs next page button start -->
-<div class="next-btn-area"><a class="next-btn">Next</a></div>
-<!-- bfs next page button finish -->
-<!-- bfs pagination start -->
 <div class="pagination-area">
 <span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field"/></span><span class="number-text">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true"></i></a></span>
 </div>

@@ -1132,11 +1132,6 @@
     <br/>
 
 <!-- End logic for second page -->
-
-<!-- bfs next page button start -->
-<div class="next-btn-area"><a class="next-btn">Next</a></div>
-<!-- bfs next page button finish -->
-<!-- bfs pagination start -->
 <div class="pagination-area">
 <span class="number-text">Page</span><span class="pagination-field-area"><input type="text" class="pagination-field" id="pageNumber" value="1" /></span><span class="number-text" id="totalPage">of 171</span><span><a href=""><i class="fa fa-angle-right" aria-hidden="true" id="nextPage"></i></a></span> <span><a href=""><i class="fa fa-angle-left" aria-hidden="true" id="previousPage"></i></a></span>
 </div>
