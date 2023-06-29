@@ -11,6 +11,25 @@ public class BrokerListingDTO implements Serializable {
     private String stateName;
     private String countryName;
 
+    private List<String> countryIds;
+
+    private Long countryId;
+
+    public Long getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
+    }
+
+    public List<String> getCountryIds() {
+        return countryIds;
+    }
+
+    public void setCountryIds(List<String> countryIds) {
+        this.countryIds = countryIds;
+    }
 
     public List<String> getBusinessServiceIds() {
         return businessServiceIds;

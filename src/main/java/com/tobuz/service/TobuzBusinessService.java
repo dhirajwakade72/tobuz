@@ -1531,6 +1531,8 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 			}
 		}
 		filteredBusinessListingDTOList = businessListingDTOList.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
+	}else{
+		return businessListingDTOList;
 	}
 
 	return filteredBusinessListingDTOList;
@@ -1587,7 +1589,23 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 			brokerLists = userRepository.getBrokerList();
 			getBrokerListDTO(brokerLists, brokerListingDTOS);
 		}
-		return brokerListingDTOS;
+
+		List<BrokerListingDTO> brokerListingDTOList = new ArrayList<>();
+		if(brokerListingDTO.getCountryIds() != null && !brokerListingDTO.getCountryIds().isEmpty() && !brokerListingDTOS.isEmpty()){
+
+			List<Long> countryIdList = new ArrayList<>();
+			if(brokerListingDTO.getCountryIds() != null && !brokerListingDTO.getCountryIds().isEmpty()) {
+				for (String str : brokerListingDTO.getCountryIds()) {
+					countryIdList.add(Long.parseLong(str));
+				}
+			}
+			brokerListingDTOList = brokerListingDTOS.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
+		}else{
+			return brokerListingDTOS;
+		}
+
+
+		return brokerListingDTOList;
 	}
 
 	private void getBrokerListDTO(List<BrokerList> brokerLists, List<BrokerListingDTO> brokerListingDTOS){
@@ -1599,6 +1617,7 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 				response.setCountryCode(data.getCountryCode());
 				response.setStateName(data.getStateName());
 				response.setCountryName(data.getCountryName());
+				response.setCountryId(data.getCountryId());
 				brokerListingDTOS.add(response);
 			}
 		}

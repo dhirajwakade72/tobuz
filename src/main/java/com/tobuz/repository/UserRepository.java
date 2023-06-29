@@ -79,13 +79,13 @@ public interface UserRepository  extends JpaRepository<AppUser, Long> {
 		@Query(value = "select a.city_id from address a join app_user au on a.id = au.address_id where au.email = ?1", nativeQuery = true)
 		public Integer getCityIdFromCity(String email);
 
-		@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName " +
+		@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName, c.id as CountryId " +
 				" from business_service_type bst join business_advisor ba on bst.id = ba.business_service_type_id" +
 				" join app_user au ON au.id = ba.adviosr_by_user_id join address a on au.address_id = a.id " +
 				" join state s on s.id = a.state_id join country c on c.id = a.country_id where bst.id =:id limit 200", nativeQuery = true)
 		public List<BrokerList> getBrokerList(@Param("id") Long id);
 
-	@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName " +
+	@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName, c.id as CountryId " +
 			" from business_service_type bst join business_advisor ba on bst.id = ba.business_service_type_id" +
 			" join app_user au ON au.id = ba.adviosr_by_user_id join address a on au.address_id = a.id " +
 			" join state s on s.id = a.state_id join country c on c.id = a.country_id limit 200", nativeQuery = true)
