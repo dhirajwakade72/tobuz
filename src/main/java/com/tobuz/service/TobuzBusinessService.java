@@ -1563,10 +1563,15 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 			for (String str : brokerListingDTO.getBusinessServiceIds()) {
 					ids.add(Long.parseLong(str));
 			}
-		}
+
 		List<BrokerList> brokerLists = new ArrayList<>();
 		for (Long l : ids){
 			brokerLists = userRepository.getBrokerList(l);
+			getBrokerListDTO(brokerLists, brokerListingDTOS);
+		}
+		}else{
+			List<BrokerList> brokerLists = new ArrayList<>();
+			brokerLists = userRepository.getBrokerList();
 			getBrokerListDTO(brokerLists, brokerListingDTOS);
 		}
 		return brokerListingDTOS;

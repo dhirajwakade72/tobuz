@@ -1510,21 +1510,22 @@ function renderCards(page,data){
   for (var i = startIndex; i < endIndex; i++) {
 	  console.log(" businessListingId :"+data[i].userName );
 
+
 	    var card = $('<div class="col-lg-6 col-xl-6 col-md-12 seller-a">');
+	     card.append('<a href="#">')
 	    card.append('<div class="seller-person-list">')
-	    card.append('<div class="imges-area-1"> <img src= "images/Mahesh-Sharma.jpg" style=width:100% title="Mahesh-Sharma" alt="Mahesh-Sharma" />');
+	    card.append('<div class="imges-area-1">')
+	     card.append('<img src= "images/Mahesh-Sharma.jpg" style=width:30% title="Mahesh-Sharma" alt="Mahesh-Sharma" />')
         card.append('</div>')
 	    card.append('<div class="imges-area-2">')
-	    card.append('<div class="name-seller-1" style="font-size: 0.875rem;">'+ data[i].userName+'</div>');
+	    card.append('<div class="name-seller-1">'+ data[i].userName+'</div>');
 	    card.append('<div class="tell-seller">')
 	    card.append('<p><i class="fa fa-phone" aria-hidden="true"></i>'+data[i].mobileNumber +'</p>');
-
-
 	    card.append('<p><i class="fa fa-map-marker" aria-hidden="true"></i>'+data[i].stateName, data[i].countryName+'</p>');
 
 
 
-	    card.append('</div></div></div></div>');
+	    card.append('</div></div></div></a></div>');
 	    $('#card-container').append(card);
 
 
