@@ -749,8 +749,9 @@ public class TobuzRestController {
 
 	@RequestMapping(value = "/getAllBroker", produces = { "application/json" }, method = RequestMethod.GET)
 	@ResponseBody
-	public List<BrokerListingDTO> getAllBrokerList(){
+	public List<BrokerListingDTO> getAllBrokerList() {
 		return businessService.getAllBrokerList();
+	}
 
 	@RequestMapping(value = "/getAllCategoryList", method = RequestMethod.GET)
 	@ResponseBody
