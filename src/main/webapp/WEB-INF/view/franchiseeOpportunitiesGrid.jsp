@@ -510,8 +510,8 @@
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick="addFranchiseType(this,'RESALE')">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="chkResale" onClick="addFranchiseType(this,'RESALE')">
+  <label class="form-check-label" for="chkResale">
    Resale
   </label>
 </div>
@@ -533,32 +533,32 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'3')" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'3')" value="" id="ApparelFootwear">
+  <label data-toggle="modal" for="ApparelFootwear">
     Apparel & Footwear
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onClick="getTopBusinessListingsByCategory(this,'17')"  id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onClick="getTopBusinessListingsByCategory(this,'17')"  id="Restaurants">
+  <label data-toggle="modal" for="Restaurants">
    Hotel, Restaurants and Food Services
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onClick="getTopBusinessListingsByCategory(this,'20')" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onClick="getTopBusinessListingsByCategory(this,'20')" id="ManufacturingBusinesses">
+  <label data-toggle="modal"for="ManufacturingBusinesses">
  Manufacturing Businesses
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'5')" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'5')" value="" id="AutomotiveBusiness">
+  <label data-toggle="modal" for="AutomotiveBusiness">
    Automotive Business
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'27')" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'27')" value="" id="BusinessSupportBusinesses">
+  <label data-toggle="modal" for="BusinessSupportBusinesses">
     Business Support Businesses
   </label>
 </div>
@@ -583,32 +583,32 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="India">
+  <label data-toggle="modal" class="form-check-label" for="India">
     India
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="AndhraPradesh">
+  <label data-toggle="modal" class="form-check-label" for="AndhraPradesh">
     Andhra Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
-    Arunachal Pradesh
+  <input class="form-check-input" type="checkbox" value="" id="ArunachalPradesh">
+  <label data-toggle="modal" class="form-check-label" for="ArunachalPradesh">
+    ArunachalPradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="Assam">
+  <label data-toggle="modal" class="form-check-label" for="Assam">
     Assam
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="Bihar">
+  <label data-toggle="modal" class="form-check-label" for="Bihar">
     Bihar
   </label>
 </div>
@@ -1861,6 +1861,36 @@ function addFranchiseType(obj, franchiseType){
           var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
             if(!obj.checked) {
                 franchiseTypeList.splice($.inArray(franchiseType, franchiseTypeList), 1);
+                if((categoriesIds === null || categoriesIds.length === 0) && (franchiseTypeList === null || franchiseTypeList.length === 0)){
+                                                    var url2 = getUrl .protocol + "//" + getUrl.host + "/topFranchesieListings" ;
+                                                    	$.ajax({
+                                                    	   url: url2,
+                                                    	   type: 'GET',
+                                                    	   dataType: 'json', // added data type
+                                                    	   success: function(data) {
+                                                    		   var currentPage = 1;
+                                                    		   // Render the cards for the initial page
+                                                    		   renderCards(currentPage,data);
+                                                    		   // Add event listeners to the page links
+                                                    		    $('.page-link').click(function(event) {
+                                                    		     event.preventDefault();
+                                                    		     var targetPage = $(event.target).text();
+                                                    		     // Update the current page and render the new cards
+                                                    		     if (targetPage === 'Previous') {
+                                                    		       currentPage--;
+                                                    		     } else if (targetPage === 'Next') {
+                                                    		       currentPage++;
+                                                    		     } else {
+                                                    		       currentPage = parseInt(targetPage);
+                                                    		     }
+                                                    		     renderCards(currentPage,data);
+                                                    		     // Update the active page link
+                                                    		     $('.page-item').removeClass('active');
+                                                    		     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                                                       		 });
+                                                    	}
+                                                    });
+                                              }else{
                  var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
                 $.ajax({
                         url: url,
@@ -1894,6 +1924,7 @@ function addFranchiseType(obj, franchiseType){
                      				 })
                      		}
                      	});
+                }
             }
     		if( obj.checked ){
     			franchiseTypeList.push(franchiseType);
@@ -2010,6 +2041,36 @@ function getTopBusinessListingsByCategory(obj, id){
       var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
         if(!obj.checked) {
             categoriesIds.splice($.inArray(id, categoriesIds), 1);
+            if((categoriesIds === null || categoriesIds.length === 0) && (franchiseTypeList === null || franchiseTypeList.length === 0)){
+                                    var url2 = getUrl .protocol + "//" + getUrl.host + "/topFranchesieListings" ;
+                                    	$.ajax({
+                                    	   url: url2,
+                                    	   type: 'GET',
+                                    	   dataType: 'json', // added data type
+                                    	   success: function(data) {
+                                    		   var currentPage = 1;
+                                    		   // Render the cards for the initial page
+                                    		   renderCards(currentPage,data);
+                                    		   // Add event listeners to the page links
+                                    		    $('.page-link').click(function(event) {
+                                    		     event.preventDefault();
+                                    		     var targetPage = $(event.target).text();
+                                    		     // Update the current page and render the new cards
+                                    		     if (targetPage === 'Previous') {
+                                    		       currentPage--;
+                                    		     } else if (targetPage === 'Next') {
+                                    		       currentPage++;
+                                    		     } else {
+                                    		       currentPage = parseInt(targetPage);
+                                    		     }
+                                    		     renderCards(currentPage,data);
+                                    		     // Update the active page link
+                                    		     $('.page-item').removeClass('active');
+                                    		     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                                       		 });
+                                    	}
+                                    });
+                              }else{
                  var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
             $.ajax({
                     url: url,
@@ -2043,6 +2104,7 @@ function getTopBusinessListingsByCategory(obj, id){
                  				 })
                  		}
                  	});
+            }
         }
 		if( obj.checked ){
 			categoriesIds.push(id);
@@ -2151,8 +2213,6 @@ jQuery(document).ready(function($){
 	}
 });
 });
-
-
 
 function renderCards(page,data){
 	

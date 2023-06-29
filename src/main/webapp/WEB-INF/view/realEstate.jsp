@@ -459,7 +459,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="realEstate">Clear All</a></span>
 </div>
 <!-- bfs sidebar filter title finish -->
 <div>
@@ -478,31 +478,31 @@
 <!-- checkbox start -->
 <div class="form-check">
   <input onchange="getTopBusinessListingsByCategory(this,'1')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault" >
+  <label data-toggle="modal" class="form-check-label" for="flexCheckDefault" >
     Agriculture & Gardening Business
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'5')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'5')" class="form-check-input" type="checkbox" value="" id="AutomotiveBusiness">
+  <label data-toggle="modal" class="form-check-label" for="AutomotiveBusiness">
     Automotive Business
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'3')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'3')" class="form-check-input" type="checkbox" value="" id="ApparelFootwear">
+  <label data-toggle="modal" class="form-check-label" for="ApparelFootwear">
     Apparel & Footwear
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'4')"  class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'4')"  class="form-check-input" type="checkbox" value="" id="ArtsEntertainmentRecreational">
+  <label data-toggle="modal" class="form-check-label" for="ArtsEntertainmentRecreational">
     Arts, Entertainment & recreational
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'6')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'6')" class="form-check-input" type="checkbox" value="" id="BusinessSupportBusinesses">
+  <label data-toggle="modal" class="form-check-label" for="BusinessSupportBusinesses">
     Business Support Businesses
   </label>
 </div>
@@ -527,32 +527,32 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="india">
+  <label data-toggle="modal" class="form-check-label" for="india">
     India
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="AndhraPradesh">
+  <label data-toggle="modal" class="form-check-label" for="AndhraPradesh">
     Andhra Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="ArunachalPradesh">
+  <label data-toggle="modal" class="form-check-label" for="ArunachalPradesh">
     Arunachal Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="Assam">
+  <label data-toggle="modal" class="form-check-label" for="Assam">
     Assam
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="Bihar">
+  <label data-toggle="modal" class="form-check-label" for="Bihar">
     Bihar
   </label>
 </div>
@@ -587,10 +587,11 @@
 <div class="Sort"><span class="sort-text">Sort By:</span>
 <span class="customselect"> 
 <select>
-  <option value="Tobuz Rank">Tobuz Rank</option>
-  <option value="Tobuz Rank">Tobuz Rank</option>
-  <option value="Tobuz Rank">Tobuz Rank</option>
-  <option value="Tobuz Rank">Tobuz Rank</option>
+  <option value="latest">Latest</option>
+    <option value="Low To High">Low To High</option>
+    <option value="High To Low">High To Low</option>
+    <option value="A to Z">A to Z</option>
+    <option value="Z to A">Z to A</option>
 </select></span></div>
 <!-- bfs Sort By finish -->
 </div>
@@ -730,7 +731,7 @@ bfs grid 6 finish
 </div> -->
 
 <div class="container">
-  <div class="row" id="card-container1">
+  <div class="row" id="card-container">
    <!--   <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
       <div class="card">
         <img class="card-img-top" src="/images/Corporate-business.jpg" alt="Card image cap">
@@ -762,7 +763,7 @@ bfs grid 6 finish
     
   </div>
   
-  <div class="row"  id="card-container2">
+  <div class="row"  id="card-container">
     <!--  <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
       <div class="card">
         <img class="card-img-top" src="https://via.placeholder.com/300x200.png" alt="Card image cap">
@@ -1743,6 +1744,36 @@ function getTopBusinessListingsByCategory(obj, id){
       var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
         if(!obj.checked) {
             categoriesIds.splice($.inArray(id, categoriesIds), 1);
+            if((categoriesIds === null || categoriesIds.length === 0)){
+                                    var url2 = getUrl .protocol + "//" + getUrl.host + "/topBusinessListings" ;
+                                    	$.ajax({
+                                    	   url: url2,
+                                    	   type: 'GET',
+                                    	   dataType: 'json', // added data type
+                                    	   success: function(data) {
+                                    		   var currentPage = 1;
+                                    		   // Render the cards for the initial page
+                                    		   renderCards(currentPage,data);
+                                    		   // Add event listeners to the page links
+                                    		    $('.page-link').click(function(event) {
+                                    		     event.preventDefault();
+                                    		     var targetPage = $(event.target).text();
+                                    		     // Update the current page and render the new cards
+                                    		     if (targetPage === 'Previous') {
+                                    		       currentPage--;
+                                    		     } else if (targetPage === 'Next') {
+                                    		       currentPage++;
+                                    		     } else {
+                                    		       currentPage = parseInt(targetPage);
+                                    		     }
+                                    		     renderCards(currentPage,data);
+                                    		     // Update the active page link
+                                    		     $('.page-item').removeClass('active');
+                                    		     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                                       		 });
+                                    	}
+                                    });
+                              }else{
             var obj = {"categoryIds":categoriesIds,"listingType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
             $.ajax({
                     url: url,
@@ -1776,6 +1807,7 @@ function getTopBusinessListingsByCategory(obj, id){
                  				 })
                  		}
                  	});
+            }
         }
 		if( obj.checked ){
 			categoriesIds.push(id);
@@ -1889,8 +1921,7 @@ function myFunction(value) {
 
 function renderCards(page,data) {
   // Clear the existing cards
-  $('#card-container1').empty();
-  $('#card-container2').empty();
+  $('#card-container').empty();
   // Calculate the starting index and ending index for this page
   var startIndex = (page - 1) * 6;
   var endIndex =startIndex+6;
@@ -1912,7 +1943,7 @@ function renderCards(page,data) {
 	    card.append('<p><button type="button" onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
 	    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
 	    card.append('</div></div></div>');
-	    $('#card-container1').append(card);
+	    $('#card-container').append(card);
 	}
 	  else {
 		  var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
@@ -1926,7 +1957,7 @@ function renderCards(page,data) {
 		    card.append('<p><button type="button"  onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
 		    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
 		    card.append('</div></div></div>');
-		    $('#card-container2').append(card);
+		    $('#card-container').append(card);
 	  }
 	  
   }

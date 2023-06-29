@@ -355,7 +355,7 @@ public class TobuzMVCController {
 		@RequestMapping(value="/realEstate",method=RequestMethod.GET) 
 		 public ModelAndView    realEstate () {
 		      ModelAndView modelAndView = new ModelAndView();
-		      modelAndView.setViewName("commercialForSaleGrid");
+		      modelAndView.setViewName("realEstate");
 		      return modelAndView;
 		  }
 		
