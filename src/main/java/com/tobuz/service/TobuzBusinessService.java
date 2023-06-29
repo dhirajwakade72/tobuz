@@ -1496,11 +1496,11 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 	if(businessListingDTO.getFranchiseType() == null){
         if(longList != null && !longList.isEmpty()) {
             for (Long l : longList) {
-                businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getBusinessType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+                businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
                 getBusinessListDto(businessByFilter, businessListingDTOList);
             }
         }else{
-            businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getBusinessType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+            businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
             getBusinessListDto(businessByFilter, businessListingDTOList);
 
         }
@@ -1508,20 +1508,16 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
         if(longList != null && !longList.isEmpty()) {
             for (Long l : longList) {
                 for (String fType : businessListingDTO.getFranchiseType()) {
-                    businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getBusinessType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+                    businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
                     getBusinessListDto(businessByFilter, businessListingDTOList);
                 }
             }
         }else{
             for (String fType : businessListingDTO.getFranchiseType()) {
-                businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter( businessListingDTO.getBusinessType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+                businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter( businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
                 getBusinessListDto(businessByFilter, businessListingDTOList);
             }
         }
-	}
-
-	if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCategoryIds().isEmpty()){
-
 	}
 
 
