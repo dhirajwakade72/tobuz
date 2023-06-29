@@ -1861,7 +1861,7 @@ function addFranchiseType(obj, franchiseType){
           var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
             if(!obj.checked) {
                 franchiseTypeList.splice($.inArray(franchiseType, franchiseTypeList), 1);
-                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
                 $.ajax({
                         url: url,
                      	type: 'POST',
@@ -1897,7 +1897,7 @@ function addFranchiseType(obj, franchiseType){
             }
     		if( obj.checked ){
     			franchiseTypeList.push(franchiseType);
-                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
     			$.ajax(
     			{
     			   url: url,
@@ -1968,7 +1968,7 @@ function myFunction(value) {
                                   sortByTitle = null;
                }
             }
-                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
                  var getUrl = window.location;
                       var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
                  $.ajax({
@@ -2010,7 +2010,7 @@ function getTopBusinessListingsByCategory(obj, id){
       var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
         if(!obj.checked) {
             categoriesIds.splice($.inArray(id, categoriesIds), 1);
-                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
             $.ajax({
                     url: url,
                  	type: 'POST',
@@ -2046,7 +2046,7 @@ function getTopBusinessListingsByCategory(obj, id){
         }
 		if( obj.checked ){
 			categoriesIds.push(id);
-                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"businessType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
 			$.ajax(
 			{
 			   url: url,
