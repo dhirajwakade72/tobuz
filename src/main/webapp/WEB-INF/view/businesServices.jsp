@@ -763,9 +763,9 @@ Ajay Pandey Business Consultants
 <!-- bfs next page button start -->
 <div class="pagination justify-content-center">
     <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-      </li>
+
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+
       <li class="page-item active" aria-current="page">
         <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
       </li>
