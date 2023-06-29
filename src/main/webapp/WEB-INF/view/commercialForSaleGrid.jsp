@@ -2024,7 +2024,7 @@ jQuery(document).ready(function($){
 
 function renderCards(page,data){
 	
-  //$('#card-container').empty();
+  $('#card-container').empty();
 
   var startIndex = (page - 1) * 6;
   var endIndex =startIndex+6;
@@ -2075,8 +2075,38 @@ var sortByPrice;
 function getTopBusinessListingsByCategory(obj, id){
 	  var getUrl = window.location;
       var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
-        if(!obj.checked) {
+             if(!obj.checked) {
             categoriesIds.splice($.inArray(id, categoriesIds), 1);
+                  if((categoriesIds === null || categoriesIds.length === 0)){
+                        var url2 = getUrl .protocol + "//" + getUrl.host + "/topCommercialListings" ;
+                        	$.ajax({
+                        	   url: url2,
+                        	   type: 'GET',
+                        	   dataType: 'json', // added data type
+                        	   success: function(data) {
+                        		   var currentPage = 1;
+                        		   // Render the cards for the initial page
+                        		   renderCards(currentPage,data);
+                        		   // Add event listeners to the page links
+                        		    $('.page-link').click(function(event) {
+                        		     event.preventDefault();
+                        		     var targetPage = $(event.target).text();
+                        		     // Update the current page and render the new cards
+                        		     if (targetPage === 'Previous') {
+                        		       currentPage--;
+                        		     } else if (targetPage === 'Next') {
+                        		       currentPage++;
+                        		     } else {
+                        		       currentPage = parseInt(targetPage);
+                        		     }
+                        		     renderCards(currentPage,data);
+                        		     // Update the active page link
+                        		     $('.page-item').removeClass('active');
+                        		     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                           		 });
+                        	}
+                        });
+                  }else{
             var obj = {"categoryIds":categoriesIds,"listingType":"COMMERCIAL","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
             $.ajax({
                     url: url,
@@ -2110,6 +2140,7 @@ function getTopBusinessListingsByCategory(obj, id){
                  				 })
                  		}
                  	});
+            }
         }
 		if( obj.checked ){
 			categoriesIds.push(id);

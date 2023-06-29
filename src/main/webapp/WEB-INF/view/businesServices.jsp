@@ -543,32 +543,32 @@ Marketing Services
 <!-- checkbox start -->
 <div id="locationDiv">
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="india">
+  <label data-toggle="modal" class="form-check-label" for="india">
     India
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="AndhraPradesh">
+  <label data-toggle="modal" class="form-check-label" for="AndhraPradesh">
     Andhra Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="ArunachalPradesh">
+  <label data-toggle="modal" class="form-check-label" for="ArunachalPradesh">
     Arunachal Pradesh
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="Assam">
+  <label data-toggle="modal" class="form-check-label" for="Assam">
     Assam
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="Bihar">
+  <label data-toggle="modal" class="form-check-label" for="Bihar">
     Bihar
   </label>
 </div>
