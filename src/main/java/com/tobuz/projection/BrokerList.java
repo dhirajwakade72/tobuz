@@ -6,4 +6,6 @@ public interface BrokerList {
     String getCountryCode();
     String getStateName();
     String getCountryName();
+
+    Long getCountryId();
 }
