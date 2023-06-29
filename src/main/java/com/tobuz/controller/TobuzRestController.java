@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import com.tobuz.model.Country;
 import com.tobuz.model.NewsLetterSubscription;
+import com.tobuz.object.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,23 +28,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.tobuz.model.BusinessListing;
-import com.tobuz.object.BusinessAdvertDTO;
-import com.tobuz.object.BusinessFeatureDTO;
-import com.tobuz.object.BusinessListingDTO;
-import com.tobuz.object.BusinessListingFeatureInfoDTO;
-import com.tobuz.object.BusinessServiceTypeDTO;
-import com.tobuz.object.CategoryDTO;
-import com.tobuz.object.ContactDTO;
-import com.tobuz.object.MessageDTO;
-import com.tobuz.object.PaymentDTO;
-import com.tobuz.object.RegisterDTO;
-import com.tobuz.object.TestimonialDTO;
-import com.tobuz.object.TobuzPackageDTO;
-import com.tobuz.object.TobuzfeatureDTO;
-import com.tobuz.object.UserDTO;
-import com.tobuz.object.UserPackageInfoDTO;
-import com.tobuz.object.UserRequestDTO;
-import com.tobuz.object.Vo;
 import com.tobuz.service.TobuzBusinessService;
 
 @Controller
@@ -756,6 +740,18 @@ public class TobuzRestController {
 		return businessService.saveNewsletter(email);
 	}
 
+	@RequestMapping(value = "/getBrokerList", method = RequestMethod.POST, produces = {"application/json"})
+	@ResponseBody
+	public List<BrokerListingDTO> getBrokerList(@RequestBody BrokerListingDTO brokerListingDTO){
+		return businessService.getBrokerList(brokerListingDTO);
+	}
+
+
+	@RequestMapping(value = "/getAllBroker", produces = { "application/json" }, method = RequestMethod.GET)
+	@ResponseBody
+	public List<BrokerListingDTO> getAllBrokerList(){
+		return businessService.getAllBrokerList();
+
 	@RequestMapping(value = "/getAllCategoryList", method = RequestMethod.GET)
 	@ResponseBody
 	public List<CategoryDTO> getAllCategoryList() {
@@ -772,5 +768,6 @@ public class TobuzRestController {
 	@ResponseBody
 	public List<BusinessServiceTypeDTO> getAllBusinessServiseTypeList() {
 		return businessService.getAllBusinessServiseTypeList();
+
 	}
 }

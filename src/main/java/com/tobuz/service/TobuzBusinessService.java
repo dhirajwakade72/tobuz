@@ -4,6 +4,7 @@ import com.tobuz.model.*;
 import com.tobuz.model.tobuzpackage.TobuzPackage;
 import com.tobuz.model.tobuzpackage.TobuzPackageService;
 import com.tobuz.object.*;
+import com.tobuz.projection.BrokerList;
 import com.tobuz.projection.BusinessByFilter;
 import com.tobuz.projection.BusinessServiseTypeList;
 import com.tobuz.projection.CategoryByFilter;
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.LongStream;
 import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingLong;
@@ -1566,6 +1568,73 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 
 		return newsLetterRepository.save(newsLetterSubscription);
 	}
+
+	public List<BrokerListingDTO> getBrokerList(BrokerListingDTO brokerListingDTO) {
+		List<BrokerListingDTO> brokerListingDTOS = new ArrayList<>();
+		List<Long> ids = new ArrayList<>();
+		if (brokerListingDTO.getBusinessServiceIds() != null && !brokerListingDTO.getBusinessServiceIds().isEmpty()) {
+			for (String str : brokerListingDTO.getBusinessServiceIds()) {
+					ids.add(Long.parseLong(str));
+			}
+
+		List<BrokerList> brokerLists = new ArrayList<>();
+		for (Long l : ids){
+			brokerLists = userRepository.getBrokerList(l);
+			getBrokerListDTO(brokerLists, brokerListingDTOS);
+		}
+		}else{
+			List<BrokerList> brokerLists = new ArrayList<>();
+			brokerLists = userRepository.getBrokerList();
+			getBrokerListDTO(brokerLists, brokerListingDTOS);
+		}
+		return brokerListingDTOS;
+	}
+
+	private void getBrokerListDTO(List<BrokerList> brokerLists, List<BrokerListingDTO> brokerListingDTOS){
+		if (Objects.nonNull(brokerLists)){
+			for (BrokerList data : brokerLists){
+				BrokerListingDTO response = new BrokerListingDTO();
+				response.setUserName(data.getUserName());
+				response.setMobileNumber(data.getMobileNumber());
+				response.setCountryCode(data.getCountryCode());
+				response.setStateName(data.getStateName());
+				response.setCountryName(data.getCountryName());
+				brokerListingDTOS.add(response);
+			}
+		}
+
+	}
+
+	public List<BrokerListingDTO> getAllBrokerList(){
+		List<BrokerListingDTO> list = new ArrayList<>();
+		List<Object[]> allBrokerList = userRepository.getAllBrokerList();
+		if (null != allBrokerList){
+			try {
+				for (Object[] objects : allBrokerList){
+					BrokerListingDTO brokerListingDTO = new BrokerListingDTO();
+					if (null != objects[0])
+						brokerListingDTO.setUserName(objects[0].toString());
+					if (null != objects[1])
+						brokerListingDTO.setMobileNumber(objects[1].toString());
+					if (null != objects[2])
+						brokerListingDTO.setCountryCode(objects[2].toString());
+					if (null != objects[3])
+						brokerListingDTO.setStateName(objects[3].toString());
+					if (null != objects[4])
+						brokerListingDTO.setCountryName(objects[4].toString());
+
+					list.add(brokerListingDTO);
+				}
+			} catch (NumberFormatException e){
+				e.printStackTrace();
+			}
+			System.out.println("broker list recent : " + list.size());
+		} else {
+			System.out.println("broker list recent: NULL");
+		}
+		return list;
+	}
+
 
 	public List<CategoryDTO> getAllCategoryList(){
 
