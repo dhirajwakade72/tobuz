@@ -2036,7 +2036,14 @@ function renderCards(page,data){
 	  console.log(" businessListingId :"+data[i].businessListingId );
 
 	    var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
-	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+	    var prefix = 'https://tobuz-dev-bkt.s3.amazonaws.com/';
+
+	    if(data[i].filePath.startsWith(prefix)) {
+            card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= "images/Distribution-Services.jpg" />');
+	    } else {
+            card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+	    }
+
 	    card.append('<div class="pd10">'); 
 	    card.append('<div class="alt" style="font-size: 0.6rem;">'+ data[i].suggestedTitle+'</div>');
 	    card.append('<div class="title" style="font-size: 0.8rem;"> <b>'+data[i].title +'</b></div>');
