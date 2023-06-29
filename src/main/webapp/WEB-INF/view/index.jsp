@@ -696,7 +696,7 @@ Searchbar scrolling top desktop finish
       <img src="images/sport-3.jpg" alt="Cafe For Sale In JUMEIRAH !" title="Cafe For Sale In JUMEIRAH !"/>
 	  <h3>Cafe For Sale In JUMEIRAH !</h3>
 	  </div>
-	   <div class="menu2" style="display: none;">
+	   <div class="menu11" style="display: none;">
 	 <div class="detail">
 	  <div class="price"><img src="images/dollar.png" class="dollar-icon"/> AED 150,000</div>
 	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
@@ -1489,14 +1489,14 @@ Broker <label class="radio-button">
 					      
 					   
 						$('#showmenu10').click(function() {
-				                $('.menu0').slideToggle("fast");
+				                $('.menu10').slideToggle("fast");
 				        });
 						
 				                $('#showmenu0').click(function() {
 					                $('.menu0').slideToggle("fast");
 					        });
 							 $('#showmenu11').click(function() {
-					                $('.menu1').slideToggle("fast");
+					                $('.menu11').slideToggle("fast");
 					        });
 							 $('#showmenu12').click(function() {
 					                $('.menu2').slideToggle("fast");
