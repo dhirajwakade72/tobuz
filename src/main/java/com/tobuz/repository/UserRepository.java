@@ -4,6 +4,7 @@ package com.tobuz.repository;
 import java.util.Date;
 import java.util.List;
 
+import com.tobuz.projection.BrokerList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -77,4 +78,16 @@ public interface UserRepository  extends JpaRepository<AppUser, Long> {
 		//@Query(value = "select au.address_id from app_user au where id = ?1", nativeQuery = true)
 		@Query(value = "select a.city_id from address a join app_user au on a.id = au.address_id where au.email = ?1", nativeQuery = true)
 		public Integer getCityIdFromCity(String email);
+
+		@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName " +
+				" from business_service_type bst join business_advisor ba on bst.id = ba.business_service_type_id" +
+				" join app_user au ON au.id = ba.adviosr_by_user_id join address a on au.address_id = a.id " +
+				" join state s on s.id = a.state_id join country c on c.id = a.country_id where bst.id =:id limit 200", nativeQuery = true)
+		public List<BrokerList> getBrokerList(@Param("id") Long id);
+
+	@Query(value = "select au.name as UserName , au.mobile_number as MobileNumber , au.country_code as CountryCode, s.name as StateName, c.name as CountryName " +
+			" from business_service_type bst join business_advisor ba on bst.id = ba.business_service_type_id" +
+			" join app_user au ON au.id = ba.adviosr_by_user_id join address a on au.address_id = a.id " +
+			" join state s on s.id = a.state_id join country c on c.id = a.country_id limit 300", nativeQuery = true)
+	public List<Object[]> getAllBrokerList();
 }

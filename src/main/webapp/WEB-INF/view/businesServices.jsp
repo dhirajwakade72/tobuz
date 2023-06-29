@@ -479,43 +479,43 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '1')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Accountants
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '3')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Business Consultants
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '4')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Personal Relation Services
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick ="getBrokerList(this, '5')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Financial Advisors
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '7')" value="" id="flexCheckDefault">
   <label  class="form-check-label" for="flexCheckDefault">
    Others
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '2')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
 Legal Advisor
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '6')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
 Marketing Services
   </label>
@@ -594,7 +594,7 @@ Marketing Services
 </div>
 <!-- bfs title finish -->
 </div>
-<div class="row" id="row-1">
+<div class="row" id="card-container">
 <!-- bfs grid 1 start -->
 <div class="col-lg-6 col-xl-6 col-md-12 seller-a">
 <a href="#">
@@ -761,7 +761,25 @@ Ajay Pandey Business Consultants
 </div>
 <br/>
 <!-- bfs next page button start -->
-<div class="next-btn-area"><a class="next-btn">Next</a></div>
+<div class="pagination justify-content-center">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+       <li class="page-item"><a class="page-link" href="#">4</a></li>
+       <li class="page-item"><a class="page-link" href="#">5</a></li>
+       <li class="page-item"><a class="page-link" href="#">6</a></li>
+       <li class="page-item"><a class="page-link" href="#">7</a></li>
+      <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </div>
 <!-- bfs next page button finish -->
 <!-- bfs pagination start -->
 <div class="pagination-area">
@@ -1200,41 +1218,49 @@ Ajay Pandey Business Consultants
   </div>
   </div>
 </body>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	 -->
- <script src="js/jquery.slim.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--  <script src="js/jquery.slim.min.js"></script> -->
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="dist/vanilla-tabs.min.js"></script>
   <link rel="stylesheet" type="text/css" href="dist/vanilla-tabs.min.css">
-  <script>
+
+	<script>
 $(document).ready(function(){
 $(".Categories-sale").click(function(){
-$(this).toggleClass("bg-green");
+/* $(this).toggleClass("bg-green");
 $(".fas").toggleClass("color-white");
-$(".input").focus().toggleClass("active-width").val('');
+$(".input").focus().toggleClass("active-width").val(''); */
 });
-});
-</script>
-<script>
-$(document).ready(function(){
-$(".Location-sale").click(function(){
-$(this).toggleClass("bg-green");
-$(".fas").toggleClass("color-white");
-$(".input-1").focus().toggleClass("active-width").val('');
-});
-});
-
-/* If user clicks Clear All link then clear all the filters */
-$(document).ready(function() {
 
     var currentPageNumber = 1;
 
-    $("#clearAll").click(function() {
-        $("input[type='checkbox']").prop("checked", false);
+    $("#nextPage").click(function(event) {
+        event.preventDefault();
+
+        if(currentPageNumber < 171) {
+            currentPageNumber++;
+            $("#pageNumber").val(currentPageNumber);
+
+            showPageNumber(currentPageNumber);
+        }
     });
 
-    var states = [
+    $("#previousPage").click(function(event) {
+        event.preventDefault();
+
+        if (currentPageNumber > 1) {
+            currentPageNumber--;
+            $("#pageNumber").val(currentPageNumber);
+
+            showPageNumber(currentPageNumber);
+        }
+    });
+
+var states = [
       "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
       "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
       "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
@@ -1307,33 +1333,339 @@ $(document).ready(function() {
 
     });
 
-    $("#nextPage").click(function(event) {
-        event.preventDefault();
+});
+</script>
+<script>
+$(document).ready(function(){
+$(".Location-sale").click(function(){
+$(this).toggleClass("bg-green");
+$(".fas").toggleClass("color-white");
+$(".input-1").focus().toggleClass("active-width").val('');
+});
+});
 
-        if(currentPageNumber < 171) {
-            currentPageNumber++;
-            $("#pageNumber").val(currentPageNumber);
+function sortByListOrGrid(option) {
+    var paginationContainer = document.querySelectorAll(".pagination-container");
+    var listFilter = document.querySelector("#listFilter > span");
+    var gridFilter = document.querySelector("#gridFilter > span");
+    if (option === "grid") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("list");
+            container.classList.add("grid");
+        })
+        listFilter.classList.remove("List-active");
+        listFilter.classList.add("List");
+        gridFilter.classList.remove("Grid");
+        gridFilter.classList.add("Grid-active");
+    }
+    if (option === "list") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("grid");
+            container.classList.add("list");
+        })
+        listFilter.classList.remove("List");
+        listFilter.classList.add("List-active");
+        gridFilter.classList.remove("Grid-active");
+        gridFilter.classList.add("Grid");
+    }
+}
 
-            showDataWithPageNumber(currentPageNumber);
+</script>
+<script>
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "customselect":*/
+x = document.getElementsByClassName("customselect");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            console.log("Internal :::::" +s.options[i].innerHTML);
+            myFunction(s.options[i].innerHTML);
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
         }
+        h.click();
     });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
 
-    $("#previousPage").click(function(event) {
-        event.preventDefault();
 
-        if (currentPageNumber > 1) {
-            currentPageNumber--;
-            $("#pageNumber").val(currentPageNumber);
 
-            showDataWithPageNumber(currentPageNumber);
+jQuery(document).ready(function($){
+	  var getUrl = window.location;
+		 var url = getUrl .protocol + "//" + getUrl.host + "/getAllBroker" ;
+
+	console.log ("url >>>>>>>"+url);
+
+	$.ajax({
+	   url: url,
+	   type: 'GET',
+	   dataType: 'json', // added data type
+	   success: function(data) {
+
+		   var currentPage = 1;
+		   // Render the cards for the initial page
+		   renderCards(currentPage,data);
+		   // Add event listeners to the page links
+		    $('.page-link').click(function(event) {
+		     event.preventDefault();
+
+		     var targetPage = $(event.target).text();
+
+		     // Update the current page and render the new cards
+		     if (targetPage === 'Previous') {
+		       currentPage--;
+		     } else if (targetPage === 'Next') {
+		       currentPage++;
+		     } else {
+		       currentPage = parseInt(targetPage);
+		     }
+
+		     renderCards(currentPage,data);
+
+		     // Update the active page link
+		     $('.page-item').removeClass('active');
+		     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+
+   		 });
+	}
+});
+});
+
+
+
+function renderCards(page,data){
+
+  $('#card-container').empty();
+
+  var startIndex = (page - 1) * 6;
+  var endIndex =startIndex+6;
+	var count =0;
+
+  // Loop through the data and create cards for this page
+  for (var i = startIndex; i < endIndex; i++) {
+	  console.log(" businessListingId :"+data[i].userName );
+
+	    var card = $('<div class="col-lg-6 col-xl-6 col-md-12 seller-a">');
+	    card.append('<div class="seller-person-list">')
+	    card.append('<div class="imges-area-1"> <img src= "images/Mahesh-Sharma.jpg" style=width:100% title="Mahesh-Sharma" alt="Mahesh-Sharma" />');
+        card.append('</div>')
+	    card.append('<div class="imges-area-2">')
+	    card.append('<div class="name-seller-1" style="font-size: 0.875rem;">'+ data[i].userName+'</div>');
+	    card.append('<div class="tell-seller">')
+	    card.append('<p><i class="fa fa-phone" aria-hidden="true"></i>'+data[i].mobileNumber +'</p>');
+
+
+	    card.append('<p><i class="fa fa-map-marker" aria-hidden="true"></i>'+data[i].stateName, data[i].countryName+'</p>');
+
+
+
+	    card.append('</div></div></div></div>');
+	    $('#card-container').append(card);
+
+
+  }
+}
+function contactbuyer (id){
+
+	 var getUrl = window.location;
+
+	 sessionStorage.setItem("listingId", id);
+	 var url = getUrl .protocol + "//" + getUrl.host + "/contactSeller" ;
+	 window.location.replace(url);
+
+}
+
+var categoriesIds = [];
+var sortByTitle;
+var sortByPrice;
+
+function getBrokerList(obj, id){
+	  var getUrl = window.location;
+      var url = getUrl .protocol + "//" + getUrl.host + "/getBrokerList" ;
+        if(!obj.checked) {
+            categoriesIds.splice($.inArray(id, categoriesIds), 1);
+            var obj = {"businessServiceIds":categoriesIds};
+            $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 				   var currentPage = 1;
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
         }
+		if( obj.checked ){
+			categoriesIds.push(id);
+			var obj = {"businessServiceIds":categoriesIds};
+			$.ajax(
+			{
+			   url: url,
+			   type: 'POST',
+			   data: JSON.stringify(obj),
+		       contentType: "application/json",
+		       dataType:"json",
+		       cache: false,
+		       timeout: 600000,
+			   success: function(data) {
+				   var currentPage = 1;
+
+				   // Render the cards for the initial page
+				   renderCards(currentPage,data);
+
+				   // Add event listeners to the page links
+				   $('.page-link').click(function(event) {
+				     event.preventDefault();
+
+				     var targetPage = $(event.target).text();
+
+				     // Update the current page and render the new cards
+				     if (targetPage === 'Previous') {
+				       currentPage--;
+				     } else if (targetPage === 'Next') {
+				       currentPage++;
+				     } else {
+				       currentPage = parseInt(targetPage);
+				     }
+
+				     renderCards(currentPage,data);
+
+				     // Update the active page link
+				     $('.page-item').removeClass('active');
+				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+
+
+				 })
+			}
+		});
+		}
+}
+
+function sortByListOrGrid(option) {
+    var paginationContainer = document.querySelectorAll(".pagination-container");
+    var listFilter = document.querySelector("#listFilter > span");
+    var gridFilter = document.querySelector("#gridFilter > span");
+    if (option === "grid") {
+      [...paginationContainer].forEach(function (container) {
+        container.classList.remove("list");
+        container.classList.add("grid");
+      })
+      listFilter.classList.remove("List-active");
+      listFilter.classList.add("List");
+      gridFilter.classList.remove("Grid");
+      gridFilter.classList.add("Grid-active");
+    }
+    if (option === "list") {
+      [...paginationContainer].forEach(function (container) {
+        container.classList.remove("grid");
+        container.classList.add("list");
+      })
+      listFilter.classList.remove("List");
+      listFilter.classList.add("List-active");
+      gridFilter.classList.remove("Grid-active");
+      gridFilter.classList.add("Grid");
+    }
+}
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
     });
 });
 
-function showDataWithPageNumber(currentPageNumber) {
+function showPageNumber(currentPageNumber) {
 
-    var x = document.getElementById("row-1");
-    var y = document.getElementById("row-2");
+    var x = document.getElementById("card-container");
+    var y = document.getElementById("card-container");
 
     if(currentPageNumber == 1) {
         $(x).show();
@@ -1346,5 +1678,66 @@ function showDataWithPageNumber(currentPageNumber) {
     }
 }
 
+function myFunction(value) {
+    console.log("Value of result :::::::::::" +value);
+        if (value == "A to Z") {
+          sortByTitle = true;
+          if(sortByPrice != null){
+            sortByPrice = null;
+          }
+        } else if (value == "Z to A") {
+          sortByTitle = false;
+          if(sortByPrice != null){
+                  sortByPrice = null;
+          }
+        } else if (value == "High To Low") {
+          sortByPrice = true;
+           if(sortByTitle != null){
+                        sortByTitle = null;
+           }
+        } else {
+          sortByPrice = false;
+           if(sortByTitle != null){
+                              sortByTitle = null;
+           }
+        }
+             var obj = {"categoryIds":categoriesIds,"sortByPrice":sortByTitle,
+            			 "sortByTitle":sortByPrice,"businessType":"COMMERCIAL"};
+             var getUrl = window.location;
+                  var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+             $.ajax({
+                url: url,
+             	type: 'POST',
+             	data: JSON.stringify(obj),
+             	contentType: "application/json",
+             	dataType:"json",
+                cache: false,
+        	    timeout: 600000,
+             	success: function(data)
+             	    {
+             				   var currentPage = 1;
+             				   // Render the cards for the initial page
+             				   renderCards(currentPage,data);
+             				   // Add event listeners to the page links
+             				   $('.page-link').click(function(event) {
+             				     event.preventDefault();
+             				     var targetPage = $(event.target).text();
+             				     // Update the current page and render the new cards
+             				     if (targetPage === 'Previous') {
+             				       currentPage--;
+             				     } else if (targetPage === 'Next') {
+             				       currentPage++;
+             				     } else {
+             				       currentPage = parseInt(targetPage);
+             				     }
+             				     renderCards(currentPage,data);
+             				     // Update the active page link
+             				     $('.page-item').removeClass('active');
+             				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+             				 })
+             		}
+             	});
+}
 </script>
+
 </html>
