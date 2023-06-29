@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingLong;
 import static java.util.stream.Collectors.collectingAndThen;
@@ -1491,8 +1492,6 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 
 	List<BusinessByFilter> businessByFilter = new ArrayList<>();
 
-
-
 	if(businessListingDTO.getFranchiseType() == null){
         if(longList != null && !longList.isEmpty()) {
             for (Long l : longList) {
@@ -1518,10 +1517,21 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
                 getBusinessListDto(businessByFilter, businessListingDTOList);
             }
         }
+
+	}
+	List<BusinessListingDTO> filteredBusinessListingDTOList = new ArrayList<>();
+	if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty() && !businessListingDTOList.isEmpty()){
+
+		List<Long> countryIdList = new ArrayList<>();
+		if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty()) {
+			for (String str : businessListingDTO.getCountryIds()) {
+				countryIdList.add(Long.parseLong(str));
+			}
+		}
+		filteredBusinessListingDTOList = businessListingDTOList.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
 	}
 
-
-	return businessListingDTOList;
+	return filteredBusinessListingDTOList;
 }
 
     private void getBusinessListDto(List<BusinessByFilter> businessByFilter, List<BusinessListingDTO> businessListingDTOList) {
@@ -1534,7 +1544,8 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
                 response.setPrice(data.getPrice());
                 response.setSuggestedTitle(data.getSuggestedTitle());
                 response.setBusinessListingId(data.getSuggestedTitle());
-                businessListingDTOList.add(response);
+				response.setCountryId(data.getCountryId());
+				businessListingDTOList.add(response);
             }
         }
     }
