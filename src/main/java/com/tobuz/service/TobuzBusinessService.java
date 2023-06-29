@@ -6,6 +6,9 @@ import com.tobuz.model.tobuzpackage.TobuzPackageService;
 import com.tobuz.object.*;
 import com.tobuz.projection.BrokerList;
 import com.tobuz.projection.BusinessByFilter;
+import com.tobuz.projection.BusinessServiseTypeList;
+import com.tobuz.projection.CategoryByFilter;
+import com.tobuz.projection.CountryList;
 import com.tobuz.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.LongStream;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingLong;
 import static java.util.stream.Collectors.collectingAndThen;
@@ -1490,16 +1494,14 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 
 	List<BusinessByFilter> businessByFilter = new ArrayList<>();
 
-
-
 	if(businessListingDTO.getFranchiseType() == null){
         if(longList != null && !longList.isEmpty()) {
             for (Long l : longList) {
-                businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getBusinessType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+                businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
                 getBusinessListDto(businessByFilter, businessListingDTOList);
             }
         }else{
-            businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getBusinessType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+            businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
             getBusinessListDto(businessByFilter, businessListingDTOList);
 
         }
@@ -1507,21 +1509,31 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
         if(longList != null && !longList.isEmpty()) {
             for (Long l : longList) {
                 for (String fType : businessListingDTO.getFranchiseType()) {
-                    businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getBusinessType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+                    businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
                     getBusinessListDto(businessByFilter, businessListingDTOList);
                 }
             }
         }else{
             for (String fType : businessListingDTO.getFranchiseType()) {
-                businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter( businessListingDTO.getBusinessType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
+                businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter( businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
                 getBusinessListDto(businessByFilter, businessListingDTOList);
             }
         }
+
+	}
+	List<BusinessListingDTO> filteredBusinessListingDTOList = new ArrayList<>();
+	if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty() && !businessListingDTOList.isEmpty()){
+
+		List<Long> countryIdList = new ArrayList<>();
+		if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty()) {
+			for (String str : businessListingDTO.getCountryIds()) {
+				countryIdList.add(Long.parseLong(str));
+			}
+		}
+		filteredBusinessListingDTOList = businessListingDTOList.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
 	}
 
-
-
-	return businessListingDTOList;
+	return filteredBusinessListingDTOList;
 }
 
     private void getBusinessListDto(List<BusinessByFilter> businessByFilter, List<BusinessListingDTO> businessListingDTOList) {
@@ -1534,7 +1546,8 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
                 response.setPrice(data.getPrice());
                 response.setSuggestedTitle(data.getSuggestedTitle());
                 response.setBusinessListingId(data.getSuggestedTitle());
-                businessListingDTOList.add(response);
+				response.setCountryId(data.getCountryId());
+				businessListingDTOList.add(response);
             }
         }
     }
@@ -1623,4 +1636,57 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 	}
 
 
+	public List<CategoryDTO> getAllCategoryList(){
+
+		List<CategoryByFilter> categoryByFilterList = new ArrayList<>();
+		categoryByFilterList= categoryRepository.getAllCategoryList();
+		List<CategoryDTO> categoryDTOList = new ArrayList<>();
+
+		for (CategoryByFilter data : categoryByFilterList) {
+			CategoryDTO response = new CategoryDTO();
+			response.setId(data.getId());
+			response.setName(data.getName());
+			response.setCommercial(data.getIsCommercial());
+			categoryDTOList.add(response);
+		}
+
+		return categoryDTOList;
+	}
+
+	public List<Country> getAllCountryList(){
+
+		List<CountryList> countryLists = new ArrayList<>();
+		countryLists= countryRepository.getAllCountryList();
+		List<Country> countryDTOList = new ArrayList<>();
+
+		for (CountryList data : countryLists) {
+			Country response = new Country();
+			response.setId(data.getId());
+			response.setName(data.getName());
+			response.setCurrencyCode(data.getCurrencyCode());
+			response.setDialingCode(data.getDialingCode());
+			response.setShortName(data.getShortName());
+			response.setIsoCode(data.getIsoCode());
+			countryDTOList.add(response);
+		}
+
+		return countryDTOList;
+	}
+
+	public List<BusinessServiceTypeDTO> getAllBusinessServiseTypeList(){
+
+		List<BusinessServiseTypeList> businessServiseTypeLists = new ArrayList<>();
+		businessServiseTypeLists= businessListingRepository.getAllBusinessServiseTypeList();
+		List<BusinessServiceTypeDTO> businessServiceTypeDTOList = new ArrayList<>();
+
+		for (BusinessServiseTypeList data : businessServiseTypeLists) {
+			BusinessServiceTypeDTO response = new BusinessServiceTypeDTO();
+			response.setId(data.getId());
+			response.setServiceType(data.getBusinessServiceType());
+
+			businessServiceTypeDTOList.add(response);
+		}
+
+		return businessServiceTypeDTOList;
+	}
 }

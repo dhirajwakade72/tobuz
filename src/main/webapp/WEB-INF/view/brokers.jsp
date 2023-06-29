@@ -1533,11 +1533,11 @@
   </div>
   </div>
   
-  
+
 </body>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	 -->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="js/jquery.slim.min.js"></script>
+ <!--<script src="js/jquery.slim.min.js"></script>-->
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
@@ -1658,6 +1658,7 @@ for (i = 0; i < l; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
             h.innerHTML = this.innerHTML;
+            sortingFunction(s.options[i].innerHTML);
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
             for (k = 0; k < yl; k++) {
@@ -1786,6 +1787,73 @@ function sortByListOrGrid(option) {
         gridFilter.classList.remove("Grid-active");
         gridFilter.classList.add("Grid");
     }
+}
+
+var sortByTitle;
+var sortByPrice;
+
+function sortingFunction(value) {
+  console.log("Value of result :::::::::::" + value);
+
+  if (value == "A to Z") {
+    sortByTitle = true;
+    if (sortByPrice != null) {
+      sortByPrice = null;
+    }
+  } else if (value == "Z to A") {
+    sortByTitle = false;
+    if (sortByPrice != null) {
+      sortByPrice = null;
+    }
+  } else if (value == "High To Low") {
+    sortByPrice = true;
+    if (sortByTitle != null) {
+      sortByTitle = null;
+    }
+  } else {
+    sortByPrice = false;
+    if (sortByTitle != null) {
+      sortByTitle = null;
+    }
+  }
+  var obj = {
+    "sortByPrice": sortByPrice,
+    "sortByTitle": sortByTitle
+  };
+  var getUrl = window.location;
+  var url = getUrl.protocol + "//" + getUrl.host + "/getBusinessByFilter";
+
+  $.ajax({
+    url: url,
+    type: 'POST',
+    data: JSON.stringify(obj),
+    contentType: "application/json",
+    dataType: "json",
+    cache: false,
+    timeout: 600000,
+    success: function (data) {
+      var currentPage = 1;
+      // Render the cards for the initial page
+      renderCards(currentPage, data);
+      // Add event listeners to the page links
+      $('.page-link').click(function (event) {
+        event.preventDefault();
+        var targetPage = $(event.target).text();
+        // Update the current page and render the new cards
+        if (targetPage === 'Previous') {
+          currentPage--;
+        } else if (targetPage === 'Next') {
+          currentPage++;
+        } else {
+          currentPage = parseInt(targetPage);
+        }
+        renderCards(currentPage, data);
+        // Update the active page link
+        $('.page-item').removeClass('active');
+        $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+      });
+    }
+  });
 }
 
 </script>

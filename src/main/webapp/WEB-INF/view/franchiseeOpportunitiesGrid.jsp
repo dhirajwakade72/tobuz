@@ -491,7 +491,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="franchiseeOpportunitiesGrid">Clear all</a></span>
 </div>
 
 <!-- bfs sidebar filter title finish -->
@@ -504,13 +504,13 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick="addFranchiseType(this,'SALE')">
   <label class="form-check-label" for="flexCheckDefault">
    Sale
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick="addFranchiseType(this,'RESALE')">
   <label class="form-check-label" for="flexCheckDefault">
    Resale
   </label>
@@ -634,10 +634,10 @@
 <!-- bfs title finish -->
 <div class="col-lg-6 col-xl-5 col-md-12 desktop-view">
 <!-- bfs grid start -->
-<span class="grid-area"><a href="businessForSale"><span class="Grid-active">Grid</span></a> 
+<span class="grid-area"><a href="javascript:sortByListOrGrid('grid')" id="gridFilter"><span class="Grid-active" value="grid">Grid</span></a>
 <!-- bfs grid finish -->
 <!-- bfs list start -->
-<a href="business-for-sale-list.html"><span class="List">List</span></a></span>
+<a href="javascript:sortByListOrGrid('list')" id="listFilter"><span class="List" value="list">List</span></a></span>
 <!-- bfs list finish -->
 <!-- bfs Sort By start -->
 <div class="Sort"><span class="sort-text">Sort By:</span>
@@ -653,139 +653,385 @@
 </div>
 </div>
 <br/>
+
 <div class="row" id="card-container">
-<!-- bfs grid 1 start -->
-<!-- <div class="col-lg-6 col-xl-4 col-md-6">
-<div class="new-tag">New</div>
-<div class="sale-image-area">
-image start
-<img src="images/Franchise.jpg" width="100%" title="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India" alt="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India"/>
-image finish
-<div class="pd10">
-meta start
-<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India</a></div>
-meta finish
-title start
-<div class="title"><a href="">Running Resturant For Sale</a></div>
-title finish
-price start
-<div class="price-location-area">
- <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
- price finish
- location start
-	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Alwar, India</div>
+	<!-- bfs grid 1 start -->
+	<div id="row-1">
+		<!-- Grid view logic starts -->
+		<div class="grid pagination-container">
+			<!-- bfs grid 1 start -->
+			<div class="card">
+				<div class="col-lg-12 col-xl-9 col-md-12">
+					<div class="new-tag">New</div>
+					<div class="sale-image-area">
+						<!--image start-->
+						<img src="images/Franchise.jpg" width="100%"
+							title="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India"
+							alt="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India" />
+						<!--image finish-->
+						<div class="pd10">
+							<!--meta start-->
+							<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+									Uttar
+									Pradesh,Meerut,India</a></div>
+							<!--meta finish-->
+							<!--title start-->
+							<div class="title"><a href="">Running Resturant For Sale</a></div>
+							<!--title finish-->
+							<!--price start-->
+							<div class="price-location-area">
+								<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+										class="dollar-icon" /> AED 150,000</div>
+								<!--price finish-->
+								<!--location start-->
+								<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+									Alwar, India
+								</div>
+							</div>
+							<!--location finish-->
+							<!--text start-->
+							<div class="p-area">1.8 yrs old runining restaurent on prime location for sale on urgent
+								basis ,Regular
+								coutomers</div>
+							<!--text finish-->
+							<!--Contact Business start-->
+							<p><button type="button" class="btn Business-btn">Contact Business</button>
+								<!--Contact Business finish-->
+								<!--wishlist start-->
+								<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+								<!--wishlist finish-->
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--bfs grid 1 finish-->
+			<!--bfs grid 2 start-->
+			<div class="card">
+				<div class="col-lg-12 col-xl-9 col-md-12">
+					<div class="sale-image-area">
+						<img src="images/Franchise-1.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+							alt="Running Salon For Sale In Chandigarh" />
+						<div class="pd10">
+							<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+									Delhi,New
+									Delhi,India</a></div>
+							<div class="title"><a href="">Become Franchisee Of Largest </a></div>
+							<div class="price-location-area">
+								<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+										class="dollar-icon" /> AED 150,000</div>
+								<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+									Dubai, UAE</div>
+							</div>
+							<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh.</div>
+							<p><button type="button" class="btn Business-btn">Contact Business</button>
+								<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--bfs grid 2 finish-->
+			<!--bfs grid 3 start-->
+			<div class="card">
+				<div class="col-lg-12 col-xl-9 col-md-12">
+					<div class="sale-image-area">
+						<img src="images/Franchise-2.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+							alt="Running Salon For Sale In Chandigarh" />
+						<div class="pd10">
+							<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+									Delhi,New
+									Delhi,India</a></div>
+							<div class="title"><a href="">Start Your QSR Business Without </a></div>
+							<div class="price-location-area">
+								<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+										class="dollar-icon" /> AED 150,000</div>
+								<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+									Dubai, UAE</div>
+							</div>
+							<div class="p-area">Become a Franchisee of the Largest Non-Vegetarian/Chicken Takeaway /
+								Restaurant
+							</div>
+							<p><button type="button" class="btn Business-btn">Contact Business</button>
+								<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--bfs grid 3 finish-->
+			<!--bfs grid 4 start-->
+			<div class="card">
+				<div class="col-lg-12 col-xl-9 col-md-12">
+					<div class="sale-image-area">
+						<img src="images/Franchise-3.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+							alt="Running Salon For Sale In Chandigarh" />
+						<div class="pd10">
+							<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+									Delhi,New
+									Delhi,India</a></div>
+							<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
+							<div class="price-location-area">
+								<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+										class="dollar-icon" /> AED 150,000</div>
+								<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+									Dubai, UAE</div>
+							</div>
+							<div class="p-area">Own a Business without working, Investment starting as low as INR 12-13
+								Lakhs,
+								Invest Once </div>
+							<p><button type="button" class="btn Business-btn">Contact Business</button>
+								<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--bfs grid 4 finish-->
+			<!--bfs grid 5 start-->
+			<div class="card">
+				<div class="col-lg-12 col-xl-9 col-md-12">
+					<div class="sale-image-area">
+						<img src="images/Franchise-4.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+							alt="Running Salon For Sale In Chandigarh" />
+						<div class="pd10">
+							<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+									Delhi,New
+									Delhi,India</a></div>
+							<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
+							<div class="price-location-area">
+								<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+										class="dollar-icon" /> AED 150,000</div>
+								<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+									Dubai, UAE</div>
+							</div>
+							<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh. </div>
+							<p><button type="button" class="btn Business-btn">Contact Business</button>
+								<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--bfs grid 5 finish-->
+			<!--bfs grid 6 start-->
+			<div class="card">
+				<div class="col-lg-12 col-xl-9 col-md-12">
+					<div class="sale-image-area">
+						<img src="images/Franchise-5.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+							alt="Running Salon For Sale In Chandigarh" />
+						<div class="pd10">
+							<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+									Delhi,New
+									Delhi,India</a></div>
+							<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
+							<div class="price-location-area">
+								<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+										class="dollar-icon" /> AED 150,000</div>
+								<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+									Dubai, UAE</div>
+							</div>
+							<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh.</div>
+							<p><button type="button" class="btn Business-btn">Contact Business</button>
+								<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- bfs grid 6 finish -->
+			</div>
+		</div>
+		<!-- Grid view logic end -->
+
+		<!-- For list view logic starts -->
+    	<div class="list pagination-container" style="display: none;">
+			<div class="list pagination-container">
+				<!-- bfs grid 1 start -->
+				<div class="card">
+					<div class="col-lg-6 col-xl-4 col-md-6">
+						<div class="new-tag">New</div>
+						<div class="sale-image-area">
+							<!--image start-->
+							<img src="images/Franchise.jpg" width="100%"
+								title="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India"
+								alt="Franchise For Sale Of Hotel, Restaurants And Food Services At Uttar Pradesh,Meerut,India" />
+							<!--image finish-->
+							<div class="pd10">
+								<!--meta start-->
+								<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+										Uttar
+										Pradesh,Meerut,India</a></div>
+								<!--meta finish-->
+								<!--title start-->
+								<div class="title"><a href="">Running Resturant For Sale</a></div>
+								<!--title finish-->
+								<!--price start-->
+								<div class="price-location-area">
+									<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+											class="dollar-icon" /> AED 150,000</div>
+									<!--price finish-->
+									<!--location start-->
+									<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+										Alwar, India
+									</div>
+								</div>
+								<!--location finish-->
+								<!--text start-->
+								<div class="p-area">1.8 yrs old runining restaurent on prime location for sale on urgent
+									basis ,Regular
+									coutomers</div>
+								<!--text finish-->
+								<!--Contact Business start-->
+								<p><button type="button" class="btn Business-btn">Contact Business</button>
+									<!--Contact Business finish-->
+									<!--wishlist start-->
+									<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+									<!--wishlist finish-->
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--bfs grid 1 finish-->
+				<!--bfs grid 2 start-->
+				<div class="card">
+					<div class="col-lg-6 col-xl-4 col-md-6">
+						<div class="sale-image-area">
+							<img src="images/Franchise-1.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+								alt="Running Salon For Sale In Chandigarh" />
+							<div class="pd10">
+								<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+										Delhi,New
+										Delhi,India</a></div>
+								<div class="title"><a href="">Become Franchisee Of Largest </a></div>
+								<div class="price-location-area">
+									<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+											class="dollar-icon" /> AED 150,000</div>
+									<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+										Dubai, UAE</div>
+								</div>
+								<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh.</div>
+								<p><button type="button" class="btn Business-btn">Contact Business</button>
+									<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--bfs grid 2 finish-->
+				<!--bfs grid 3 start-->
+				<div class="card">
+					<div class="col-lg-6 col-xl-4 col-md-6">
+						<div class="sale-image-area">
+							<img src="images/Franchise-2.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+								alt="Running Salon For Sale In Chandigarh" />
+							<div class="pd10">
+								<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+										Delhi,New
+										Delhi,India</a></div>
+								<div class="title"><a href="">Start Your QSR Business Without </a></div>
+								<div class="price-location-area">
+									<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+											class="dollar-icon" /> AED 150,000</div>
+									<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+										Dubai, UAE</div>
+								</div>
+								<div class="p-area">Become a Franchisee of the Largest Non-Vegetarian/Chicken Takeaway /
+									Restaurant
+								</div>
+								<p><button type="button" class="btn Business-btn">Contact Business</button>
+									<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--bfs grid 3 finish-->
+				<!--bfs grid 4 start-->
+				<div class="card">
+					<div class="col-lg-6 col-xl-4 col-md-6">
+						<div class="sale-image-area">
+							<img src="images/Franchise-3.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+								alt="Running Salon For Sale In Chandigarh" />
+							<div class="pd10">
+								<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+										Delhi,New
+										Delhi,India</a></div>
+								<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
+								<div class="price-location-area">
+									<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+											class="dollar-icon" /> AED 150,000</div>
+									<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+										Dubai, UAE</div>
+								</div>
+								<div class="p-area">Own a Business without working, Investment starting as low as INR 12-13
+									Lakhs,
+									Invest Once </div>
+								<p><button type="button" class="btn Business-btn">Contact Business</button>
+									<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--bfs grid 4 finish-->
+				<!--bfs grid 5 start-->
+				<div class="card">
+					<div class="col-lg-6 col-xl-4 col-md-6">
+						<div class="sale-image-area">
+							<img src="images/Franchise-4.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+								alt="Running Salon For Sale In Chandigarh" />
+							<div class="pd10">
+								<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+										Delhi,New
+										Delhi,India</a></div>
+								<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
+								<div class="price-location-area">
+									<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+											class="dollar-icon" /> AED 150,000</div>
+									<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+										Dubai, UAE</div>
+								</div>
+								<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh. </div>
+								<p><button type="button" class="btn Business-btn">Contact Business</button>
+									<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--bfs grid 5 finish-->
+				<!--bfs grid 6 start-->
+				<div class="card">
+					<div class="col-lg-6 col-xl-4 col-md-6">
+						<div class="sale-image-area">
+							<img src="images/Franchise-5.jpg" width="100%" title="Running Salon For Sale In Chandigarh"
+								alt="Running Salon For Sale In Chandigarh" />
+							<div class="pd10">
+								<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At
+										Delhi,New
+										Delhi,India</a></div>
+								<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
+								<div class="price-location-area">
+									<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar"
+											class="dollar-icon" /> AED 150,000</div>
+									<div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i>
+										Dubai, UAE</div>
+								</div>
+								<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh.</div>
+								<p><button type="button" class="btn Business-btn">Contact Business</button>
+									<span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- bfs grid 6 finish -->
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-location finish
-text start
-<div class="p-area">1.8 yrs old runining restaurent on prime location for sale on urgent basis ,Regular coutomers</div>
-text finish
-Contact Business start
-<p><button type="button" class="btn Business-btn">Contact Business</button>
-Contact Business finish
-wishlist start
-	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   wishlist finish
-	   </p>
-</div>
-</div>
-</div>
-bfs grid 1 finish
-bfs grid 2 start
-<div class="col-lg-6 col-xl-4 col-md-6">
-<div class="sale-image-area">
-<img src="images/Franchise-1.jpg" width="100%" title="Running Salon For Sale In Chandigarh" alt="Running Salon For Sale In Chandigarh"/>
-<div class="pd10">
-<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Delhi,New Delhi,India</a></div>
-<div class="title"><a href="">Become Franchisee Of Largest </a></div>
-<div class="price-location-area">
- <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
-	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
-</div>
-<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh.</div>
-<p><button type="button" class="btn Business-btn">Contact Business</button>
-	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   </p>
-</div>
-</div>
-</div>
-bfs grid 2 finish
-bfs grid 3 start
-<div class="col-lg-6 col-xl-4 col-md-6">
-<div class="sale-image-area">
-<img src="images/Franchise-2.jpg" width="100%" title="Running Salon For Sale In Chandigarh" alt="Running Salon For Sale In Chandigarh"/>
-<div class="pd10">
-<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Delhi,New Delhi,India</a></div>
-<div class="title"><a href="">Start Your QSR Business Without </a></div>
-<div class="price-location-area">
- <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
-	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
-</div>
-<div class="p-area">Become a Franchisee of the Largest Non-Vegetarian/Chicken Takeaway / Restaurant</div>
-<p><button type="button" class="btn Business-btn">Contact Business</button>
-	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   </p>
-</div>
-</div>
-</div>
-bfs grid 3 finish
-bfs grid 4 start
-<div class="col-lg-6 col-xl-4 col-md-6">
-<div class="sale-image-area">
-<img src="images/Franchise-3.jpg" width="100%" title="Running Salon For Sale In Chandigarh" alt="Running Salon For Sale In Chandigarh"/>
-<div class="pd10">
-<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Delhi,New Delhi,India</a></div>
-<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
-<div class="price-location-area">
- <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
-	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
-</div>
-<div class="p-area">Own a Business without working, Investment starting as low as INR 12-13 Lakhs, Invest Once </div>
-<p><button type="button" class="btn Business-btn">Contact Business</button>
-	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   </p>
-</div>
-</div>
-</div>
-bfs grid 4 finish
-bfs grid 5 start
-<div class="col-lg-6 col-xl-4 col-md-6">
-<div class="sale-image-area">
-<img src="images/Franchise-4.jpg" width="100%" title="Running Salon For Sale In Chandigarh" alt="Running Salon For Sale In Chandigarh"/>
-<div class="pd10">
-<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Delhi,New Delhi,India</a></div>
-<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
-<div class="price-location-area">
- <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
-	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
-</div>
-<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh. </div>
-<p><button type="button" class="btn Business-btn">Contact Business</button>
-	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   </p>
-</div>
-</div>
-</div>
-bfs grid 5 finish
-bfs grid 6 start
-<div class="col-lg-6 col-xl-4 col-md-6">
-<div class="sale-image-area">
-<img src="images/Franchise-5.jpg" width="100%" title="Running Salon For Sale In Chandigarh" alt="Running Salon For Sale In Chandigarh"/>
-<div class="pd10">
-<div class="alt"><a href="">Franchise For Sale Of Hotel, Restaurants And Food Services At Delhi,New Delhi,India</a></div>
-<div class="title"><a href="">Running Salon For Sale In Chandigarh</a></div>
-<div class="price-location-area">
- <div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/> AED 150,000</div>
-	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
-</div>
-<div class="p-area">Running salon for sale in Sector 16D, Chandigarh, Chandigarh.</div>
-<p><button type="button" class="btn Business-btn">Contact Business</button>
-	   <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span>
-	   </p>
-</div>
-</div>
-</div> -->
-<!-- bfs grid 6 finish -->
-</div>
+
 <br/>
 <!-- bfs next page button start -->
  <div class="pagination justify-content-center">
@@ -1522,7 +1768,8 @@ Sports Bar
   </div>
  
 </body>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <!-- <script src="js/jquery.slim.min.js"></script> -->
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
@@ -1579,6 +1826,7 @@ for (i = 0; i < l; i++) {
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
+            myFunction(s.options[i].innerHTML);
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
@@ -1603,6 +1851,237 @@ for (i = 0; i < l; i++) {
       this.classList.toggle("select-arrow-active");
     });
 }
+var categoriesIds = [];
+var sortByTitle;
+var sortByPrice;
+var franchiseTypeList = [];
+
+function addFranchiseType(obj, franchiseType){
+    var getUrl = window.location;
+          var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+            if(!obj.checked) {
+                franchiseTypeList.splice($.inArray(franchiseType, franchiseTypeList), 1);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                $.ajax({
+                        url: url,
+                     	type: 'POST',
+                     	data: JSON.stringify(obj),
+                     	contentType: "application/json",
+                     	dataType:"json",
+                        cache: false,
+                	    timeout: 600000,
+                     	success: function(data)
+                     	    {
+                     				   var currentPage = 1;
+                     				   // Render the cards for the initial page
+                     				   renderCards(currentPage,data);
+                     				   // Add event listeners to the page links
+                     				   $('.page-link').click(function(event) {
+                     				     event.preventDefault();
+                     				     var targetPage = $(event.target).text();
+                     				     // Update the current page and render the new cards
+                     				     if (targetPage === 'Previous') {
+                     				       currentPage--;
+                     				     } else if (targetPage === 'Next') {
+                     				       currentPage++;
+                     				     } else {
+                     				       currentPage = parseInt(targetPage);
+                     				     }
+                     				     renderCards(currentPage,data);
+                     				     // Update the active page link
+                     				     $('.page-item').removeClass('active');
+                     				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                     				 })
+                     		}
+                     	});
+            }
+    		if( obj.checked ){
+    			franchiseTypeList.push(franchiseType);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+    			$.ajax(
+    			{
+    			   url: url,
+    			   type: 'POST',
+    			   data: JSON.stringify(obj),
+    		       contentType: "application/json",
+    		       dataType:"json",
+    		       cache: false,
+    		       timeout: 600000,
+    			   success: function(data) {
+    				   var currentPage = 1;
+
+    				   // Render the cards for the initial page
+    				   renderCards(currentPage,data);
+
+    				   // Add event listeners to the page links
+    				   $('.page-link').click(function(event) {
+    				     event.preventDefault();
+
+    				     var targetPage = $(event.target).text();
+
+    				     // Update the current page and render the new cards
+    				     if (targetPage === 'Previous') {
+    				       currentPage--;
+    				     } else if (targetPage === 'Next') {
+    				       currentPage++;
+    				     } else {
+    				       currentPage = parseInt(targetPage);
+    				     }
+    				     renderCards(currentPage,data);
+    				     // Update the active page link
+    				     $('.page-item').removeClass('active');
+    				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+    				 })
+    			}
+    		});
+    		}
+    	  console.log("franchiseTypeList :::::::::::"+franchiseTypeList);
+
+}
+
+/* If user clicks Clear All link then clear all the filters */
+$(document).ready(function() {
+    $("#clearAll").click(function() {
+        $("input[type='checkbox']").prop("checked", false);
+    });
+});
+
+function myFunction(value) {
+    if (value == "A to Z") {
+              sortByTitle = true;
+              if(sortByPrice != null){
+                sortByPrice = null;
+              }
+            } else if (value == "Z to A") {
+              sortByTitle = false;
+              if(sortByPrice != null){
+                      sortByPrice = null;
+              }
+            } else if (value == "High To Low") {
+              sortByPrice = true;
+               if(sortByTitle != null){
+                            sortByTitle = null;
+               }
+            } else {
+              sortByPrice = false;
+               if(sortByTitle != null){
+                                  sortByTitle = null;
+               }
+            }
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+                 var getUrl = window.location;
+                      var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+                 $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 				   var currentPage = 1;
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
+}
+
+function getTopBusinessListingsByCategory(obj, id){
+	  var getUrl = window.location;
+      var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+        if(!obj.checked) {
+            categoriesIds.splice($.inArray(id, categoriesIds), 1);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+            $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 				   var currentPage = 1;
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
+        }
+		if( obj.checked ){
+			categoriesIds.push(id);
+                 var obj = {"franchiseType":franchiseTypeList,"categoryIds":categoriesIds,"listingType":"FRANCHISE","sortByPrice":sortByPrice,"sortByTitle":sortByTitle};
+			$.ajax(
+			{
+			   url: url,
+			   type: 'POST',
+			   data: JSON.stringify(obj),
+		       contentType: "application/json",
+		       dataType:"json",
+		       cache: false,
+		       timeout: 600000,
+			   success: function(data) {
+				   var currentPage = 1;
+				   // Render the cards for the initial page
+				   renderCards(currentPage,data);
+				   // Add event listeners to the page links
+				   $('.page-link').click(function(event) {
+				     event.preventDefault();
+				     var targetPage = $(event.target).text();
+				     // Update the current page and render the new cards
+				     if (targetPage === 'Previous') {
+				       currentPage--;
+				     } else if (targetPage === 'Next') {
+				       currentPage++;
+				     } else {
+				       currentPage = parseInt(targetPage);
+				     }
+				     renderCards(currentPage,data);
+				     // Update the active page link
+				     $('.page-item').removeClass('active');
+				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+				 })
+			}
+		});
+		}
+}
+
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,
   except the current select box:*/
@@ -1714,61 +2193,6 @@ function contactbuyer (id){
 
 }
 
-function getTopBusinessListingsByCategory (obj ,id){
-	
-	  var getUrl = window.location;
-		 var url = getUrl .protocol + "//" + getUrl.host + "/getTopBusinessListingsByCategory" ;
-		
-		if( obj.checked ){
-			console.log ("url >>>>>>>"+url);
-			 var obj = {"categoryId":id ,"listingType":"FRANCHISE"};
-			$.ajax({
-			   url: url,
-			   type: 'POST',
-			   data: JSON.stringify(obj),
-		       contentType: "application/json",
-		       dataType:"json",
-		       cache: false,
-		       timeout: 600000,
-			   success: function(data) {
-			     
-		    
-				   var currentPage = 1;
-
-				   // Render the cards for the initial page
-				   renderCards(currentPage,data);
-
-				   // Add event listeners to the page links
-				   $('.page-link').click(function(event) {
-				     event.preventDefault();
-
-				     var targetPage = $(event.target).text();
-
-				     // Update the current page and render the new cards
-				     if (targetPage === 'Previous') {
-				       currentPage--;
-				     } else if (targetPage === 'Next') {
-				       currentPage++;
-				     } else {
-				       currentPage = parseInt(targetPage);
-				     }
-
-				     renderCards(currentPage,data);
-
-				     // Update the active page link
-				     $('.page-item').removeClass('active');
-				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
-												
-				
-				 })
-			}
-		});
-		}
-			
-	
-	
-}
-
 
 function addListings(){
 	 var getUrl = window.location;
@@ -1776,6 +2200,32 @@ function addListings(){
 	
 		window.location.href =url;
 		}
+
+function sortByListOrGrid(option) {
+    var paginationContainer = document.querySelectorAll(".pagination-container");
+    var listFilter = document.querySelector("#listFilter > span");
+    var gridFilter = document.querySelector("#gridFilter > span");
+    if (option === "grid") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("list");
+            container.classList.add("grid");
+        })
+        listFilter.classList.remove("List-active");
+        listFilter.classList.add("List");
+        gridFilter.classList.remove("Grid");
+        gridFilter.classList.add("Grid-active");
+    }
+    if (option === "list") {
+        [...paginationContainer].forEach(function(container) {
+            container.classList.remove("grid");
+            container.classList.add("list");
+        })
+        listFilter.classList.remove("List");
+        listFilter.classList.add("List-active");
+        gridFilter.classList.remove("Grid-active");
+        gridFilter.classList.add("Grid");
+    }
+}
 
 </script>
 </html>

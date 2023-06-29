@@ -1743,7 +1743,7 @@ function getTopBusinessListingsByCategory(obj, id){
       var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
         if(!obj.checked) {
             categoriesIds.splice($.inArray(id, categoriesIds), 1);
-            var obj = {"categoryIds":categoriesIds,"businessType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
+            var obj = {"categoryIds":categoriesIds,"listingType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
             $.ajax({
                     url: url,
                  	type: 'POST',
@@ -1779,7 +1779,7 @@ function getTopBusinessListingsByCategory(obj, id){
         }
 		if( obj.checked ){
 			categoriesIds.push(id);
-			var obj = {"categoryIds":categoriesIds,"businessType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
+			var obj = {"categoryIds":categoriesIds,"listingType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice};
 			$.ajax(
 			{
 			   url: url,
@@ -1847,7 +1847,7 @@ function myFunction(value) {
            }
         }
              var obj = {"categoryIds":categoriesIds,"sortByPrice":sortByPrice,
-            			 "sortByTitle":sortByTitle,"businessType":"COMMERCIAL"};
+            			 "sortByTitle":sortByTitle,"listingType":"COMMERCIAL"};
              var getUrl = window.location;
                   var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
              $.ajax({
