@@ -424,7 +424,7 @@
     <li class="nav-item"> <a class="nav-link" href="//businessForSale">Buy a Business</a></li>
 	<li class="nav-item"> <a class="nav-link" href="sell-a-business.html">Sell a Business</a></li>
 	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item"> <a class="nav-link" href="business-advisory.html">Business Advisory</a></li>
+	<li class="nav-item"> <a class="nav-link" href="businessAdvisory">Business Advisory</a></li>
 	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
 	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
 	<!-- mobile menu finish -->
