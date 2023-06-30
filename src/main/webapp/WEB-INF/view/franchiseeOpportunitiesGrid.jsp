@@ -1166,7 +1166,7 @@
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12"><a href="terms-of-service.html" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2023 Designed By <a href="https://5thquarter.net/" style="color:#00498e;" target="_blank">FQI</a></div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2023 Designed By <a href="https://5thquarter.net/" style="color:#00498e;" target="_blank">FQI</a></div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->
