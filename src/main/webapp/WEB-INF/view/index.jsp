@@ -1241,7 +1241,7 @@ Broker <label class="radio-button">
 <li><a href="businessForSale">Business For Sale</a></li>
 <li><a href="businessForSale">Investment Opportunities</a></li>
 <li><a href="businessForSale">Business Seeking Loan</a></li>
-<li><a href="realEstate">Business Assets For Sale</a></li>
+<li><a href="commercialForSaleGrid">Business Assets For Sale</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchise Opportunities</a></li>
 </ul>
 </div>

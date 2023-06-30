@@ -385,6 +385,13 @@ public class TobuzMVCController {
 			return attr.getRequest().getSession(true); // true == allow create
 		}
 
+		@RequestMapping(value = "/updateProfile", method = RequestMethod.GET)
+		public ModelAndView updateProfile(){
+		 ModelAndView modelAndView = new ModelAndView();
+		 modelAndView.setViewName("updateProfile");
+		 return modelAndView;
+		}
+
 		
 		
 			 
