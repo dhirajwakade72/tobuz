@@ -38,10 +38,10 @@
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -424,7 +424,7 @@
     <li class="nav-item"> <a class="nav-link" href="businessForSale">Buy a Business</a></li>
 	<li class="nav-item"> <a class="nav-link" href="#">Sell a Business</a></li>
 	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item"> <a class="nav-link" href="#">Business Advisory</a></li>
+	<li class="nav-item"> <a class="nav-link" href="businessAdvisory">Business Advisory</a></li>
 	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
 	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
 	<!-- mobile menu finish -->
@@ -1933,8 +1933,12 @@ function renderCards(page,data) {
 	  console.log(" businessListingId :"+data[i].businessListingId );
 	  if (count <3) {
 	    var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
-	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
-	    card.append('<div class="pd10">'); 
+	    if(data[i].filePath == null || data[i].filePath.trim() === '') {
+                    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= "images/rest3.jpg" />');
+        } else {
+        	    	card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+        }
+	    card.append('<div class="pd10">');
 	   // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
 	    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
 	    card.append('<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/>'+data[i].price+'</div>');
@@ -1947,7 +1951,11 @@ function renderCards(page,data) {
 	}
 	  else {
 		  var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
-		    card.append('<div class="sale-image-area"> <img  style=width:100% , height:70% src=' + data[i].filePath + ' style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+		   if(data[i].filePath == null || data[i].filePath.trim() === '') {
+                              card.append('<div class="sale-image-area"> <img style="width=20% , height-140"  src= "images/rest3.jpg" />');
+           } else {
+                  	    	card.append('<div class="sale-image-area"> <img style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+            }
 		    card.append('<div class="pd10">');
 		    // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
 		    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
