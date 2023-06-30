@@ -897,7 +897,7 @@ bfs grid 6 finish
 <li><a href="#">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
