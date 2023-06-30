@@ -1269,7 +1269,7 @@ Broker <label class="radio-button">
 <li><a href="brokers">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="distress">Distress Business Sale</a></li>
-<li><a href="realEstate">Buy Or Sell Commercial Properties</a></li>
+<li><a href="commercialForSaleGrid">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
 <!-- footer area 3 finish -->
