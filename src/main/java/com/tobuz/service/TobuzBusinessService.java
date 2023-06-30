@@ -1497,8 +1497,8 @@ public List<MessageDTO> getUserMessages(){
 		}
 
 		if(businessListingDTO.getSortByPrice() != null){
-			isPriceASC = businessListingDTO.getSortByPrice();
-			isPriceDSC = !businessListingDTO.getSortByPrice();
+			isPriceDSC = businessListingDTO.getSortByPrice();
+			isPriceASC = !businessListingDTO.getSortByPrice();
 		}
 
 
