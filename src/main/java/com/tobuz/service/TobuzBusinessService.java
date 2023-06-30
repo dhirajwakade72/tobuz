@@ -1569,7 +1569,10 @@ public List<MessageDTO> getUserMessages(){
 	@Transactional
 	public NewsLetterSubscription saveNewsletter(String email) {
 		Integer appUserId = userRepository.getUserIdFromAppUser(email);
-		Integer roleId = userRepository.getRoleIdFromRole(appUserId);
+		Integer roleId = null;
+		if(appUserId!=null){
+			roleId = userRepository.getRoleIdFromRole(appUserId);
+		}
 		Integer cityId = userRepository.getCityIdFromCity(email);
 
 		NewsLetterSubscription newsLetterSubscription = new NewsLetterSubscription();
