@@ -479,43 +479,43 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '1')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '1', 'category')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Accountants
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '3')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '3', 'category')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Business Consultants
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '4')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '4', 'category')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Personal Relation Services
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick ="getBrokerList(this, '5')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick ="getBrokerList(this, '5', 'category')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Financial Advisors
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '7')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '7','category')" value="" id="flexCheckDefault">
   <label  class="form-check-label" for="flexCheckDefault">
    Others
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '2')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '2','category')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
 Legal Advisor
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '6')" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" onClick = "getBrokerList(this, '6', 'category')" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
 Marketing Services
   </label>
@@ -542,39 +542,39 @@ Marketing Services
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div id="locationDiv">
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="india">
-  <label data-toggle="modal" class="form-check-label" for="india">
-    India
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="AndhraPradesh">
-  <label data-toggle="modal" class="form-check-label" for="AndhraPradesh">
-    Andhra Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="ArunachalPradesh">
-  <label data-toggle="modal" class="form-check-label" for="ArunachalPradesh">
-    Arunachal Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="Assam">
-  <label data-toggle="modal" class="form-check-label" for="Assam">
-    Assam
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="Bihar">
-  <label data-toggle="modal" class="form-check-label" for="Bihar">
-    Bihar
-  </label>
-</div>
+    <div class="form-check">
+      <input data-toggle="modal"  class="form-check-input" type="checkbox" onClick="getBrokerList(this,'1', 'country')" value="country" id="chkIndia">
+      <label data-toggle="modal"  class="form-check-label" for="chkIndia">
+        Afghanistan
+      </label>
+    </div>
+    <div class="form-check">
+      <input data-toggle="modal"  class="form-check-input" type="checkbox" onClick="getBrokerList(this,'2', 'country')" value="country" id="chkAndhraPradesh">
+      <label data-toggle="modal"  class="form-check-label" for="chkAndhraPradesh">
+        Albania
+      </label>
+    </div>
+    <div class="form-check">
+      <input data-toggle="modal"  class="form-check-input" type="checkbox" onClick="getBrokerList(this,'3', 'country')" value="country" id="chkArunachalPradesh">
+      <label data-toggle="modal"  class="form-check-label" for="chkArunachalPradesh">
+        Algeria
+      </label>
+    </div>
+    <div class="form-check">
+      <input data-toggle="modal" class="form-check-input" type="checkbox" onClick="getBrokerList(this,'4', 'country')" value="country" id="chkAssam">
+      <label data-toggle="modal" class="form-check-label" for="chkAssam">
+        Andorra
+      </label>
+    </div>
+    <div class="form-check">
+      <input data-toggle="modal" class="form-check-input" type="checkbox" onClick="getBrokerList(this,'4', 'country')" value="country" id="chkBihar">
+      <label data-toggle="modal" class="form-check-label" for="chkBihar">
+        Angola
+      </label>
+    </div>
 <!-- checkbox finish -->
 <!-- location popup link start -->
-<a data-toggle="modal" data-target="#myModal-1" class="more-filter">+ 13more</a>
+<a data-toggle="modal" data-target="#myModal-1" class="more-filter">+ 193more</a>
 <!-- location popup link finish -->
 </form>
 </div>
@@ -933,282 +933,1243 @@ Ajay Pandey Business Consultants
 	  <div class="overflow">
 	  
         <form class="mt-0">
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkIndia1">
-  <label class="form-check-label" for="chkIndia1">
-   India
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkAndamanAndNicobarIslands1">
-  <label class="form-check-label" for="chkAndamanAndNicobarIslands1">
-   Andaman and Nicobar Islands
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkAndhraPradesh1">
-  <label class="form-check-label" for="chkAndhraPradesh1">
-    Andhra Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkArunachalPradesh1">
-  <label class="form-check-label" for="chkArunachalPradesh1">
-   Arunachal Pradesh
-  </label>
-</div>
-
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkAssam1">
-  <label class="form-check-label" for="chkAssam1">
-    Assam
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkBihar1">
-  <label class="form-check-label" for="chkBihar1">
-  Bihar
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkChandigarh">
-  <label class="form-check-label" for="chkChandigarh">
-   Chandigarh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkChhattisgarh">
-  <label class="form-check-label" for="chkChhattisgarh">
-   Chhattisgarh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkDadraAndNagarHaveli">
-  <label class="form-check-label" for="chkDadraAndNagarHaveli">
-  Dadra and Nagar Haveli
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkDamanAndDiu">
-  <label class="form-check-label" for="chkDamanAndDiu">
-  Daman and Diu
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkDelhi">
-  <label class="form-check-label" for="chkDelhi">
-   Delhi
-  </label>
-</div>
-		</div>
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkGoa">
-  <label class="form-check-label" for="chkGoa">
-    Goa
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkGujarat">
-  <label class="form-check-label" for="chkGujarat">
-   Gujarat
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkHaryana">
-  <label class="form-check-label" for="chkHaryana">
-   Haryana
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkHimachalPradesh">
-  <label class="form-check-label" for="chkHimachalPradesh">
-   Himachal Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkJammuAndKashmir">
-  <label class="form-check-label" for="chkJammuAndKashmir">
-    Jammu and Kashmir
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkJharkhand">
-  <label class="form-check-label" for="chkJharkhand">
-   Jharkhand
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkKarnataka">
-  <label class="form-check-label" for="chkKarnataka">
-    Karnataka
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkKerala">
-  <label class="form-check-label" for="chkKerala">
-    Kerala
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkLakshadweep">
-  <label class="form-check-label" for="chkLakshadweep">
-    Lakshadweep
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkMadhyaPradesh">
-  <label class="form-check-label" for="chkMadhyaPradesh">
-   Madhya Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkMaharashtra">
-  <label class="form-check-label" for="chkMaharashtra">
-   Maharashtra
-  </label>
-</div>
-		</div>
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkManipur">
-  <label class="form-check-label" for="chkManipur">
-  Manipur
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkMeghalaya">
-  <label class="form-check-label" for="chkMeghalaya">
-   Meghalaya
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkMizoram">
-  <label class="form-check-label" for="chkMizoram">
-   Mizoram
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkNagaland">
-  <label class="form-check-label" for="chkNagaland">
-   Nagaland
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkOdisha">
-  <label class="form-check-label" for="chkOdisha">
-   Odisha
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkPuducherry">
-  <label class="form-check-label" for="chkPuducherry">
-    Puducherry
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkPunjab">
-  <label class="form-check-label" for="chkPunjab">
-   Punjab
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkRajasthan">
-  <label class="form-check-label" for="chkRajasthan">
-   Rajasthan
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkSikkim">
-  <label class="form-check-label" for="chkSikkim">
-    Sikkim
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkTamilNadu">
-  <label class="form-check-label" for="chkTamilNadu">
-   Tamil Nadu
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="chkTelangana">
-  <label class="form-check-label" for="chkTelangana">
-  Telangana
-  </label>
-</div>
-		</div>
-		<!--<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Manipur
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Meghalaya
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Mizoram
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Nagaland
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Odisha
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Puducherry
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Punjab
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Rajasthan
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Sikkim
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Tamil Nadu
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Telangana
-  </label>
-</div>
+        		<div class="catagories-popup-area">
+        		
+        		<div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'1', 'country')" value="" id="chkIndia1">
+          <label class="form-check-label" for="chkIndia1">
+           Afghanistan
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,2', 'country')" value="" id="chkAndamanNicobar">
+          <label class="form-check-label" for="chkAndamanNicobar">
+           Albania
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'3', 'country')" value="" id="chkAndhraPradesh1">
+          <label class="form-check-label" for="chkAndhraPradesh1">
+            Algeria
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'4', 'country')" value="" id="chkArunachalPradesh1">
+          <label class="form-check-label" for="chkArunachalPradesh1">
+           Andorra
+          </label>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'5', 'country')" value="" id="chkAssam1">
+          <label class="form-check-label" for="chkAssam1">
+            Angola
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'6', 'country')" value="" id="chkBihar1">
+          <label class="form-check-label" for="chkBihar1">
+          Antigua and Barbuda
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'7', 'country')" value="" id="chkChandigarh">
+          <label class="form-check-label" for="chkChandigarh">
+           Argentina
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'8', 'country')" value="" id="chkChhattisgarh">
+          <label class="form-check-label" for="chkChhattisgarh">
+           Armenia
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'9', 'country')" value="" id="chkDadraNagarHaveli">
+          <label class="form-check-label" for="chkDadraNagarHaveli">
+          Australia
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'10', 'country')" value="" id="chkDamanDiu">
+          <label class="form-check-label" for="chkDamanDiu">
+          Austria
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'11', 'country')" value="" id="chkDelhi">
+          <label class="form-check-label" for="chkDelhi">
+           Azerbaijan
+          </label>
+        </div>
+        		</div>
+        		<div class="catagories-popup-area">
+        		
+        		<div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'12', 'country')" value="" id="chkGoa">
+          <label class="form-check-label" for="chkGoa">
+            Bahrain
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'13', 'country')" value="" id="chkGujarat">
+          <label class="form-check-label" for="chkGujarat">
+           Bangladesh
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'14', 'country')" value="" id="chkHaryana">
+          <label class="form-check-label" for="chkHaryana">
+           Barbados
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'15', 'country')" value="" id="chkHimachalPradesh">
+          <label class="form-check-label" for="chkHimachalPradesh">
+           Belarus
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'16', 'country')" value="" id="chkJammuKashmir">
+          <label class="form-check-label" for="chkJammuKashmir">
+            Belgium
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'17', 'country')" value="" id="chkJharkhand">
+          <label class="form-check-label" for="chkJharkhand">
+           Belize
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'18', 'country')" value="" id="chkKarnataka">
+          <label class="form-check-label" for="chkKarnataka">
+            Benin
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'19', 'country')" value="" id="chkKerala">
+          <label class="form-check-label" for="chkKerala">
+            Bhutan
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'20', 'country')" value="" id="chkLakshadweep">
+          <label class="form-check-label" for="chkLakshadweep">
+            Bolivia
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'21', 'country')" value="" id="chkMadhyaPradesh">
+          <label class="form-check-label" for="chkMadhyaPradesh">
+           Bosnia and Herzegovina
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'22', 'country')" value="" id="chkMaharashtra">
+          <label class="form-check-label" for="chkMaharashtra">
+           Botswana
+          </label>
+        </div>
+        		</div>
+        		<div class="catagories-popup-area">
+        		
+        		<div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'23', 'country')" value="" id="chkManipur">
+          <label class="form-check-label" for="chkManipur">
+          Brazil
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'24', 'country')" value="" id="chkMeghalaya">
+          <label class="form-check-label" for="chkMeghalaya">
+           Brunei
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'25', 'country')" value="" id="chkMizoram">
+          <label class="form-check-label" for="chkMizoram">
+           Bulgaria
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'26', 'country')" value="" id="chkNagaland">
+          <label class="form-check-label" for="chkNagaland">
+           Burkina Faso
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'27', 'country')" value="" id="chkOdisha">
+          <label class="form-check-label" for="chkOdisha">
+          Burundi
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'28', 'country')" value="" id="chkPunjab">
+          <label class="form-check-label" for="chkPunjab">
+           Cambodia
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'29', 'country')" value="" id="chkRajasthan">
+          <label class="form-check-label" for="chkRajasthan">
+           Cameroon
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'30', 'country')" value="" id="chkSikkim">
+          <label class="form-check-label" for="chkSikkim">
+            Canada
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'31', 'country')" value="" id="chkTamilNadu">
+          <label class="form-check-label" for="chkTamilNadu">
+           Cape Verde
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'32', 'country')" value="" id="chkTelangana">
+          <label class="form-check-label" for="chkTelangana">
+          Central African Republic
+          </label>
+        </div>
+        		</div>
+        		<div class="catagories-popup-area">
+        		
+        		<div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'33', 'country')" value="" id="chkTripura">
+          <label class="form-check-label" for="chkTripura">
+            Chad
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'34', 'country')" value="" id="chkWestBengal">
+          <label class="form-check-label" for="chkWestBengal">
+           Chile
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'35', 'country')" value="" id="chkUttarakhand">
+          <label class="form-check-label" for="chkUttarakhand">
+           China
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'36', 'country')" value="" id="chkUttarPradesh">
+          <label class="form-check-label" for="chkUttarPradesh">
+            Colombia
+          </label>
+        </div>
+        <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'37', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Comoros
+                </label>
+              </div>
+         <div class="form-check">
+                      <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'38', 'country')" value="" id="chkUttarPradesh">
+                      <label class="form-check-label" for="chkUttarPradesh">
+                        Congo, Democratic Republic of the
+                      </label>
+                    </div>
+         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'39', 'country')" value="" id="chkUttarPradesh">
+                            <label class="form-check-label" for="chkUttarPradesh">
+                              Congo, Republic of the
+                            </label>
+                          </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'40', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Costa Rica
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'41', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Cote d Ivoire
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'42', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Croatia
+           </label>
+         </div>
+         </div>
+         <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'43', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Cuba
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'44', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Cyprus
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'45', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Czech Republic
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'46', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Denmark
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'47', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Djibouti
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'48', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Dominica
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'49', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Dominican Republic
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'50', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Ecuador
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'51', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Egypt
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'52', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             El Salvador
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'199', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             England
+           </label>
+         </div>
+         </div>
+         <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'53', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Equatorial Guinea
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'54', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Eritrea
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'55', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Estonia
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'56', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Ethiopia
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'57', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Fiji
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'58', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Finland
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'59', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             France
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'60', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Gabon
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox"  onClick="getBrokerList(this,'61', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Gambia
+           </label>
+         </div>
+         <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'62', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Georgia
+                 </label>
+               </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'63', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Germany
+           </label>
+         </div>
+         </div>
+         <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'64', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Ghana
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'65', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Greece
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'66', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Greenland
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'67', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Grenada
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'68', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Guatemala
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'69', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Guinea
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'70', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Guinea-Bissau
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'71', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Guyana
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'72', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Haiti
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'73', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Honduras
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'74', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Hong Kong
+           </label>
+         </div>
+         </div>
+         <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'75', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Hungary
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'76', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Iceland
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'77', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             India
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'78', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Indonesia
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'79', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Iran
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'80', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Iraq
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'81', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Ireland
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'82', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Israel
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'83', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Italy
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'84', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Jamaica
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'85', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Japan
+           </label>
+         </div>
+         </div>
+         <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'86', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Jordan
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'87', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Kazakhstan
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'88', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Kenya
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'89', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Kiribati
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'90', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Korea, North
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'91', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Korea, South
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'92', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Kosovo
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'93', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Kuwait
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'94', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Kyrgyzstan
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'95', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Laos
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'96', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Latvia
+           </label>
+         </div>
+         </div>
+         <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'97', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Lebanon
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'98', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Lesotho
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'99', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Liberia
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'100', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Libya
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'101', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Liechtenstein
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'102', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Lithuania
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'103', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Luxembourg
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'104', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Macedonia
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'105', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Madagascar
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'106', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Malawi
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'107', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Malaysia
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'108', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Maldives
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'109', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Mali
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'110', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Malta
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'111', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Marshall Islands
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'112', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Mauritania
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'113', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Mauritius
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'114', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Mexico
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'115', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Micronesia, Federated States of
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'116', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Moldova
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'117', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Monaco
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'118', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Mongolia
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'119', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Montenegro
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'120', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Morocco
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'121', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Mozambique
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'122', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Myanmar (Burma)
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'123', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Namibia
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'124', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Nauru
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'125', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Nepal
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'126', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Netherlands
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'127', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    New Zealand
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'128', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Nicaragua
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'129', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Niger
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'130', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Nigeria
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'131', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Norway
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'132', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Oman
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'133', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Pakistan
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'134', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Palau
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'135', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Panama
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'136', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Papua New Guinea
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'137', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Paraguay
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'138', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Peru
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'139', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Philippines
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'140', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Poland
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'141', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Portugal
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'142', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Qatar
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'143', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Romania
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'144', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Russia
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'145', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Rwanda
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'146', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Saint Kitts and Nevis
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'147', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Saint Lucia
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'148', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Saint Vincent and the Grenadines
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'149', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Samoa
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'150', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     San Marino
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'151', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Sao Tome and Principe
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'152', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Saudi Arabia
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'153', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Senegal
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'154', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Serbia
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'155', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Seychelles
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'156', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Sierra Leone
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'157', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Singapore
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'158', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Slovakia
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'159', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Slovenia
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'160', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Solomon Islands
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'161', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Somalia
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'162', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      South Africa
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'163', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             South Sudan
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'164', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Spain
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'165', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Sri Lanka
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'166', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Sudan
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'167', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Suriname
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'168', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Swaziland
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'169', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Sweden
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'170', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Switzerland
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'171', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Syria
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'172', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Taiwan
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'173', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Tajikistan
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'174', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Tanzania
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'175', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Thailand
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'176', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              The Bahamas
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'177', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               Timor-Leste
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'178', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                Togo
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'179', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Tonga
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'180', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Trinidad and Tobago
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'181', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Tunisia
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'182', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Turkey
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'183', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Turkmenistan
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'184', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Tuvalu
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'185', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             UAE
+           </label>
+         </div>
+         <div class="form-check">
+           <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'186', 'country')" value="" id="chkUttarPradesh">
+           <label class="form-check-label" for="chkUttarPradesh">
+             Uganda
+           </label>
+         </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'187', 'country')" value="" id="chkUttarPradesh">
+            <label class="form-check-label" for="chkUttarPradesh">
+              Ukraine
+            </label>
+          </div>
+           <div class="form-check">
+             <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'188', 'country')" value="" id="chkUttarPradesh">
+             <label class="form-check-label" for="chkUttarPradesh">
+               United Kingdom
+             </label>
+           </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'189', 'country')" value="" id="chkUttarPradesh">
+              <label class="form-check-label" for="chkUttarPradesh">
+                United States of America
+              </label>
+            </div>
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'190', 'country')" value="" id="chkUttarPradesh">
+               <label class="form-check-label" for="chkUttarPradesh">
+                 Uruguay
+               </label>
+             </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'191', 'country')" value="" id="chkUttarPradesh">
+                <label class="form-check-label" for="chkUttarPradesh">
+                  Uzbekistan
+                </label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'192', 'country')" value="" id="chkUttarPradesh">
+                 <label class="form-check-label" for="chkUttarPradesh">
+                   Vanuatu
+                 </label>
+               </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'193', 'country')" value="" id="chkUttarPradesh">
+                  <label class="form-check-label" for="chkUttarPradesh">
+                    Vatican City (Holy See)
+                  </label>
+                </div>
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'194', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Venezuela
+                   </label>
+                 </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'195', 'country')" value="" id="chkUttarPradesh">
+                    <label class="form-check-label" for="chkUttarPradesh">
+                      Vietnam
+                    </label>
+                  </div>
+                  </div>
+        <div class="catagories-popup-area">
+        <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'196', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Yemen
+                   </label>
+                 </div>
+        <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'197', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Zambia
+                   </label>
+                 </div>
+        <div class="form-check">
+                   <input class="form-check-input" type="checkbox" onClick="getBrokerList(this,'198', 'country')" value="" id="chkUttarPradesh">
+                   <label class="form-check-label" for="chkUttarPradesh">
+                     Zimbabwe
+                   </label>
+                 </div>
+                 </div>
 		</div>-->
 		</form>
 		</div>
@@ -1554,13 +2515,22 @@ function contactbuyer (id){
 var categoriesIds = [];
 var sortByTitle;
 var sortByPrice;
+var countryIds = [];
 
-function getBrokerList(obj, id){
+function getBrokerList(obj, id, value){
 	  var getUrl = window.location;
       var url = getUrl .protocol + "//" + getUrl.host + "/getBrokerList" ;
         if(!obj.checked) {
-            categoriesIds.splice($.inArray(id, categoriesIds), 1);
-            var obj = {"businessServiceIds":categoriesIds};
+        if(value == 'country'){
+                        countryIds.splice($.inArray(id, countryIds), 1)
+                     }else if(value == 'category'){
+                        categoriesIds.splice($.inArray(id, categoriesIds), 1);
+                     } else {
+
+                     }
+
+            var obj = {"businessServiceIds":categoriesIds,  "countryIds" : countryIds};
+            console.log(obj)
             $.ajax({
                     url: url,
                  	type: 'POST',
@@ -1595,8 +2565,15 @@ function getBrokerList(obj, id){
                  	});
         }
 		if( obj.checked ){
-			categoriesIds.push(id);
-			var obj = {"businessServiceIds":categoriesIds};
+            if(value == 'country'){
+                            countryIds.push(id);
+                         }else if(value == 'category'){
+                            categoriesIds.push(id);
+                         } else {
+
+                         }
+			var obj = {"businessServiceIds":categoriesIds,  "countryIds" : countryIds};
+			console.log(obj)
 			$.ajax(
 			{
 			   url: url,
