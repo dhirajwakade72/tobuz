@@ -689,6 +689,7 @@ $( document ).ready(function() {
 	$(".alert-success").hide();
 
 	 $( "#saveSubmitBtn" ).click(function(event) {
+		 event.preventDefault();
 
 		 function saveContact (event){
 
@@ -715,20 +716,17 @@ $( document ).ready(function() {
 						  $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter A Valid Email </strong> ");
 							  window.scrollTo(0, 0);
-							 event.preventDefault();
 							 return;
 					  }
 					  if( $.trim(phone) == ''){
 							 $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter Phone No </strong> ");
 
-							 event.preventDefault();
 							 return;
 						}
 					  if( $.trim(city) == ''){
 							 $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter City </strong> ");
-							 event.preventDefault();
 							 return;
 						}
 
@@ -756,7 +754,6 @@ $( document ).ready(function() {
 				 	        	$(".alert-success").show();
 				 				 $(".alert-success").html("<strong>Sent Successfully </strong> ");
 				 				  window.scrollTo(0, 0);
-                                 event.preventDefault();
 				 				 return;
 				 	        },
 				 	        error: function (e) {
@@ -765,13 +762,11 @@ $( document ).ready(function() {
 				 	        	 $(".alert-danger").show();
 				 				 $(".alert-danger").html("<strong>Error in Sent</strong> ");
 				 				  window.scrollTo(0, 0);
-				 				 event.preventDefault();
 				 				 return;
 
 				 	        },
 
 				 	    });
-                        event.preventDefault();
 
 					  });
 			}
