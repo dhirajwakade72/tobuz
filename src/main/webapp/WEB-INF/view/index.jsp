@@ -1241,7 +1241,7 @@ Broker <label class="radio-button">
 <li><a href="businessForSale">Business For Sale</a></li>
 <li><a href="businessForSale">Investment Opportunities</a></li>
 <li><a href="businessForSale">Business Seeking Loan</a></li>
-<li><a href="realEstate">Business Assets For Sale</a></li>
+<li><a href="commercialForSaleGrid">Business Assets For Sale</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchise Opportunities</a></li>
 </ul>
 </div>
@@ -1269,7 +1269,7 @@ Broker <label class="radio-button">
 <li><a href="brokers">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="distress">Distress Business Sale</a></li>
-<li><a href="realEstate">Buy Or Sell Commercial Properties</a></li>
+<li><a href="commercialForSaleGrid">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
 <!-- footer area 3 finish -->
