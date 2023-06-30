@@ -502,19 +502,19 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="16" id="flexCheckDefault">
   <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
   Healthcare & Pharmaceuticals
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="21" id="flexCheckDefault">
   <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
   Marine Business
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="24" id="flexCheckDefault">
   <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
  Services Business
   </label>
