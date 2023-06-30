@@ -437,7 +437,7 @@
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers.html">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -596,7 +596,7 @@
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
 <li><a href="commercialForSaleGrid">Commercial for sale</a></li>
-<li><a href="buyers-investors-grid.html">Buyers/Investors</a></li>
+<li><a href="buyersInvestorsGrid">Buyers/Investors</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="brokers.html">Brokers</a></li>
 <li><a href="businesServices">Business Services</a></li>

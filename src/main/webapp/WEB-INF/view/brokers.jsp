@@ -443,7 +443,7 @@
                      </a>
 
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                       <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+                       <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
                        <a class="dropdown-item" href="brokers.html">Brokers</a>
                        <a class="dropdown-item" href="businesServices">Business Services</a>
                      </div>
@@ -1192,7 +1192,7 @@
 <h2>For Businesses</h2>
 <ul>
 <li><a href="individual-investors.html">Individual Investors</a></li>
-<li><a href="business-buyers.html">Business Buyers</a></li>
+<li><a href="buyersInvestorsGrid">Business Buyers</a></li>
 <li><a href="venture-capital-firms.html">Venture Capital Firms</a></li>
 <li><a href="private-equity-firms.html">Private Equity Firms</a></li>
 <li><a href="business-lenders.html">Business Lenders</a></li>
