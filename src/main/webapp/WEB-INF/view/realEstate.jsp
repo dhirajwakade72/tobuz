@@ -2908,11 +2908,7 @@ function renderCards(page,data) {
 	  console.log(" businessListingId :"+data[i].businessListingId );
 	  if (count <3) {
 	    var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
-	    if(data[i].filePath == null || data[i].filePath.trim() === '') {
-                    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= "images/rest3.jpg" />');
-        } else {
-        	    	card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
-        }
+	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
 	    card.append('<div class="pd10">');
 	   // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
 	    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
@@ -2926,11 +2922,7 @@ function renderCards(page,data) {
 	}
 	  else {
 		  var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
-		   if(data[i].filePath == null || data[i].filePath.trim() === '') {
-                              card.append('<div class="sale-image-area"> <img style="width=20% , height-140"  src= "images/rest3.jpg" />');
-           } else {
-                  	    	card.append('<div class="sale-image-area"> <img style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
-            }
+		    card.append('<div class="sale-image-area"> <img  style=width:100% , height:70% src=' + data[i].filePath + ' style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
 		    card.append('<div class="pd10">');
 		    // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
 		    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');

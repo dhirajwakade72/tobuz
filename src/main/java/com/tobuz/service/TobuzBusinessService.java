@@ -1485,6 +1485,23 @@ public List<MessageDTO> getUserMessages(){
 
 	public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessListingDTO) {
 
+		Boolean isTitleASC = false;
+		Boolean isTitleDsc = false;
+		Boolean isPriceASC = false;
+		Boolean isPriceDSC = false;
+
+
+		if(businessListingDTO.getSortByTitle() != null){
+			isTitleASC = businessListingDTO.getSortByTitle();
+			isTitleDsc = !businessListingDTO.getSortByTitle();
+		}
+
+		if(businessListingDTO.getSortByPrice() != null){
+			isPriceDSC = businessListingDTO.getSortByPrice();
+			isPriceASC = !businessListingDTO.getSortByPrice();
+		}
+
+
 		List<BusinessListingDTO> businessListingDTOList = new ArrayList<>();
 		List<Long> longList = new ArrayList<>();
 		if (businessListingDTO.getCategoryIds() != null && !businessListingDTO.getCategoryIds().isEmpty()) {
@@ -1498,11 +1515,11 @@ public List<MessageDTO> getUserMessages(){
 		if (businessListingDTO.getFranchiseType() == null) {
 			if (longList != null && !longList.isEmpty()) {
 				for (Long l : longList) {
-					businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getListingType(), businessListingDTO.getSearchKey());
+					businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getListingType(), isTitleASC, isTitleDsc, isPriceASC, isPriceDSC, businessListingDTO.getSearchKey());
 					getBusinessListDto(businessByFilter, businessListingDTOList);
 				}
 			} else {
-				businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getListingType(), businessListingDTO.getSearchKey());
+				businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getListingType(),isTitleASC, isTitleDsc, isPriceASC, isPriceDSC, businessListingDTO.getSearchKey());
 				getBusinessListDto(businessByFilter, businessListingDTOList);
 
 			}
@@ -1510,13 +1527,13 @@ public List<MessageDTO> getUserMessages(){
 			if (longList != null && !longList.isEmpty()) {
 				for (Long l : longList) {
 					for (String fType : businessListingDTO.getFranchiseType()) {
-						businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getListingType(), fType, businessListingDTO.getSearchKey());
+						businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getListingType(), fType,isTitleASC, isTitleDsc, isPriceASC, isPriceDSC, businessListingDTO.getSearchKey());
 						getBusinessListDto(businessByFilter, businessListingDTOList);
 					}
 				}
 			} else {
 				for (String fType : businessListingDTO.getFranchiseType()) {
-					businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(businessListingDTO.getListingType(), fType, businessListingDTO.getSearchKey());
+					businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(businessListingDTO.getListingType(), fType,isTitleASC, isTitleDsc, isPriceASC, isPriceDSC, businessListingDTO.getSearchKey());
 					getBusinessListDto(businessByFilter, businessListingDTOList);
 				}
 			}
@@ -1552,7 +1569,10 @@ public List<MessageDTO> getUserMessages(){
 	@Transactional
 	public NewsLetterSubscription saveNewsletter(String email) {
 		Integer appUserId = userRepository.getUserIdFromAppUser(email);
-		Integer roleId = userRepository.getRoleIdFromRole(appUserId);
+		Integer roleId = null;
+		if(appUserId!=null){
+			roleId = userRepository.getRoleIdFromRole(appUserId);
+		}
 		Integer cityId = userRepository.getCityIdFromCity(email);
 
 		NewsLetterSubscription newsLetterSubscription = new NewsLetterSubscription();
