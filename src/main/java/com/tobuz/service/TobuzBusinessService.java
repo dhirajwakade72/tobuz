@@ -1483,60 +1483,55 @@ public List<MessageDTO> getUserMessages(){
 	return business;
 }
 
-public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessListingDTO){
+	public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessListingDTO) {
 		List<BusinessListingDTO> businessListingDTOList = new ArrayList<>();
-	List<Long> longList = new ArrayList<>();
-	if(businessListingDTO.getCategoryIds() != null && !businessListingDTO.getCategoryIds().isEmpty()) {
-		for (String str : businessListingDTO.getCategoryIds()) {
-			longList.add(Long.parseLong(str));
+		List<Long> longList = new ArrayList<>();
+		if (businessListingDTO.getCategoryIds() != null && !businessListingDTO.getCategoryIds().isEmpty()) {
+			for (String str : businessListingDTO.getCategoryIds()) {
+				longList.add(Long.parseLong(str));
+			}
 		}
-	}
 
-	List<BusinessByFilter> businessByFilter = new ArrayList<>();
+		List<BusinessByFilter> businessByFilter = new ArrayList<>();
 
-	if(businessListingDTO.getFranchiseType() == null){
-        if(longList != null && !longList.isEmpty()) {
-            for (Long l : longList) {
-                businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
-                getBusinessListDto(businessByFilter, businessListingDTOList);
-            }
-        }else{
-            businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
-            getBusinessListDto(businessByFilter, businessListingDTOList);
+		if (businessListingDTO.getFranchiseType() == null) {
+			if (longList != null && !longList.isEmpty()) {
+				for (Long l : longList) {
+					businessByFilter = fileEntityRepositiory.getBusinessByFilter(l, businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(), businessListingDTO.getSearchKey());
+					getBusinessListDto(businessByFilter, businessListingDTOList);
+				}
+			} else {
+				businessByFilter = fileEntityRepositiory.getBusinessByFilter(businessListingDTO.getListingType(), businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(), businessListingDTO.getSearchKey());
+				getBusinessListDto(businessByFilter, businessListingDTOList);
 
-        }
-    }else {
-        if(longList != null && !longList.isEmpty()) {
-            for (Long l : longList) {
-                for (String fType : businessListingDTO.getFranchiseType()) {
-                    businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
-                    getBusinessListDto(businessByFilter, businessListingDTOList);
-                }
-            }
-        }else{
-            for (String fType : businessListingDTO.getFranchiseType()) {
-                businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter( businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(),businessListingDTO.getSearchKey());
-                getBusinessListDto(businessByFilter, businessListingDTOList);
-            }
-        }
+			}
+		} else {
+			if (longList != null && !longList.isEmpty()) {
+				for (Long l : longList) {
+					for (String fType : businessListingDTO.getFranchiseType()) {
+						businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(l, businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(), businessListingDTO.getSearchKey());
+						getBusinessListDto(businessByFilter, businessListingDTOList);
+					}
+				}
+			} else {
+				for (String fType : businessListingDTO.getFranchiseType()) {
+					businessByFilter = fileEntityRepositiory.getBusinessWithFranchiseFilter(businessListingDTO.getListingType(), fType, businessListingDTO.getSortByTitle(), businessListingDTO.getSortByPrice(), businessListingDTO.getSearchKey());
+					getBusinessListDto(businessByFilter, businessListingDTOList);
+				}
+			}
 
-	}
-	List<BusinessListingDTO> filteredBusinessListingDTOList = new ArrayList<>();
-	if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty() && !businessListingDTOList.isEmpty()){
-
-		List<Long> countryIdList = new ArrayList<>();
-		if(businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty()) {
+		}
+		if (businessListingDTO.getCountryIds() != null && !businessListingDTO.getCountryIds().isEmpty() && !businessListingDTOList.isEmpty()) {
+			List<Long> countryIdList = new ArrayList<>();
 			for (String str : businessListingDTO.getCountryIds()) {
 				countryIdList.add(Long.parseLong(str));
 			}
+			return businessListingDTOList.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
+		} else if (businessListingDTO.getPrefredCountryId() != null) {
+			return businessListingDTOList.stream().filter(dto -> businessListingDTO.getPrefredCountryId().equals(dto.getCountryId().toString())).collect(Collectors.toList());
 		}
-		filteredBusinessListingDTOList = businessListingDTOList.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
-	}else{
 		return businessListingDTOList;
 	}
-
-	return filteredBusinessListingDTOList;
-}
 
     private void getBusinessListDto(List<BusinessByFilter> businessByFilter, List<BusinessListingDTO> businessListingDTOList) {
         if (Objects.nonNull(businessByFilter)) {
@@ -1590,23 +1585,18 @@ public List<BusinessListingDTO> getBusinessByFilter(BusinessListingDTO businessL
 			getBrokerListDTO(brokerLists, brokerListingDTOS);
 		}
 
-		List<BrokerListingDTO> brokerListingDTOList = new ArrayList<>();
 		if(brokerListingDTO.getCountryIds() != null && !brokerListingDTO.getCountryIds().isEmpty() && !brokerListingDTOS.isEmpty()){
 
 			List<Long> countryIdList = new ArrayList<>();
-			if(brokerListingDTO.getCountryIds() != null && !brokerListingDTO.getCountryIds().isEmpty()) {
 				for (String str : brokerListingDTO.getCountryIds()) {
 					countryIdList.add(Long.parseLong(str));
 				}
-			}
-			brokerListingDTOList = brokerListingDTOS.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
-		}else{
+			return  brokerListingDTOS.stream().filter(dto -> countryIdList.contains(dto.getCountryId())).collect(Collectors.toList());
+		}else if (brokerListingDTO.getPrefredCountryId() != null) {
+			return brokerListingDTOS.stream().filter(dto -> brokerListingDTO.getPrefredCountryId().equals(dto.getCountryId().toString())).collect(Collectors.toList());
+		}
 			return brokerListingDTOS;
 		}
-
-
-		return brokerListingDTOList;
-	}
 
 	private void getBrokerListDTO(List<BrokerList> brokerLists, List<BrokerListingDTO> brokerListingDTOS){
 		if (Objects.nonNull(brokerLists)){

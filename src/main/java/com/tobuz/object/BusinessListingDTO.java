@@ -106,6 +106,15 @@ public class BusinessListingDTO implements Serializable{
 
 	private Long stateId;
 
+	private String prefredCountryId;
+
+	public String getPrefredCountryId() {
+		return prefredCountryId;
+	}
+
+	public void setPrefredCountryId(String prefredCountryId) {
+		this.prefredCountryId = prefredCountryId;
+	}
 
 	public List<String> getCountryIds() {
 		return countryIds;

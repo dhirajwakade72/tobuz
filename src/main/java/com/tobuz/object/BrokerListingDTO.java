@@ -15,6 +15,16 @@ public class BrokerListingDTO implements Serializable {
 
     private Long countryId;
 
+    private String prefredCountryId;
+
+    public String getPrefredCountryId() {
+        return prefredCountryId;
+    }
+
+    public void setPrefredCountryId(String prefredCountryId) {
+        this.prefredCountryId = prefredCountryId;
+    }
+
     public Long getCountryId() {
         return countryId;
     }
