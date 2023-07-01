@@ -432,7 +432,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="businessForSale">Business For Sale</a>
                   <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-                  <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+                  <a class="dropdown-item" href="distress">Distress Sale</a>
                   <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
                 </div>
             </li>
@@ -608,7 +608,7 @@ Commercial Properties Are Bought, Sold And Leased</p>
 <li><a href="#">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
