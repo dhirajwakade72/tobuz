@@ -429,7 +429,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
