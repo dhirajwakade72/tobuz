@@ -578,12 +578,12 @@
 <!-- bfs title finish -->
 <div class="col-lg-6 col-xl-5 col-md-12 desktop-view">
 <!-- bfs grid start -->
-<span class="grid-area"><a href="/businessForSale"><span class="Grid-active">Grid</span></a> 
+<!-- bfs grid start -->
+<span class="grid-area"><a href="javascript:listOrGridview('grid')" id="gridFilter"><span class="Grid" value="grid">Grid</span></a>
 <!-- bfs grid finish -->
 <!-- bfs list start -->
-<a href="business-for-sale-list.html"><span class="List">List</span></a></span>
+<a href="javascript:listOrGridview('list')" id="listFilter"><span class="List" value="list">List</span></a></span>
 <!-- bfs list finish -->
-<!-- bfs Sort By start -->
 <div class="Sort"><span class="sort-text">Sort By:</span>
 <span class="customselect"> 
 <select>
@@ -2541,7 +2541,8 @@ bfs grid 6 finish
 </div>
 </div>
 </body>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--  <script src="js/jquery.slim.min.js"></script> -->
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
@@ -2650,7 +2651,12 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
 
+var response;
+var currentPage = 1;
 
+function listOrGridview(view){
+    renderCards2(currentPage,response, view);
+}
 
 jQuery(document).ready(function($){
 	  var getUrl = window.location;
@@ -2663,8 +2669,8 @@ jQuery(document).ready(function($){
 	   type: 'GET',
 	   dataType: 'json', // added data type
 	   success: function(data) {
-	            
-		   var currentPage = 1;
+	       response = data;
+
 		   // Render the cards for the initial page
 		   renderCards(currentPage,data);
 		   // Add event listeners to the page links
@@ -2720,7 +2726,8 @@ function getTopBusinessListingsByCategory(obj, id, value){
                                     	   type: 'GET',
                                     	   dataType: 'json', // added data type
                                     	   success: function(data) {
-                                    		   var currentPage = 1;
+                                    	   response = data;
+
                                     		   // Render the cards for the initial page
                                     		   renderCards(currentPage,data);
                                     		   // Add event listeners to the page links
@@ -2754,7 +2761,8 @@ function getTopBusinessListingsByCategory(obj, id, value){
             	    timeout: 600000,
                  	success: function(data)
                  	    {
-                 				   var currentPage = 1;
+                 	    response = data;
+
                  				   // Render the cards for the initial page
                  				   renderCards(currentPage,data);
                  				   // Add event listeners to the page links
@@ -2797,7 +2805,7 @@ function getTopBusinessListingsByCategory(obj, id, value){
 		       cache: false,
 		       timeout: 600000,
 			   success: function(data) {
-				   var currentPage = 1;
+			   response = data;
 
 				   // Render the cards for the initial page
 				   renderCards(currentPage,data);
@@ -2867,7 +2875,8 @@ function myFunction(value) {
         	    timeout: 600000,
              	success: function(data)
              	    {
-             				   var currentPage = 1;
+             	    response = data;
+
              				   // Render the cards for the initial page
              				   renderCards(currentPage,data);
              				   // Add event listeners to the page links
@@ -2906,6 +2915,7 @@ function renderCards(page,data) {
   for (var i = startIndex; i < endIndex; i++) {
 	  console.log("File path :"+data[i].filePath );
 	  console.log(" businessListingId :"+data[i].businessListingId );
+
 	  if (count <3) {
 	    var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
 	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
@@ -2921,7 +2931,7 @@ function renderCards(page,data) {
 	    $('#card-container').append(card);
 	}
 	  else {
-		  var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
+		   var card = $('<div class="' + (viewMode === 'grid' ? 'col-lg-6 col-xl-4 col-md-6' : 'col-lg-10 col-xl-8 col-md-10') + '">');
 		    card.append('<div class="sale-image-area"> <img  style=width:100% , height:70% src=' + data[i].filePath + ' style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
 		    card.append('<div class="pd10">');
 		    // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
@@ -2937,6 +2947,54 @@ function renderCards(page,data) {
 	  
   }
 }
+
+
+function renderCards2(page,data, view) {
+  // Clear the existing cards
+  $('#card-container').empty();
+  // Calculate the starting index and ending index for this page
+  var startIndex = (page - 1) * 6;
+  var endIndex =startIndex+6;
+	var count =0;
+
+  // Loop through the data and create cards for this page
+  for (var i = startIndex; i < endIndex; i++) {
+	  console.log("File path :"+data[i].filePath );
+	  console.log(" businessListingId :"+data[i].businessListingId );
+
+	  if (count <3) {
+	     var card = $('<div class="' + (view === 'grid' ? 'col-lg-6 col-xl-4 col-md-6' : 'col-lg-10 col-xl-8 col-md-10') + '">');
+	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+	    card.append('<div class="pd10">');
+	   // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
+	    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
+	    card.append('<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/>'+data[i].price+'</div>');
+	    card.append('<span class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> UAE</span></div>');
+	    card.append('<div class="p-area" style="font-size: 0.9rem;">'+data[i].description.substring(0, 100)+"..."+'</div>');
+	    card.append('<p><button type="button" onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
+	    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
+	    card.append('</div></div></div>');
+	    $('#card-container').append(card);
+	}
+	  else {
+		   var card = $('<div class="' + (viewMode === 'grid' ? 'col-lg-6 col-xl-4 col-md-6' : 'col-lg-10 col-xl-8 col-md-10') + '">');
+		    card.append('<div class="sale-image-area"> <img  style=width:100% , height:70% src=' + data[i].filePath + ' style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+		    card.append('<div class="pd10">');
+		    // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
+		    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
+		    card.append('<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/>'+data[i].price+'</div>');
+		    card.append('<span class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> UAE</span></div>');
+		    card.append('<div class="p-area" style="font-size: 0.9rem;">'+data[i].description.substring(0, 100)+"..."+'</div>');
+		    card.append('<p><button type="button"  onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
+		    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
+		    card.append('</div></div></div>');
+		    $('#card-container').append(card);
+	  }
+
+  }
+}
+
+
 
 
 function contactbuyer (id){
