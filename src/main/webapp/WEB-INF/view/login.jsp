@@ -432,7 +432,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="businessForSale">Business For Sale</a>
                   <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-                  <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+                  <a class="dropdown-item" href="distress">Distress Sale</a>
                   <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
                 </div>
             </li>
@@ -608,7 +608,7 @@ Commercial Properties Are Bought, Sold And Leased</p>
 <li><a href="#">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
@@ -622,8 +622,8 @@ Commercial Properties Are Bought, Sold And Leased</p>
 <li><a href="blog">Blog</a></li>
 <li><a href="faql">FAQ</a></li>
 <li><a href="contact">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -647,7 +647,7 @@ Commercial Properties Are Bought, Sold And Leased</p>
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12">Terms Of Service | Privacy Policy © 2022 Designed By FQI</div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2022 Designed By FQI</div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->

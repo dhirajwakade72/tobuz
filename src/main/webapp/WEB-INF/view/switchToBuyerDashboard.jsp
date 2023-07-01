@@ -472,7 +472,7 @@
 <div class="Favorites"><a href="">Favorites</a></div>
 <div class="Saved-Search"><a href="">Saved Search</a></div>
 <div class="Messages"><a href="">Messages</a></div>
-<div class="Update-Profile"><a href="">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
 </div>
 </div>
 
@@ -488,7 +488,7 @@
    <div class="Favorites"> <a class="dropdown-item" href="#">Favorites</a></div>
    <div class="Saved-Search"><a class="dropdown-item" href="">Saved Search</a></div>
 <div class="Messages"><a class="dropdown-item" href="">Messages</a></div>
-<div class="Update-Profile"><a class="dropdown-item" href="">Update Profile</a></div>
+<div class="Update-Profile"><a class="dropdown-item" href="updateProfile">Update Profile</a></div>
   </div>
 </div>
 </div>

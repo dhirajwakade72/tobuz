@@ -428,7 +428,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -436,7 +436,7 @@
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -476,7 +476,7 @@
 <div class="col-lg-12 col-xl-12 col-md-12">
 <!-- business for sale tab content start -->
 <!-- bradcrumb start -->
-<div><div class="bradcrumb"><a href="index">Home</a> / <a href="distress-sale.html">Distress Sale<</a>
+<div><div class="bradcrumb"><a href="index">Home</a> / <a href="distress">Distress Sale<</a>
 </div>
 
 </div>
@@ -809,7 +809,7 @@
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="brokers">Brokers</a></li>
 <li><a href="businesServices">Business Services</a></li>
-<li><a href="distress-sale.html">Distress Sale</a></li>
+<li><a href="distress">Distress Sale</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->

@@ -1554,16 +1554,18 @@ public List<MessageDTO> getUserMessages(){
     private void getBusinessListDto(List<BusinessByFilter> businessByFilter, List<BusinessListingDTO> businessListingDTOList) {
         if (Objects.nonNull(businessByFilter)) {
             for (BusinessByFilter data : businessByFilter) {
-                BusinessListingDTO response = new BusinessListingDTO();
-                response.setFilePath(data.getFilePath());
-                response.setTitle(data.getTitle());
-                response.setDescription(data.getListingDescription());
-                response.setPrice(data.getPrice());
-                response.setSuggestedTitle(data.getSuggestedTitle());
-                response.setBusinessListingId(data.getSuggestedTitle());
-				response.setCountryId(data.getCountryId());
-				businessListingDTOList.add(response);
-            }
+				if (data.getPrice() != null) {
+					BusinessListingDTO response = new BusinessListingDTO();
+					response.setFilePath(data.getFilePath());
+					response.setTitle(data.getTitle());
+					response.setDescription(data.getListingDescription());
+					response.setPrice(data.getPrice());
+					response.setSuggestedTitle(data.getSuggestedTitle());
+					response.setBusinessListingId(data.getSuggestedTitle());
+					response.setCountryId(data.getCountryId());
+					businessListingDTOList.add(response);
+				}
+			}
         }
     }
 	@Transactional

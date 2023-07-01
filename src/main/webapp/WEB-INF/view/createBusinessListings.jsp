@@ -516,7 +516,7 @@
   <div class="Favorites"><a href="myFavouritesSeller">Favorites</a></div>
 <div class="Saved-Search"><a href="saved-search-buyer-dashboard.html">Saved Search</a></div>
 <div class="Messages"><a href="messages-dashboard.html">Messages</a></div>
-<div class="Update-Profile"><a href="update-profile-Dashboard.html">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
   </div>
 </div>
 </div>
@@ -1244,7 +1244,7 @@ Name finish
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="brokers">Brokers</a></li>
 <li><a href="businesServices">Business Services</a></li>
-<li><a href="distress-sale.html">Distress Sale</a></li>
+<li><a href="distress">Distress Sale</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
