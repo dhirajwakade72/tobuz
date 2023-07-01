@@ -501,7 +501,7 @@
 <div class="Favorites"><a href="myFavouritesSeller">Favorites</a></div>
 <div class="Saved-Search"><a href="">Saved Search</a></div>
 <div class="Messages"><a href="myMessagesSeller">Messages</a></div>
-<div class="Update-Profile"><a href="">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
 </div>
 </div>
 
@@ -517,7 +517,7 @@
    <div class="Favorites"> <a  href="myFavouritesSeller">Favorites</a></div>
    <div class="Saved-Search"><a href="saved-search-buyer-dashboard.html">Saved Search</a></div>
 <div class="Messages"><a href="myMessagesSeller">Messages</a></div>
-<div class="Update-Profile"><a href="update-profile-Dashboard.html">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
   </div>
 </div>
 </div>
