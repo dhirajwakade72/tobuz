@@ -326,7 +326,7 @@ public class TobuzMVCController {
 						  modelAndView.setViewName("contactSeller");
 					}
 					else {
-						 modelAndView.setViewName("login");
+						 modelAndView.setViewName("register");
 					}
 			    
 			      return modelAndView;
