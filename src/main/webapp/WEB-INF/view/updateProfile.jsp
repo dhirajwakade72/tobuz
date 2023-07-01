@@ -501,7 +501,7 @@
 <div class="Favorites"><a href="my-favourites-dashboard.html">Favorites</a></div>
 <div class="Saved-Search"><a href="saved-search-buyer-dashboard.html">Saved Search</a></div>
 <div class="Messages"><a href="messages-dashboard.html">Messages</a></div>
-<div class="Update-Profile-active"><a href="update-profile-Dashboard.html">Update Profile</a></div>
+<div class="Update-Profile-active"><a href="updateProfile">Update Profile</a></div>
 </div>
 </div>
 
@@ -509,7 +509,7 @@
 <!-- bfs sidebar filter area start -->
 <div class="dropdown dashboard">
   <button class="btn btn-secondary dashboard-leftmenu dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   <div class="Update-Profile-active"><a href="update-profile-Dashboard.html">Update Profile</a></div>
+   <div class="Update-Profile-active"><a href="updateProfile">Update Profile</a></div>
 
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

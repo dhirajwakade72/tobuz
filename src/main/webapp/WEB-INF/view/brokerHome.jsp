@@ -472,7 +472,7 @@
 <div class="Favorites"><a href="">Favorites</a></div>
 <div class="Saved-Search"><a href="">Saved Search</a></div>
 <div class="Messages"><a href="myMessagesBroker">Messages</a></div>
-<div class="Update-Profile"><a href="">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
 </div>
 </div>
 <div class="col-lg-3 col-xl-3 col-md-4 mobile-view">
@@ -487,7 +487,7 @@
    <div class="Favorites"> <a class="dropdown-item" href="#">Favorites</a></div>
    <div class="Saved-Search"><a class="dropdown-item" href="">Saved Search</a></div>
 <div class="Messages"><a class="dropdown-item" href="myMessagesBroker">Messages</a></div>
-<div class="Update-Profile"><a class="dropdown-item" href="">Update Profile</a></div>
+<div class="Update-Profile"><a class="dropdown-item" href="updateProfile">Update Profile</a></div>
   </div>
 </div>
 </div>
@@ -539,7 +539,7 @@
 <div class="Favorites"><a href="">Favorites</a></div>
 <div class="Saved-Search"><a href="">Saved Search</a></div>
 <div class="Messages"><a href="">Messages</a></div>
-<div class="Update-Profile"><a href="">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
 </div>
 <!-- bfs title start -->
 <div class="col-lg-12 col-xl-12 col-md-12">
