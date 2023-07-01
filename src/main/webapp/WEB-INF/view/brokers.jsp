@@ -614,10 +614,9 @@
 <!-- bfs title finish -->
 
 </div>
+<div class="row" id="card-container">
 
-<div class="row">
-    <div class="row" id="card-container">
-    </div>
+
 
 
 <!-- End logic for second page -->
@@ -2341,23 +2340,32 @@ function renderCards(page,data){
   for (var i = startIndex; i < endIndex; i++) {
 	  console.log(" businessListingId :"+data[i]);
 
+var card = $('<div class="col-lg-6 col-xl-6 col-md-12 seller-a">');
+var link = $('<a href="#"></a>');
+var sellerPersonList = $('<div class="seller-person-list"></div>');
+var imgesArea1 = $('<div class="imges-area-1"></div>');
+var image = $('<img src="images/Mahesh-Sharma.jpg" style="width:100%" title="Mahesh-Sharma" alt="Mahesh-Sharma" />');
+var imgesArea2 = $('<div class="imges-area-2"></div>');
+var nameSeller = $('<div class="name-seller-1">' + data[i].userName + '</div>');
+var tellSeller = $('<div class="tell-seller"></div>');
+var phoneNumber = $('<p><i class="fa fa-phone" aria-hidden="true"></i>' + data[i].mobileNumber + '</p>');
+var location = $('<p><i class="fa fa-map-marker" aria-hidden="true"></i>' + data[i].stateName + ', ' + data[i].countryName + '</p>');
 
-	    var card = $('<div class="col-lg-6 col-xl-6 col-md-12 seller-a">');
-	     card.append('<a href="#">')
-	    card.append('<div class="seller-person-list">')
-	    card.append('<div class="imges-area-1">')
-	     card.append('<img src= "images/Mahesh-Sharma.jpg" style=width:30% title="Mahesh-Sharma" alt="Mahesh-Sharma" />')
-        card.append('</div>')
-	    card.append('<div class="imges-area-2">')
-	    card.append('<div class="name-seller-1">'+ data[i].userName +'</div>');
-	    card.append('<div class="tell-seller">')
-	    card.append('<p><i class="fa fa-phone" aria-hidden="true"></i>'+data[i].mobileNumber +'</p>');
-	    card.append('<p><i class="fa fa-map-marker" aria-hidden="true"></i>'+data[i].stateName, data[i].countryName+'</p>');
+tellSeller.append(phoneNumber);
+tellSeller.append(location);
 
+imgesArea1.append(image);
+imgesArea2.append(nameSeller);
+imgesArea2.append(tellSeller);
 
+sellerPersonList.append(imgesArea1);
+sellerPersonList.append(imgesArea2);
 
-	    card.append('</div></div></div></a></div>');
-	    $('#card-container').append(card);
+link.append(sellerPersonList);
+
+card.append(link);
+
+        $('#card-container').append(card);
 
 
   }
