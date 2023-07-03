@@ -326,7 +326,7 @@ public class TobuzMVCController {
 						  modelAndView.setViewName("contactSeller");
 					}
 					else {
-						 modelAndView.setViewName("login");
+						 modelAndView.setViewName("register");
 					}
 			    
 			      return modelAndView;
@@ -355,7 +355,7 @@ public class TobuzMVCController {
 		@RequestMapping(value="/realEstate",method=RequestMethod.GET) 
 		 public ModelAndView    realEstate () {
 		      ModelAndView modelAndView = new ModelAndView();
-		      modelAndView.setViewName("commercialForSaleGrid");
+		      modelAndView.setViewName("realEstate");
 		      return modelAndView;
 		  }
 		
@@ -371,13 +371,25 @@ public class TobuzMVCController {
 		      modelAndView.setViewName("myListingsSllerDashboard");
 		      return modelAndView;
 		  }
-		
-		
+
+		@RequestMapping(value="/buyersInvestorsGrid",method=RequestMethod.GET)
+		public ModelAndView buyersInvestorsGrid () {
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.setViewName("buyersInvestorsGrid");
+			return modelAndView;
+		}
 	  
 		
 		public static HttpSession getSession() {
 			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 			return attr.getRequest().getSession(true); // true == allow create
+		}
+
+		@RequestMapping(value = "/updateProfile", method = RequestMethod.GET)
+		public ModelAndView updateProfile(){
+		 ModelAndView modelAndView = new ModelAndView();
+		 modelAndView.setViewName("updateProfile");
+		 return modelAndView;
 		}
 
 		

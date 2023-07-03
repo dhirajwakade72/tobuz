@@ -38,10 +38,10 @@
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -424,7 +424,7 @@
     <li class="nav-item"> <a class="nav-link" href="businessForSale">Buy a Business</a></li>
 	<li class="nav-item"> <a class="nav-link" href="#">Sell a Business</a></li>
 	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item"> <a class="nav-link" href="#">Business Advisory</a></li>
+	<li class="nav-item"> <a class="nav-link" href="businessAdvisory">Business Advisory</a></li>
 	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
 	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
 	<!-- mobile menu finish -->
@@ -459,7 +459,7 @@
 <div class="filter">
 <!-- bfs sidebar filter title start -->
 <div class="filter-title">
-<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="#">Clear all</a></span>
+<i class="fa fa-filter" aria-hidden="true"></i> Filter by <span class="clear"><a href="realEstate">Clear All</a></span>
 </div>
 <!-- bfs sidebar filter title finish -->
 <div>
@@ -477,32 +477,32 @@
 <form class="catagories-filter">
 <!-- checkbox start -->
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'1')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault" >
+  <input onchange="getTopBusinessListingsByCategory(this,'1', 'category')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label data-toggle="modal" class="form-check-label" for="flexCheckDefault" >
     Agriculture & Gardening Business
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'5')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'5', 'category')" class="form-check-input" type="checkbox" value="" id="AutomotiveBusiness">
+  <label data-toggle="modal" class="form-check-label" for="AutomotiveBusiness">
     Automotive Business
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'3')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'3', 'category')" class="form-check-input" type="checkbox" value="" id="ApparelFootwear">
+  <label data-toggle="modal" class="form-check-label" for="ApparelFootwear">
     Apparel & Footwear
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'4')"  class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'4', 'category')"  class="form-check-input" type="checkbox" value="" id="ArtsEntertainmentRecreational">
+  <label data-toggle="modal" class="form-check-label" for="ArtsEntertainmentRecreational">
     Arts, Entertainment & recreational
   </label>
 </div>
 <div class="form-check">
-  <input onchange="getTopBusinessListingsByCategory(this,'6')" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal" class="form-check-label" for="flexCheckDefault">
+  <input onchange="getTopBusinessListingsByCategory(this,'6', 'category')" class="form-check-input" type="checkbox" value="" id="BusinessSupportBusinesses">
+  <label data-toggle="modal" class="form-check-label" for="BusinessSupportBusinesses">
     Business Support Businesses
   </label>
 </div>
@@ -526,39 +526,79 @@
 <div class="clear"></div>
 <form class="catagories-filter">
 <!-- checkbox start -->
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
-    India
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
-    Andhra Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
-    Arunachal Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
-    Assam
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label data-toggle="modal" data-target="#myModal-1" class="form-check-label" for="flexCheckDefault">
-    Bihar
-  </label>
-</div>
+
+
+    <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'1', 'country')" value="" id="Afghanistan">
+                 <label class="form-check-label" for="Afghanistan">
+                  Afghanistan
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,2', 'country')" value="" id="Albania">
+                 <label class="form-check-label" for="Albania">
+                  Albania
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'3', 'country')" value="" id="Algeria">
+                 <label class="form-check-label" for="Algeria">
+                   Algeria
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'4', 'country')" value="" id="Andorra">
+                 <label class="form-check-label" for="Andorra">
+                  Andorra
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'5', 'country')" value="" id="Angola">
+                 <label class="form-check-label" for="Angola">
+                   Angola
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'6', 'country')" value="" id="AntiguaAndBarbuda">
+                 <label class="form-check-label" for="AntiguaAndBarbuda">
+                 Antigua and Barbuda
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'7', 'country')" value="" id="Argentina">
+                 <label class="form-check-label" for="Argentina">
+                  Argentina
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'8', 'country')" value="" id="Armenia">
+                 <label class="form-check-label" for="Armenia">
+                  Armenia
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'9', 'country')" value="" id="Australia">
+                 <label class="form-check-label" for="Australia">
+                 Australia
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'10', 'country')" value="" id="Austria">
+                 <label class="form-check-label" for="Austria">
+                 Austria
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'11', 'country')" value="" id="Azerbaijan">
+                 <label class="form-check-label" for="Azerbaijan">
+                  Azerbaijan
+                 </label>
+               </div>
+
+
 <!-- checkbox finish -->
 <!-- location popup link start -->
-<a data-toggle="modal" data-target="#myModal-1" class="more-filter">+ 13more</a>
+<a data-toggle="modal" data-target="#myModal-1" class="more-filter">+ 193more</a>
 <!-- location popup link finish -->
 </form>
 </div>
@@ -578,19 +618,20 @@
 <!-- bfs title finish -->
 <div class="col-lg-6 col-xl-5 col-md-12 desktop-view">
 <!-- bfs grid start -->
-<span class="grid-area"><a href="/businessForSale"><span class="Grid-active">Grid</span></a> 
+<!-- bfs grid start -->
+<span class="grid-area"><a href="javascript:listOrGridview('grid')" id="gridFilter"><span class="Grid" value="grid">Grid</span></a>
 <!-- bfs grid finish -->
 <!-- bfs list start -->
-<a href="business-for-sale-list.html"><span class="List">List</span></a></span>
+<a href="javascript:listOrGridview('list')" id="listFilter"><span class="List" value="list">List</span></a></span>
 <!-- bfs list finish -->
-<!-- bfs Sort By start -->
 <div class="Sort"><span class="sort-text">Sort By:</span>
 <span class="customselect"> 
 <select>
-  <option value="Tobuz Rank">Tobuz Rank</option>
-  <option value="Tobuz Rank">Tobuz Rank</option>
-  <option value="Tobuz Rank">Tobuz Rank</option>
-  <option value="Tobuz Rank">Tobuz Rank</option>
+  <option value="latest">Latest</option>
+    <option value="Low To High">Low To High</option>
+    <option value="High To Low">High To Low</option>
+    <option value="A to Z">A to Z</option>
+    <option value="Z to A">Z to A</option>
 </select></span></div>
 <!-- bfs Sort By finish -->
 </div>
@@ -730,7 +771,7 @@ bfs grid 6 finish
 </div> -->
 
 <div class="container">
-  <div class="row" id="card-container1">
+  <div class="row" id="card-container">
    <!--   <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
       <div class="card">
         <img class="card-img-top" src="/images/Corporate-business.jpg" alt="Card image cap">
@@ -762,7 +803,7 @@ bfs grid 6 finish
     
   </div>
   
-  <div class="row"  id="card-container2">
+  <div class="row"  id="card-container">
     <!--  <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
       <div class="card">
         <img class="card-img-top" src="https://via.placeholder.com/300x200.png" alt="Card image cap">
@@ -896,7 +937,7 @@ bfs grid 6 finish
 <li><a href="#">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
@@ -910,8 +951,8 @@ bfs grid 6 finish
 <li><a href="#">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
 <li><a href="#">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -935,7 +976,7 @@ bfs grid 6 finish
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12">Terms Of Service | Privacy Policy © 2022 Designed By FQI</div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2022 Designed By FQI</div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- whatsapp icon area start -->
@@ -963,25 +1004,25 @@ bfs grid 6 finish
 		<div class="catagories-popup-area">
 		<div class="catagories-title">Agriculture & Gardening Business</div>
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'1')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'1', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Farms & related businesses
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'1')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'1', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Nurseries
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'1')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'1', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Agricultural & related Supplies
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'33')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'33', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Commercial Farming
   </label>
@@ -989,43 +1030,43 @@ bfs grid 6 finish
 <br/>
 <div class="catagories-title">Commercial</div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'37')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'37', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Commercial
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'39')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'39', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Commercial Land
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'39')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'39', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Commercial Suites
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'41')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'41', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Commercial Villa
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'38')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'38', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Commercial Building
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'13')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'13', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Franchise New
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'14')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'14', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Franchise Resale
   </label>
@@ -1034,19 +1075,19 @@ bfs grid 6 finish
 		<div class="catagories-popup-area">
 		<div class="catagories-title">Hotel, Restaurants and Food Services</div>
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'17')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'17', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Hotel, Restaurants and Food Services
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'46')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'46', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Coffee Shops
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'31')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'31', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Hotel/ Leisure
   </label>
@@ -1060,49 +1101,61 @@ bfs grid 6 finish
 <br/>
 <div class="catagories-title">Corporate Businesses</div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'28')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'28', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Industrial/ Warehouse
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'35')"  id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'35', 'category')"  id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Labor Camp
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'30')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'30', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Land/ Development
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'34')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'34', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Under Construction Projects
   </label>
 </div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'26', 'category')" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+   Offices
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox"  onClick="getTopBusinessListingsByCategory(this,'27', 'category')"  value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Retail
+  </label>
+</div>
 <!-- <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'19')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'19', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Investors
   </label>
 </div> -->
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'20')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'20', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Manufacturing Businesses
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'10')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'10', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Corporate Businesses
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'44')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'44', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Education
   </label>
@@ -1112,25 +1165,25 @@ bfs grid 6 finish
 		<div class="catagories-popup-area">
 		<div class="catagories-title">Retail Businesses</div>
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'23')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'23', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Retail Businesses
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'16')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'16', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Healthcare & Pharmaceuticals
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'45')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'45', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
  SuperMarket and Convenience Store
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'42')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'42', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     Shop
   </label>
@@ -1138,43 +1191,43 @@ bfs grid 6 finish
 <br/>
 <div class="catagories-title">Others</div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'21')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'21', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Marine Business
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'32')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'32', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Medical/ Consulting
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'8')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'8', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Care Businesses
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'12')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'12', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Finance, Insurance & Legal
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'25')"  id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="" onclick = "getTopBusinessListingsByCategory(this,'25', 'category')"  id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Utility Services
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'15')" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'15', 'category')" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
   Gift Shops
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'22')"  id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value=""  onclick = "getTopBusinessListingsByCategory(this,'22', 'category')"  id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    Others
   </label>
@@ -1272,285 +1325,1178 @@ bfs grid 6 finish
       </div>
       <div class="modal-body">
 	  <div class="overflow">
-	  
         <form class="mt-0">
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   India
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Andaman and Nicobar Islands
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Andhra Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Arunachal Pradesh
-  </label>
-</div>
 
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Assam
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Bihar
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Chandigarh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Chhattisgarh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Dadra and Nagar Haveli
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Daman and Diu
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Delhi
-  </label>
-</div>
-		</div>
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Goa
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Gujarat
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Haryana
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Himachal Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Jammu and Kashmir
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Jharkhand
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Karnataka
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Kerala
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Lakshadweep
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Madhya Pradesh
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Maharashtra
-  </label>
-</div>
-		</div>
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Manipur
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Meghalaya
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Mizoram
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Nagaland
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Odisha
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Puducherry
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Punjab
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Rajasthan
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Sikkim
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Tamil Nadu
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Telangana
-  </label>
-</div>
-		</div>
-		<div class="catagories-popup-area">
-		
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Manipur
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Meghalaya
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Mizoram
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Nagaland
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Odisha
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Puducherry
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Punjab
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Rajasthan
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Sikkim
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-   Tamil Nadu
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-  Telangana
-  </label>
-</div>
-		</div>
+
+            <div class="catagories-popup-area">
+
+                            		<div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'12', 'country')" value="" id="Bahrain">
+                              <label class="form-check-label" for="Bahrain">
+                                Bahrain
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'13', 'country')" value="" id="Bangladesh">
+                              <label class="form-check-label" for="Bangladesh">
+                               Bangladesh
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'14', 'country')" value="" id="Barbados">
+                              <label class="form-check-label" for="Barbados">
+                               Barbados
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'15', 'country')" value="" id="Belarus">
+                              <label class="form-check-label" for="Belarus">
+                               Belarus
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'16', 'country')" value="" id="Belgium">
+                              <label class="form-check-label" for="Belgium">
+                                Belgium
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'17', 'country')" value="" id="Belize">
+                              <label class="form-check-label" for="Belize">
+                               Belize
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'18', 'country')" value="" id="Benin">
+                              <label class="form-check-label" for="Benin">
+                                Benin
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'19', 'country')" value="" id="Bhutan">
+                              <label class="form-check-label" for="Bhutan">
+                                Bhutan
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'20', 'country')" value="" id="Bolivia">
+                              <label class="form-check-label" for="Bolivia">
+                                Bolivia
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'21', 'country')" value="" id="Bosnia and Herzegovina">
+                              <label class="form-check-label" for="Bosnia and Herzegovina">
+                               Bosnia and Herzegovina
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'22', 'country')" value="" id="Botswana">
+                              <label class="form-check-label" for="Botswana">
+                               Botswana
+                              </label>
+                            </div>
+                            		</div>
+                            		<div class="catagories-popup-area">
+
+                            		<div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'23', 'country')" value="" id="Brazil">
+                              <label class="form-check-label" for="Brazil">
+                              Brazil
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'24', 'country')" value="" id="Brunei">
+                              <label class="form-check-label" for="Brunei">
+                               Brunei
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'25', 'country')" value="" id="Bulgaria">
+                              <label class="form-check-label" for="Bulgaria">
+                               Bulgaria
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'26', 'country')" value="" id="Burkina Faso">
+                              <label class="form-check-label" for="Burkina Faso">
+                               Burkina Faso
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'27', 'country')" value="" id="Burundi">
+                              <label class="form-check-label" for="Burundi">
+                              Burundi
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'28', 'country')" value="" id="Cambodia">
+                              <label class="form-check-label" for="Cambodia">
+                               Cambodia
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'29', 'country')" value="" id="Cameroon">
+                              <label class="form-check-label" for="Cameroon">
+                               Cameroon
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'30', 'country')" value="" id="Canada">
+                              <label class="form-check-label" for="Canada">
+                                Canada
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'31', 'country')" value="" id="Cape Verde">
+                              <label class="form-check-label" for="Cape Verde">
+                               Cape Verde
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'32', 'country')" value="" id="Central African Republic">
+                              <label class="form-check-label" for="Central African Republic">
+                              Central African Republic
+                              </label>
+                            </div>
+                            		</div>
+                            		<div class="catagories-popup-area">
+
+                            		<div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'33', 'country')" value="" id="Chad">
+                              <label class="form-check-label" for="Chad">
+                                Chad
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'34', 'country')" value="" id="Chile">
+                              <label class="form-check-label" for="Chile">
+                               Chile
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'35', 'country')" value="" id="China">
+                              <label class="form-check-label" for="China">
+                               China
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'36', 'country')" value="" id="Colombia">
+                              <label class="form-check-label" for="Colombia">
+                                Colombia
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'37', 'country')" value="" id="Comoros">
+                                    <label class="form-check-label" for="Comoros">
+                                      Comoros
+                                    </label>
+                                  </div>
+                             <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'38', 'country')" value="" id="Congo, Democratic Republic of the">
+                                          <label class="form-check-label" for="Congo, Democratic Republic of the">
+                                            Congo, Democratic Republic of the
+                                          </label>
+                                        </div>
+                             <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'39', 'country')" value="" id="Congo, Republic of the">
+                                                <label class="form-check-label" for="Congo, Republic of the">
+                                                  Congo, Republic of the
+                                                </label>
+                                              </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'40', 'country')" value="" id="Costa Rica">
+                               <label class="form-check-label" for="Costa Rica">
+                                 Costa Rica
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'41', 'country')" value="" id="Cote d'Ivoire">
+                               <label class="form-check-label" for="Cote d'Ivoire">
+                                 Cote d Ivoire
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'42', 'country')" value="" id="Croatia">
+                               <label class="form-check-label" for="Croatia">
+                                 Croatia
+                               </label>
+                             </div>
+                             </div>
+                             <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'43', 'country')" value="" id="Cuba">
+                               <label class="form-check-label" for="Cuba">
+                                 Cuba
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'44', 'country')" value="" id="Cyprus">
+                               <label class="form-check-label" for="Cyprus">
+                                 Cyprus
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'45', 'country')" value="" id="Czech Republic">
+                               <label class="form-check-label" for="Czech Republic">
+                                 Czech Republic
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'46', 'country')" value="" id="Denmark">
+                               <label class="form-check-label" for="Denmark">
+                                 Denmark
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'47', 'country')" value="" id="Djibouti">
+                               <label class="form-check-label" for="Djibouti">
+                                 Djibouti
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'48', 'country')" value="" id="Dominica">
+                               <label class="form-check-label" for="Dominica">
+                                 Dominica
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'49', 'country')" value="" id="Dominican Republic">
+                               <label class="form-check-label" for="Dominican Republic">
+                                 Dominican Republic
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'50', 'country')" value="" id="Ecuador">
+                               <label class="form-check-label" for="Ecuador">
+                                 Ecuador
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'51', 'country')" value="" id="Egypt">
+                               <label class="form-check-label" for="Egypt">
+                                 Egypt
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'52', 'country')" value="" id="El Salvador">
+                               <label class="form-check-label" for="El Salvador">
+                                 El Salvador
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'199', 'country')" value="" id="England">
+                               <label class="form-check-label" for="England">
+                                 England
+                               </label>
+                             </div>
+                             </div>
+                             <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'53', 'country')" value="" id="Equatorial Guinea">
+                               <label class="form-check-label" for="Equatorial Guinea">
+                                 Equatorial Guinea
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'54', 'country')" value="" id="Eritrea">
+                               <label class="form-check-label" for="Eritrea">
+                                 Eritrea
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'55', 'country')" value="" id="Estonia">
+                               <label class="form-check-label" for="Estonia">
+                                 Estonia
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'56', 'country')" value="" id="Ethiopia">
+                               <label class="form-check-label" for="Ethiopia">
+                                 Ethiopia
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'57', 'country')" value="" id="Fiji">
+                               <label class="form-check-label" for="Fiji">
+                                 Fiji
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'58', 'country')" value="" id="Finland">
+                               <label class="form-check-label" for="Finland">
+                                 Finland
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'59', 'country')" value="" id="France">
+                               <label class="form-check-label" for="France">
+                                 France
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'60', 'country')" value="" id="Gabon">
+                               <label class="form-check-label" for="Gabon">
+                                 Gabon
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox"  onClick="getTopBusinessListingsByCategory(this,'61', 'country')" value="" id="Gambia">
+                               <label class="form-check-label" for="Gambia">
+                                 Gambia
+                               </label>
+                             </div>
+                             <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'62', 'country')" value="" id="Georgia">
+                                     <label class="form-check-label" for="Georgia">
+                                       Georgia
+                                     </label>
+                                   </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'63', 'country')" value="" id="Germany">
+                               <label class="form-check-label" for="Germany">
+                                 Germany
+                               </label>
+                             </div>
+                             </div>
+                             <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'64', 'country')" value="" id="Ghana">
+                               <label class="form-check-label" for="Ghana">
+                                 Ghana
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'65', 'country')" value="" id="Greece">
+                               <label class="form-check-label" for="Greece">
+                                 Greece
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'66', 'country')" value="" id="Greenland">
+                               <label class="form-check-label" for="Greenland">
+                                 Greenland
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'67', 'country')" value="" id="Grenada">
+                               <label class="form-check-label" for="Grenada">
+                                 Grenada
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'68', 'country')" value="" id="Guatemala">
+                               <label class="form-check-label" for="Guatemala">
+                                 Guatemala
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'69', 'country')" value="" id="Guinea">
+                               <label class="form-check-label" for="Guinea">
+                                 Guinea
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'70', 'country')" value="" id="Guinea-Bissau">
+                               <label class="form-check-label" for="Guinea-Bissau">
+                                 Guinea-Bissau
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'71', 'country')" value="" id="Guyana">
+                               <label class="form-check-label" for="Guyana">
+                                 Guyana
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'72', 'country')" value="" id="Haiti">
+                               <label class="form-check-label" for="Haiti">
+                                 Haiti
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'73', 'country')" value="" id="Honduras">
+                               <label class="form-check-label" for="Honduras">
+                                 Honduras
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'74', 'country')" value="" id="Hong Kong">
+                               <label class="form-check-label" for="Hong Kong">
+                                 Hong Kong
+                               </label>
+                             </div>
+                             </div>
+                             <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'75', 'country')" value="" id="Hungary">
+                               <label class="form-check-label" for="Hungary">
+                                 Hungary
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'76', 'country')" value="" id="Iceland">
+                               <label class="form-check-label" for="Iceland">
+                                 Iceland
+                               </label>
+                             </div>
+                             <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'77', 'country')" value="" id="India">
+                                        <label class="form-check-label" for="India">
+                                          India
+                                        </label>
+                                      </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'78', 'country')" value="" id="Indonesia">
+                               <label class="form-check-label" for="Indonesia">
+                                 Indonesia
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'79', 'country')" value="" id="Iran">
+                               <label class="form-check-label" for="Iran">
+                                 Iran
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'80', 'country')" value="" id="Iraq">
+                               <label class="form-check-label" for="Iraq">
+                                 Iraq
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'81', 'country')" value="" id="Ireland">
+                               <label class="form-check-label" for="Ireland">
+                                 Ireland
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'82', 'country')" value="" id="Israel">
+                               <label class="form-check-label" for="Israel">
+                                 Israel
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'83', 'country')" value="" id="Italy">
+                               <label class="form-check-label" for="Italy">
+                                 Italy
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'84', 'country')" value="" id="Jamaica">
+                               <label class="form-check-label" for="Jamaica">
+                                 Jamaica
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'85', 'country')" value="" id="Japan">
+                               <label class="form-check-label" for="Japan">
+                                 Japan
+                               </label>
+                             </div>
+                             </div>
+                             <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'86', 'country')" value="" id="Jordan">
+                               <label class="form-check-label" for="Jordan">
+                                 Jordan
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'87', 'country')" value="" id="Kazakhstan">
+                               <label class="form-check-label" for="Kazakhstan">
+                                 Kazakhstan
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'88', 'country')" value="" id="Kenya">
+                               <label class="form-check-label" for="Kenya">
+                                 Kenya
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'89', 'country')" value="" id="Kiribati">
+                               <label class="form-check-label" for="Kiribati">
+                                 Kiribati
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'90', 'country')" value="" id="Korea, North">
+                               <label class="form-check-label" for="Korea, North">
+                                 Korea, North
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'91', 'country')" value="" id="Korea, South">
+                               <label class="form-check-label" for="Korea, South">
+                                 Korea, South
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'92', 'country')" value="" id="Kosovo">
+                               <label class="form-check-label" for="Kosovo">
+                                 Kosovo
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'93', 'country')" value="" id="Kuwait">
+                               <label class="form-check-label" for="Kuwait">
+                                 Kuwait
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'94', 'country')" value="" id="Kyrgyzstan">
+                               <label class="form-check-label" for="Kyrgyzstan">
+                                 Kyrgyzstan
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'95', 'country')" value="" id="Laos">
+                               <label class="form-check-label" for="Laos">
+                                 Laos
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'96', 'country')" value="" id="Latvia">
+                               <label class="form-check-label" for="Latvia">
+                                 Latvia
+                               </label>
+                             </div>
+                             </div>
+                             <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'97', 'country')" value="" id="Lebanon">
+                               <label class="form-check-label" for="Lebanon">
+                                 Lebanon
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'98', 'country')" value="" id="Lesotho">
+                               <label class="form-check-label" for="Lesotho">
+                                 Lesotho
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'99', 'country')" value="" id="Liberia">
+                                <label class="form-check-label" for="Liberia">
+                                  Liberia
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'100', 'country')" value="" id="Libya">
+                                 <label class="form-check-label" for="Libya">
+                                   Libya
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'101', 'country')" value="" id="1">
+                                  <label class="form-check-label" for="1">
+                                    Liechtenstein
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'102', 'country')" value="" id="2">
+                                   <label class="form-check-label" for="2">
+                                     Lithuania
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'103', 'country')" value="" id="3">
+                                    <label class="form-check-label" for="3">
+                                      Luxembourg
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'104', 'country')" value="" id="4">
+                                     <label class="form-check-label" for="4">
+                                       Macedonia
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'105', 'country')" value="" id="5">
+                                      <label class="form-check-label" for="5">
+                                        Madagascar
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'106', 'country')" value="" id="6">
+                                       <label class="form-check-label" for="6">
+                                         Malawi
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'107', 'country')" value="" id="7">
+                                        <label class="form-check-label" for="7">
+                                          Malaysia
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'108', 'country')" value="" id="8">
+                               <label class="form-check-label" for="8">
+                                 Maldives
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'109', 'country')" value="" id="9">
+                               <label class="form-check-label" for="9">
+                                 Mali
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'110', 'country')" value="" id="10">
+                                <label class="form-check-label" for="10">
+                                  Malta
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'111', 'country')" value="" id="11">
+                                 <label class="form-check-label" for="11">
+                                   Marshall Islands
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'112', 'country')" value="" id="12">
+                                  <label class="form-check-label" for="12">
+                                    Mauritania
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'113', 'country')" value="" id="13">
+                                   <label class="form-check-label" for="13">
+                                     Mauritius
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'114', 'country')" value="" id="14">
+                                    <label class="form-check-label" for="14">
+                                      Mexico
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'115', 'country')" value="" id="15">
+                                     <label class="form-check-label" for="15">
+                                       Micronesia, Federated States of
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'116', 'country')" value="" id="16">
+                                      <label class="form-check-label" for="16">
+                                        Moldova
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'117', 'country')" value="" id="17">
+                                       <label class="form-check-label" for="17">
+                                         Monaco
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'118', 'country')" value="" id="18">
+                                        <label class="form-check-label" for="18">
+                                          Mongolia
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'119', 'country')" value="" id="19">
+                               <label class="form-check-label" for="19">
+                                 Montenegro
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'120', 'country')" value="" id="20">
+                               <label class="form-check-label" for="20">
+                                 Morocco
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'121', 'country')" value="" id="21">
+                                <label class="form-check-label" for="21">
+                                  Mozambique
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'122', 'country')" value="" id="22">
+                                 <label class="form-check-label" for="22">
+                                   Myanmar (Burma)
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'123', 'country')" value="" id="23">
+                                  <label class="form-check-label" for="23">
+                                    Namibia
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'124', 'country')" value="" id="24">
+                                   <label class="form-check-label" for="24">
+                                     Nauru
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'125', 'country')" value="" id="25">
+                                    <label class="form-check-label" for="25">
+                                      Nepal
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'126', 'country')" value="" id="26">
+                                     <label class="form-check-label" for="26">
+                                       Netherlands
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'127', 'country')" value="" id="27">
+                                      <label class="form-check-label" for="27">
+                                        New Zealand
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'128', 'country')" value="" id="28">
+                                       <label class="form-check-label" for="28">
+                                         Nicaragua
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'129', 'country')" value="" id="29">
+                                        <label class="form-check-label" for="29">
+                                          Niger
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'130', 'country')" value="" id="30">
+                               <label class="form-check-label" for="30">
+                                 Nigeria
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'131', 'country')" value="" id="31">
+                               <label class="form-check-label" for="31">
+                                 Norway
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'132', 'country')" value="" id="32">
+                                <label class="form-check-label" for="32">
+                                  Oman
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'133', 'country')" value="" id="34">
+                                 <label class="form-check-label" for="34">
+                                   Pakistan
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'134', 'country')" value="" id="35">
+                                  <label class="form-check-label" for="35">
+                                    Palau
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'135', 'country')" value="" id="36">
+                                   <label class="form-check-label" for="36">
+                                     Panama
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'136', 'country')" value="" id="37">
+                                    <label class="form-check-label" for="37">
+                                      Papua New Guinea
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'137', 'country')" value="" id="38">
+                                     <label class="form-check-label" for="38">
+                                       Paraguay
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'138', 'country')" value="" id="39">
+                                      <label class="form-check-label" for="39">
+                                        Peru
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'139', 'country')" value="" id="40">
+                                       <label class="form-check-label" for="40">
+                                         Philippines
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'140', 'country')" value="" id="41">
+                                        <label class="form-check-label" for="41">
+                                          Poland
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'141', 'country')" value="" id="42">
+                               <label class="form-check-label" for="42">
+                                 Portugal
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'142', 'country')" value="" id="43">
+                               <label class="form-check-label" for="43">
+                                 Qatar
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'143', 'country')" value="" id="44">
+                                <label class="form-check-label" for="44">
+                                  Romania
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'144', 'country')" value="" id="45">
+                                 <label class="form-check-label" for="45">
+                                   Russia
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'145', 'country')" value="" id="46">
+                                  <label class="form-check-label" for="46">
+                                    Rwanda
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'146', 'country')" value="" id="47">
+                                   <label class="form-check-label" for="47">
+                                     Saint Kitts and Nevis
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'147', 'country')" value="" id="48">
+                                    <label class="form-check-label" for="48">
+                                      Saint Lucia
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'148', 'country')" value="" id="49">
+                                     <label class="form-check-label" for="49">
+                                       Saint Vincent and the Grenadines
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'149', 'country')" value="" id="50">
+                                      <label class="form-check-label" for="50">
+                                        Samoa
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'150', 'country')" value="" id="51">
+                                       <label class="form-check-label" for="51">
+                                         San Marino
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'151', 'country')" value="" id="52">
+                                        <label class="form-check-label" for="52">
+                                          Sao Tome and Principe
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'152', 'country')" value="" id="53">
+                               <label class="form-check-label" for="53">
+                                 Saudi Arabia
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'153', 'country')" value="" id="54">
+                               <label class="form-check-label" for="54">
+                                 Senegal
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'154', 'country')" value="" id="55">
+                                <label class="form-check-label" for="55">
+                                  Serbia
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'155', 'country')" value="" id="56">
+                                 <label class="form-check-label" for="56">
+                                   Seychelles
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'156', 'country')" value="" id="57">
+                                  <label class="form-check-label" for="57">
+                                    Sierra Leone
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'157', 'country')" value="" id="58">
+                                   <label class="form-check-label" for="58">
+                                     Singapore
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'158', 'country')" value="" id="59">
+                                    <label class="form-check-label" for="59">
+                                      Slovakia
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'159', 'country')" value="" id="60">
+                                     <label class="form-check-label" for="60">
+                                       Slovenia
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'160', 'country')" value="" id="61">
+                                      <label class="form-check-label" for="61">
+                                        Solomon Islands
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'161', 'country')" value="" id="62">
+                                       <label class="form-check-label" for="62">
+                                         Somalia
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'162', 'country')" value="" id="63">
+                                        <label class="form-check-label" for="63">
+                                          South Africa
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'163', 'country')" value="" id="64">
+                               <label class="form-check-label" for="64">
+                                 South Sudan
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'164', 'country')" value="" id="65">
+                               <label class="form-check-label" for="65">
+                                 Spain
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'165', 'country')" value="" id="66">
+                                <label class="form-check-label" for="66">
+                                  Sri Lanka
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'166', 'country')" value="" id="67">
+                                 <label class="form-check-label" for="67">
+                                   Sudan
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'167', 'country')" value="" id="68">
+                                  <label class="form-check-label" for="68">
+                                    Suriname
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'168', 'country')" value="" id="69">
+                                   <label class="form-check-label" for="69">
+                                     Swaziland
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'169', 'country')" value="" id="70">
+                                    <label class="form-check-label" for="70">
+                                      Sweden
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'170', 'country')" value="" id="71">
+                                     <label class="form-check-label" for="71">
+                                       Switzerland
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'171', 'country')" value="" id="72">
+                                      <label class="form-check-label" for="72">
+                                        Syria
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'172', 'country')" value="" id="73">
+                                       <label class="form-check-label" for="73">
+                                         Taiwan
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'173', 'country')" value="" id="74">
+                                        <label class="form-check-label" for="74">
+                                          Tajikistan
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'174', 'country')" value="" id="75">
+                               <label class="form-check-label" for="75">
+                                 Tanzania
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'175', 'country')" value="" id="76">
+                               <label class="form-check-label" for="76">
+                                 Thailand
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'176', 'country')" value="" id="77">
+                                <label class="form-check-label" for="77">
+                                  The Bahamas
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'177', 'country')" value="" id="78">
+                                 <label class="form-check-label" for="78">
+                                   Timor-Leste
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'178', 'country')" value="" id="79">
+                                  <label class="form-check-label" for="79">
+                                    Togo
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'179', 'country')" value="" id="80">
+                                   <label class="form-check-label" for="80">
+                                     Tonga
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'180', 'country')" value="" id="81">
+                                    <label class="form-check-label" for="81">
+                                      Trinidad and Tobago
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'181', 'country')" value="" id="82">
+                                     <label class="form-check-label" for="82">
+                                       Tunisia
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'182', 'country')" value="" id="83">
+                                      <label class="form-check-label" for="83">
+                                        Turkey
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'183', 'country')" value="" id="84">
+                                       <label class="form-check-label" for="84">
+                                         Turkmenistan
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'184', 'country')" value="" id="85">
+                                        <label class="form-check-label" for="85">
+                                          Tuvalu
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'185', 'country')" value="" id="86">
+                               <label class="form-check-label" for="86">
+                                 UAE
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'186', 'country')" value="" id="87">
+                               <label class="form-check-label" for="87">
+                                 Uganda
+                               </label>
+                             </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'187', 'country')" value="" id="88">
+                                <label class="form-check-label" for="88">
+                                  Ukraine
+                                </label>
+                              </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'188', 'country')" value="" id="89">
+                                 <label class="form-check-label" for="89">
+                                   United Kingdom
+                                 </label>
+                               </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'189', 'country')" value="" id="90">
+                                  <label class="form-check-label" for="90">
+                                    United States of America
+                                  </label>
+                                </div>
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'190', 'country')" value="" id="91">
+                                   <label class="form-check-label" for="91">
+                                     Uruguay
+                                   </label>
+                                 </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'191', 'country')" value="" id="92">
+                                    <label class="form-check-label" for="92">
+                                      Uzbekistan
+                                    </label>
+                                  </div>
+                                   <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'192', 'country')" value="" id="93">
+                                     <label class="form-check-label" for="93">
+                                       Vanuatu
+                                     </label>
+                                   </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'193', 'country')" value="" id="95">
+                                      <label class="form-check-label" for="95">
+                                        Vatican City (Holy See)
+                                      </label>
+                                    </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'194', 'country')" value="" id="94">
+                                       <label class="form-check-label" for="94">
+                                         Venezuela
+                                       </label>
+                                     </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'195', 'country')" value="" id="96">
+                                        <label class="form-check-label" for="96">
+                                          Vietnam
+                                        </label>
+                                      </div>
+                                      </div>
+                            <div class="catagories-popup-area">
+                            <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'196', 'country')" value="" id="97">
+                                       <label class="form-check-label" for="97">
+                                         Yemen
+                                       </label>
+                                     </div>
+                            <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'197', 'country')" value="" id="98">
+                                       <label class="form-check-label" for="98">
+                                         Zambia
+                                       </label>
+                                     </div>
+                            <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" onClick="getTopBusinessListingsByCategory(this,'198', 'country')" value="" id="99">
+                                       <label class="form-check-label" for="99">
+                                         Zimbabwe
+                                       </label>
+                                     </div>
+                                     </div>
+                    		</div>
+
 		</form>
 		</div>
       </div>
@@ -1567,7 +2513,8 @@ bfs grid 6 finish
 </div>
 </div>
 </body>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--  <script src="js/jquery.slim.min.js"></script> -->
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
@@ -1624,6 +2571,8 @@ for (i = 0; i < l; i++) {
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
+            console.log("Internal :::::" +s.options[i].innerHTML);
+            myFunction(s.options[i].innerHTML);
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
@@ -1674,7 +2623,12 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
 
+var response;
+var currentPage = 1;
 
+function listOrGridview(view){
+    renderCards2(currentPage,response, view);
+}
 
 jQuery(document).ready(function($){
 	  var getUrl = window.location;
@@ -1687,8 +2641,8 @@ jQuery(document).ready(function($){
 	   type: 'GET',
 	   dataType: 'json', // added data type
 	   success: function(data) {
-	            
-		   var currentPage = 1;
+	       response = data;
+
 		   // Render the cards for the initial page
 		   renderCards(currentPage,data);
 		   // Add event listeners to the page links
@@ -1720,14 +2674,100 @@ jQuery(document).ready(function($){
 });
 });
 
-function getTopBusinessListingsByCategory (obj ,id){
+var categoriesIds = [];
+var sortByTitle = '';
+var sortByPrice = '';
+var countryIds = [];
+
+function getTopBusinessListingsByCategory(obj, id, value){
 	  var getUrl = window.location;
-		 var url = getUrl .protocol + "//" + getUrl.host + "/getTopBusinessListingsByCategory" ;
-		
+      var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+        if(!obj.checked) {
+        if(value == 'country'){
+                        countryIds.splice($.inArray(id, countryIds), 1)
+                     }
+                     if(value == 'category'){
+                        categoriesIds.splice($.inArray(id, categoriesIds), 1);
+                     }
+
+                if(((countryIds === null || countryIds.length === 0) && (categoriesIds === null || categoriesIds.length === 0)) && ((sortByTitle === null || sortByTitle === '') && ((sortByPrice === null || sortByPrice === '')))){
+                                    var url2 = getUrl .protocol + "//" + getUrl.host + "/topBusinessListings" ;
+                                    	$.ajax({
+                                    	   url: url2,
+                                    	   type: 'GET',
+                                    	   dataType: 'json', // added data type
+                                    	   success: function(data) {
+                                    	   response = data;
+
+                                    		   // Render the cards for the initial page
+                                    		   renderCards(currentPage,data);
+                                    		   // Add event listeners to the page links
+                                    		    $('.page-link').click(function(event) {
+                                    		     event.preventDefault();
+                                    		     var targetPage = $(event.target).text();
+                                    		     // Update the current page and render the new cards
+                                    		     if (targetPage === 'Previous') {
+                                    		       currentPage--;
+                                    		     } else if (targetPage === 'Next') {
+                                    		       currentPage++;
+                                    		     } else {
+                                    		       currentPage = parseInt(targetPage);
+                                    		     }
+                                    		     renderCards(currentPage,data);
+                                    		     // Update the active page link
+                                    		     $('.page-item').removeClass('active');
+                                    		     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                                       		 });
+                                    	}
+                                    });
+                              }else{
+            var obj = {"categoryIds":categoriesIds,"listingType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice, "countryIds" : countryIds};
+            $.ajax({
+                    url: url,
+                 	type: 'POST',
+                 	data: JSON.stringify(obj),
+                 	contentType: "application/json",
+                 	dataType:"json",
+                    cache: false,
+            	    timeout: 600000,
+                 	success: function(data)
+                 	    {
+                 	    response = data;
+
+                 				   // Render the cards for the initial page
+                 				   renderCards(currentPage,data);
+                 				   // Add event listeners to the page links
+                 				   $('.page-link').click(function(event) {
+                 				     event.preventDefault();
+                 				     var targetPage = $(event.target).text();
+                 				     // Update the current page and render the new cards
+                 				     if (targetPage === 'Previous') {
+                 				       currentPage--;
+                 				     } else if (targetPage === 'Next') {
+                 				       currentPage++;
+                 				     } else {
+                 				       currentPage = parseInt(targetPage);
+                 				     }
+                 				     renderCards(currentPage,data);
+                 				     // Update the active page link
+                 				     $('.page-item').removeClass('active');
+                 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+                 				 })
+                 		}
+                 	});
+            }
+        }
 		if( obj.checked ){
-			console.log ("url >>>>>>>"+url);
-			 var obj = {"categoryId":id};
-			$.ajax({
+			if(value == 'country'){
+            		    countryIds.push(id);
+            		} else if(value == 'category'){
+            		    categoriesIds.push(id);
+            		} else {
+
+            		}
+			var obj = {"categoryIds":categoriesIds,"listingType":"COMMERCIAL","sortByPrice":sortByTitle,"sortByTitle":sortByPrice, "countryIds" : countryIds};
+			$.ajax(
+			{
 			   url: url,
 			   type: 'POST',
 			   data: JSON.stringify(obj),
@@ -1736,9 +2776,7 @@ function getTopBusinessListingsByCategory (obj ,id){
 		       cache: false,
 		       timeout: 600000,
 			   success: function(data) {
-			     
-		    
-				   var currentPage = 1;
+			   response = data;
 
 				   // Render the cards for the initial page
 				   renderCards(currentPage,data);
@@ -1763,15 +2801,74 @@ function getTopBusinessListingsByCategory (obj ,id){
 				     // Update the active page link
 				     $('.page-item').removeClass('active');
 				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
-												
-				
+
+
 				 })
 			}
 		});
 		}
-			
-	
-	
+}
+
+function myFunction(value) {
+    console.log("Value of result :::::::::::" +value);
+        if (value == "A to Z") {
+          sortByTitle = true;
+          if(sortByPrice != null){
+            sortByPrice = null;
+          }
+        } else if (value == "Z to A") {
+          sortByTitle = false;
+          if(sortByPrice != null){
+                  sortByPrice = null;
+          }
+        } else if (value == "High To Low") {
+          sortByPrice = true;
+           if(sortByTitle != null){
+                        sortByTitle = null;
+           }
+        } else {
+          sortByPrice = false;
+           if(sortByTitle != null){
+                              sortByTitle = null;
+           }
+        }
+             var obj = {"categoryIds":categoriesIds,"sortByPrice":sortByPrice,
+            			 "sortByTitle":sortByTitle,"listingType":"COMMERCIAL", "countryIds" : countryIds};
+             var getUrl = window.location;
+                  var url = getUrl .protocol + "//" + getUrl.host + "/getBusinessByFilter" ;
+             $.ajax({
+                url: url,
+             	type: 'POST',
+             	data: JSON.stringify(obj),
+             	contentType: "application/json",
+             	dataType:"json",
+                cache: false,
+        	    timeout: 600000,
+             	success: function(data)
+             	    {
+             	    response = data;
+
+             				   // Render the cards for the initial page
+             				   renderCards(currentPage,data);
+             				   // Add event listeners to the page links
+             				   $('.page-link').click(function(event) {
+             				     event.preventDefault();
+             				     var targetPage = $(event.target).text();
+             				     // Update the current page and render the new cards
+             				     if (targetPage === 'Previous') {
+             				       currentPage--;
+             				     } else if (targetPage === 'Next') {
+             				       currentPage++;
+             				     } else {
+             				       currentPage = parseInt(targetPage);
+             				     }
+             				     renderCards(currentPage,data);
+             				     // Update the active page link
+             				     $('.page-item').removeClass('active');
+             				     $('.page-item:nth-child(' + (currentPage + 1) + ')').addClass('active');
+             				 })
+             		}
+             	});
 }
 
 
@@ -1779,8 +2876,7 @@ function getTopBusinessListingsByCategory (obj ,id){
 
 function renderCards(page,data) {
   // Clear the existing cards
-  $('#card-container1').empty();
-  $('#card-container2').empty();
+  $('#card-container').empty();
   // Calculate the starting index and ending index for this page
   var startIndex = (page - 1) * 6;
   var endIndex =startIndex+6;
@@ -1790,10 +2886,15 @@ function renderCards(page,data) {
   for (var i = startIndex; i < endIndex; i++) {
 	  console.log("File path :"+data[i].filePath );
 	  console.log(" businessListingId :"+data[i].businessListingId );
+
 	  if (count <3) {
 	    var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
-	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
-	    card.append('<div class="pd10">'); 
+	    if(data[i].filePath == null || data[i].filePath.trim() === '') {
+                    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= "images/others.jpg" />');
+        } else {
+        	    	card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+        }
+	    card.append('<div class="pd10">');
 	   // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
 	    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
 	    card.append('<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/>'+data[i].price+'</div>');
@@ -1802,10 +2903,61 @@ function renderCards(page,data) {
 	    card.append('<p><button type="button" onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
 	    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
 	    card.append('</div></div></div>');
-	    $('#card-container1').append(card);
+	    $('#card-container').append(card);
 	}
 	  else {
+
 		  var card = $('<div class="col-lg-6 col-xl-4 col-md-6">');
+		   if(data[i].filePath == null || data[i].filePath.trim() === '') {
+                              card.append('<div class="sale-image-area"> <img style="width=20% , height-140"  src= "images/others.jpg" />');
+           } else {
+                  	    	card.append('<div class="sale-image-area"> <img style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+            }
+		    card.append('<div class="pd10">');
+		    // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
+		    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
+		    card.append('<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/>'+data[i].price+'</div>');
+		    card.append('<span class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> UAE</span></div>');
+		    card.append('<div class="p-area" style="font-size: 0.9rem;">'+data[i].description.substring(0, 100)+"..."+'</div>');
+		    card.append('<p><button type="button"  onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
+		    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
+		    card.append('</div></div></div>');
+		    $('#card-container').append(card);
+	  }
+	  
+  }
+}
+
+
+function renderCards2(page,data, view) {
+  // Clear the existing cards
+  $('#card-container').empty();
+  // Calculate the starting index and ending index for this page
+  var startIndex = (page - 1) * 6;
+  var endIndex =startIndex+6;
+	var count =0;
+
+  // Loop through the data and create cards for this page
+  for (var i = startIndex; i < endIndex; i++) {
+	  console.log("File path :"+data[i].filePath );
+	  console.log(" businessListingId :"+data[i].businessListingId );
+
+	  if (count <3) {
+	     var card = $('<div class="' + (view === 'grid' ? 'col-lg-6 col-xl-4 col-md-6' : 'col-lg-10 col-xl-8 col-md-10') + '">');
+	    card.append('<div class="sale-image-area"> <img style=width:100% , height:70% src= ' + data[i].filePath + '   title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
+	    card.append('<div class="pd10">');
+	   // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
+	    card.append('<div class="title" style="font-size: 0.8rem;">'+data[i].title +'</div>');
+	    card.append('<div class="price"><img src="images/dollar-icon-sale.jpg" title="dollar" alt="dollar" class="dollar-icon"/>'+data[i].price+'</div>');
+	    card.append('<span class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> UAE</span></div>');
+	    card.append('<div class="p-area" style="font-size: 0.9rem;">'+data[i].description.substring(0, 100)+"..."+'</div>');
+	    card.append('<p><button type="button" onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
+	    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
+	    card.append('</div></div></div>');
+	    $('#card-container').append(card);
+	}
+	  else {
+		   var card = $('<div class="' + (viewMode === 'grid' ? 'col-lg-6 col-xl-4 col-md-6' : 'col-lg-10 col-xl-8 col-md-10') + '">');
 		    card.append('<div class="sale-image-area"> <img  style=width:100% , height:70% src=' + data[i].filePath + ' style="width=20% , height-140"  title='+data[i].suggestedTitle+' alt='+data[i].suggestedTitle+'/>');
 		    card.append('<div class="pd10">');
 		    // card.append('<div class="alt"><a href="">'+ data[i].suggestedTitle+'</a></div>');
@@ -1816,11 +2968,13 @@ function renderCards(page,data) {
 		    card.append('<p><button type="button"  onClick=contactbuyer("'+data[i].businessListingId+'") class="btn Business-btn">Contact Business</button>');
 		    card.append(' <span class="wishlist"><i class="fa fa-heart-o"></i> 0</span> </p>');
 		    card.append('</div></div></div>');
-		    $('#card-container2').append(card);
+		    $('#card-container').append(card);
 	  }
-	  
+
   }
 }
+
+
 
 
 function contactbuyer (id){

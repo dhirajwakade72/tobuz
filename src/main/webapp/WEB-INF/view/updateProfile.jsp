@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Tobuz - How It Works</title>
+  <title>Tobuz - Update Profile Dashboard</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="" />
@@ -25,7 +25,8 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 <body>
 <!-- topbar start -->
@@ -54,12 +55,27 @@
 <!-- Searchbar scrolling top desktop finish -->
 </div>
 
-<div class="col-lg-5 col-xl-4 col-md-6 offset-lg-0 offset-xl-2 offset-md-0">
+<div class="col-lg-6 col-xl-5 col-md-6 offset-lg-0 offset-xl-1 offset-md-0">
 <!-- Add Listing top desktop start -->
-<a href="createBusinessListings" class="btn btn-warning add-list-button" onclick="addListings();">+ Add Listing </a>
+<span class="mail-icon"><a href="#"><img src="images/mail.png" width="21" height="12" title="Mail" alt="Mail"/></a></span>
+<span class="mail-icon"><a href="#"><img src="images/bell.png" width="15" height="15" title="Notification" alt="Notification"/></a></span>
 <!-- Add Listing top desktop Finish -->
 <!-- login and ragister top desktop start -->
-<span class="login-area"><a href="login.html">Login</a> | <a href="register.html">Register</a> </span>
+<span class="switch-area"><div class="dropdown">
+  <button class="btn btn-secondary switch dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Switch to Franchisor
+  </button>
+  <div class="dropdown-menu switch-dropdown" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+ </span>
+ <span class="top-profile-area">
+ <div class="profile-photo"><img src="images/profile.jpg" width="28" height="28"/></div>
+ <div class="profile-name">Parag Gogari</div>
+ </span>
 <!-- login and ragister top desktop finish -->
 <!-- languages top desktop Start -->
 <span class="lang">
@@ -232,7 +248,7 @@
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
- <!-- navigation toggle finish --> 
+ <!-- navigation toggle finish -->
   <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="tobuz" title="Tobuz"></a>
   <div class="mobile-menu-right">
  <!-- Search icon mobile start -->
@@ -410,39 +426,41 @@
 	 <!-- mobile menu close button finish -->
 	 <!-- login and register area mobile start -->
 	 <li class="login-area d-lg-none">
-	 <img src="images/moble-menu-login.png" style="margin-right:10px;"/> <a href="login.html">Login</a> | <a href="register.html">Register</a> 
+	 <!--<img src="images/moble-menu-login.png" style="margin-right:10px;"/> <a href="login.html">Login</a> | <a href="register.html">Register</a> -->
+	 <div class="profile-photo"><img src="images/profile.jpg" width="28" height="28"/></div>
+ <div class="profile-name">Parag Gogari</div>
 	 </li>
 	 <!-- login and register area mobile finish -->
 	  <!-- Add Listing mobile start -->
 	 <li class="add-list d-lg-none">
-	  <a href="createBusinessListings" style="color:#000;"><img src="images/plus.png" width="15" height="15" style="margin-right:5px;"/> Add Listing</a> 
+	 <a href="create-business-listings-dashboard.html" style="color:#000;"><img src="images/plus.png" width="15" height="15" style="margin-right:5px;"/> Add Listing</a>
 	 </li>
 	 <!-- Add Listing mobile Finish -->
-	 <!-- mobile menu start -->
+	<!-- mobile menu start -->
     <li class="nav-item"> <a class="nav-link" href="index.html">Home</a></li>
-    <li class="nav-item dropdown"> 
+    <li class="nav-item dropdown">
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Buy a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="businessForSale">Business For Sale</a>
-          <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress">Distress Sale</a>
-		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
+          <a class="dropdown-item" href="business-for-sale.html">Business For Sale</a>
+          <a class="dropdown-item" href="commercial-for-sale-grid.html">Commercial for a sale</a>
+          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+		  <a class="dropdown-item" href="franchisee-opportunities-grid.html">Franchisee Opportunities</a>
         </div>
 	</li>
 	<li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers.html">Brokers</a>
-          <a class="dropdown-item" href="businesServices">Business Services</a>
-		  
+          <a class="dropdown-item" href="business-services.html">Business Services</a>
+
         </div>
 	</li>
-	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item dropdown"> 
+	<li class="nav-item"> <a class="nav-link" href="#">Real Estate</a></li>
+	<li class="nav-item dropdown">
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -452,13 +470,13 @@
 		  <a class="dropdown-item" href="#">Business Loan</a>
         </div>
 	</li>
-	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
-	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
-	<li class="nav-item"> <a class="nav-link" href="contact">Contact</a></li>
+	<li class="nav-item"> <a class="nav-link" href="blog-gride.html">Blog</a></li>
+	<li class="nav-item"> <a class="nav-link" href="about.html">About Us</a></li>
+	<li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a></li>
 	<!-- mobile menu finish -->
-	<!-- social icon area start -->
+<!-- social icon area start -->
 	<li class="social d-lg-none">
-	<span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span> 
+	<span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span>
 	 </li>
 	 <!-- social icon area finish -->
   </ul>
@@ -467,107 +485,141 @@
 </div>
 <!-- navigation finish -->
 </header>
-<!-- How Tobuz Works area start -->
+<!--Switch to Buyer Dashboard area start -->
 <section class="padtb50">
 <div class="container">
-<div class="row mb-20px">
-<div class="col-md-12 col-lg-6 col-xl-6">
-<!-- How Tobuz Works video start -->
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/x0ZL-ApVya0" allowfullscreen></iframe>
-</div>
-<!-- How Tobuz Works video finish -->
-
-</div>
-<!-- How Tobuz Works text start -->
-<div class="col-md-12 col-lg-6 col-xl-6 about-us-text-area">
-<!-- How Tobuz Works title start -->
-<h1>Understand How Tobuz Works <Br/><span>For your business</span></h1>
-<!-- How Tobuz Works title finish -->
-<ul>
-<li>Have a business to sell or looking for a new opportunity to invest in? </li>
-<li>Look no further, as Tobuz is now your <span class="strong-text">No.1 trusted</span> choice to buy or sell businesses.</li>
-<li>A <span class="strong-text">secure and 100% confidential</span> online portal.</li>
-<li>Tobuz makes business trade processes to be easier than ever.</li>
-</ul>
-</div>
-<!-- How Tobuz Works text finish -->
+<div class="row">
+<div class="col-lg-12 col-xl-12 col-md-12">
+<!-- bfs sidebar start -->
+<div class="row">
+<div class="col-lg-3 col-xl-3 col-md-4 desktop-view">
+<!-- bfs sidebar filter area start -->
+<div>
+<div class="my-destboard"><a href="switch-to-buyer-dashboard.html">My Dashboard</a></div>
+<div class="My-Packages"><a href="my-packages-buyer-dashboard.html">My Packages</a></div>
+<div class="My-Adverts"><a href="my-adverts-buyer-dashboard.html">My Adverts</a></div>
+<div class="Favorites"><a href="my-favourites-dashboard.html">Favorites</a></div>
+<div class="Saved-Search"><a href="saved-search-buyer-dashboard.html">Saved Search</a></div>
+<div class="Messages"><a href="messages-dashboard.html">Messages</a></div>
+<div class="Update-Profile-active"><a href="updateProfile">Update Profile</a></div>
 </div>
 </div>
-</section>
-<!-- How Tobuz Works area finish -->
-<!-- Overall Business area start -->
-<section class="Overall">
-<div class="container">
-<!-- Overall Business title start -->
-<h2 class="buy-h2"><span style="color:#252525;">Overall</span> Business</h2>
-<!-- Overall Business title finish -->
-<div class="row justify-content-md-center">
- <div class="col-xl-9 col-lg-10">
-<div class="row"> 
-<div class="col-xl-4 col-lg-4 col-4 mb-4">
-      
-        <!-- Progress bar 1 -->
-        <div class="progress mx-auto" data-value='80'>
-          <span class="progress-left">
-                        <span class="progress-bar progress-bar-border"></span>
-          </span>
-          <span class="progress-right">
-                        <span class="progress-bar progress-bar-border"></span>
-          </span>
-          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-            <div class="progress-text">39121<br/>
-			<span class="progress-small">Business Listed</span></div>
-			
-          </div>
-        </div>
-        <!-- END -->
 
-      </div>
-    
+<div class="col-lg-3 col-xl-3 col-md-4 mobile-view">
+<!-- bfs sidebar filter area start -->
+<div class="dropdown dashboard">
+  <button class="btn btn-secondary dashboard-leftmenu dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <div class="Update-Profile-active"><a href="updateProfile">Update Profile</a></div>
 
-    <div class="col-xl-4 col-lg-4 col-4 mb-4">
-     <!-- Progress bar 2 -->
-        <div class="progress mx-auto" data-value='70'>
-          <span class="progress-left">
-                        <span class="progress-bar progress-bar-border"></span>
-          </span>
-          <span class="progress-right">
-                        <span class="progress-bar progress-bar-border"></span>
-          </span>
-          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-            <div class="progress-text">28012<br/><span class="progress-small">Total Users</span></div>
-			
-          </div>
-        </div>
-        <!-- END -->
-
-        
-      </div>
-  
-
-    <div class="col-xl-4 col-lg-4 col-4 mb-4">
- <!-- Progress bar 3 -->
-        <div class="progress mx-auto" data-value='26'>
-          <span class="progress-left">
-                        <span class="progress-bar progress-bar-border"></span>
-          </span>
-          <span class="progress-right">
-                        <span class="progress-bar progress-bar-border"></span>
-          </span>
-          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-            <div class="progress-text">630 <Br/><span class="progress-small">Sale Closed</span></div>
-			
-          </div>
-        </div>
-        <!-- END -->
-
-    </div>
-    </div>
-	</div>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <div class="my-destboard"><a href="switch-to-buyer-dashboard.html">My Dashboard</a></div>
+   <div class="My-Packages"><a href="my-packages-buyer-dashboard.html">My Packages</a></div>
+   <div class="My-Adverts"> <a href="my-adverts-buyer-dashboard.html">My Adverts</a></div>
+   <div class="Favorites"> <a href="favourites-dashboard.html">Favorites</a></div>
+   <div class="Saved-Search"><a href="saved-search-buyer-dashboard.html">Saved Search</a></div>
+<div class="Messages"><a href="messages-dashboard">Messages</a></div>
   </div>
 </div>
+</div>
+<!-- bfs sidebar finish -->
+<!-- bfs area contact start -->
+<div class="col-lg-9 col-xl-9 col-md-8">
+<div class="row">
+<!-- buyer profile finish -->
+<div class="col-lg-12 col-xl-10 col-md-12">
+<div class="profile-deshboard">
+<div class="row">
+<div class="col-lg-2 col-xl-2 col-6 col-md-3">
+<img src="images/profile.jpg" width="100%" alt="Parag Gogari" title="Parag Gogari"/><br>
+<div class="desktop-view"><button type="button" class="btn chosefile">Choose a file</button></div>
+<div class="mobile-view">
+<div class="name">Parag Gogari</div><br/>
+<div class="buyer-des">Buyer</div>
+<div class="buyer-create-list-button"><button type="button" class="btn chosefile">Choose a file</button></div>
+</div>
+</div>
+<div class="col-lg-10 col-xl-10 col-6 col-md-9">
+<div class="desktop-view">
+<div class="name">Parag Gogari</div><br/>
+<div class="buyer-des">Buyer</div><br/>
+</div>
+<div class="register-seller-area"><a href=""><img src="images/icon-register.jpg" title="Register as Seller" alt="Register as Seller" width="13" height="13"/> Register as Seller</a></div>
+<div class="register-seller-area"><a href=""><img src="images/icon-register.jpg" title="Register as Franchisor" alt="Register as Franchisor" width="13" height="13"/> Register as Franchisor</a></div>
+</div>
+</div>
+</div>
+</div>
+<!-- buyer profile finish -->
+<div class="clear"></div>
+
+<div class="col-lg-10 col-xl-10 col-md-12 mb-30">
+<!--contact seller from start-->
+<div class="contact-seller-form">
+<h2 style="color:#00498e;" class="contact-h2">Account Information</h2>
+<form>
+<div class="row">
+<div class="col-md-12 col-lg-6 col-xl-6">
+<!-- Name start -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><img src="images/name.png" width="33" height="19"/></span>
+  </div>
+  <input type="text" class="form-control login-user" placeholder="Parag Gogari" aria-label="Name" aria-describedby="basic-addon1">
+</div>
+<!-- Name finish -->
+<!-- Name start -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><img src="images/city-icon.jpg" width="33" height="19"/></span>
+  </div>
+  <input type="text" class="form-control login-user" placeholder="Mumbai" aria-label="Name" aria-describedby="basic-addon1">
+</div>
+<!-- Name finish -->
+<!-- Email Address start -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><img src="images/country-icon.jpg" width="33" height="23"/></span>
+  </div>
+  <input type="text" class="form-control login-user" placeholder="India" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<!-- Email Address finish -->
+</div>
+<div class="col-md-12 col-lg-6 col-xl-6">
+<!-- Phone No start -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><img src="images/phone.png" width="33" height="21"/></span>
+  </div>
+  <input type="text" class="form-control login-user" placeholder="07738282287" aria-label="phone" aria-describedby="basic-addon1">
+</div>
+<!-- Phone No finishs -->
+<!-- Phone No start -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><img src="images/map-icon.jpg" width="33" height="21"/></span>
+  </div>
+  <input type="text" class="form-control login-user" placeholder="Maharashtra" aria-label="phone" aria-describedby="basic-addon1">
+</div>
+<!-- Phone No finishs -->
+</div>
+ <!-- submit button start -->
+ <div class="register-button-area">
+ <button type="submit" class="btn register-button">Update</button>
+ </div>
+ <!-- submit button finish -->
+</div>
+<form>
+</div>
+<!--contact seller from finish-->
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<!-- FAQ area finish -->
+
 <!-- Signup for email alerts area start -->
 <section class="padd-30 sign-subscriobe">
 <div class="container">
@@ -595,7 +647,6 @@
 </div>
 </section>
 <!-- Signup for email alerts area finish -->
-
 <!-- footer area start -->
 <footer class="padd-30">
 <div class="container">
@@ -615,13 +666,13 @@
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Businesses</h2>
 <ul>
-<li><a href="businessForSale">Business For Sale</a></li>
-<li><a href="commercialForSaleGrid">Commercial for sale</a></li>
+<li><a href="business-for-sale.html">Business For Sale</a></li>
+<li><a href="commercial-for-sale-grid.html">Commercial for sale</a></li>
 <li><a href="buyers-investors-grid.html">Buyers/Investors</a></li>
-<li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
+<li><a href="franchisee-opportunities-grid.html">Franchisee Opportunities</a></li>
 <li><a href="brokers.html">Brokers</a></li>
-<li><a href="businesServices">Business Services</a></li>
-<li><a href="distress">Distress Sale</a></li>
+<li><a href="business-services.html">Business Services</a></li>
+<li><a href="distress-sale.html">Distress Sale</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
@@ -639,13 +690,13 @@
 <h2>Company</h2>
 <ul>
 <li><a href="howitworks.html">How It Works</a></li>
-<li><a href="about">About</a></li>
+<li><a href="about.html">About</a></li>
 <li><a href="Testmonal.html">Testimonials</a></li>
-<li><a href="blog">Blog</a></li>
-<li><a href="faq">FAQ</a></li>
-<li><a href="contact">Contact</a></li>
-<li><a href="termCondition">Terms Of Conditions</a></li>
-<li><a href="privacyPolicy">Privacy Policy</a></li>
+<li><a href="blog-gride.html">Blog</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="term-condition.html">Terms Of Conditions</a></li>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -669,13 +720,13 @@
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2023 Designed By <a href="https://5thquarter.net/" style="color:#00498e;" target="_blank">FQI</a></div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="terms-of-service.html" style="color:#00498e;">Terms Of Service</a> | <a href="privacy-policy.html" style="color:#00498e;">Privacy Policy</a> © 2023 Designed By <a href="https://5thquarter.net/" style="color:#00498e;" target="_blank">FQI</a></div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->
 <div class="fix-mobile-bar">
   <a href="index.html"><img src="images/home-icon.png" width="18" height="22"/><br/>Home</a>
-  <a href="createBusinessListings"><img src="images/icon-5.png" width="19" height="22"/><br/>Add listing</a>
+  <a href="create-business-listings-dashboard.html"><img src="images/icon-5.png" width="19" height="22"/><br/>Add listing</a>
   <a href="search.html"><img src="images/search.png" width="16" height="22"/><br/>Search</a>
   <a href="login.html"><img src="images/login-icon.png" width="16" height="22"/><br/>Login</a>
 </div>
@@ -693,41 +744,4 @@
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script>
-$(function() {
-
-  $(".progress").each(function() {
-
-    var value = $(this).attr('data-value');
-    var left = $(this).find('.progress-left .progress-bar');
-    var right = $(this).find('.progress-right .progress-bar');
-
-    if (value > 0) {
-      if (value <= 55) {
-        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-      } else {
-        right.css('transform', 'rotate(180deg)')
-        left.css('transform', 'rotate(' + percentageToDegrees(value - 55) + 'deg)')
-      }
-    }
-
-  })
-
-  function percentageToDegrees(percentage) {
-
-    return percentage / 100 * 360
-
-  }
-
-});
-
-
-function addListings(){
-	 var getUrl = window.location;
-	 var url = getUrl .protocol + "//" + getUrl.host + "/createBusinessListings" ;
-	
-		window.location.href =url;
-		}
-</script>
-</div>
 </html>

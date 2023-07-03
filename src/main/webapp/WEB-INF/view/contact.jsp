@@ -427,7 +427,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -447,7 +447,7 @@
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
           <a class="dropdown-item" href="business-setup.html">Business Setup</a>
           <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
@@ -590,7 +590,7 @@
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Investors</h2>
 <ul>
-<li><a href="business-advisory.html">Business Advisory</a></li>
+<li><a href="businessAdvisory">Business Advisory</a></li>
 <li><a href="business-setup.html">Business Setup</a></li>
 <li><a href="business-valuation.html">Business Valuation</a></li>
 <li><a href="#">Business Loan</a></li>
@@ -603,11 +603,11 @@
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
 <li><a href="commercialForSaleGrid">Commercial for sale</a></li>
-<li><a href="buyers-investors-grid.html">Buyers/Investors</a></li>
+<li><a href="buyersInvestorsGrid">Buyers/Investors</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="brokers">Brokers</a></li>
 <li><a href="businesServices">Business Services</a></li>
-<li><a href="distress-sale.html">Distress Sale</a></li>
+<li><a href="distress">Distress Sale</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
@@ -687,11 +687,12 @@
 $( document ).ready(function() {
 	$(".alert-danger").hide();
 	$(".alert-success").hide();
-	
+
 	 $( "#saveSubmitBtn" ).click(function(event) {
-		 
+		 event.preventDefault();
+
 		 function saveContact (event){
-				
+
 				var name = $("#name").val();
 				var email = $("#email").val();
 				var phone = $("#phone").val();
@@ -703,7 +704,7 @@ $( document ).ready(function() {
 				console.log ("email :"+email);
 				console.log ("phone :"+phone);
 				console.log ("message :"+message);
-				
+
 				const validateEmail = (email) => {
 					  return String(email)
 					    .toLowerCase()
@@ -715,32 +716,29 @@ $( document ).ready(function() {
 						  $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter A Valid Email </strong> ");
 							  window.scrollTo(0, 0);
-							 event.preventDefault();
 							 return;
 					  }
-					  if( $.trim(phoneNo) == ''){
+					  if( $.trim(phone) == ''){
 							 $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter Phone No </strong> ");
-							 
-							 event.preventDefault();
+
 							 return;
 						}
 					  if( $.trim(city) == ''){
 							 $(".alert-danger").show();
 							 $(".alert-danger").html("<strong>Enter City </strong> ");
-							 event.preventDefault();
 							 return;
 						}
-					  
+
 
 					  jQuery(document).ready(function($){
 					  	  var getUrl = window.location;
 					  		 var url = getUrl .protocol + "//" + getUrl.host + "/saveContact" ;
-					  			
+
 					  	console.log ("url >>>>>>>"+url);
 
 					 	  var  data =  { "name": name, "email" : email,"phone":phone , "city":city , "message":message };
-					 	  
+
 					    $.ajax({
 				 	        type: "POST",
 				 	        contentType: "application/json",
@@ -751,31 +749,28 @@ $( document ).ready(function() {
 				 	        cache: false,
 				 	        timeout: 600000,
 				 	        success: function (data) {
-				 		
+
 				 				 $(".alert-danger").hide();
 				 	        	$(".alert-success").show();
 				 				 $(".alert-success").html("<strong>Sent Successfully </strong> ");
 				 				  window.scrollTo(0, 0);
-				 				 event.preventDefault();
 				 				 return;
 				 	        },
 				 	        error: function (e) {
-				 	        	
+
 				 	        	$(".alert-success").hide();
 				 	        	 $(".alert-danger").show();
 				 				 $(".alert-danger").html("<strong>Error in Sent</strong> ");
 				 				  window.scrollTo(0, 0);
-				 				 event.preventDefault();
 				 				 return;
 
-				 	        }
-				 	       event.preventDefault();
+				 	        },
+
 				 	    });
-					    
-					    
+
 					  });
 			}
-		 
+            saveContact(event);
 	 });
 });
 

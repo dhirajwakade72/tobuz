@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="utf-8">
 <head>
   <title>Tobuz - Terms and Conditions</title>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="" />
   <meta name="robots" content="max-image-preview:large" />
@@ -427,7 +427,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -435,7 +435,7 @@
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers.html">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -446,7 +446,7 @@
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
           <a class="dropdown-item" href="business-setup.html">Business Setup</a>
           <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
@@ -476,16 +476,16 @@
 <h1>Terms and Conditions</h1>
 <!-- Terms and Conditions title finish -->
 <h2 class="subtitle-terms">Introduction</h2>
-<p>These terms and conditions govern your use of the Tobuz LLC (free zone enterprise), hereafter referred to as Tobuz, website, by using the website, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use the website. The Tobuz website uses cookies. By using the website and agreeing to these terms and conditions, you consent to Tobuz’s use of cookies in accordance with the terms of Tobuz’s privacy policy.</p>
+<p>These terms and conditions govern your use of the Tobuz LLC (free zone enterprise), hereafter referred to as Tobuz, website, by using the website, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use the website. The Tobuz website uses cookies. By using the website and agreeing to these terms and conditions, you consent to Tobuz&#39;s use of cookies in accordance with the terms of Tobuz&#39;s privacy policy.</p>
 <h2 class="subtitle-terms">Definitions</h2>
-<p>In addition to the terms defined elsewhere in the Us er Terms & Conditions, and unless the context otherwise requires: “Account Holder” and/or “User” refers to any individual who registers for an account with any of the Website (“account”), and is therefore party to these Terms & Conditions.</p>
-<p>“You” and/or “your” refers to that “account holder”.</p>
-<p>“We”, “us” and/or “our” or “Tobuz” refers to Tobuz LLC (free zone enterprise).</p>
-<p>“Tobuz LLC” maintains the <a href="https://www.tobuz.com" style="color:#6f6f6f;">www.tobuz.com</a> Website ("Site").</p>
+<p>In addition to the terms defined elsewhere in the Us er Terms & Conditions, and unless the context otherwise requires: "Account Holder" and/or "User" refers to any individual who registers for an account with any of the Website ("account"), and is therefore party to these Terms & Conditions.</p>
+<p>"You" and/or "your" refers to that "account holder".</p>
+<p>"We", "us" and/or "our" or "Tobuz" refers to Tobuz LLC (free zone enterprise).</p>
+<p>"Tobuz LLC" maintains the <a href="https://www.tobuz.com" style="color:#6f6f6f;">www.tobuz.com</a> Website ("Site").</p>
 <h2 class="subtitle-terms">Disclaimer</h2>
 <p>The owner of this website, including all the affiliates and sub-branches, imparts the information present here and all the pages which comprise the website to its visitors (referred to as you or your) subjected to the terms and conditions mentioned in the Privacy Policy, Notices and Terms and Conditions sections which can be applicable to certain sections of the website. Tobuz.com Terms and Conditions should be carefully read before you use or create an account. Tobuz is a platform if you wish to buy, sell or lease business and commercial properties or to be listed in as a broker, business service providers and franchisor and use the business valuation tool. You are automatically bound by all terms and policy on this website when you create an account.</p>
-<p>The website has been launched to provide buyers and sellers of businesses, commercial properties, franchisee or franchisors, business service provider’s and a platform to advertise which may or may not be paid listings depending on the package purchased. Tobuz also provides a business valuation tools to sellers that gives an approximate value for their business, these are purely based on the information and numbers provided by the seller and Tobuz does not hold any liability on the selling price derived through this tool. This is completely the seller discretion to consider this as the final selling price.</p>
-<p>The message communications on the website is solely for business purpose and not for any other use. Tobuz is only a platform to liaison the communication between the different users and will not and can not be held liable for lack of responsiveness from either parties. Its purely at the individual’s discretion whether to respond or not</p>
+<p>The website has been launched to provide buyers and sellers of businesses, commercial properties, franchisee or franchisors, business service provider&#39;s and a platform to advertise which may or may not be paid listings depending on the package purchased. Tobuz also provides a business valuation tools to sellers that gives an approximate value for their business, these are purely based on the information and numbers provided by the seller and Tobuz does not hold any liability on the selling price derived through this tool. This is completely the seller discretion to consider this as the final selling price.</p>
+<p>The message communications on the website is solely for business purpose and not for any other use. Tobuz is only a platform to liaison the communication between the different users and will not and can not be held liable for lack of responsiveness from either parties. Its purely at the "individual\'s\'" discretion whether to respond or not</p>
 <h2 class="subtitle-terms">Information on the Website</h2>
 <p>Any claims put forward by third parties whether financial or else wise on this website have no confirmation, assurance or guarantee from our end. You agree and comprehend that you will be solely responsible for the verification of such claims and information before you go into any transaction via this website.</p>
 </div>
@@ -529,7 +529,7 @@
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Investors</h2>
 <ul>
-<li><a href="business-advisory.html">Business Advisory</a></li>
+<li><a href="businessAdvisory">Business Advisory</a></li>
 <li><a href="business-setup.html">Business Setup</a></li>
 <li><a href="business-valuation.html">Business Valuation</a></li>
 <li><a href="#">Business Loan</a></li>
@@ -542,11 +542,11 @@
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
 <li><a href="commercialForSaleGrid">Commercial for sale</a></li>
-<li><a href="buyers-investors-grid.html">Buyers/Investors</a></li>
+<li><a href="buyersInvestorsGrid">Buyers/Investors</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="brokers.html">Brokers</a></li>
 <li><a href="businesServices">Business Services</a></li>
-<li><a href="distress-sale.html">Distress Sale</a></li>
+<li><a href="distress">Distress Sale</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
@@ -594,7 +594,7 @@
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12"><a href="terms-of-service.html" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2023 Designed By <a href="https://5thquarter.net/" style="color:#00498e;" target="_blank">FQI</a></div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2023 Designed By <a href="https://5thquarter.net/" style="color:#00498e;" target="_blank">FQI</a></div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->

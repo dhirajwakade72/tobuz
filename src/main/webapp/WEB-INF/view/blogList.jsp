@@ -666,7 +666,7 @@
 <h2>For Businesses</h2>
 <ul>
 <li><a href="individual-investors.html">Individual Investors</a></li>
-<li><a href="business-buyers.html">Business Buyers</a></li>
+<li><a href="buyersInvestorsGrid">Business Buyers</a></li>
 <li><a href="venture-capital-firms.html">Venture Capital Firms</a></li>
 <li><a href="private-equity-firms.html">Private Equity Firms</a></li>
 <li><a href="business-lenders.html">Business Lenders</a></li>

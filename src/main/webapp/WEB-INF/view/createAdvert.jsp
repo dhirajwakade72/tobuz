@@ -464,7 +464,7 @@
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
           <a class="dropdown-item" href="business-setup.html">Business Setup</a>
           <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
@@ -501,7 +501,7 @@
 <div class="Favorites"><a href="my-myFavouritesSeller">Favorites</a></div>
 <div class="Saved-Search"><a href="">Saved Search</a></div>
 <div class="Messages"><a href="">Messages</a></div>
-<div class="Update-Profile"><a href="">Update Profile</a></div>
+<div class="Update-Profile"><a href="updateProfile">Update Profile</a></div>
 </div>
 </div>
 <div class="col-lg-3 col-xl-3 col-md-4 mobile-view">
@@ -516,7 +516,7 @@
   <div class="Favorites"> <a class="dropdown-item" href="my-myFavouritesSeller">Favorites</a></div>
    <div class="Saved-Search"><a class="dropdown-item" href="">Saved Search</a></div>
 <div class="Messages"><a class="dropdown-item" href="">Messages</a></div>
-<div class="Update-Profile"><a class="dropdown-item" href="update-profile-Dashboard.html">Update Profile</a></div>
+<div class="Update-Profile"><a class="dropdown-item" href="updateProfile">Update Profile</a></div>
   </div>
 </div>
 </div>
@@ -820,7 +820,7 @@
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Investors</h2>
 <ul>
-<li><a href="business-advisory.html">Business Advisory</a></li>
+<li><a href="businessAdvisory">Business Advisory</a></li>
 <li><a href="business-setup.html">Business Setup</a></li>
 <li><a href="business-valuation.html">Business Valuation</a></li>
 <li><a href="#">Business Loan</a></li>

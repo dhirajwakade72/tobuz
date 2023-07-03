@@ -38,10 +38,10 @@
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -428,7 +428,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -436,7 +436,7 @@
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -448,7 +448,7 @@
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
           <a class="dropdown-item" href="business-setup.html">Business Setup</a>
           <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
@@ -461,7 +461,7 @@
 	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">
-	<span class="icon-social"><a href="#"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-linkedin"></i></a></span> 
+	<span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span>
 	 </li>
 	 <!-- social icon area finish -->
   </ul>
@@ -898,9 +898,9 @@ bfs grid 6 finish
 <h2>For Investors</h2>
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
-<li><a href="#">Investment Opportunities</a></li>
-<li><a href="#">Business Seeking Loan</a></li>
-<li><a href="#">Business Assets For Sale</a></li>
+<li><a href="businessForSale">Investment Opportunities</a></li>
+<li><a href="businessForSale">Business Seeking Loan</a></li>
+<li><a href="realEstate">Business Assets For Sale</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchise Opportunities</a></li>
 </ul>
 </div>
@@ -909,12 +909,12 @@ bfs grid 6 finish
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Businesses</h2>
 <ul>
-<li><a href="#">Individual Investors</a></li>
-<li><a href="#">Business Buyers</a></li>
-<li><a href="#">Venture Capital Firms</a></li>
-<li><a href="#">Private Equity Firms</a></li>
-<li><a href="#">Business Lenders</a></li>
-<li><a href="#">Financial Advisors</a></li>
+<li><a href="buyersInvestorsGrid">Individual Investors</a></li>
+<li><a href="buyersInvestorsGrid">Business Buyers</a></li>
+<li><a href="contact">Venture Capital Firms</a></li>
+<li><a href="contact">Private Equity Firms</a></li>
+<li><a href="contact">Business Lenders</a></li>
+<li><a href="contact">Financial Advisors</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
@@ -923,12 +923,12 @@ bfs grid 6 finish
 <h2>Get Started</h2>
 <ul>
 <li><a href="createBusinessListings">Sell Your Business</a></li>
-<li><a href="#">Invest Or Buy Business</a></li>
-<li><a href="#">Business Services</a></li>
-<li><a href="#">Business Brokers</a></li>
+<li><a href="buyersInvestorsGrid">Invest Or Buy Business</a></li>
+<li><a href="businesServices">Business Services</a></li>
+<li><a href="brokers">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
-<li><a href="#">Buy Or Sell Commercial Properties</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
+<li><a href="realEstate">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
 <!-- footer area 3 finish -->
@@ -938,11 +938,11 @@ bfs grid 6 finish
 <ul>
 <li><a href="about">About</a></li>
 <li><a href="testimonial">Testimonials</a></li>
-<li><a href="#">Blog</a></li>
+<li><a href="blog">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="contact">Contact</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -956,17 +956,17 @@ bfs grid 6 finish
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12">Terms Of Service | Privacy Policy © 2022 Designed By FQI</div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition">Terms Of Service</a> | <a href="privacyPolicy">Privacy Policy</a> © 2022 Designed By FQI</div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- whatsapp icon area start -->

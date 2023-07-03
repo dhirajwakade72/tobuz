@@ -419,13 +419,36 @@
 	 </li>
 	 <!-- Add Listing mobile Finish -->
 	 <!-- mobile menu start -->
-     <li class="nav-item"> <a class="nav-link active" href="/">Home</a></li>
-    <li class="nav-item"> <a class="nav-link" href="businessForSale">Buy a Business</a></li>
-	<li class="nav-item"> <a class="nav-link" href="#">Sell a Business</a></li>
-	<li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
-	<li class="nav-item"> <a class="nav-link" href="#">Business Advisory</a></li>
-	<li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
-	<li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
+
+        <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Buy a Business
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="businessForSale">Business For Sale</a>
+              <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
+              <a class="dropdown-item" href="distress">Distress Sale</a>
+              <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sell a Business
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
+              <a class="dropdown-item" href="brokers">Brokers</a>
+              <a class="dropdown-item" href="businesServices">Business Services</a>
+            </div>
+        </li>
+        <li class="nav-item"> <a class="nav-link" href="realEstate">Real Estate</a></li>
+        <li class="nav-item"> <a class="nav-link" href="businessAdvisory">Business Advisory</a></li>
+        <li class="nav-item"> <a class="nav-link" href="blog">Blog</a></li>
+        <li class="nav-item"> <a class="nav-link" href="about">About Us</a></li>
+
 	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">
@@ -480,7 +503,7 @@
 <!-- reach area start -->
 <div class="col-sm-12">
 <div class="what-area"><img src="images/vission.png" title="vision" alt="vision"/></div>
-<div class="what-vission-area"><div class="vission-area">Tobuz’ s vision is to innovate the best platform for trading businesses and commercial properties online. We are proud of our commitment to providing maximum customer satisfaction through our extensively skilled team.</div></div>
+<div class="what-vission-area"><div class="vission-area">Tobuz's vision is to innovate the best platform for trading businesses and commercial properties online. We are proud of our commitment to providing maximum customer satisfaction through our extensively skilled team.</div></div>
 </div>
 <!-- reach area finish -->
 </div>
@@ -550,7 +573,7 @@
 <ul>
 <li><a href="createBusinessListings">Sell Your Business</a></li>
 <li><a href="#">Invest Or Buy Business</a></li>
-<li><a href="#">Business Services</a></li>
+<li><a href="businesServices">Business Services</a></li>
 <li><a href="brokers">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
 <li><a href="distress">Distress Business Sale</a></li>
@@ -592,7 +615,7 @@
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12">Terms Of Service | Privacy Policy © 2022 Designed By FQI</div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2022 Designed By FQI</div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->

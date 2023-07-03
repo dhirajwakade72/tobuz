@@ -20,8 +20,20 @@ public class CategoryDTO implements Serializable{
 	String imagePath;
 	
 	 String subCategoryName;
-	
-	 private List<SubCategoryDTO> subCategoryList;
+
+
+	Boolean isCommercial;
+
+
+	public Boolean getCommercial() {
+		return isCommercial;
+	}
+
+	public void setCommercial(Boolean commercial) {
+		isCommercial = commercial;
+	}
+
+	private List<SubCategoryDTO> subCategoryList;
 
 	public long getId() {
 		return id;

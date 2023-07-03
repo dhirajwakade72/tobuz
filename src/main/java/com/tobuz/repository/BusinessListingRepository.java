@@ -3,6 +3,8 @@ package com.tobuz.repository;
 
 import java.util.List;
 
+import com.tobuz.projection.BusinessServiseTypeList;
+import com.tobuz.projection.CountryList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -64,5 +66,6 @@ public interface BusinessListingRepository extends JpaRepository<BusinessListing
     		+ "	", nativeQuery = true)
     public List<Object[]>   getAdvertListingsForTypeAndUser( long id ,String type);
 
-    
+	@Query(value = "SELECT id, business_service_type as businessServiceType FROM business_service_type WHERE is_active is true ORDER BY id", nativeQuery = true)
+	public List<BusinessServiseTypeList> getAllBusinessServiseTypeList();
 }

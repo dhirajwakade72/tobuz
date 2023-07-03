@@ -533,7 +533,7 @@ Searchbar scrolling top desktop finish
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -553,7 +553,7 @@ Searchbar scrolling top desktop finish
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
           <a class="dropdown-item" href="business-setup.html">Business Setup</a>
           <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
@@ -706,7 +706,7 @@ Searchbar scrolling top desktop finish
 <div class="row justify-content-md-center">
 <!-- Google start -->
 <div class="col-md-4 col-lg-4 col-xl-4">
-<a href="#"><div class="facebook-register-button"><img src="images/google-plus.png" width="25" title="Google" alt="Google" class="ragister-icon" height="25"/> <span class="ragister-icon">| </span>Sign in with Google</div></a>
+<a href="#"><div class="facebook-register-button"><img src="images/google.png" width="25" title="Google" alt="Google" class="ragister-icon" height="25"/> <span class="ragister-icon">| </span>Sign in with Google</div></a>
 </div>
 <!-- Google finish -->
 <!-- Facebook start -->
@@ -721,7 +721,7 @@ Searchbar scrolling top desktop finish
 <!-- Linkedin finish -->
 </div>
 <!-- Already have an account? start -->
-<p class="an-account">Already have an account? <a href="#" style="color:#0070cc;">Click here</a> to login.</p>
+<p class="an-account">Already have an account? <a href="login" style="color:#0070cc;">Click here</a> to login.</p>
 <!-- Already have an account? finish -->
 </div>
 </div>
@@ -794,7 +794,7 @@ Searchbar scrolling top desktop finish
 <li><a href="#">Business Services</a></li>
 <li><a href="#">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
 <li><a href="#">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
@@ -808,8 +808,8 @@ Searchbar scrolling top desktop finish
 <li><a href="blog">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
 <li><a href="contact">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -833,7 +833,7 @@ Searchbar scrolling top desktop finish
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12">Terms Of Service | Privacy Policy © 2022 Designed By FQI</div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2022 Designed By FQI</div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->

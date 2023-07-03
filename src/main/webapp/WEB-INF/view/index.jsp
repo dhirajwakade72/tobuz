@@ -44,16 +44,16 @@
 
 
 <div class="topbar desktop-view">
-<div class="container" style="float: right">
-<div class="row">
+<div class="container">
+<div class="row justify-content-between">
 <div class="col-lg-3 col-xl-2 col-md-3">
 <!-- social icon desktop start -->
 <div class="social-icon">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- social icon desktop finish -->
@@ -447,7 +447,7 @@ Searchbar scrolling top desktop finish
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="businessForSale">Business For Sale</a>
           <a class="dropdown-item" href="commercialForSaleGrid">Commercial for a sale</a>
-          <a class="dropdown-item" href="distress-sale.html">Distress Sale</a>
+          <a class="dropdown-item" href="distress">Distress Sale</a>
 		  <a class="dropdown-item" href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a>
         </div>
 	</li>
@@ -455,7 +455,7 @@ Searchbar scrolling top desktop finish
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="buyers-investors-grid.html">Buyers / Investors</a>
+          <a class="dropdown-item" href="buyersInvestorsGrid">Buyers / Investors</a>
           <a class="dropdown-item" href="brokers">Brokers</a>
           <a class="dropdown-item" href="businesServices">Business Services</a>
 		  
@@ -467,9 +467,9 @@ Searchbar scrolling top desktop finish
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="business-advisory.html">Business Advisory</a>
-          <a class="dropdown-item" href="business-setup.html">Business Setup</a>
-          <a class="dropdown-item" href="business-valuation.html">Business Valuation</a>
+          <a class="dropdown-item" href="businessAdvisory">Business Advisory</a>
+          <a class="dropdown-item" href="business-setup">Business Setup</a>
+          <a class="dropdown-item" href="business-valuation">Business Valuation</a>
 		  <a class="dropdown-item" href="#">Business Loan</a>
         </div>
 	</li>
@@ -479,7 +479,7 @@ Searchbar scrolling top desktop finish
 	<!-- mobile menu finish -->
 	<!-- social icon area start -->
 	<li class="social d-lg-none">
-	<span class="icon-social"><a href="#"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="#"><i class="fa fa-linkedin"></i></a></span> 
+	<span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span>
 	 </li>
 	 <!-- social icon area finish -->
   </ul>
@@ -696,7 +696,7 @@ Searchbar scrolling top desktop finish
       <img src="images/sport-3.jpg" alt="Cafe For Sale In JUMEIRAH !" title="Cafe For Sale In JUMEIRAH !"/>
 	  <h3>Cafe For Sale In JUMEIRAH !</h3>
 	  </div>
-	   <div class="menu2" style="display: none;">
+	   <div class="menu11" style="display: none;">
 	 <div class="detail">
 	  <div class="price"><img src="images/dollar.png" class="dollar-icon"/> AED 150,000</div>
 	  <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> Dubai, UAE</div>
@@ -1216,10 +1216,10 @@ Broker <label class="radio-button">
 
 <div class="input-group">
 <!-- Signup for email alerts input start -->
-  <input type="search" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" />
+  <input type="email" class="form-control email-alerts-searbox" placeholder="Email Address" aria-label="Search" aria-describedby="search-addon" id="emailAddressForAlerts" />
   <!-- Signup for email alerts input finish -->
   <!-- Signup for email alerts button start -->
-  <button type="button" class="btn aleart-button">Submit</button>
+  <button type="button" class="btn aleart-button" id="btnSubmitForEmailAlerts" onClick="signupForEmailAlerts();">Submit</button>
   <!-- Signup for email alerts button finish -->
 </div>
 
@@ -1239,9 +1239,9 @@ Broker <label class="radio-button">
 <h2>For Investors</h2>
 <ul>
 <li><a href="businessForSale">Business For Sale</a></li>
-<li><a href="#">Investment Opportunities</a></li>
-<li><a href="#">Business Seeking Loan</a></li>
-<li><a href="#">Business Assets For Sale</a></li>
+<li><a href="businessForSale">Investment Opportunities</a></li>
+<li><a href="businessForSale">Business Seeking Loan</a></li>
+<li><a href="commercialForSaleGrid">Business Assets For Sale</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchise Opportunities</a></li>
 </ul>
 </div>
@@ -1250,12 +1250,12 @@ Broker <label class="radio-button">
 <div class="col-lg-3 col-md-6 mb-30 col-6">
 <h2>For Businesses</h2>
 <ul>
-<li><a href="#">Individual Investors</a></li>
-<li><a href="#">Business Buyers</a></li>
-<li><a href="#">Venture Capital Firms</a></li>
-<li><a href="#">Private Equity Firms</a></li>
-<li><a href="#">Business Lenders</a></li>
-<li><a href="#">Financial Advisors</a></li>
+<li><a href="buyersInvestorsGrid">Individual Investors</a></li>
+<li><a href="buyersInvestorsGrid">Business Buyers</a></li>
+<li><a href="contact">Venture Capital Firms</a></li>
+<li><a href="contact">Private Equity Firms</a></li>
+<li><a href="contact">Business Lenders</a></li>
+<li><a href="contact">Financial Advisors</a></li>
 </ul>
 </div>
 <!-- footer area 2 finish -->
@@ -1264,12 +1264,12 @@ Broker <label class="radio-button">
 <h2>Get Started</h2>
 <ul>
 <li><a href="createBusinessListings">Sell Your Business</a></li>
-<li><a href="#">Invest Or Buy Business</a></li>
-<li><a href="#">Business Services</a></li>
-<li><a href="#">Business Brokers</a></li>
+<li><a href="buyersInvestorsGrid">Invest Or Buy Business</a></li>
+<li><a href="businesServices">Business Services</a></li>
+<li><a href="brokers">Business Brokers</a></li>
 <li><a href="franchiseeOpportunitiesGrid">Franchisee Opportunities</a></li>
-<li><a href="#">Distress Business Sale</a></li>
-<li><a href="#">Buy Or Sell Commercial Properties</a></li>
+<li><a href="distress">Distress Business Sale</a></li>
+<li><a href="commercialForSaleGrid">Buy Or Sell Commercial Properties</a></li>
 </ul>
 </div>
 <!-- footer area 3 finish -->
@@ -1282,8 +1282,8 @@ Broker <label class="radio-button">
 <li><a href="blog">Blog</a></li>
 <li><a href="faq">FAQ</a></li>
 <li><a href="contact">Contact</a></li>
-<li><a href="#">Terms Of Service</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="termCondition">Terms Of Service</a></li>
+<li><a href="privacyPolicy">Privacy Policy</a></li>
 </ul>
 </div>
 <!-- footer area 4 finish -->
@@ -1297,17 +1297,17 @@ Broker <label class="radio-button">
 <!-- footer social area start -->
 <div class="social-icon-footer">
 <ul>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
 </div>
 <!-- footer social area finish -->
 </div>
 </div>
 <!-- footer copyright area start -->
-<div class="row copyright"><div class="col-lg-12">Terms Of Service | Privacy Policy © 2022 Designed By FQI</div></div>
+<div class="row copyright"><div class="col-lg-12"><a href="termCondition" style="color:#00498e;">Terms Of Service</a> | <a href="privacyPolicy" style="color:#00498e;">Privacy Policy</a> © 2022 Designed By FQI</div></div>
 <!-- footer copyright area finish -->
 </div>
 <!-- footer mobile bottom bar area start -->
@@ -1319,7 +1319,7 @@ Broker <label class="radio-button">
 </div>
 <!-- footer mobile bottom bar area finish -->
 <!-- whatsapp icon area start -->
-<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float-icon" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=971503744318&text=Hi,%20I%20am%20looking%20for%0D%0ABusiness%20to%20Buy%0D%0ABusiness%20to%20Sell%0D%0ABusiness%20Valuation%0D%0ABusiness%20Setup%0D%0ABusiness%20Advisory%20Service" class="float-icon" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 <!-- whatsapp icon area finish -->
@@ -1327,6 +1327,7 @@ Broker <label class="radio-button">
 <!-- footer area finish -->
 </body>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
  <script src="/js/jquery.slim.min.js"></script>
    <script src="/js/popper.min.js"></script>
    <script src="/js/bootstrap.bundle.min.js"></script>
@@ -1488,14 +1489,14 @@ Broker <label class="radio-button">
 					      
 					   
 						$('#showmenu10').click(function() {
-				                $('.menu0').slideToggle("fast");
+				                $('.menu10').slideToggle("fast");
 				        });
 						
 				                $('#showmenu0').click(function() {
 					                $('.menu0').slideToggle("fast");
 					        });
 							 $('#showmenu11').click(function() {
-					                $('.menu1').slideToggle("fast");
+					                $('.menu11').slideToggle("fast");
 					        });
 							 $('#showmenu12').click(function() {
 					                $('.menu2').slideToggle("fast");
@@ -1698,6 +1699,25 @@ $(function() {
   
 });
 
+$(document).ready(function() {
+    $('#btnSubmitForEmailAlerts').click(function(event) {
+        var email = $('#emailAddressForAlerts').val();
+
+        if(email.trim() === '') {
+            alert('Enter email...!!');
+        } else {
+            event.preventDefault();
+            var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            if (!emailRegex.test(email)) {
+              alert('Email is invalid');
+              // You can perform further actions here, such as submitting the form
+              // this.submit();
+            }
+        }
+    });
+});
+
 function moveToRegister (){
 	  var getUrl = window.location;
 	  var url = getUrl .protocol + "//" + getUrl.host + "/register" ;
@@ -1725,6 +1745,25 @@ function contactbuyer (id){
 
 }
 
+function signupForEmailAlerts() {
+
+    var emailForAlerts = document.getElementById('emailAddressForAlerts').value;
+
+    $.ajax({
+        type: 'POST',
+        url : '/saveNewsletter',
+
+        data : {
+            text: emailForAlerts
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 
 </script>
  <div class="modal" id="myModal">

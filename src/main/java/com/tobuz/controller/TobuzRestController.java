@@ -6,8 +6,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.tobuz.model.Country;
+import com.tobuz.model.NewsLetterSubscription;
+import com.tobuz.object.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,29 +21,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.tobuz.model.BusinessListing;
-import com.tobuz.object.BusinessAdvertDTO;
-import com.tobuz.object.BusinessFeatureDTO;
-import com.tobuz.object.BusinessListingDTO;
-import com.tobuz.object.BusinessListingFeatureInfoDTO;
-import com.tobuz.object.BusinessServiceTypeDTO;
-import com.tobuz.object.CategoryDTO;
-import com.tobuz.object.ContactDTO;
-import com.tobuz.object.MessageDTO;
-import com.tobuz.object.PaymentDTO;
-import com.tobuz.object.RegisterDTO;
-import com.tobuz.object.TestimonialDTO;
-import com.tobuz.object.TobuzPackageDTO;
-import com.tobuz.object.TobuzfeatureDTO;
-import com.tobuz.object.UserDTO;
-import com.tobuz.object.UserPackageInfoDTO;
-import com.tobuz.object.UserRequestDTO;
-import com.tobuz.object.Vo;
 import com.tobuz.service.TobuzBusinessService;
 
 @Controller
@@ -103,7 +91,7 @@ public class TobuzRestController {
 	@ResponseBody
 	public List<BusinessListingDTO> getTopBusinessListingsByCategory(@RequestBody BusinessListingDTO businessListing) {
 		System.out.println("<<<<<<<<<<<<getTopBusinessListingsByCategory>>>>>>>>>>>");
-		return businessService.getTopBusinessListingsByCategory(Long.parseLong(businessListing.getCategoryId()),
+		return businessService.getTopBusinessListingsByCategory(businessListing.getCategoryIds(),
 				businessListing.getListingType());
 	}
 
@@ -144,7 +132,7 @@ public class TobuzRestController {
 		System.out.println(" EMAIL " + registerDTO.getEmail());
 		System.out.println(" PASSWORD " + registerDTO.getPassword());
 		registerDTO = businessService.findLoginInfo(registerDTO.getEmail(), registerDTO.getPassword());
-		
+
 		if (registerDTO.getName().equalsIgnoreCase("ADMIN")) {
 			registerDTO.setRole("ADMIN");
 			return ResponseEntity.ok(registerDTO);
@@ -612,10 +600,10 @@ public class TobuzRestController {
 	public List <BusinessAdvertDTO> getAdvertListingsForTypeAndUser(@PathVariable String type) {
 		System.out.println("type : " + type);
 		return businessService.getAdvertListingsForTypeAndUser(type);
-		
+
 	}
-	
-	
+
+
 	@RequestMapping(value = "/getBusineeListingbyListingId/{id}", produces = {
 			"application/json" }, method = RequestMethod.GET)
 	@ResponseBody
@@ -708,7 +696,7 @@ public class TobuzRestController {
 		return attr.getRequest().getSession(true); // true == allow create
 	}
 
-	
+
 	@GetMapping({ "/getUserMessages" })
 	public ResponseEntity<Vo> getUserMessages() {
 		List<String[]> obj = new ArrayList<>();
@@ -726,7 +714,7 @@ public class TobuzRestController {
 				String subject = bDto.getSubject();
 				String ceatedDate = bDto.getCreatedOn();
 				String buttons = "<img src=/images/view.jpg onclick='viewMessage(\"+bDto.getId()+\")'  style=' width: 24px !important; height: 24px !important;'  alt=view/>  ";
-				
+
 				String mStringArray[] = { (i + 1) + "", id+"",name, email, code, mobile, ceatedDate , subject ,buttons};
 				obj.add(mStringArray);
 
@@ -734,6 +722,52 @@ public class TobuzRestController {
 		Vo vo = new Vo();
 		vo.setData(obj);
 		return new ResponseEntity<>(vo, HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value = "/getBusinessByFilter",produces = {
+			"application/json" }, method = RequestMethod.POST)
+	@ResponseBody
+	public List<BusinessListingDTO> getBusinessByFilter(@RequestBody BusinessListingDTO businessListingDTO){
+		return businessService.getBusinessByFilter(businessListingDTO);
+
+	}
+
+	@RequestMapping(value = "/saveNewsletter", method = RequestMethod.POST)
+	@ResponseBody
+	public NewsLetterSubscription saveNewsletter(@RequestParam("text") String email) {
+		return businessService.saveNewsletter(email);
+	}
+
+	@RequestMapping(value = "/getBrokerList", method = RequestMethod.POST, produces = {"application/json"})
+	@ResponseBody
+	public List<BrokerListingDTO> getBrokerList(@RequestBody BrokerListingDTO brokerListingDTO){
+		return businessService.getBrokerList(brokerListingDTO);
+	}
+
+
+	@RequestMapping(value = "/getAllBroker", produces = { "application/json" }, method = RequestMethod.GET)
+	@ResponseBody
+	public List<BrokerListingDTO> getAllBrokerList() {
+		return businessService.getAllBrokerList();
+	}
+
+	@RequestMapping(value = "/getAllCategoryList", method = RequestMethod.GET)
+	@ResponseBody
+	public List<CategoryDTO> getAllCategoryList() {
+		return businessService.getAllCategoryList();
+	}
+
+	@RequestMapping(value = "/getAllCountryList", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Country> getAllCountryList() {
+		return businessService.getAllCountryList();
+	}
+
+	@RequestMapping(value = "/getAllBusinessServiseTypeList", method = RequestMethod.GET)
+	@ResponseBody
+	public List<BusinessServiceTypeDTO> getAllBusinessServiseTypeList() {
+		return businessService.getAllBusinessServiseTypeList();
 
 	}
 }

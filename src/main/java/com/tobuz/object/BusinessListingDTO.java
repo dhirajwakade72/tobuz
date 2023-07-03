@@ -12,7 +12,7 @@ public class BusinessListingDTO implements Serializable{
 	private String filePath ;
 	private String title;
 	private String description ;
-	private double price ;
+	private Double price ;
 	
 	private String businessType ;
 	private String categoryList ;
@@ -89,9 +89,81 @@ public class BusinessListingDTO implements Serializable{
 			private String userRole;
 			
 			private String createdOn;
-			
-			
-	
+
+			private List<String> categoryIds;
+
+			private List<String> franchiseType;
+			private Boolean sortByTitle;
+			private Boolean sortByPrice;
+
+			private String searchKey;
+
+			private List<String> countryIds;
+
+			private List<String> stateIds;
+
+	private Long countryId;
+
+	private Long stateId;
+
+	private String prefredCountryId;
+
+	public String getPrefredCountryId() {
+		return prefredCountryId;
+	}
+
+	public void setPrefredCountryId(String prefredCountryId) {
+		this.prefredCountryId = prefredCountryId;
+	}
+
+	public List<String> getCountryIds() {
+		return countryIds;
+	}
+
+	public void setCountryIds(List<String> countryIds) {
+		this.countryIds = countryIds;
+	}
+
+	public List<String> getStateIds() {
+		return stateIds;
+	}
+
+	public void setStateIds(List<String> stateIds) {
+		this.stateIds = stateIds;
+	}
+
+	public String getSearchKey() {
+		return searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+
+	public Boolean getSortByPrice() {
+		return sortByPrice;
+	}
+
+	public void setSortByPrice(Boolean sortByPrice) {
+		this.sortByPrice = sortByPrice;
+	}
+
+	public Boolean getSortByTitle() {
+		return sortByTitle;
+	}
+
+	public void setSortByTitle(Boolean sortByTitle) {
+		this.sortByTitle = sortByTitle;
+	}
+
+	public List<String> getFranchiseType() {
+		return franchiseType;
+	}
+
+	public void setFranchiseType(List<String> franchiseType) {
+		this.franchiseType = franchiseType;
+	}
+
 	public String getBusinessTurnover() {
 				return businessTurnover;
 			}
@@ -134,10 +206,10 @@ public class BusinessListingDTO implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String getBusinessType() {
@@ -405,6 +477,27 @@ public class BusinessListingDTO implements Serializable{
 		this.createdOn = createdOn;
 	}
 
-	
+	public List<String> getCategoryIds() {
+		return categoryIds;
+	}
 
+	public void setCategoryIds(List<String> categoryIds) {
+		this.categoryIds = categoryIds;
+	}
+
+	public Long getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(Long countryId) {
+		this.countryId = countryId;
+	}
+
+	public Long getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(Long stateId) {
+		this.stateId = stateId;
+	}
 }
