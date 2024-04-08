@@ -1,0 +1,12 @@
+.register-button {
+    background: #707070;
+    color: #fff;
+    padding: 10px 50px;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 0;
+	margin:20px 0;
+}
+.register-button:hover {background: #00498e;  color:#fff;}

@@ -1,0 +1,10 @@
+
+.create-advert{
+    color: #fff;
+        background-color: #707070;
+        border-radius: 30px;
+        padding: 8px 15px;
+        line-height: 13px;
+        font-size: 13px;
+    }
+    .create-advert:hover {background:#00498e; color:#fff;}

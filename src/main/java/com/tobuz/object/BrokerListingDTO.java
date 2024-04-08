@@ -17,6 +17,17 @@ public class BrokerListingDTO implements Serializable {
 
     private String prefredCountryId;
 
+    private Boolean sortByTitle;
+
+
+    public Boolean getSortByTitle() {
+        return sortByTitle;
+    }
+
+    public void setSortByTitle(Boolean sortByTitle) {
+        this.sortByTitle = sortByTitle;
+    }
+
     public String getPrefredCountryId() {
         return prefredCountryId;
     }

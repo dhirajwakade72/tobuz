@@ -1,0 +1,186 @@
+<header>
+   <div class="topbar desktop-view">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-2 col-xl-2 col-md-3">
+               <!-- social icon desktop start -->
+               <div style="padding-top: 4px;" class="social-icon">
+                  <ul>
+                     <li><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                     <li><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+               </div>
+               <!-- social icon desktop finish -->
+            </div>
+            <div class="col-lg-4 col-xl-4 col-md-3">
+               <!-- Searchbar scrolling top desktop start -->
+               <div class="input-group a1 autocomplete">
+                  <input class="form-control" list="datalistOptions" id="exampleDataList" (input)="onInput($event)" placeholder="Type to search...">
+                  <button type="button" (click)="onSubmit()" class="btn round-button"><i class="fa fa-search"></i></button>
+                  <datalist id="datalistOptions">
+                     <option *ngFor="let c of allCategories" value="{{c.name}}">
+                  </datalist>         
+              </div>                              
+
+            </div>
+            <div class="col-lg-6 col-xl-6 col-md-6">
+              <!--<span style="padding-top: 8px;" class="login-area d-lg-none"><a href="/login">Login</a> | <a href="register">Register</a> </span>-->
+               <span id="login_register" class="login-area">
+                  <img src="./assets/images/moble-menu-login.png" style="margin-right:10px;"/> <a href="/login">Login</a> | <a href="/register">Register</a>                  
+               </span>
+               <span id="profile_add_listing" class="login-area">                  
+                  <div class="profile-photo"><img src="./assets/images/profile.jpg" width="28" height="28"></div>
+		            <div class="profile-name">{{displayname | firstName | capitalizeFirst }}</div>
+                  <a href="{{addButtonUrl}}" class="btn btn-warning add-list-button">+ {{addButton}} </a> 
+                  <button class="add-list-button" (click)="logout()">logout</button>
+               </span>
+               <!--<span style="padding-top: 2px;" class="lang">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                     <option value="Afrikaans">af</option>
+                     <option value="Albanian">sq</option>
+                     <option value="Albanian">EN</option>
+                  </select>
+               </span>-->
+               <!--<span style="padding-top: 4px;" class="country">
+                  <div class="dropdown coun-flag">
+                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <img src="./assets/images/india-flag.jpg" alt="India" title="India" class="flag"> IN
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 200px; overflow-y: auto;">
+                        <a *ngFor="let c of allCountry" class="dropdown-item" href="#"><img src="./assets/images/{{c.isoCode.toLowerCase()}}-flag.jpg" class="flag"> {{c.isoCode}}</a>
+                        
+                     </div>
+                  </div>
+               </span>-->
+
+               <span class="country">
+                  <div class="dropdown coun-flag">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <img src="./assets/images/india-flag.jpg" alt="India" title="India" class="flag"> IN
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 200px; overflow-y: auto;">
+                      <a class="dropdown-item" href="#"><img src="./assets/images/ae-flag.jpg" alt="AE" title="AE" class="flag"> AE</a>
+                      <a class="dropdown-item" href="#"><img src="./assets/images/au-flag.jpg" alt="AU" title="AU" class="flag"> AU</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/bd-flag.jpg" alt="BD" title="BD" class="flag"> BD</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/bh-flag.jpg" alt="BH" title="BH" class="flag"> BH</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/lk-flag.jpg" alt="LK" title="LK" class="flag"> LK</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/nz-flag.jpg" alt="NZ" title="NZ" class="flag"> AU</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/om-flag.jpg" alt="OM" title="OM" class="flag"> OM</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/pk-flag.jpg" alt="PK" title="PK" class="flag"> PK</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/sa-flag.jpg" alt="SA" title="SA" class="flag"> SA</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/sg-flag.jpg" alt="SG" title="SG" class="flag"> SG</a>
+                     <a class="dropdown-item" href="#"><img src="./assets/images/uk-flag.jpg" alt="UK" title="UK" class="flag"> UK</a>
+                    </div>
+                  </div>
+                  </span>
+
+               <!-- country top desktop finish -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- topbar finish -->
+   <!-- navigation start -->
+   <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+         <!-- navigation toggle start -->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <!-- navigation toggle finish --> 
+         <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.png" alt="tobuz" title="Tobuz"></a>
+         <div class="mobile-menu-right">
+            <!-- Search icon mobile start -->
+            <div class="searchicon"> <i class="fa fa-search"></i></div>
+            <!-- Search icon mobile finsh -->
+            <!-- languages bar mobile start -->
+            <div class="lang-mobile">
+               <span class="lang">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                     <option value="Afrikaans">af</option>                     
+                     <option value="Zulu">zu</option>
+                  </select>
+               </span>
+            </div>
+            <!-- languages bar mobile finish -->
+            <!-- country bar mobile start -->
+            <div class="mobile-country">
+               <span class="country">
+                  <div class="dropdown coun-flag">
+                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <img src="./assets/images/india-flag.jpg" alt="India" title="India"> IN
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button *ngFor="let c of allCountry" class="dropdown-item">
+                           <img src="./assets/images/ae-flag.jpg" alt="AE" title="AE" class="flag"> {{c.isoCode}}
+                        </button>                       
+                     </div>
+                  </div>
+               </span>
+            </div>
+            <!-- country bar mobile finish -->
+         </div>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+               <!-- mobile menu close button start -->
+               <li class="d-inline d-lg-none">
+                  <button data-toggle="collapse" data-target="#navbarSupportedContent" class="close float-right"><img src="./assets/images/close.png"/></button>
+               </li>
+               <li class="login-area d-lg-none">
+                  <img src="./assets/images/moble-menu-login.png" style="margin-right:10px;"/> <a href="login.html">Login</a> | <a href="register.html">Register</a>
+                  <div class="profile-photo"><img src="./assets/images/profile.jpg" width="28" height="28"></div>
+		            <div class="profile-name">Parag Gogari</div>
+               </li>
+               <li class="add-list d-lg-none">
+                  <a href="create-business-listings-dashboard.html" style="color:#000;"><img src="./assets/images/plus.png" width="15" height="15" style="margin-right:5px;"/> Add Listing</a>   
+               </li>
+               <li class="nav-item black_color" [ngClass]="{'active': selectedMenu === 'Home'}"> <a class="nav-link" href="/">Home</a></li>
+               <li class="nav-item dropdown black_color" [ngClass]="{'active': selectedMenu === 'BuyABusiness'}">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Buy a Business
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item"  href="/buy-a-business/BUSINESS">Business For Sale</a>
+                     <a class="dropdown-item" href="/buy-a-business/COMMERCIAL">Commercial for a sale</a>
+                     <a class="dropdown-item" href="/buy-a-business/DISTRESS">Distress Sale</a>
+                     <a class="dropdown-item" href="/buy-a-business/FRANCHISE">Franchisee Opportunities</a>
+                  </div>
+               </li>
+               <li class="nav-item dropdown" [ngClass]="{'active': selectedMenu === 'SellABusiness'}">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sell a Business
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="/sell-a-business/buyers-or-invstors">Buyers / Investors</a>
+                     <a class="dropdown-item" href="/sell-a-business/brokers">Brokers</a>
+                     <a class="dropdown-item" href="/sell-a-business/business-services">Business Services</a>
+                  </div>
+               </li>
+               <!--<li class="nav-item"> <a class="nav-link" href="#">Real Estate</a></li>-->
+               <li class="nav-item dropdown" [ngClass]="{'active': selectedMenu === 'Investor'}">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Investors
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="business-advisory">Business Advisory</a>
+                     <a class="dropdown-item" href="business-setup">Business Setup</a>
+                     <a class="dropdown-item" href="business-valuation">Business Valuation</a>
+                     <!--<a class="dropdown-item" href="business-loan">Business Loan</a>-->
+                  </div>
+               </li>
+               <li class="nav-item" [ngClass]="{'active': selectedMenu === 'Blog'}"> <a class="nav-link" href="blog-gride">Blog</a></li>
+               <li class="nav-item" [ngClass]="{'active': selectedMenu === 'About-Us'}"> <a class="nav-link" href="about-us">About Us</a></li>
+               <li class="nav-item" [ngClass]="{'active': selectedMenu === 'Contact'}"> <a class="nav-link" href="contact-us">Contact</a></li>
+               <!-- mobile menu finish -->
+               <!-- mobile menu finish -->
+               <!-- social icon area start -->
+               <li class="social d-lg-none">
+                  <span class="icon-social"><a href="https://www.facebook.com/tobuz/" target="_blank"><i class="fa fa-facebook"></i></a></span> <span class="icon-social"><a href="https://twitter.com/Tobuzcom" target="_blank"><i class="fa fa-twitter"></i></a></span> <span class="icon-social"><a href="https://www.instagram.com/tobuzbusiness/" target="_blank"><i class="fa fa-instagram"></i></a></span> <span class="icon-social"><a href="https://www.linkedin.com/company/tobuz/" target="_blank"><i class="fa fa-linkedin"></i></a></span> 
+               </li>
+               <!-- social icon area finish -->
+            </ul>
+         </div>
+      </nav>
+   </div>
+   <!-- navigation finish -->
+</header>

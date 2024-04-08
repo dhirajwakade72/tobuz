@@ -10,14 +10,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class FileEntity extends BaseEntity {
 
-	public BusinessListing getBusinessListing() {
-		return businessListing;
-	}
-
-	public void setBusinessListing(BusinessListing businessListing) {
-		this.businessListing = businessListing;
-	}
-
 	private String fileName;
 
 	private String mimeType;
@@ -27,6 +19,26 @@ public class FileEntity extends BaseEntity {
 	private String thumbnailPath;
 
 	private String thumbnailKey;
+
+	@ManyToOne
+	public AppUser uploadedBy;
+
+	@Column(name = "byte_content", columnDefinition = "bytea")
+	private byte[] byteContent;
+
+	private Date uploadedOn;
+
+	private String fileKey;
+
+	@Column(columnDefinition = "TEXT")
+	private String comment;
+
+	@ManyToOne
+	private BusinessListing businessListing;
+
+	private String fileType = "IMAGE";
+
+
 
 	public String getThumbnailKey() {
 		return thumbnailKey;
@@ -43,25 +55,6 @@ public class FileEntity extends BaseEntity {
 	public void setThumbnailPath(String thumbnailPath) {
 		this.thumbnailPath = thumbnailPath;
 	}
-
-	@ManyToOne
-	public AppUser uploadedBy;
-
-	@Lob
-	private byte[] byteContent;
-
-	private Date uploadedOn;
-
-	private String fileKey;
-
-	@Column(columnDefinition = "TEXT")
-	private String comment;
-
-	@ManyToOne
-	private BusinessListing businessListing;
-
-	private String fileType = "IMAGE";
-
 	
 //	 public static com.avaje.ebean.Model.Finder<Long, FileEntity> find = new
 //	  com.avaje.ebean.Model.Finder<Long, FileEntity>(FileEntity.class);
@@ -136,6 +129,13 @@ public class FileEntity extends BaseEntity {
 
 	public void setUploadedBy(AppUser uploadedBy) {
 		this.uploadedBy = uploadedBy;
+	}
+	public BusinessListing getBusinessListing() {
+		return businessListing;
+	}
+
+	public void setBusinessListing(BusinessListing businessListing) {
+		this.businessListing = businessListing;
 	}
 
 	/*

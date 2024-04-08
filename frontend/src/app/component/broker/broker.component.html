@@ -1,0 +1,75 @@
+<section class="padtb20">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-md-12">       
+                <div>
+                    <!--<div class="bradcrumb"><a href="index.html">Home</a> / <a href="business-for-sale.html"></a></div>-->
+                </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-md-3">
+                <app-filters></app-filters>
+            </div>
+            <div class="col-lg-9 col-xl-9 col-md-9">                
+                    <div class="row">
+                    <!-- bfs title start -->
+                        <div class="col-lg-7 col-xl-7 col-md-7">
+                            <div class="about-us-text-area">
+                                <h1>Brokers <br></h1>
+                            </div>
+                        </div>                   
+                    <!--<div class="col-lg-5 col-xl-5 col-md-5 desktop-view">
+                        <span class="grid-area"><a href="business-for-sale.html"><span class="Grid-active">Grid</span></a> 
+                        <a href="business-for-sale-list.html"><span class="List">List</span></a></span>                      
+                        <div class="Sort"><span class="sort-text">Sort By:</span>
+                        <span class="customselect"> 
+                        <select>
+                        <option value="latest">Latest</option>
+                        <option value="Low To High">Low To High</option>
+                        <option value="High To Low">High To Low</option>
+                        <option value="A to Z">A to Z</option>
+                        <option value="Z to A">Z to A</option>
+                        </select><div class="select-selected">Latest</div><div class="select-items select-hide"><div>Low To High</div><div>High To Low</div><div>A to Z</div><div>Z to A</div></div></span></div>                        
+                    </div>-->
+                    </div>
+                    <div class="row">                    
+                        <div class="col-lg-4 col-xl-4 col-md-4 seller-a" *ngFor="let broker of brokerList;let i = index">
+                            <a></a>
+                            <div class="seller-person-list">
+                                <a>
+                                    <div class="imges-area">
+                                        <img [src]="i % 2 === 0 ? './assets/images/Mahesh-Sharma.jpg' : i % 3 === 0 ? './assets/images/Neethu-Joseph.jpg':'./assets/images/Akhilesh-Thakur.jpg'" 
+                         style="width: 100%;" 
+                         [title]="i % 2 === 0 ? 'Mahesh-Sharma' : 'Akhilesh-Thakur'"
+                         [alt]="i % 2 === 0 ? 'Mahesh-Sharma' : 'Akhilesh-Thakur'">
+                                    </div>
+                                </a>
+                                <div class="imges-area">
+                                  
+                                        <div class="name-seller_1">
+                                        {{broker.brokerName}}
+                                        </div>
+                                  
+                                <div class="tell-seller">
+                                    
+                                    <p><a><i class="fa fa-phone" aria-hidden="true"></i> </a><a>+{{broker.countryCode}}-{{broker.mobileNumber}}</a></p>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{broker.countryName}}</p>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>                
+                    </div>
+                    <br>
+                    <!-- bfs next page button start -->
+                    <div class="next-btn-area" style="float: left;padding-bottom: 20px;">
+                        <a class="next-btn">Prev</a>
+                    </div>
+                    <div class="next-btn-area" style="float: right;padding-bottom: 20px;">
+                        <a class="next-btn">Next</a>
+                    </div>                     
+                               
+            </div>
+        </div>
+    </div>
+</section> 
+ 
+ <div class="clear"></div>

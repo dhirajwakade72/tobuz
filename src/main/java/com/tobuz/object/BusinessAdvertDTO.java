@@ -2,6 +2,11 @@ package com.tobuz.object;
 
 import java.io.Serializable;
 
+import com.tobuz.model.ListingAdvertLable;
+
+import lombok.Data;
+@SuppressWarnings("serial")
+@Data
 public class BusinessAdvertDTO implements Serializable {
 	
 	String advertId;
@@ -24,99 +29,27 @@ public class BusinessAdvertDTO implements Serializable {
 	
 	String investmentRangeTo;
 	
+	String countryCode;
+	
+	String currencyCode;
+	
+	String searchIndex;
+	
+	String advertDescription;
+	
+	String companyType;
+	String listingType;
+	
+	String category;
+	String subCategory;
+	
+	
 	long id ;
 	
+	ListingAdvertLable advertLable;
 	
+	Boolean addedToFavourites;
 	
-
-
-	public String getAdvertId() {
-		return advertId;
-	}
-
-	public void setAdvertId(String advertId) {
-		this.advertId = advertId;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getViews() {
-		return views;
-	}
-
-	public void setViews(String views) {
-		this.views = views;
-	}
-
-	public String getPackag() {
-		return packag;
-	}
-
-	public void setPackag(String packag) {
-		this.packag = packag;
-	}
-
-	public String getCreatedOn() {
-		return createdOn;
-	}
-
-	public void setCreatedOn(String createdOn) {
-		this.createdOn = createdOn;
-	}
-
-	public String getExpiredOn() {
-		return expiredOn;
-	}
-
-	public void setExpiredOn(String expiredOn) {
-		this.expiredOn = expiredOn;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getInvestmentRangeFrom() {
-		return investmentRangeFrom;
-	}
-
-	public void setInvestmentRangeFrom(String investmentRangeFrom) {
-		this.investmentRangeFrom = investmentRangeFrom;
-	}
-
-	public String getInvestmentRangeTo() {
-		return investmentRangeTo;
-	}
-
-	public void setInvestmentRangeTo(String investmentRangeTo) {
-		this.investmentRangeTo = investmentRangeTo;
-	}
-	
+	Long likeCount;
 	
 }

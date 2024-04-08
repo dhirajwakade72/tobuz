@@ -1,0 +1,5 @@
+.wrap-label {
+    word-wrap: break-word; /* Fallback */
+    overflow-wrap: break-word;
+}
+

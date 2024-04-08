@@ -9,6 +9,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class BusinessListingOutLet extends BaseEntity {
+	
 	@OneToOne
 	private Address businessAddress;
 	
@@ -32,7 +33,7 @@ public class BusinessListingOutLet extends BaseEntity {
 	private Boolean isPlantFixturesFittingsIncluded = Boolean.FALSE;
 	private Boolean isEstimatedStockIncluded = Boolean.TRUE;
 	private String listingSalePriceType;
-	private Float totalBusinessSalePrice;
+	private Double totalBusinessSalePrice;
 	
 
 	/**
@@ -48,8 +49,10 @@ public class BusinessListingOutLet extends BaseEntity {
 	 */
 	// private String size;
 	private Float size;
+	
 	@ManyToOne
 	private AreaMetrics metrics;
+	
 	private Integer yearOfEstablishment;
 	private Integer noOfEmployees;
 	private Integer noOfTradingHours;
@@ -199,11 +202,11 @@ public class BusinessListingOutLet extends BaseEntity {
 		this.listingSalePriceType = listingSalePriceType;
 	}
 
-	public Float getTotalBusinessSalePrice() {
+	public Double getTotalBusinessSalePrice() {
 		return totalBusinessSalePrice;
 	}
 
-	public void setTotalBusinessSalePrice(Float totalBusinessSalePrice) {
+	public void setTotalBusinessSalePrice(Double totalBusinessSalePrice) {
 		this.totalBusinessSalePrice = totalBusinessSalePrice;
 	}
 

@@ -1,0 +1,90 @@
+<section class="padtb50">
+   <div class="container">
+      <div class="row justify-content-md-center mb-20px">
+         <div class="col-md-12 col-lg-12 col-xl-10 about-us-text-area">
+            <div class="ragisterarea">
+               <!-- register form title start -->
+               <h1>Contact us</h1>
+               <!-- register form title finish -->
+               <div class="row">
+                  <div class="col-md-4 col-lg-4 col-xl-4 line-right">
+                     <div class="office-text">Offices</div>
+                     <div class="contact-text">India, Dubai, Australia, Singapore</div>
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-xl-4 line-right">
+                     <div class="office-text">Email</div>
+                     <div class="contact-text"><a href="mailto:contact@tobuz.com" style="color:#707070;">contact@tobuz.com</a></div>
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-xl-4">
+                     <div class="office-text">Contact Number</div>
+                     <div class="contact-text"><a href="tel:+971508038288" style="color:#707070;">+971508038288</a></div>
+                  </div>
+               </div>
+               <hr>
+               <form [formGroup]="sellerContactForm" (ngSubmit)="submitContactToseller()" novalidate>
+                  <div class="row justify-content-md-center">
+                     <div class="col-md-12 col-lg-12 col-xl-12">
+                        <h2 class="contact-form-line">Get in touch with us to buy, sell, or grow your Business</h2>
+                     </div>
+                     <div class="row">
+                      <div class="col-md-6 offset-md-3 col-lg-6 col-xl-6">
+                         <span id="messageId" style="color:red">{{showMessage}}<br><br></span>
+ 
+                      </div>
+                     </div>
+                     
+                     <div class="col-md-6 col-lg-6 col-xl-5">                     
+                       
+                        <!-- Name start -->
+                        <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><img src="./assets/images/name.png" width="33" height="19"></span>
+                           </div>
+                           <input type="text" #cnameInput id="cname" tabindex="1" formControlName="name" appAlphabet class="form-control login-user" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- Name finish -->
+                        <!-- Phone No start -->
+                        <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><img src="./assets/images/phone.png" width="33" height="21"></span>
+                           </div>
+                           <input type="text" class="form-control login-user" (keypress)="onPress($event)" tabindex="3" #phone appNumericOnlyDirective formControlName="phone" placeholder="Phone No" aria-label="phone" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- Phone No finishs -->
+                        <!-- Register start -->
+                        <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><img src="./assets/images/massage.jpg" width="30" height="20"></span>
+                           </div>
+                           <input type="text" class="form-control login-user" tabindex="5" #message formControlName="message" placeholder="Message" aria-label="Message" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- Register finish -->
+                     </div>
+                     <div class="col-md-6 col-lg-6 col-xl-5 offset-lg-0 offset-md-0 offset-xl-1">
+                        <!-- Email Address start -->
+                        <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"></span>
+                           </div>
+                           <input type="text" class="form-control login-user" tabindex="2" #email appEmailValidator formControlName="email" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- Email Address finish -->
+                        <!-- City start -->
+                        <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><img src="./assets/images/city.png" width="34" height="21"></span>
+                           </div>
+                           <input type="text" class="form-control login-user" appAlphabet tabindex="4" #city formControlName="city" placeholder="City" aria-label="City" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- City finish -->
+                        <!-- Register button start -->
+                        <button type="submit" style="margin-top:0px;" class="btn register-button">Submit</button>
+                        <!-- Register button finish -->
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+ </section>

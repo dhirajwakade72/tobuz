@@ -1,0 +1,157 @@
+ <section class="padtb50">
+   <div class="container">
+      <div class="row mb-20px ">
+         <div class="col-md-8 col-lg-9 col-xl-10 contact-seller-title">
+            <!--title start-->
+            <h1 style="font-weight: bold;">{{businessListingDetails.title}}<br/>
+               <span>{{businessListingDetails.suggestedTitle}}</span>
+            </h1>
+            <!--title finish-->
+            <!--post start-->
+            <p class="post-on">Posted on: {{businessListingDetails.postedOnStr}}</p>
+            <!--post finish-->
+            <div class="row">
+               <div class="col-md-6 col-lg-8 col-xl-8">
+                   <div id="demo" class="carousel slide" data-ride="carousel">                       
+                      <div class="carousel-inner mb-20">                        
+                        <div class="carousel-item active" *ngFor="let files of businessListingDetails.listingGallery">
+                           <img src="{{files.filePath}}"  alt="Service banner 1" width="50%" height="200px">
+                       </div>                      
+                      </div>
+                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a class="carousel-control-next" href="#demo" data-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                      </a>
+                   </div>
+                   <!--contact seller from start-->
+                   <div class="contact-seller-form">
+                       <h2 class="contact-h2">Contact Seller</h2>
+                       <span id="messageId" style="color:red">{{showMessage}}</span>
+                       <form [formGroup]="sellerContactForm" (ngSubmit)="submitContactToseller()" novalidate>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6 col-xl-6">                              
+                               <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                     <span class="input-group-text" id="basic-addon1"><img src="./assets/images/name.png" width="33" height="19"/></span>
+                                  </div>
+                                  <input type="text" formControlName="name" #name tabindex="1" appAlphabet class="form-control login-user input_fields" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>                                  
+                               </div>
+                               <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                     <span class="input-group-text" id="basic-addon1"><img src="./assets/images/phone.png" width="33" height="21"/></span>
+                                  </div>
+                                  <input type="text" class="form-control login-user" (keypress)="onPress($event)" #phone tabindex="2" appNumericOnlyDirective formControlName="phone" placeholder="Contact" aria-label="phone" aria-describedby="basic-addon1" required>
+                               </div>
+                               <div class="input-group mb-3" style="margin-bottom: 0px;">
+                                 
+                                  <div class="input-group-prepend">
+                                     <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"/></span>
+                                  </div>
+                                  <input type="text" class="form-control login-user" #email  tabindex="3" appEmailValidator formControlName="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>                                                                                                
+                                 </div> 
+                            </div>
+                              <div class="col-md-12 col-lg-6 col-xl-6">
+                                  <div class="form-group required-field-block">
+                                      <div class="col-md-12 input-group">
+                                      <span class="input-group-addon"><img src="./assets/images/commnet.png" width="31" height="20"/></span>
+                                      <textarea rows="4" size="50" value="" tabindex="4" #message formControlName="message" class="form-control interested" placeholder="Please send me more details, Interested in the business ,Thanks" required></textarea>  
+                                      </div>
+                                  </div>
+                                  <button type="submit" class="btn login-submit-button">Submit</button>                                                                                             
+                              </div>
+                         </div>
+                        </form>
+                    </div>
+                    <!--contact seller from finish-->
+                </div>
+                <!--Business Description start-->
+               <div class="col-md-6 col-lg-4 col-xl-4">
+                  <!--Business Description start-->
+                  <p class="business-text"><span class="business-description">Business Description</span><br/>
+                     {{businessListingDetails.listingDescription}}
+                  </p>
+                  <!--Business Description finish-->
+                  <!--Business Category start-->
+                  <p class="business-text"><span class="business-description">Business Category</span><br/>
+                     {{businessListingDetails.category.name}} 
+                  </p>
+                  <!--Business Category finish-->
+                  <!--Business Location start-->
+                  <p class="business-text"><span class="business-description">Business Location</span><br/>
+                     {{businessListingDetails.businessListingOutLet.businessAddress.city.name+", "+businessListingDetails.businessListingOutLet.businessAddress.state.name+", "+businessListingDetails.businessListingOutLet.businessAddress.country.name}} 
+                  </p>
+                  <!--Business Location finish-->
+                  <!--Business Features start-->
+                  <p class="business-text"><span class="business-description">Business Features</span><br/>
+                     <span *ngFor="let bf of businessListingDetails.businessFeatures">{{bf.name}} ,</span>
+                     
+                  </p>
+                  <!--Business Features finish-->
+                  <!--Operational Information start-->
+                  <p class="business-text"><span class="business-description">Operational Information</span><br/>
+                     Year of Establishment : 2022<br/>
+                     No of Employee : 2<br/>
+                     No of Years trading : 1<Br/>
+                     Trading Hours From : 10<br/>
+                     Trading Hours To: 21<br/>
+                  </p>
+                  <!--Operational Information finish-->
+                  <!--Company Details start-->
+                  <p class="business-text"><span class="business-description">Company Details</span><br/>
+                     Type : {{businessListingDetails.businessListingOutLet.companyType}}<br/>
+                     Status : {{businessListingDetails.businessListingOutLet.isCompanyActive==true?'Active':'In Active'}}
+                  </p>
+                  <!--Company Details finish-->
+                  <!--Profit & Pricing start-->
+                  <p class="business-text"><span class="business-description">Profit & Pricing</span><br/>
+                     Business Turnover : 100000-250000 INR /Month<Br/>
+                     Total Expenses : 0-100000 INR /Month<Br/>
+                     Gross profit : 100000-250000 INR<br/>
+                     Net profit : 100000-250000 INR<Br/>
+                     Included Plant & Fixture fittings<Br/>
+                     Included Estimated Stock
+                  </p>
+                  <!--Profit & Pricing finish-->
+                  <!--Profit & Pricing start-->
+                  <p class="business-text"><span class="business-description">Business Expenses</span><br/>
+                     Rent : 70000<Br/>
+                     Electricity : 5000
+                  </p>
+                  <!--Profit & Pricing finish-->
+                  <!--Profit & Pricing start-->
+                  <p class="business-text"><span class="business-description">Keywords</span><br/>
+                     Fully furnished retail business for sale
+                  </p>
+                  <!--Profit & Pricing finish-->
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-lg-3 col-xl-2">
+            <div class="listing-seller">
+
+               <div class="wishlist-seller" *ngIf="!businessListingDetails.isFovorite"><img src="./assets/images/listing.png" width="27" title="Add to Favorite" alt="Add to Favorite" style="margin-right:5px;" height="19"/> <a (click)="addToFavorite()">Add to Favorite</a></div>
+               <div class="wishlist-seller" *ngIf="businessListingDetails.isFovorite"><img src="./assets/images/red-heart-icon.png" width="20" title="Add to Favorite" alt="Add to Favorite" style="margin-right:5px;" height="19"/> <a >Your Favorite</a></div>
+
+               <!--Add to Favorite start-->
+               <!--<div class="wishlist-seller"><img src="./assets/images/listing.png" width="27" title="Add to Favorite" alt="Add to Favorite" style="margin-right:5px;" (click)="addToFavorite(businessListingDetails.id)" height="19"/> <a (click)="addToFavorite(businessListingDetails.id)">Add to Favorite</a></div>-->
+               <!--Add to Favorite finish-->
+               <!--View Contact start-->
+               <!--<div class="wishlist-seller"><img src="./assets/images/phone-icon.png" title="View Contact" alt="View Contact" width="27" style="margin-right:5px;" height="19"/> View Contact</div>-->
+               <!--View Contact finish-->
+               <!--social start-->
+               <div class="social-seller"><span><a href="https://www.facebook.com/tobuz/"><img src="./assets/images/facebook-icon.png" title="Facebook" alt="Facebook" width="25" height="25"/></a></span> <span><a href="https://www.linkedin.com/company/tobuz/?originalSubdomain=ae"><img src="./assets/images/linkedin-icon.png" title="Linkedin" alt="Linkedin" width="25" height="25"/></a></span> <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2FTobuzcom"><img src="./assets/images/twitter.png" width="25" title="Twitter" alt="Twitter" height="25"/></a></span></div>
+               <!--social icon finish-->
+               <!--listing start-->
+               <div class="listing-id">Listing ID<br/><span>{{businessListingDetails.listingId}}</span></div>
+               <div class="listing-id">Listing Type<br/><span>{{businessListingDetails.listingFor}}</span></div>
+               <div class="listing-id">Listing Category<br/><span>{{businessListingDetails.listingType}}</span></div>
+               <div class="listing-id">Total Views<br/><span>72</span></div>
+               <div class="listing-id">Pricing<br/><span>{{businessListingDetails.businessAddressCountry.currencyCode}} {{ businessListingDetails.businessListingOutLet.totalBusinessSalePrice}}</span></div>
+               <!--finish finish-->
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

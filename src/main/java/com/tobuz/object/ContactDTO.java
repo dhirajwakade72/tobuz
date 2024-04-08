@@ -19,6 +19,16 @@ public class ContactDTO implements Serializable{
 	
 	private Date lastUpdate ;
 	
+	private Long businessId;
+	
+
+	public Long getBusinessId() {
+		return businessId;
+	}
+
+	public void setBusinessId(Long businessId) {
+		this.businessId = businessId;
+	}
 
 	public String getName() {
 		return name;

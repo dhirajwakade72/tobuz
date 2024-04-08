@@ -1,17 +1,9 @@
 package com.tobuz.model.tobuzpackage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import com.avaje.ebean.ExpressionList;
-import com.avaje.ebean.Model;
-import com.avaje.ebean.annotation.JsonIgnore;
-import com.tobuz.model.AppUser;
 import com.tobuz.model.BaseEntity;
 import com.tobuz.model.Country;
 import com.tobuz.model.TobuzPackageType;
@@ -32,7 +24,6 @@ public class TobuzPackage extends BaseEntity {
 	private Float cost;
 
 	@ManyToOne
-	@JsonIgnore
 	private Country country;
 
 	private Integer expiryPeriodInMonths;

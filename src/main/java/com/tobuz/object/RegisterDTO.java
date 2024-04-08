@@ -22,6 +22,8 @@ public class RegisterDTO implements Serializable{
 	private Date lastUpdate ;
 	
 	private boolean active;
+
+	private Long id;
 	
 	public String getName() {
 		return name;
@@ -95,6 +97,12 @@ public class RegisterDTO implements Serializable{
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }

@@ -11,7 +11,9 @@ import com.tobuz.model.SubCategory;
 public interface SubCategoryRepository extends JpaRepository<SubCategory, Long> {
 	
 	@Query(value = " from SubCategory sc where sc.category =?1")
-	   public  List<SubCategory> findSubCategotyByCategory(Category category);
-	  
+	public  List<SubCategory> findSubCategotyByCategory(Category category);
+	
+	@Query(value = " from SubCategory sc where sc.category.id =?1")
+	public  List<SubCategory> findByCategoryId(Long catId);  
 
 }

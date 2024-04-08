@@ -1,0 +1,20 @@
+.font_size_in{
+    font-size: smaller;
+}
+
+.blog-warpper {
+    height: 100%; /* Ensure the blog wrappers take up full height */
+}
+
+.blog-home-image img {
+    height: 100%; /* Ensure images take up full height of their parent container */
+    width: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.blog-home-text-area {
+    height: calc(100% - 20px); /* Subtract some height for padding */
+    padding: 10px; /* Add padding to the text area */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #f9f9f9; /* Set background color for better readability */
+}

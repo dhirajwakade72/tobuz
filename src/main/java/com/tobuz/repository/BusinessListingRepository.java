@@ -1,15 +1,18 @@
 
 package com.tobuz.repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.tobuz.projection.BusinessServiseTypeList;
-import com.tobuz.projection.CountryList;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.tobuz.model.BusinessListing;
-import com.tobuz.model.Country;
+import org.springframework.data.repository.query.Param;
 
 public interface BusinessListingRepository extends JpaRepository<BusinessListing, Long> {
 	
@@ -23,11 +26,7 @@ public interface BusinessListingRepository extends JpaRepository<BusinessListing
     		+  " select id, name  from  category ", nativeQuery = true)
     public List<Object[]> getAllCategories();
      
-    @Query(value = " "
-    		+  " 	"
-    		+ "  select bl.id ,bl.title ,bl.listing_for,bl.country_code ,bl.listing_id   ,bl.business_listing_status,au.user_default_role ,bl.created_on  "
-    		+ "	 from business_listing bl  inner join app_user au on bl.listed_by_user_id = au.id   where business_listing_status  in ('PUBLISHED' ,'APPROVED','REJECTED','SOLD' ,'UNDER_REVIEW' ) order by id desc limit 5000"
-    		, nativeQuery = true)
+    @Query(value = "select bl.id,bl.title,bl.listing_for,bl.country_code,bl.listing_id,bl.business_listing_status,au.user_default_role,bl.created_on from business_listing bl inner join app_user au on bl.listed_by_user_id = au.id where business_listing_status  in ('PUBLISHED' ,'APPROVED','REJECTED','SOLD' ,'UNDER_REVIEW' ) order by id desc limit 5000", nativeQuery = true)
     public List<Object[]> getAllpublishedListings();
     
     @Query(value = " "
@@ -37,7 +36,8 @@ public interface BusinessListingRepository extends JpaRepository<BusinessListing
     public List<Object[]> getAllAdverts();
     
     
-    
+    @Query(value="select bl from BusinessListing bl where bl.listedByUser.id=?1")
+    public List<BusinessListing> findAllByUserId(Long userId);
     
     @Query(value = " "
     		+  " update business_listing set business_listing_status =:status where id =:id", nativeQuery = true)
@@ -67,5 +67,26 @@ public interface BusinessListingRepository extends JpaRepository<BusinessListing
     public List<Object[]>   getAdvertListingsForTypeAndUser( long id ,String type);
 
 	@Query(value = "SELECT id, business_service_type as businessServiceType FROM business_service_type WHERE is_active is true ORDER BY id", nativeQuery = true)
-	public List<BusinessServiseTypeList> getAllBusinessServiseTypeList();
+	public Page<BusinessServiseTypeList> getAllBusinessServiseTypeList(Pageable pageable);
+
+	@Modifying
+	@Query(value = "INSERT INTO favourite_business_listing (is_active, user_id, role_id, business_listing_id, added_on, created_on, last_update) VALUES (true, :userId, :roleId, :businessListingId, :currentTimeStamp, :currentTimeStamp, :currentTimeStamp )", nativeQuery = true)
+	void addFavouriteBusiness(@Param("userId") Long userId, @Param("roleId") Integer roleId, @Param("businessListingId") Long businessListingId, @Param("currentTimeStamp") Timestamp currentTimeStamp);
+
+	@Modifying
+	@Query(value = "DELETE FROM favourite_business_listing WHERE user_id = :userId AND business_listing_id = :businessListingId", nativeQuery = true)
+	void removeFavouriteBusiness(@Param("userId") Long userId, @Param("businessListingId") Long businessListingId);
+		
+	@Query(value = "select count(*) as count from favourite_business_listing where business_listing_id=:businessListingId", nativeQuery = true)
+	Long getFavoriteCount(@Param("businessListingId") Long businessListingId);
+	
+	@Query(value = "select count(*) as count from favourite_business_listing where business_advert_id=:advertId", nativeQuery = true)
+	Long getAdvertFavoriteCount(@Param("advertId") Long advertId);
+	
+	@Query(value = "select business_listing_id from favourite_business_listing where user_id=:userId", nativeQuery = true)
+	List<Long> getUserFavoriteListing(@Param("userId") Long userId);
+	
+	@Query(value = "select business_advert_id from favourite_business_listing where user_id=:userId", nativeQuery = true)
+	List<Long> getUserFavoriteAdvert(@Param("userId") Long userId);
+
 }

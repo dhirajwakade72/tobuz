@@ -11,4 +11,6 @@ public interface BusinessByFilter {
     Long getCountryId();
 
     String getStateId();
+    String getCountryName();
+    Boolean getAddedToFavourites();
 }

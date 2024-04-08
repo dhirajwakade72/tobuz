@@ -1,0 +1,815 @@
+<section class="padtb50">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-xl-12 col-md-12">          
+              <div class="row">
+                  <div class="col-lg-3 col-xl-3 col-md-4 desktop-view">
+                      <app-userfilters></app-userfilters>
+                  </div>
+                  <div class="col-lg-9 col-xl-9 col-md-4 desktop-view">
+                    <!--Started-->
+                    <section>
+                      <div class="container">
+                      <div class="row">
+                      <div class="col-lg-12 col-xl-12 col-md-12">
+                      <!-- bfs sidebar start -->
+                      <div class="row">                      
+                      <!-- bfs sidebar finish -->
+                      <!-- bfs area contact start -->
+                      <div class="col-lg-12 col-xl-12 col-md-12">
+                      <div class="row">
+                      <!-- bfs title start -->
+                      <div class="col-lg-12 col-xl-12 col-md-12">
+                      <div class="about-us-text-area">
+                      <h1>Create Business Listing</h1>
+                      </div>
+                      </div>
+                      <form style="margin:0px;" class="business-detail" #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+                      <div class="col-lg-12 col-xl-12 col-md-12">
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Business Details</h2>
+                      <div class="row pt-20">                     
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                        <span class="label-form-text">Select business</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="Select Multiple Subcategories" data-original-title="" title="">
+                      </div>
+                        <div class="col-lg-6 col-xl-5 col-md-7">    
+                          <div class="input-group">                              
+                          <select style="text-transform: none;" #businessType name="listingType" ngModel class="form-select leftOrder_radius login-user" required>
+                            <option value="">Select Business </option>
+                              <option value="BUSINESS">Business</option>
+                              <option value="COMMERCIAL">Commercial</option>
+                              <option value="FRANCHISE">Franchise</option>
+                          </select>
+                        </div>
+                        <div *ngIf="formData.controls['listingType'].errors?.['required']">
+                          <div class="redColor pl-20">Business type is required.</div>
+                        </div>
+                        </div>
+                        
+                      </div>                  
+                      <div class="row pt-20">
+                        <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                          <span class="label-form-text">Select Categories</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="Select Multiple Subcategories" data-original-title="" title="">
+                        </div>
+                        <div class="col-lg-6 col-xl-5 col-md-7">  
+                          <div class="input-group">                                  
+                            <select style="text-transform: none;" #category (change)="onSelect($event)" ngModel name="categoryId" required class="form-select leftOrder_radius login-user" required>
+                              <option value="" disabled>Select Categories</option>
+                              <option *ngFor="let category of allCategories" [value]="category.id">{{category.name}}</option>
+                            </select>    
+                        </div>
+                        <div *ngIf="formData.controls['categoryId'].errors?.['required']">
+                          <div class="redColor pl-20">Category is required.</div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="row pt-20">
+                        <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                          <span class="label-form-text">Subcategories</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="Select Multiple Subcategories" data-original-title="" title="">
+                        </div>
+                        <div class="col-lg-6 col-xl-5 col-md-7">  
+                          <div class="input-group">   
+                            <select style="text-transform: none;" #subcategory (change)="onSelect($event)" ngModel name="subCategoryIds" required class="form-select leftOrder_radius login-user" multiple>
+                              <option selected value="">Select SubCategories</option>                              
+                              <option *ngFor="let sc of allSubCategories" value="{{sc.id}}">{{sc.name}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="formData.controls['subCategoryIds'].errors?.['required']">
+                          <div class="redColor pl-20">SubCategory is required.</div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="row pt-20">
+                        <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                          <span class="label-form-text">Description</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Type Listing Description">
+                        </div>
+                        <div class="col-lg-6 col-xl-5 col-md-7">
+                            <div>           
+                              <textarea #desc class="form-control login-user leftOrder_radius" placeholder="Description" ngModel name="listingDescription" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                            </div>  
+                            <div *ngIf="formData.controls['listingDescription'].errors?.['required']">
+                              <div class="redColor pl-20">Description is required.</div>
+                            </div>              
+                        </div>
+                        
+                      </div>                  
+                      <div class="row pt-20">
+                        <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                        <span class="label-form-text">Keywords</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select Keywords">
+                        </div>
+                        <div class="col-lg-6 col-xl-5 col-md-7">
+                          <div>           
+                            <textarea class="form-control login-user leftOrder_radius"  placeholder="Keywords" ngModel name="listingKeywords" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                          </div>
+                          <div *ngIf="formData.controls['listingKeywords'].errors?.['required']">
+                            <div class="redColor pl-20">Keyword is required.</div>
+                          </div>               
+                      </div>
+                      </div>
+                        <div class="row pt-20">
+                          <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                            <span class="label-form-text">Features</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="Select Multiple Subcategories" data-original-title="" title="">
+                          </div>
+                          <div class="col-lg-6 col-xl-5 col-md-7">  
+                            <div class="input-group mb-3">                                  
+                              <select style="text-transform: none;"  (change)="onSelect($event)" ngModel name="features" ngModel class="form-select leftOrder_radius login-user">
+                                <option selected value="">Select Features</option>                              
+                                <option value="Attractive Business">Attractive Business </option>
+                                <option value="Attractive Business">Attractive Business</option>
+                                <option value="Attractive Business">Attractive Business</option>
+                                <option value="Attractive Business">Attractive Business</option>
+                                <option value="Attractive Business">Attractive Business</option>
+                              </select>    
+                            </div>
+                          </div>
+                        </div>                  
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                        <h2 class="contact-h2 color-blue">Business Location</h2>
+                        <div class="row mb-20">                          
+                            <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                              <div class="row">
+                                  <span class="label-form-text">Preferred Location</span><span style="color:red">*</span> <img src="images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select Preferred Location">
+                              </div>
+                              <br>
+                              <div class="row" style="padding-top: 30px;">
+                                <span class="label-form-text">Country<span style="color:red">*</span> <img src="images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select Preferred Location"></span>
+                              </div>
+                              <br>
+                              <div class="row" style="padding-top: 30px;">
+                                <span class="label-form-text">State<span style="color:red">*</span> <img src="images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select Preferred Location"></span>
+                              </div>
+                            </div>
+                          <div class="col-lg-6 col-xl-3 col-md-7">                      
+                            <div>
+                                <input type="text" class="form-control Location" ngModel name="preferdLocation" aria-label="Name" placeholder="Enter address" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div *ngIf="formData.controls['preferdLocation'].errors?.['required']">
+                              <div class="redColor pl-20">Location is required.</div>
+                            </div>
+                            <br>
+                            <div class="input-group">                                    
+                              <select style="text-transform: none;"  (change)="onCountrySelect($event)" ngModel name="countryId" aria-placeholder="dd" class="form-select leftOrder_radius login-user" required>
+                                <option>Select Country</option>
+                                <option *ngFor="let country of allCountries" value="{{country.id}}">{{country.name}}</option>                                
+                              </select>    
+                            </div>
+                            <div *ngIf="formData.controls['countryId'].errors?.['required']">
+                              <div class="redColor pl-20">Country is required.</div>
+                            </div>
+                            <br>
+                            <div class="input-group">                                    
+                              <select style="text-transform: none;" ngModel name="stateId" class="form-select leftOrder_radius login-user" required="">
+                                <option value="">Select State</option>
+                                <option *ngFor="let state of selectedStates" [value]="state.id">{{state.name}}</option>                                
+                              </select>    
+                            </div>
+                            <div *ngIf="formData.controls['stateId'].errors?.['required']">
+                              <div class="redColor pl-20">State is required.</div>
+                            </div>
+                          </div>
+                        <div class="col-lg-6 col-xl-6 col-md-12">
+                          <div class="map-border"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15079.03795885064!2d72.86336325!3d19.118204249999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1676054175842!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 pr-15 col-md-4">
+                      <span class="label-form-text">Suggested Title</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group">
+                          <input type="text" class="form-control Location" ngModel name="suggestedTitle" placeholder="Enter suggestedTitle" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row pt-20">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Your Title</span><span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter Your Title">
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- What you liked about us start -->
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" ngModel name="title" placeholder="Type Your Title Here" aria-label="Name" aria-describedby="basic-addon1" required>
+                      </div>
+                      <div *ngIf="formData.controls['title'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20">Your Title is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                          <!-- What you liked about us finish -->
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Contact Details</h2>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Name</span> <span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="enter Your Name">
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" appAlphabet class="form-control Location" ngModel name="contactName" placeholder="Enter contact person name" aria-label="Name" aria-describedby="basic-addon1" required>
+                      </div>
+                      <div *ngIf="formData.controls['contactName'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20">Contact Name is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Phone number on which you can be reached</span> <span style="color:red">*</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter your Phone number on which you can be reached">
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- What you liked about us start -->
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" #contactNumber appNumericOnlyDirective (keypress)="onPressMobile($event)" required class="form-control Location" ngModel name="contactNumber" placeholder="Enter Contact number" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <div *ngIf="formData.controls['contactNumber'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20" id="contactNumber_msg">Contact Number is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                          <!-- What you liked about us finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Do you have any website link?</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter Your Website Link">
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- What you liked about us start -->
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" ngModel name="webSiteUrl" placeholder="www." aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                          <!-- What you liked about us finish -->
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Company Information</h2>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 pr-15 col-md-4">
+                      <span class="label-form-text">What is your Company type? </span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter Your Company Type">
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      
+                      <div class="input-group mb-3">                                  
+                        <select style="text-transform: none;" ngModel name="companyType" class="form-select leftOrder_radius login-user">
+                          <option value="" selected>Select Company Type</option>
+                          <option value="Public">Public</option>
+                          <option value="Private">Private</option>
+                          <option value="Sole Proprietorship">Sole Proprietorship</option>
+                          <option value="Partnership">Partnership</option>
+                           <option value="Co-operatives">Co-operatives </option>
+                        </select>
+                        <!--<input type="text" formControlName="role" class="form-control login-user" placeholder="Register as" aria-label="Register" aria-describedby="basic-addon1">-->
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">What is your Company status? </span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select your Company status">
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-8">
+                      <!-- What you liked about us start -->
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                        <!-- Buyer radio button start -->
+                      <span class="radio-area-2">
+                       Active <label class="radio-button">
+                        <input type="radio" ngModel name="companyStatus">
+                        <span class="checkmark"></span>
+                      </label>
+                      </span>
+                      <!-- Buyer radio button finsh -->
+                      <!-- Seller radio button start -->
+                      <span class="radio-area-2">
+                       Seller <label class="radio-button"> 
+                        <input type="radio" ngModel name="companyStatus">
+                        <span class="checkmark"></span>
+                      </label>
+                      </span>
+                      <!-- Seller radio button finish -->
+                      </div>
+                      <!-- Name finish -->
+                          <!-- What you liked about us finish -->
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Financial Details</h2>
+                      <div class="row">
+                      <div class="col-lg-3 col-xl-3 pr-15 col-md-3">
+                      <span class="label-form-text">What is your Business Turnover?</span><span style="color:red">*</span>  <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter your Business Turnover">
+                      </div>
+                      <div class="col-lg-2 col-xl-2 col-md-2">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" value="{{selectedCurrencyCode}}" class="form-control Location" placeholder="INR" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      
+                      <div class="col-lg-3 col-xl-3 col-md-3">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" appNumericOnlyDirective required class="form-control Location" name="businessTurnOver" ngModel aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      
+                      <div *ngIf="formData.controls['businessTurnOver'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20">Business Turnover is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      <div class="col-lg-1 col-xl-1 col-md-1">
+                        <!-- Name start -->
+                        <span style="line-height:40px;" class="label-form-text">Per</span>
+                      </div>
+
+                      <div class="col-lg-3 col-xl-3 col-md-3">                     
+                      <select style="text-transform: none;" ngModel name="businessTurnoverPer" class="form-select leftOrder_radius login-user" required>                        
+                        <option value="Annual">Annualy</option>
+                        <option value="Quarterly">Quarterly</option>
+                        <option value="Monthly">Monthly</option>
+                      </select>
+                      
+                      <div *ngIf="formData.controls['businessTurnoverPer'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20">Business Turnover Per is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                    </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Business Expenses</h2>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Rent</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" appNumericOnlyDirective name="rentAmount" ngModel class="form-control Location" placeholder="Rent amount" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Wages</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text"  appNumericOnlyDirective class="form-control Location" name="wagesAmount" ngModel placeholder="Wages amount" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Out going</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" appNumericOnlyDirective name="outGoingAmount" ngModel class="form-control Location" placeholder="Out going amount" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Electricity</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text"  appNumericOnlyDirective name="electricityAmount" ngModel class="form-control Location" placeholder="Electricity amount" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Insurance</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" appNumericOnlyDirective name="insuranceAmount" ngModel class="form-control Location" placeholder="Insurance amount" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Gas</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text"  appNumericOnlyDirective name="gasAmount" ngModel class="form-control Location" placeholder="Gas amount" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">More Expenses</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" placeholder="More Expenses" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      <div class="col-lg-4 col-xl-4 col-md-7">
+                       <button type="button" class="btn hide-expenses">Hide Expenses</button>
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Price and Profit Information</h2>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">What is your Gross Profit?</span><span style="color:red">*</span>  <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter your Gross Profit">
+                      </div>
+                      <div class="col-lg-4 col-xl-2 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" placeholder="Currency" value="{{selectedCurrencyCode}}" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      <div class="col-lg-4 col-xl-3 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" appNumericOnlyDirective required class="form-control Location" name="grossProfit" ngModel placeholder="Enter Gross Profit" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      
+                      <div *ngIf="formData.controls['grossProfit'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20">Gross Profit is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">What is your net Profit?</span><span style="color:red">*</span>  <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter Your Net Profit">
+                      </div>
+                      <div class="col-lg-4 col-xl-2 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text"  class="form-control Location" placeholder="Currency" value="{{selectedCurrencyCode}}" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      <div class="col-lg-4 col-xl-3 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" required appNumericOnlyDirective class="form-control Location" name="netProfit" ngModel placeholder="Enter Net Profit" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <div *ngIf="formData.controls['netProfit'].errors?.['required']" class="mb-3">
+                        <div class="redColor pl-20">Net Profit is required.</div>
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row mb-20">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Is the plant Fittings and Fixtures included </span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select The Plant Fittings and Fixtures Included">
+                      </div>
+                      <div class="col-lg-7 col-xl-5 col-md-8">
+                      <!-- What you liked about us start -->
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                        <!-- Buyer radio button start -->
+                      <span class="radio-area-3">
+                       Yes <label class="radio-button">
+                        <input type="radio" checked="checked" value="Yes" name="Fittings">
+                        <span class="checkmark"></span>
+                      </label>
+                      </span>
+                      <!-- Buyer radio button finsh -->
+                      <!-- Seller radio button start -->
+                      <span class="radio-area-3">
+                       No <label class="radio-button"> 
+                        <input type="radio" checked="checked" value="No" name="Fittings">
+                        <span class="checkmark"></span>
+                      </label>
+                      </span>
+                      <!-- Seller radio button finish -->
+                      </div>
+                      <!-- Name finish -->
+                          <!-- What you liked about us finish -->
+                      </div>
+                      </div>
+                      <div class="row mb-20">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Is the EstimatedStock included</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Select the EstimatedStock Included">
+                      </div>
+                      <div class="col-lg-7 col-xl-5 col-md-8">
+                      <!-- What you liked about us start -->
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                        <!-- Buyer radio button start -->
+                      <span class="radio-area-3">
+                       Yes <label class="radio-button">
+                        <input type="radio" checked="checked" value="Yes" name="EstimatedStock">
+                        <span class="checkmark"></span>
+                      </label>
+                      </span>
+                      <!-- Buyer radio button finsh -->
+                      <!-- Seller radio button start -->
+                      <span class="radio-area-3">
+                       No <label class="radio-button"> 
+                        <input type="radio" value="No" name="EstimatedStock">
+                        <span class="checkmark"></span>
+                      </label>
+                      </span>
+                      <!-- Seller radio button finish -->
+                      </div>
+                      <!-- Name finish -->
+                          <!-- What you liked about us finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">What is your Total Price?</span><span style="color:red">*</span>  <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Enter Your Total Price">
+                      </div>
+                      <div class="col-lg-4 col-xl-2 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" value="{{selectedCurrencyCode}}" placeholder="Currency code" aria-label="Name" aria-describedby="basic-addon1">
+                      </div> 
+                                     
+                      <!-- Name finish -->
+                      </div>
+
+                      <div class="col-lg-4 col-xl-3  col-md-4">
+                          <!-- Name start -->
+                          <div class="input-group">
+                              <input type="text" class="form-control Location" placeholder="Total Price" name="totalPrice" aria-label="Name" ngModel aria-describedby="basic-addon1" required>
+                          </div>  
+                          <div *ngIf="formData.controls['totalPrice'].errors?.['required']" class="mb-3">
+                            <div class="redColor pl-20">Total Price is required.</div>
+                          </div>                          
+                      <!-- Name finish -->
+                      </div>
+                     
+
+                      <div class="col-lg-6 col-xl-3 pr-15 col-md-8">
+                      <span class="or-form">Or</span><span class="form-check mt-7">
+                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Available on approach
+                        </label>
+                      </span>
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Upload image</h2>
+                      <form>
+                        <div class="row mb-30">
+                        <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                        <span class="label-form-text">Link Logo to the Listing</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Upload Logo to the Listing">
+                        </div>
+                        <div class="col-lg-8 col-xl-5 col-md-8">
+                        <!-- Upload your Photograph start -->
+                        <div class="form-group upload">                           
+                          <input #logoFile type="file" name="logo_file" ngModel class="file" style="display: none;" (change)="handleFileChange($event,'LOGO')">
+                          <div class="input-group file-area">    
+                            <input type="text" class="form-control" disabled placeholder="Upload Logo" aria-label="Upload File" aria-describedby="basic-addon1">  
+                            <div class="input-group-append">
+                              <button class="browse input-group-text btn btn-primary" id="basic-addon2" (click)="logoFile.click()">
+                                <img src="./assets/images/browse.png" width="72" height="35">
+                              </button>
+                            </div>                         
+                          </div>
+                          <div style="padding-left: 20px;" *ngIf="selectLogoFileName.length > 0">
+                            <p style="color:green">Successfully uploaded </p>                                                
+                          </div>
+                          <div style="padding-left: 20px;" *ngIf=isfileLogUploadError>                            
+                            <p style="color:red">{{fileLogUploadError}}</p>                                                 
+                          </div>  
+                          
+                          <div style="padding-left: 20px;" *ngIf="selectLogoFile.length > 0">
+                            <p>Selected files: {{selectLogoFile[0].name}}
+                            <i class="fa fa-remove" (click)="removeFile(0,'LOGO')"></i> </p>                         
+                          </div>   
+                          </div> 
+                          <div class="logo-note">(Logo specification (250x200)px for better resolution.)</div>
+                          <!-- Upload your Photograph finish -->
+                        </div>
+
+                          <div class="col-lg-3 col-xl-3 col-md-8">
+                            <!-- Name start -->
+                            <div class="input-group mb-3">
+                              <button type="button"  (click)="uploadFile('LOGO')" class="btn login-submit-button">Upload</button>
+                            </div>
+                            <!-- Name finish -->
+                          </div>
+                        </div>
+                    </form>
+
+                      <form>
+                        <div class="row mb-30">
+                          <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                            <span class="label-form-text">Link images to the Listing </span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Upload images to the Listing">
+                          </div>
+                          <div class="col-lg-8 col-xl-5 col-md-8">
+                      <!-- Upload your Photograph start -->
+                          <div class="form-group upload">
+                            <input #listingFile type="file" name="listingGallary" class="file" multiple (change)="handleFileChange($event,'LISTING')">
+                              <div class="input-group file-area">    
+                                <input type="text" class="form-control file-input" placeholder="Upload Listing Images" aria-label="Upload File" aria-describedby="basic-addon1" multiple>  
+                                <div class="input-group-append">  
+                                  
+                                    <button class="browse input-group-text btn btn-primary" (click)="listingFile.click()" id="basic-addon2"> <img src="./assets/images/browse.png" width="72" height="28"></button>  
+                                  
+                                </div>  
+                              </div>
+                              <div style="padding-left: 20px;" *ngIf="selectedLisistingFilesName.length > 0">
+                                <p style="color:green">Successfully uploaded </p>                                                 
+                              </div>                           
+                              <div *ngIf="selectedLisistingFiles.length > 0" style="padding-left: 20px;">
+                                <p>Selected files:</p>
+                                <li *ngFor="let file of selectedLisistingFiles; let i = index">
+                                  {{ file.name }}
+                                  <i class="fa fa-remove" (click)="removeFile(i,'LISTING')"></i>
+                                </li>
+                              </div>
+                              <div style="padding-left: 20px;" *ngIf=isfileListingUploadError>                            
+                                <p style="color:red">{{fileListingUploadError}}</p>                                                 
+                              </div>
+                            </div> 
+                            <div class="logo-note">(Logo specification (250x200)px for better resolution.)</div>
+                            <!-- Upload your Photograph finish -->
+                        </div>
+                        <div class="col-lg-3 col-xl-3 col-md-8">
+                          <!-- Name start -->
+                          <div class="input-group mb-3">
+                            <button type="button" (click)="uploadFile('LISTING')" class="btn login-submit-button">Upload</button>
+                          </div>
+                          <!-- Name finish -->
+                        </div>
+                      </div>
+                    </form>
+                    <form>
+                      <div class="row mb-30">
+                        <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                          <span class="label-form-text">Link Documents to the Listing</span> <img src="./assets/images/note-icon.jpg" width="14" data-toggle="tooltip" data-placement="right" title="" data-original-title="Upload Documents to the Listing">
+                        </div>
+                        <div class="col-lg-8 col-xl-5 col-md-8">
+                          <!-- Upload your Photograph start -->
+                          <div class="form-group upload">
+                            <input #documentFiles type="file" name="documentFiles" class="file" multiple (change)="handleFileChange($event,'DOCUMENT')">                            
+                              <div class="input-group file-area">    
+                                <input type="text" class="form-control file-input"  placeholder="Upload Documnts" aria-label="Upload File" aria-describedby="basic-addon1">  
+                                <div class="input-group-append">                                    
+                                    <button class="browse input-group-text btn btn-primary" (click)="documentFiles.click()" id="basic-addon2"> <img src="./assets/images/browse.png" width="72" height="28"></button>                                    
+                                </div>  
+                              </div>
+                              <div style="padding-left: 20px;" *ngIf="documentFilesListName.length > 0">
+                                <p style="color:green">Successfully uploaded </p>                                                 
+                              </div> 
+                              <div *ngIf="documentFilesList.length > 0" style="padding-left: 20px;">
+                                <p>Selected files:</p>
+                                <li *ngFor="let file of documentFilesList; let i = index">
+                                  {{ file.name }}
+                                  <i class="fa fa-remove" (click)="removeFile(i,'DOCUMENT')"></i>
+                                </li>
+                              </div>
+                              <div style="padding-left: 20px;" *ngIf=isfileDocUploadError>                            
+                                <p style="color:red">{{fileDocUploadError}}</p>                                                 
+                              </div>  
+                            </div> 
+                            <div class="logo-note">(Logo specification (250x200)px for better resolution.)</div>
+                            <!-- Upload your Photograph finish -->
+                        </div>
+                        <div class="col-lg-3 col-xl-3 col-md-8">
+                          <!-- Name start -->
+                          <div class="input-group mb-3">
+                            <button type="button" (click)="uploadFile('DOCUMENT')" class="btn login-submit-button">Upload</button>
+                          </div>
+                          <!-- Name finish -->
+                        </div>
+                      </div>   </form>
+                      </div>
+                 
+                 
+
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">More about your Business</h2>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">More about your Business </span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" placeholder="Type your title here" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Number of Employees</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" name="numberOfEmployees" ngModel placeholder="Enter total employee count" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Number of years in trading</span>
+                      </div>
+                      <div class="col-lg-6 col-xl-5 col-md-7">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" name="numberOfYearsinTrading" ngModel placeholder="Enter Number of years in trading" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-4 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Trading Hours</span>
+                      </div>
+                      <div class="col-lg-4 col-xl-2 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" placeholder="From" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      <div class="col-lg-4 col-xl-3 col-md-4">
+                      <!-- Name start -->
+                      <div class="input-group mb-3">
+                          <input type="text" class="form-control Location" placeholder="To" aria-label="Name" aria-describedby="basic-addon1">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="contact-seller-form">
+                      <h2 class="contact-h2 color-blue">Business operational information</h2>
+                      <div class="row">
+                      <div class="col-lg-3 col-xl-3 pr-15 col-md-4">
+                      <span class="label-form-text">Whether your contact details to be visible to other users </span>
+                      </div>
+                      <div class="col-lg-5 col-xl-5 col-md-8">
+                      <!-- Name start -->
+                      <div class="input-group visible">
+                        <div id="radioBtn" class="btn-group">
+                          <a class="btn btn-primary btn-sm active" (click)="handleClick('Y')" id="Y_BOI" data-toggle="happy" data-title="Y">YES</a>
+                          <a class="btn btn-primary btn-sm notActive" (click)="handleClick('N')"  id="N_BOI" data-toggle="happy" data-title="N">NO</a>
+                        </div>
+                        
+                        <input type="hidden" name="happy" id="happy">
+                      </div>
+                      <!-- Name finish -->
+                      </div>
+                      </div>
+                      </div>
+                      
+                      <div class="button-publish">  
+                         <button type="submit" class="btn publish-submit-button" >Publish</button> 
+                         <button type="button" class="btn login-submit-button" (click)="onDraft(formData)">Draft</button>
+                      </div>
+                      
+                      </div></form>
+                      </div>
+                      </div>
+                      </div>
+                      </div></div></div></section>
+                  </div>          
+              </div>
+          </div>
+      </div>
+  </div>
+</section>   

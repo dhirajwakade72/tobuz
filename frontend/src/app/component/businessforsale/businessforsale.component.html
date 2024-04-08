@@ -1,0 +1,101 @@
+<section class="padtb20">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-md-12">       
+                <div>
+                    <!--<div class="bradcrumb"><a href="index.html">Home</a> / <a href="business-for-sale.html"></a></div>-->
+                </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-md-3">
+                <app-filters></app-filters>
+            </div>
+            <div class="col-lg-9 col-xl-9 col-md-9">
+                <div class="row">
+                    <!-- bfs title start -->
+                    <div class="col-lg-8 col-xl-9 col-md-12">
+                        <div class="about-us-text-area">
+                            <h1>{{pageTitle}}<Br/><span>{{pageSubTitle}}</span></h1>
+                        </div>
+                    </div>
+                    <!-- bfs title finish -->
+                    <div class="col-lg-6 col-xl-5 col-md-12 desktop-view">
+                        <!-- bfs grid start -->
+                       <!-- <span class="grid-area">
+                            <a href="business-for-sale.html"><span class="Grid-active">Grid</span></a> 
+                           
+                            <a href="business-for-sale-list.html"><span class="List">List</span></a>
+                        </span>
+                        <div class="Sort">
+                            <span class="sort-text">Sort By:</span>
+                            <span class="customselect">
+                                <select>
+                                    <option value="latest">Latest</option>
+                                    <option value="Low To High">Low To High</option>
+                                    <option value="High To Low">High To Low</option>
+                                    <option value="A to Z">A to Z</option>
+                                    <option value="Z to A">Z to A</option>
+                                </select>
+                            </span>
+                        </div>-->
+                        <!-- bfs Sort By finish -->
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- bfs grid 1 start -->
+                    <div *ngFor="let listing of recentBusinessListing" class="col-lg-6 col-xl-4 col-md-6">
+                       
+                        <div class="sale-image-area">
+                            
+                            <!-- image start -->
+                            <a href="/buy-a-business/{{currentBusinessListingType}}/{{listing.businessid}}">
+                                <img [src]="listing.filepath || './assets/images/img/NO-IMAGE-2.jpg'" onerror="this.onerror=null; this.src='./assets/images/img/NO-IMAGE-2.jpg'" alt="NO Image" height="150px" width="100%" title="{{listing.title}}" alt="{{listing.title}}"/>
+                            </a>
+                                <!-- image finish -->
+                            <div class="pd10">
+                                <!--<a href="/buy-a-business/{{currentBusinessListingType}}/{{listing.businessid}}"></a>-->
+                                <!-- meta start -->
+                                <div class="alt"><a class="font_size_10" href="/buy-a-business/{{currentBusinessListingType}}/{{listing.businessid}}">{{listing.suggestedtitle | slice:0:50}}</a></div>
+                                <!-- meta finish -->
+                                <!-- title start -->
+                                <div class="title"><a href="/buy-a-business/{{currentBusinessListingType}}/{{listing.businessid}}">{{ listing.title | padEnd: 50 |  slice:0:30 }}</a></div>
+                                <!-- title finish -->
+                                <!-- price start -->
+                                <div class="price-location-area">
+                                    
+                                    <div class="price"><i class="fa fa-money blue-color" aria-hidden="true"></i> {{listing.currency}} {{listing.totalbusinesssaleprice}}</div>
+                                    <!-- price finish -->
+                                    <!-- location start -->
+                                    <div class="location"><i class="fa fa-map-marker map-size" aria-hidden="true"></i> {{listing.countryName}}</div>
+                                </div>
+                                <!-- location finish -->
+                                <!-- text start -->
+                                <div class="p-area">{{listing.listingdescription.length < 100 ? listing.listingdescription + '&nbsp;'.repeat(110 - listing.listingdescription.length) : listing.listingdescription | slice:0:110}}</div>
+
+                            <!--</a>-->
+                                <!-- text finish -->
+                                <!-- Contact Business start -->
+                                <p>
+                                    <a href="/business/contact/{{currentBusinessListingType}}/{{listing.businessid}}"><span class="btn Business-btn">Contact Business</span></a>
+                                    <!-- Contact Business finish -->
+                                    <!-- wishlist start -->
+                                    <a (click)="addLike(currentBusinessListingType,listing.businessid,listing.addedToFavourites)"><span id="{{currentBusinessListingType+'_'+listing.businessid}}" class="wishlist"><i id="{{currentBusinessListingType+'_'+listing.businessid+'i'}}" [style.color]="listing.likeCount > 0 ? 'red' : 'black'" [class]="listing.addedToFavourites ? 'fa fa-heart' : 'fa fa-heart-o'"> {{listing.likeCount}}</i></span></a>
+                                    <!-- wishlist finish -->
+                                </p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!-- bfs grid 1 finish -->                   
+                </div>
+                <div class="next-btn-area" style="float: left;padding-bottom: 20px;">
+                    <a class="next-btn" (click)="prevPage()">Prev</a>
+                </div>
+                <div class="next-btn-area" style="float: right;padding-bottom: 20px;">
+                    <a class="next-btn" (click)="nextPage()">Next</a>
+                </div>                
+            </div>
+        </div>
+    </div>
+</section> 
+ 
+ <div class="clear"></div>

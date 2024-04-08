@@ -1,0 +1,103 @@
+<!-- business for sale area start -->
+<section class="padtb50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-md-12">
+                <!-- business for sale tab content start -->
+                <!-- bradcrumb start -->
+                <div>
+                    <!--<div class="bradcrumb"><a href="index.html">Home</a> / <a href="buyers-investors-grid.html">Buyers
+                            Investors</a>
+                    </div>-->
+
+                </div>
+                
+                <!-- bradcrumb finish -->
+                <!-- bfs sidebar start -->
+                <div class="row">
+                    <div class="col-lg-3 col-xl-3 col-md-3">
+                        <app-filters></app-filters>
+                    </div>
+                    <!-- bfs sidebar finish -->
+                    <!-- bfs area contact start -->
+                    <div class="col-lg-9 col-xl-9 col-md-8">
+                        <div class="row">
+                            <!-- bfs title start -->
+                            <div class="col-lg-6 col-xl-7 col-md-12">
+                                <div class="about-us-text-area">
+                                    <h1>Find Investment Or Buyers<Br /><span>For Your Business Or Sell It Online</span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <!-- bfs title finish -->
+                            <!--<div class="col-lg-6 col-xl-5 col-md-12 desktop-view">
+                    
+                                <span class="grid-area"><a href="business-for-sale.html"><span
+                                            class="Grid-active">Grid</span></a>
+                                    <a href="business-for-sale-list.html"><span class="List">List</span></a></span>
+                                <div class="Sort"><span class="sort-text">Sort By:</span>
+                                    <span class="customselect">
+                                        <select>
+                                            <option value="latest">Latest</option>
+                                            <option value="Low To High">Low To High</option>
+                                            <option value="High To Low">High To Low</option>
+                                            <option value="A to Z">A to Z</option>
+                                            <option value="Z to A">Z to A</option>
+                                        </select></span>
+                                </div>
+                            </div>-->
+                        </div>
+                        <br />
+                        <div class="row">
+                            <!-- bfs grid 1 start -->
+                            <div class="col-lg-6 col-xl-4 col-md-6" *ngFor="let advert of AdvertBusinessListing">
+                                
+                                <div class="new-tag">New</div>
+                                <div class="sale-image-area">
+                                    <a href="/sell-a-business/{{currentBusinessListingType}}/{{advert.id}}">                                    
+                                        <img src="./assets/images/buyers-investors.jpg" width="100%"/>
+                                    </a>
+                                    <div class="pd10">
+                                        <a href="/sell-a-business/{{currentBusinessListingType}}/{{advert.id}}">                                        
+                                            <div class="alt" style="font-size: 13px;"><a href="/sell-a-business/{{currentBusinessListingType}}/{{advert.id}}">{{advert.searchIndex.length < 90 ? advert.searchIndex + '&nbsp;'.repeat(90 - advert.searchIndex.length) : advert.searchIndex | slice:0:90}}</a></div>
+                                        </a>
+                                        <div class="title"><a href="/sell-a-business/{{currentBusinessListingType}}/{{advert.id}}">{{advert.title.length < 60 ? advert.title + '&nbsp;'.repeat(60 - advert.title.length) : advert.title | slice:0:60}}</a></div>
+
+                                        <a href="/sell-a-business/{{currentBusinessListingType}}/{{advert.id}}">
+                                            <div class="price-location-area">
+                                                <div class="price"><img src="./assets/images/dollar-icon-sale.jpg" title="dollar"
+                                                        alt="dollar" class="dollar-icon" /> {{advert.currencyCode}} {{advert.investmentRangeFrom}} </div>
+
+                                                <div class="location"><i class="fa fa-map-marker map-size"
+                                                        aria-hidden="true"></i> {{advert.countryCode}}
+                                                </div>
+                                            </div> 
+                                        </a>                                       
+                                        <!-- Contact Business start -->
+                                        <p><a href="/sell-a-business/{{currentBusinessListingType}}/{{advert.id}}"><button type="button" class="btn Business-btn">View Proposal</button>    </a>                                       
+                                            <a (click)="addLike(currentBusinessListingType,advert.id,advert.addedToFavourites)"><span id="{{currentBusinessListingType+'_'+advert.id}}" class="wishlist"><i id="{{currentBusinessListingType+'_'+advert.id+'i'}}" [style.color]="advert.likeCount > 0 ? 'red' : 'black'" [class]="advert.addedToFavourites ? 'fa fa-heart' : 'fa fa-heart-o'"> {{advert.likeCount}}</i></span></a>
+                                            <!-- wishlist finish -->
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!-- bfs grid 1 finish -->
+                            
+                        </div>
+                        <br />
+                        <div class="next-btn-area" style="float: left;padding-bottom: 20px;">
+                            <a class="next-btn" (click)="prevPage()">Prev</a>
+                        </div>
+                        <div class="next-btn-area" style="float: right;padding-bottom: 20px;">
+                            <a class="next-btn" (click)="nextPage()">Next</a>
+                        </div> 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FAQ area finish -->
+<div class="clear"></div>

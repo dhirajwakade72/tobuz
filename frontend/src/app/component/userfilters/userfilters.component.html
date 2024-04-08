@@ -1,0 +1,8 @@
+<div>
+    <div *ngFor="let menu of userMenu" 
+         [id]="menu.url"          
+         [class.active]="menu.url === currentUrl" 
+         [class]="menu.cssClass + (menu.url === currentUrl ? '-active' : '')">
+      <a href="{{menu.url}}">{{menu.name}}</a>
+    </div>                           
+</div>

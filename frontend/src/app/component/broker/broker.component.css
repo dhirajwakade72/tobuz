@@ -1,0 +1,12 @@
+.name-seller_1 {font-size:14px; margin:0 10px; font-weight:bold; padding:20px 0; text-align:left; border-bottom:2px solid #ffc000;}
+
+
+.seller-person-list1 {
+    background: #f7f7f7;
+    float: left;
+    width: 100%;
+	height:100%;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.seller-person-list img {border-radius: 20px;}

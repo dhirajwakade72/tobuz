@@ -19,4 +19,9 @@ public interface ContactUsRepository extends JpaRepository<ContactUs, Long> {
 	    		+ " ", nativeQuery = true)
 	    public List<Object[]> getAdminContactus();
 
+	    
+	    @Query(value = "SELECT c FROM ContactUs c WHERE c.email=?1")
+	    List<ContactUs> findByEmail(String email);
+	    
+
 }

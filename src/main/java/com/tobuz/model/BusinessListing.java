@@ -23,19 +23,25 @@ public class BusinessListing extends BaseEntity {
 
 	private String listingId;
 
-	private FranchiseFor franchiseFor;
+	@Column(name="franchise_for")
+	private String franchiseFor;
 
+	@Column(name="franchise_name")
 	private String franchiseName;
 
 	private String suggestedTitle;
+	
+	@Column(name="is_active")
+	private Boolean isActive;
 
 	// Business,franchise,commercial and business_advert
-	private String  listingType;
+	private String listingType;
 
 	// Rent / Sale(or)Lease / Others
 	private String listingFor;
 
-	private FranchisePartnerType franchisePartnerType;
+	@Column(name="franchise_partner_type")
+	private String franchisePartnerType;
 
 	// Extra option for franchise resale Master/Unit
 	// private FranchisePartnerType franchisePartnerType;
@@ -67,6 +73,7 @@ public class BusinessListing extends BaseEntity {
 
 	private String metaUrl;
 
+	@Column(name="business_listing_status")
 	private String businessListingStatus;
 
 	// contact details
@@ -79,9 +86,8 @@ public class BusinessListing extends BaseEntity {
 
 	private String contactNumber;
 
-	/*
-	 * @Column(name ="") private String websiteURL;
-	 */
+	@Column(name = "website_url")
+	private String websiteURL;
 
 	private Boolean showContactDetailsOnListing = Boolean.FALSE;
 
@@ -94,13 +100,12 @@ public class BusinessListing extends BaseEntity {
 	@ManyToOne
 	private AppUser soldMarkedBy;
 
-	
-	@OneToOne 
+	@OneToOne
 	private BusinessListingOutLet businessListingOutLet;
-	
+
 	/*
 	 * @ManyToOne private UserTobuzServicePackageInfo userTobuzServicePackageInfo;
-	 */ 
+	 */
 
 	/**
 	 * If it is distress sale Needs to be in paid package
@@ -128,6 +133,9 @@ public class BusinessListing extends BaseEntity {
 	private AppUser removedBy;
 
 	private Boolean isAdminResponded = Boolean.FALSE;
+	
+	@Column(name="view_count")
+	private Long viewCount;
 
 //	@OneToMany(cascade = CascadeType.ALL)
 	/*
@@ -146,14 +154,12 @@ public class BusinessListing extends BaseEntity {
 	private Boolean isDraftReminderSent = Boolean.FALSE;
 
 	private Boolean isListingMarkedWorldWide = Boolean.FALSE;
-	
+
 	@Transient
-	public List<FileEntity> listingGallery ;
-	
+	public List<FileEntity> listingGallery;
+
 	@Transient
-	private List<BusinessListingFeatureInfo> businessListingFeatureInfoList ;
-	
-	
+	private List<BusinessListingFeatureInfo> businessListingFeatureInfoList;
 
 	public List<FileEntity> getListingGallery() {
 		return listingGallery;
@@ -305,7 +311,7 @@ public class BusinessListing extends BaseEntity {
 	}
 
 	public String getListingId() {
-		return this.listingId = "L"+getId();
+		return this.listingId = "L-" + getId();
 	}
 
 	public String getSuggestedtitle() {
@@ -317,7 +323,7 @@ public class BusinessListing extends BaseEntity {
 	}
 
 	public void setListingId(String listingId) {
-		this.listingId = "L"+getId();
+		this.listingId = "L-" + getId();
 	}
 
 	public String getSearchIndex() {
@@ -344,7 +350,6 @@ public class BusinessListing extends BaseEntity {
 		this.listingDescription = listingDescription;
 	}
 
-	
 	public String getListingFor() {
 		return listingFor;
 	}
@@ -418,7 +423,6 @@ public class BusinessListing extends BaseEntity {
 		this.metaUrl = metaUrl;
 	}
 
-	
 	public String getBusinessListingStatus() {
 		return businessListingStatus;
 	}
@@ -442,8 +446,6 @@ public class BusinessListing extends BaseEntity {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-
-	
 
 	public String getListingType() {
 		return listingType;
@@ -469,13 +471,15 @@ public class BusinessListing extends BaseEntity {
 		this.contactNumber = contactNumber;
 	}
 
-	/*
-	 * public String getWebsiteURL() { return websiteURL; }
-	 */
-	/*
-	 * public void setWebsiteURL(String websiteURL) { this.websiteURL = websiteURL;
-	 * }
-	 */
+
+	public String getWebsiteURL() {
+		return websiteURL;
+	}
+
+	public void setWebsiteURL(String websiteURL) {
+		this.websiteURL = websiteURL;
+	}
+
 	public Boolean getShowContactDetailsOnListing() {
 		return showContactDetailsOnListing;
 	}
@@ -508,11 +512,11 @@ public class BusinessListing extends BaseEntity {
 		this.soldMarkedBy = soldMarkedBy;
 	}
 
-	public FranchiseFor getFranchiseFor() {
+	public String getFranchiseFor() {
 		return franchiseFor;
 	}
 
-	public void setFranchiseFor(FranchiseFor franchiseFor) {
+	public void setFranchiseFor(String franchiseFor) {
 		this.franchiseFor = franchiseFor;
 	}
 
@@ -548,11 +552,11 @@ public class BusinessListing extends BaseEntity {
 		this.isDistressSale = isDistressSale;
 	}
 
-	public FranchisePartnerType getFranchisePartnerType() {
+	public String getFranchisePartnerType() {
 		return franchisePartnerType;
 	}
 
-	public void setFranchisePartnerType(FranchisePartnerType franchisePartnerType) {
+	public void setFranchisePartnerType(String franchisePartnerType) {
 		this.franchisePartnerType = franchisePartnerType;
 	}
 
@@ -572,15 +576,23 @@ public class BusinessListing extends BaseEntity {
 		this.businessListingFeatureInfoList = businessListingFeatureInfoList;
 	}
 
+	public Long getViewCount() {
+		return viewCount;
+	}
+
+	public void setViewCount(Long viewCount) {
+		this.viewCount = viewCount;
+	}
 	
 	
+
 	/*
 	 * public List<FileEntity> getDocumentList() { return documentList; }
 	 * 
 	 * public void setDocumentList(List<FileEntity> documentList) {
 	 * this.documentList = documentList; }
 	 */
-	
+
 	/*
 	 * public UserTobuzServicePackageInfo getUserTobuzServicePackageInfo() { return
 	 * userTobuzServicePackageInfo; }

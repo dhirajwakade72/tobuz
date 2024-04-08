@@ -14,7 +14,7 @@ public class AppUser extends BaseEntity {
 	@Column(nullable = false)
 	private String name;
 
-	
+	//@Id
 	@Column(unique = true, nullable = false)
 	private String email;
 

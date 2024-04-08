@@ -1,0 +1,86 @@
+<section class="padtb50">
+  <div class="container">
+  <div class="row mb-20px">
+  <!-- testimonal from title start -->
+  <div class="col-md-6 col-lg-6 col-xl-6">
+  <!-- testimonal form image start -->
+  <img src="./assets/images/testimonal-bg.jpg" title="testimonal" width="100%" alt="Testimonal">
+  <!-- testimonal form image finish -->
+  </div>
+  
+  <div class="col-md-6 col-lg-6 col-xl-6 about-us-text-area">
+  <!-- testimonal form title start -->
+  <h1>Client <br><span>Testimonials</span></h1>
+  <!-- testimonal form title finish -->
+  <div class="testimonal-note">Please fill up following details &amp; let us know your comments <br>
+  about our services in the comment section.</div><br>
+  <div class="row">
+    <div class="col-md-13 col-md-off-4">
+      <span id="messageId" style="color:red">{{showMessage}}</span>
+    </div>
+  </div>
+  <div class="row">
+  
+  <div class="col-md-12 testimonal col-lg-8 col-xl-8">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+  <!-- user name start -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><img src="./assets/images/name.png" width="33" height="19"></span>
+    </div>
+    <input type="text" class="form-control login-user" required appAlphabet #name formControlName="name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+  </div>
+  <!-- user name finish -->
+  <!-- Email Address start -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"></span>
+    </div>
+    <input type="text" class="form-control login-user" required appEmailValidator #email formControlName="email" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <!-- Email Address finish -->
+  <!-- Your Designation start -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><img src="./assets/images/Your-Designation.png" width="33" height="22"></span>
+    </div>
+    <input type="text" class="form-control login-user" required #aboutUser formControlName="aboutUser" placeholder="Your Designation / Company" aria-label="Your Designation / Company" aria-describedby="basic-addon1">
+  </div>
+  <!-- Your Designation finish -->
+  <!-- What you liked about us start -->
+  <div class="form-group required-field-block">       
+          <div class="col-md-12 input-group">
+              <span class="input-group-addon"><img src="./assets/images/commnet.png" width="31" height="20"></span>
+              <textarea rows="5" size="50" required  #message formControlName="message" class="form-control" placeholder="What you liked about us" required></textarea>  
+          </div>
+      </div>
+      <!-- What you liked about us finish -->
+      <!-- Upload your Photograph start -->
+  <div class="form-group">  
+    <form>
+      <input #listingFile type="file" name="img[]" class="file" (change)="handleFileChange($event)">  
+      <div class="input-group file-area mb-3">  
+        <div class="input-group-prepend">  
+          <span class="input-group-text-1" id="basic-addon1"> <img src="./assets/images/upload-file.png" width="32" height="20"> </span>  
+        </div>  
+        <input type="text" class="form-control" disabled placeholder="Upload your Photograph" aria-label="Upload File" aria-describedby="basic-addon1">  
+        <div class="input-group-append">  
+          <button class="browse input-group-text btn btn-primary" (click)="listingFile.click()" id="basic-addon2"> <img src="./assets/images/browse.png" width="72" height="28"></button>  
+        </div>         
+      </div> 
+      <div *ngIf="selectedLisistingFiles.length > 0" style="padding-left: 20px;">
+        <p>Selected files: {{selectedLisistingFiles[0].name}} <i class="fa fa-remove" (click)="removeFile(0)"></i></p>        
+      </div> 
+    </form> 
+    </div> 
+    <!-- Upload your Photograph finish -->
+    <!-- submit button start -->
+   <button type="submit" class="btn login-submit-button">Submit</button>
+  </form>
+   <!-- submit button finish -->
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>

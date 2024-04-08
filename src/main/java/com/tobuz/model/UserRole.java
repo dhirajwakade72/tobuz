@@ -1,9 +1,5 @@
 package com.tobuz.model;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
-
 public final class  UserRole {
 	
 	public static String BROKER = "BROKER";

@@ -3,7 +3,6 @@ package com.tobuz.model.tobuzpackage;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import com.avaje.ebean.Model;
 import com.tobuz.model.BaseEntity;
 import com.tobuz.model.Country;
 

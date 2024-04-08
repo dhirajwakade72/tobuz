@@ -1,0 +1,127 @@
+<section class="padtb50">
+   <div class="container">
+      <div class="row mb-20px ">
+         <div class="col-md-8 col-lg-9 col-xl-10 contact-seller-title">
+            <!--title start-->
+            <h1 style="font-weight: bold;">{{advertListingDetails.title}}<br/>
+               <span>{{advertListingDetails.searchIndex}}</span>
+            </h1>
+            <!--title finish-->
+            <!--post start-->
+            <p class="post-on">Posted on: {{advertListingDetails.createdOn}}</p>
+            <!--post finish-->
+            <div class="row">
+               <div class="col-md-6 col-lg-8 col-xl-8">
+                   <div id="demo" class="carousel slide" data-ride="carousel">                       
+                      <div class="carousel-inner mb-20">
+                         <div class="carousel-item active" >
+                            <img src="./assets/images/service-banner.jpg" alt="Service banner 1" width="60%" height="auto">
+                         </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a class="carousel-control-next" href="#demo" data-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                      </a>
+                   </div>
+                   <!--contact seller from start-->
+                   <div class="contact-seller-form">
+                       <h2 class="contact-h2">Contact Seller</h2>
+                       <span id="messageId" style="color:red">{{showMessage}}</span>
+                       <form [formGroup]="sellerContactForm" (ngSubmit)="submitContactToseller()" novalidate>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6 col-xl-6">                              
+                               <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                     <span class="input-group-text" id="basic-addon1"><img src="./assets/images/name.png" width="33" height="19"/></span>
+                                  </div>
+                                  <input type="text" formControlName="name" tabindex="1" #name appAlphabet class="form-control login-user input_fields" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>
+                               </div>
+                               <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                     <span class="input-group-text" id="basic-addon1"><img src="./assets/images/phone.png" width="33" height="21"/></span>
+                                  </div>
+                                  <input type="text" class="form-control login-user" tabindex="2" (keypress)="onPress($event)" #phone appNumericOnlyDirective formControlName="phone" placeholder="Contact" aria-label="phone" aria-describedby="basic-addon1" required>
+                               </div>
+                               <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                     <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"/></span>
+                                  </div>
+                                  <input type="text" class="form-control login-user" tabindex="3" #email appEmailValidator formControlName="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>
+                               </div>
+                            </div>
+                              <div class="col-md-12 col-lg-6 col-xl-6">
+                                  <div class="form-group required-field-block">
+                                      <div class="col-md-12 input-group">
+                                      <span class="input-group-addon"><img src="./assets/images/commnet.png" width="31" height="20"/></span>
+                                      <textarea rows="4" size="50" value="" tabindex="4" #message formControlName="message" class="form-control interested" placeholder="Please send me more details, Interested in the business ,Thanks" required></textarea>  
+                                       
+                                    </div>
+                                  </div>
+                                  <button type="submit" class="btn login-submit-button">Submit</button>                      
+                              </div>
+                         </div>
+                        </form>
+                    </div>
+                    <!--contact seller from finish-->
+                </div>
+                <!--Business Description start-->
+               <div class="col-md-6 col-lg-4 col-xl-4">
+                  <!--Business Description start-->
+                  <p class="business-text"><span class="business-description">Advert Description</span><br/>
+                     {{advertListingDetails.advertDescription}}
+                  </p>
+                  <!--Business Description finish-->
+                  <!--Business Category start-->
+                  <p class="business-text"><span class="business-description">Advert Category</span><br/>
+                     {{advertListingDetails.category}} 
+                  </p>
+                  <!--Business Category finish-->
+                  <!--Business Location start-->
+                  <p class="business-text"><span class="business-description">Advert Location</span><br/>
+                    <!-- {{advertListingDetails.businessListingOutLet.businessAddress.city.name+", "+advertListingDetails.businessListingOutLet.businessAddress.state.name+", "+advertListingDetails.businessListingOutLet.businessAddress.country.name}} -->
+                  </p>
+                  <!--Business Location finish-->
+                  <!--Business Features start-->
+                  <p class="business-text"><span class="business-description">Advert Features</span><br/>
+                     <span>Features</span>
+                     
+                  </p>
+                  
+                  <!--Company Details start-->
+                  <p class="business-text"><span class="business-description">Company Details</span><br/>
+                     Type : {{advertListingDetails.companyType}}<br/>
+                     Status : Active
+                  </p>
+                  
+                  <p class="business-text"><span class="business-description">Keywords</span><br/>
+                     Fully furnished retail business for sale
+                  </p>
+                  <!--Profit & Pricing finish-->
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-lg-3 col-xl-2">
+            <div class="listing-seller">                      
+               <div class="wishlist-seller" *ngIf="!advertListingDetails.addedToFavourites"><img src="./assets/images/listing.png" width="27" title="Add to Favorite" alt="Add to Favorite" style="margin-right:5px;" height="19"/> <a (click)="addToFavorite()">Add to Favorite</a></div>
+               <div class="wishlist-seller" *ngIf="advertListingDetails.addedToFavourites"><img src="./assets/images/red-heart-icon.png" width="20" title="Add to Favorite" alt="Add to Favorite" style="margin-right:5px;" height="19"/> <a >Your Favorite</a></div>
+
+               <!--View Contact start-->
+               <!--<div class="wishlist-seller"><img src="./assets/images/phone-icon.png" title="View Contact" alt="View Contact" width="27" style="margin-right:5px;" height="19"/> View Contact</div>-->
+               <!--View Contact finish-->
+               <!--social start-->
+               <div class="social-seller"><span><a href="https://www.facebook.com/tobuz/"><img src="./assets/images/facebook-icon.png" title="Facebook" alt="Facebook" width="25" height="25"/></a></span> <span><a href="https://www.linkedin.com/company/tobuz/?originalSubdomain=ae"><img src="./assets/images/linkedin-icon.png" title="Linkedin" alt="Linkedin" width="25" height="25"/></a></span> <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2FTobuzcom"><img src="./assets/images/twitter.png" width="25" title="Twitter" alt="Twitter" height="25"/></a></span></div>
+               <!--social icon finish-->
+               <!--listing start-->
+               <div class="listing-id">Advert ID<br/><span>{{advertListingDetails.advertId}}</span></div>
+               <div class="listing-id">Advert Type<br/><span>{{advertListingDetails.listingType}}</span></div>
+               <div class="listing-id">Advert Category<br/><span>{{advertListingDetails.category}}</span></div>
+               <div class="listing-id">Total Views<br/><span>72</span></div>
+               <div class="listing-id">Pricing<br/><span>{{advertListingDetails.currencyCode}} {{ advertListingDetails.investmentRangeFrom}}-{{ advertListingDetails.investmentRangeTo}}</span></div>
+               <!--finish finish-->
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

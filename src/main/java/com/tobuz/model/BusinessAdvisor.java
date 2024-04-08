@@ -1,25 +1,15 @@
 package com.tobuz.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
-import org.apache.tomcat.jni.Address;
-import org.h2.expression.ExpressionList;
-import org.springframework.ui.Model;
-
-import javassist.compiler.ast.Expr;
 
 
 @Entity
-public class BusinessAdvisor extends BaseEntity{
+public class BusinessAdvisor extends BaseEntity {
 
 	@OneToOne
 	private AppUser adviosrByUser;
@@ -28,9 +18,9 @@ public class BusinessAdvisor extends BaseEntity{
 
 	private String firmName;
 
-	/*
-	 * @OneToOne private Address address;
-	 */
+	@OneToOne
+	private Address address;
+
 	private String webSiteAddress;
 
 	private Boolean isCompanyRegister = Boolean.FALSE;
@@ -47,8 +37,6 @@ public class BusinessAdvisor extends BaseEntity{
 
 	private String nationality;
 
-	//private Boolean isActive;
-
 	@OneToOne
 	private FileEntity licensedId;
 
@@ -59,12 +47,11 @@ public class BusinessAdvisor extends BaseEntity{
 
 	private String socialMediaProfileUrl;
 
-	@Column(columnDefinition="TEXT")
+	@Column(columnDefinition = "TEXT")
 	private String aboutCorporateProfile;
 
-	/*
-	 * @ManyToOne private BusinessServiceType businessServiceType;
-	 */
+	@OneToOne
+	private BusinessServiceType businessServiceType;
 
 	private Boolean isApprovedByAdmin = Boolean.FALSE;
 
@@ -91,14 +78,7 @@ public class BusinessAdvisor extends BaseEntity{
 		this.isProfileVerified = isProfileVerified;
 	}
 
-	/*
-	 * public BusinessServiceType getBusinessServiceType() { return
-	 * businessServiceType; }
-	 * 
-	 * public void setBusinessServiceType(BusinessServiceType businessServiceType) {
-	 * this.businessServiceType = businessServiceType; }
-	 */
-
+	
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -114,12 +94,6 @@ public class BusinessAdvisor extends BaseEntity{
 	public void setFirmName(String firmName) {
 		this.firmName = firmName;
 	}
-
-	/*
-	 * public Address getAddress() { return address; }
-	 * 
-	 * public void setAddress(Address address) { this.address = address; }
-	 */
 
 	public String getWebSiteAddress() {
 		return webSiteAddress;
@@ -154,16 +128,30 @@ public class BusinessAdvisor extends BaseEntity{
 	}
 
 	public String getCountryOfRegistration() {
-		/*if(util.StringUtils.isNotEmpty(this.countryOfRegistration)){
-			try{
-				if(Country.find.byId(Long.parseLong(this.countryOfRegistration)) != null){
-				return Country.find.byId(Long.parseLong(this.countryOfRegistration)).getName();
-			}
-			}catch(Exception ex){
-return "";
-			}
-		}*/
+		/*
+		 * if(util.StringUtils.isNotEmpty(this.countryOfRegistration)){ try{
+		 * if(Country.find.byId(Long.parseLong(this.countryOfRegistration)) != null){
+		 * return
+		 * Country.find.byId(Long.parseLong(this.countryOfRegistration)).getName(); }
+		 * }catch(Exception ex){ return ""; } }
+		 */
 		return countryOfRegistration;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public BusinessServiceType getBusinessServiceType() {
+		return businessServiceType;
+	}
+
+	public void setBusinessServiceType(BusinessServiceType businessServiceType) {
+		this.businessServiceType = businessServiceType;
 	}
 
 	public void setCountryOfRegistration(String countryOfRegistration) {
@@ -177,9 +165,6 @@ return "";
 	public void setTaxIdentificationNumber(String taxIdentificationNumber) {
 		this.taxIdentificationNumber = taxIdentificationNumber;
 	}
-
-
-
 
 	public FileEntity getLicensedId() {
 		return licensedId;
@@ -212,6 +197,7 @@ return "";
 	public String getPassportDetails() {
 		return passportDetails;
 	}
+
 	public AppUser getAdviosrByUser() {
 		return adviosrByUser;
 	}
@@ -317,12 +303,11 @@ return "";
 	 * 
 	 * }
 	 */
-	public List<String> getFirmnames(){
+	public List<String> getFirmnames() {
 		List<String> firmList = new ArrayList<>();
 		firmList.add("Private");
 		firmList.add("Public");
 		return firmList;
 	}
-
 
 }

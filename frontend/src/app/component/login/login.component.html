@@ -1,0 +1,62 @@
+<section class="padtb50">
+    <div class="container">
+    <div class="row justify-content-md-center mb-20px">
+    <!-- login area start -->
+    <div class="col-md-6 col-lg-5 col-xl-4">
+    <div class="tobuslogin">
+    <div class="Tobuz-login">Tobuz</div>
+    <p class="login-text">Transforming And Simplifying The Way Businesses And 
+    Commercial Properties Are Bought, Sold And Leased</p>
+    </div>
+    </div>
+    <!-- Tobuz area finish -->
+    <!-- login area start -->
+    <div class="col-md-6 col-lg-5 col-xl-4 about-us-text-area">
+    <div class="loginarea">
+    <!-- login title start -->
+    <div class="sigh-in"><h1>Sign In</h1></div>
+    <!-- login title finish -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- user name area start -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"/></span>
+      </div>
+      <input type="text" formControlName="email" class="form-control login-user" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <!-- user name area finish -->
+    <!-- password area start -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><img src="./assets/images/lock.png" width="33" height="20"/></span>
+      </div>
+      <input type="password" #password [type]="showPassword ? 'text' : 'password'" formControlName="password" class="form-control login-user" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+      <div class="input-group-prepend" style="width:50px;border-radius: 25px;border-right:1.5px solid#252525">
+        <div class="input-group-text" style="margin-right: 10px;">
+          <a (click)="togglePasswordVisibility()">              
+            <span><i id="password_eyeId" class="fa fa-eye-slash" aria-hidden="true"></i></span>                         
+          </a> 
+        </div>
+      </div>
+    </div>
+    <!-- password area finish -->
+    <!-- forget password area start -->
+    <div class="Forgot"><a href="/forgot-password">Forgot Password</a></div>
+    <!-- forget password area finish -->
+    <!-- submit button start -->
+    <div class="login-submit-button-area"><button type="submit" class="btn login-submit-button">Login</button></div>
+    <!-- submit button finish -->
+    </form>
+    <!-- or sign in using start -->
+    <div class="or"><img src="./assets/images/or.png" width="222" height="11" align="center"/></div>
+    <!-- or sign in using finish -->
+    <!-- social area start -->
+    <div class="login-social"><span><img src="./assets/images/google.jpg" width="25" height="25"/></span><span style="margin:0 10px;"><img src="./assets/images/facebook.jpg" width="25" height="25"/></span><span><img src="./assets/images/linkedin.jpg" width="25" height="25"/></span></div>
+    <!-- social area finish -->
+    </div>
+    </div>
+    <!-- login area start -->
+    </div>
+    </div>
+    </section>
+    

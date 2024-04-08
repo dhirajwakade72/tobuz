@@ -1,0 +1,37 @@
+<div class="contact-seller-form">
+    <h2 class="contact-h2">Contact Seller</h2>
+    <span id="messageId" style="color:red">{{showMessage}}</span>
+    <form [formGroup]="sellerContactForm" (ngSubmit)="submitContactToseller()" novalidate>
+     <div class="row">
+         <div class="col-md-12 col-lg-6 col-xl-6">                              
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><img src="./assets/images/name.png" width="33" height="19"/></span>
+               </div>
+               <input type="text" formControlName="name" #name tabindex="1" appAlphabet class="form-control login-user input_fields" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>
+            </div>
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><img src="./assets/images/phone.png" width="33" height="21"/></span>
+               </div>
+               <input type="text" class="form-control login-user" (keypress)="onPress($event)" #phone tabindex="2" appNumericOnlyDirective formControlName="phone" placeholder="Contact" aria-label="phone" aria-describedby="basic-addon1" required>
+            </div>
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"/></span>
+               </div>
+               <input type="text" class="form-control login-user" #email  tabindex="3" appEmailValidator formControlName="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
+         </div>
+           <div class="col-md-12 col-lg-6 col-xl-6">
+               <div class="form-group required-field-block">
+                   <div class="col-md-12 input-group">
+                   <span class="input-group-addon"><img src="./assets/images/commnet.png" width="31" height="20"/></span>
+                   <textarea rows="4" size="50" value="" tabindex="4" #message formControlName="message" class="form-control interested" placeholder="Please send me more details, Interested in the business ,Thanks" required></textarea>  
+                   </div>
+               </div>
+               <button type="submit" class="btn login-submit-button">Submit</button>                                 
+           </div>
+      </div>
+     </form>
+ </div>

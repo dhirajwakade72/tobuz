@@ -1,0 +1,11 @@
+.email-alerts-searbox 
+{
+    border:1px solid #fff; border-radius:25px; padding:10px 10px 8px; height:auto; background:#00498e; margin-right:0px;font-size:18px; font-weight:normal; color:#fff; line-height:24px;
+  }
+.alerts-email {font-size:15px; font-weight:bold; color:#fff; line-height: 45px; text-align:right; }
+
+.email-alerts-searbox::placeholder {
+  font-size:18px; font-weight:normal; color:#fff; line-height:24px;
+}
+.aleart-button {background:#fff; color:#00498e; padding:10px 55px; line-height:20px; font-weight:normal;border-radius:25px; font-size:15px; border:0}
+.aleart-button:hover {background:#707070; color:#fff;}

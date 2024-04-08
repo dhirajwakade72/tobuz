@@ -1,0 +1,147 @@
+<section class="padtb50">
+    <div class="container">
+    <div class="row justify-content-md-center mb-20px">
+    <div class="col-md-12 col-lg-12 col-xl-10 about-us-text-area">
+    <div class="ragisterarea">
+    <!-- register form title start -->
+    <h1 class="ml4">Register on Tobuz <Br/><span>Please fill up following details to register on Tobuz.com</span></h1>
+
+    <div class="row">
+      <div class="col-md-13 col-md-off-4">
+        <span id="messageId" style="color:red">{{showMessage}}</span>
+      </div>
+    </div>
+    
+    <!-- register form title finish -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="g-3 needs-validation" novalidate>
+      <div class="row justify-content-md-center">
+        <div class="col-md-6 col-lg-6 col-xl-5">
+        <!-- Name start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            
+            <span class="input-group-text" id="basic-addon1"><img src="./assets/images/name.png" width="33" height="19"/></span>
+          </div>                    
+          <input type="text" appAlphabet formControlName="name" tabindex="1" #name class="form-control login-user" placeholder="Name *" aria-label="Name" aria-describedby="basic-addon1" required>
+          
+        </div>
+        <!-- Name finish -->
+        <!-- Phone No start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><img src="./assets/images/phone.png" width="33" height="21"/></span>
+          </div>
+          <input type="text" appNumericOnlyDirective formControlName="phoneNo" tabindex="3" #phoneNo class="form-control login-user" (keypress)="onPress($event)" placeholder="Phone No *" aria-label="phone" aria-describedby="basic-addon1" required>
+        </div>
+        <!-- Phone No finishs -->
+        <!-- Password start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><img src="./assets/images/lock.png" width="33" height="20"/></span>
+          </div>
+          <input type="password" id="password" tabindex="5" #password formControlName="password" [type]="showPassword ? 'text' : 'password'" class="form-control login-user" placeholder="Password *" aria-label="Password" aria-describedby="basic-addon1" required>
+          <div class="input-group-prepend" style="width:50px;border-radius: 25px;border-right:1.5px solid#252525">
+            <div class="input-group-text" style="margin-right: 10px;">
+              <a (click)="togglePasswordVisibility('password')">              
+                <span><i id="password_eyeId" class="fa fa-eye-slash" aria-hidden="true"></i></span>                         
+              </a> 
+            </div>
+          </div>
+        </div>
+        <!-- Password finish -->
+        <!-- Register start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><img src="./assets/images/register-as.png" width="34" height="20"/></span>
+          </div>          
+          <select style="text-transform: none;" tabindex="7" #role formControlName="role" class="form-select ragisterarea login-user" >
+            <option selected value="RegisterAs" style="font-weight: 600;color: #9a9999;">Register As *</option>
+            <option value="BUYER">Buy a Business (BUYER)</option>
+            <option value="FRANCHISOR">Buy a Franchise (FRANCHISOR)</option>
+            <option value="BROKER">Buy a Commercial Property (BROKER)</option>
+            <option value="SELLER">Sell a Business (SELLER)</option>
+            <option value="BUSINESS_SERVICE">Provide Business-related Service(BUSINESS_SERVICE)</option>
+          </select>
+          <!--<input type="text" formControlName="role" class="form-control login-user" placeholder="Register as" aria-label="Register" aria-describedby="basic-addon1">-->
+        </div>
+        <!-- Register finish -->
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-5 offset-lg-0 offset-md-0 offset-xl-1">
+        <!-- Email Address start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><img src="./assets/images/envelop.png" width="33" height="19"/></span>
+          </div>
+          <input type="email" appEmailValidator #email tabindex="2" formControlName="email" class="form-control login-user"  (keydown.Tab)="checkMailExist()" placeholder="Email Address *" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <!-- Email Address finish -->
+        <!-- City start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"  id="basic-addon1"><img src="./assets/images/city.png" width="34" height="21"/></span>
+          </div>
+          <input type="text" appAlphabet formControlName="city" tabindex="4" #city class="form-control login-user" placeholder="City *" aria-label="City" aria-describedby="basic-addon1">
+        </div>
+        <!-- City finish -->
+        <!-- Confirm Password start -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><img src="./assets/images/co-password.png" width="33" height="22"/></span>
+          </div>
+          <input style="width: 20px;" id="cpassword" tabindex="6" #cpassword [type]="showConfirmPassword ? 'text' : 'password'" formControlName="cpassword" class="form-control login-user" placeholder="Confirm Password *" aria-label="copassword" aria-describedby="basic-addon1">
+               
+          <div class="input-group-prepend" style="width:50px;border-radius: 25px;border-right:1.5px solid#252525">
+            <div class="input-group-text" style="margin-right: 10px;">
+              <a (click)="togglePasswordVisibility('cpassword')">              
+                <span><i id="cpassword_eyeId" class="fa fa-eye-slash" aria-hidden="true"></i></span>                         
+              </a> 
+            </div>
+          </div>
+        </div>
+        <!-- Confirm Password finish -->
+        </div>
+      </div>
+      <!-- clicking start -->
+      <p class="by">By clicking on register, you agree to our <a href="/term-condition" style="color:#0070cc;">Terms of Service</a> and <a href="/privacy-policy" style="color:#0070cc;">Privacy Policy</a>.</p>
+      <!-- clicking finish -->
+      <!-- Enter Captcha start -->
+      <div class="captcha-area">
+        <input type="text" class="form-control captcha" #captcha id="captchaValueId" placeholder="Enter Captcha (Not Case Sensitive)*" aria-label="copassword" aria-describedby="basic-addon1">
+        <span style="width: 19%;" class="form-control captcha">{{generatedCaptcha}} <i  (click)="refreshCaptcha()" style="padding-left:30px;" class="fa fa-refresh" aria-hidden="true"></i>            </span>
+        
+        
+      </div>
+      <!-- Enter Captcha finish -->
+      <!-- Register button start -->
+      <div class="register-button-area"><button type="submit" class="btn btn-primary register-button">Register </button></div>
+      <!-- Register button finish -->
+    </form>
+    <!-- or sign in using start -->
+    <div class="or"><img src="./assets/images/or.png" width="222" style="margin-bottom:10px;" height="11" align="center"/></div>
+    <!-- or sign in using finish -->
+    <!-- social area start -->
+    <div class="row justify-content-md-center">
+    <!-- Google start -->
+    <div class="col-md-4 col-lg-4 col-xl-4">
+    <a href="http://www.gmail.com/"><div class="facebook-register-button"><img src="./assets/images/google.png" width="25" title="Google" alt="Google" class="ragister-icon" height="25"/> <span class="ragister-icon">| </span>Sign in with Google</div></a>
+    </div>
+    <!-- Google finish -->
+    <!-- Facebook start -->
+    <div class="col-md-4 col-lg-4 col-xl-4">
+    <a href="http://www.facebook.com/"><div class="facebook-register-button"><img src="./assets/images/facebook-icon.png" width="25" title="Facebook" alt="Facebook" class="ragister-icon" height="25"/> <span class="ragister-icon">|</span> Sign in with Facebook</div></a>
+    </div>
+    <!-- Facebook finish -->
+    <!-- Linkedin start -->
+    <div class="col-md-4 col-lg-4 col-xl-4">
+    <a href="https://www.linkedin.com/"><div class="facebook-register-button"><img src="./assets/images/linkedin-icon.png" title="Linkdin" alt="Linkdin" width="25" class="ragister-icon" height="25"/> <span class="ragister-icon">|</span> Sign in with Linkedin</div></a>
+    </div>
+    <!-- Linkedin finish -->
+    </div>
+    <!-- Already have an account? start -->
+    <p class="an-account">Already have an account? <a href="/login" style="color:#0070cc;">Click here</a> to login.</p>
+    <!-- Already have an account? finish -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>

@@ -1,0 +1,22 @@
+
+.businessCompanyDesc {
+    border: 1px solid #ddd;
+    background-color: #f0f8ff;
+    border-radius: 4px
+}
+
+.businessCompanyDesc .row {
+    padding: 10px 0 5px;
+    border-bottom: 1px solid #ddd;
+    margin: 0
+}
+
+.businessCompanyDesc p.fontBold {
+    color: #2192d0!important;
+    font-weight: 700!important
+}
+
+.login-submit-button {background:#707070; color:#fff; padding:10px 30px; line-height:20px; font-weight:normal; font-size:14px; border-radius:25px; border:0}
+.login-submit-button:hover {background:#00498e; color:#fff;}
+.publish-submit-button {background:#00498e; color:#fff; padding:10px 30px; line-height:20px; font-weight:normal; font-size:14px; border-radius:25px; border:0}
+.publish-submit-button:hover {background:#707070; color:#fff;}

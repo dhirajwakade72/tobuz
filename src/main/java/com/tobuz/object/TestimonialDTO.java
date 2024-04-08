@@ -15,6 +15,18 @@ public class TestimonialDTO implements Serializable{
 	String companyName ;
 	
 	String email ;
+	
+	String fileName;
+	
+	
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
 	public long getId() {
 		return id;

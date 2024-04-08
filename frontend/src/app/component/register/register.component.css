@@ -1,0 +1,31 @@
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+
+  .rest{
+    border-radius: 15px;
+    border: 1px solid grey;
+    padding-left: 8px;
+  }
+  
+  .rest:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #0066ff;
+  }
+  .register-button {
+    background: #707070;
+    color: #fff;
+    padding: 10px 50px;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 0;
+	margin:20px 0;
+}
+.register-button:hover {background: #00498e;  color:#fff;}
+
+
+  

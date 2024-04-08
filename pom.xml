@@ -2,10 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.howtodoinjava</groupId>
-	<artifactId>spring-boot-demo</artifactId>
-	<packaging>war</packaging>
+	<artifactId>tobuz_new</artifactId>	
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-demo Maven Webapp</name>
+	<name>Tobuz</name>
 	<url>http://maven.apache.org</url>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -14,17 +13,15 @@
 	</parent>
 	<properties>
 		<java.version>1.8</java.version>
-    <start-class>com.tobuz.SpringBootWebApplication</start-class>
-
+    	<start-class>com.tobuz.SpringBootWebApplication</start-class>
+    	<frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
+    	<node.version>v18.18.2</node.version>
+    	<npm.version>9.8.1</npm.version>
 	</properties>
 	<dependencies>
-		<!-- Web -->
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-web</artifactId>
-		    <version>1.5.21.RELEASE</version>
-	
+		    <artifactId>spring-boot-starter-web</artifactId>		    	
 		</dependency>
 
 		<!-- Tomcat Embed -->
@@ -33,27 +30,16 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<!--<scope>provided</scope>-->
 		</dependency>
-		<!-- JSTL -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>2.5.6</version>
 		</dependency>
-		<!-- To compile JSP files -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		
-		
 		<dependency>
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
 		    <version>42.3.8</version>
 		</dependency>
-
-	
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -66,45 +52,49 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons</artifactId>
 		</dependency>
-		
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-web</artifactId>
-		   <version>5.1.6.RELEASE</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
-	
-				 
-		 <dependency>
-		     <groupId>net.sourceforge.nekohtml</groupId>
-		     <artifactId>nekohtml</artifactId>
-		     <version>1.9.21</version>
-		 </dependency>
-		 
-		   <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-        
-        <!-- https://mvnrepository.com/artifact/org.avaje.ebean/ebean -->
-			<dependency>
-			    <groupId>org.avaje.ebean</groupId>
-			    <artifactId>ebean</artifactId>
-			    <version>9.3.1</version>
-			    <scope>provided</scope>
-			</dependency>
-
-
+		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+		<dependency>
+		    <groupId>org.modelmapper</groupId>
+		    <artifactId>modelmapper</artifactId>
+		    <version>3.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-dependencies</artifactId>
+		    <version>3.1.5</version>
+		    <type>pom</type>
+		    <scope>import</scope>
+		</dependency>
 	</dependencies>
 	
 	<build>
-		<plugins>
-				<plugin>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-maven-plugin</artifactId>
-			   	</plugin>
-			 
-		</plugins>
-	</build>
-	
+        <plugins>
+            <!-- Frontend Maven Plugin -->            
+		       <plugin>
+			      <artifactId>maven-assembly-plugin</artifactId>
+			      <configuration>
+			        <archive>
+			          <manifest>
+			            <mainClass>com.tobuz.SpringBootWebApplication</mainClass>
+			          </manifest>
+			        </archive>
+			        <descriptorRefs>
+			          <descriptorRef>jar-with-dependencies</descriptorRef>
+			        </descriptorRefs>
+			      </configuration>
+		    	</plugin>
+		       <plugin>
+		       		<groupId>org.springframework.boot</groupId>
+		       		<artifactId>spring-boot-maven-plugin</artifactId>
+		       		<configuration>
+                		<classifier>exec</classifier>
+            		</configuration>		       		
+		       </plugin>            
+        </plugins>
+    </build>	
 </project>

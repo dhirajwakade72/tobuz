@@ -1,16 +1,11 @@
 package com.tobuz.model.tobuzpackage;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import com.avaje.ebean.Model;
-import com.avaje.ebean.annotation.JsonIgnore;
 import com.tobuz.model.BaseEntity;
 import com.tobuz.model.Country;
-import com.tobuz.model.UserRole;
 
 @Entity
 public class TobuzPackageService extends BaseEntity {
@@ -20,8 +15,7 @@ public class TobuzPackageService extends BaseEntity {
 	@Column(columnDefinition = "TEXT")
 	private String description;
 
-	@ManyToOne
-	@JsonIgnore
+	@ManyToOne	
 	private Country country;
 
 	private String userRole;

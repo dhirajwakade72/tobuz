@@ -1,13 +1,10 @@
 package com.tobuz.model.tobuzpackage;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import com.avaje.ebean.ExpressionList;
-import com.avaje.ebean.Model;
 import com.tobuz.model.AppUser;
 import com.tobuz.model.BaseEntity;
 import com.tobuz.model.Role;

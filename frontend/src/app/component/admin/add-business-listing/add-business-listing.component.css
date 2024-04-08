@@ -1,0 +1,99 @@
+.customselect1 {
+    position: relative;
+     width:100%;
+   float:left;
+   margin-bottom:20px;
+  }
+  
+  .customselect1 select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .customselect1 .select-selected {
+    background-color: #f7f7f7;
+  }
+  
+  /*style the arrow inside the select element:*/
+  .customselect1 .select-selected:after {
+   position: absolute;
+    content: "";
+    top: 20px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-color: #707070 transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .customselect1 .select-selected.select-arrow-active:after {
+     border-color: transparent transparent #000 transparent;
+    top: 15px;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .customselect1 .select-items div {
+    color: #707070;
+    padding: 10px 10px;
+    border: 0px solid #000;
+   border-radius:0px;
+    cursor: pointer;
+    user-select: none;
+    font-size:14px;
+  }
+  
+  .customselect1 .select-selected {
+   border: 1px solid #707070;	
+   padding: 10px 10px;
+   border-radius:20px;
+   font-size:14px;
+   color:#707070;
+  }
+  /*style items (options):*/
+  .customselect1 .select-items {
+    position: absolute;
+    background-color: #fff;
+    border:0px !important;
+    border-radius:10px !important;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  .customselect1 .select-items:hover {border-radius:10px !important;}
+  
+  /*hide the items when the select box is closed:*/
+  .customselect1 .select-hide {
+    display: none;
+  }
+  
+  .customselect1 .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-submit-button {background:#707070; color:#fff; padding:10px 30px; line-height:20px; font-weight:normal;
+     font-size:14px; border-radius:25px; border:0}
+  .login-submit-button:hover {background:#00498e; color:#fff;}
+  .publish-submit-button:hover {background:#00498e; color:#fff;}
+  
+  .publish-submit-button {background:#707070; color:#fff; padding:10px 30px; line-height:20px; font-weight:normal; font-size:14px; border-radius:25px; border:0}
+
+  .pt-20{
+    padding-top: 20px;
+  }
+  .pl-20{
+    padding-left: 20px;
+  }
+.leftOrder_radius{border-radius: 20px 20px 20px 20px;border-left: 1px solid #707070;
+}
+
+.file-input {
+  height: 30px;
+  width: 200px;
+  padding: 12px;
+  font-size: 10px;
+}
+
+.redColor{
+  color: red;
+}
