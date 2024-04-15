@@ -20,6 +20,7 @@ export class Defination {
     public static readonly POST_LOGIN_USER="/user/login";
     public static readonly POST_REGISTER_USER="/user/register";
     public static readonly POST_FORGOT_PASSWORD="/user/forgotPassword";
+    public static readonly POST_CHANGE_PASSWORD="/user/changePassword";
     public static readonly POST_SEND_OPT="/user/sendOpt";
     public static readonly POST_SUMBIT_SELLER_CONTACT="/business/saveContact";
     public static readonly POST_SUMBIT_BUSINESS_CONTACT="/business/saveBusinessContact";
@@ -36,5 +37,8 @@ export class Defination {
 
     public static readonly MOBILE_MIN_LENGTH=10;
     public static readonly MOBILE_MAX_LENGTH=14;    
-
+    public static readonly META_CONTENT="Businesses for Sale or Investment worldwide. Search, Buy, Invest in verified  business worldwide. Get verified contact details of the business owner with easy access to business financials to make profitable decisions";
+    public static readonly META_BUY_BUSINESS_TITLE="Buy a Business";
+    public static readonly META_NAME="description";
+    public static readonly META_SELL_BUSINESS_TITLE="Sell a Business";
 }

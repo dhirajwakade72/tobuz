@@ -30,12 +30,25 @@
                <span id="login_register" class="login-area">
                   <img src="./assets/images/moble-menu-login.png" style="margin-right:10px;"/> <a href="/login">Login</a> | <a href="/register">Register</a>                  
                </span>
-               <span id="profile_add_listing" class="login-area">                  
+               <span class="switch-area" *ngIf="isUSerLoggedIn">
                   <div class="profile-photo"><img src="./assets/images/profile.jpg" width="28" height="28"></div>
-		            <div class="profile-name">{{displayname | firstName | capitalizeFirst }}</div>
-                  <a href="{{addButtonUrl}}" class="btn btn-warning add-list-button">+ {{addButton}} </a> 
-                  <button class="add-list-button" (click)="logout()">logout</button>
-               </span>
+                  <div class="profile-name">{{displayname | firstName | capitalizeFirst }}</div>                     
+                  <div class="dropdown">
+                     <button class="btn btn-secondary switch dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Settings
+                     </button>
+                     <div class="dropdown-menu switch-dropdown" aria-labelledby="dropdownMenuButton">                      
+                     <a class="dropdown-item" href="/user/my-dashboard">My Dashboard</a>  
+                     <a class="dropdown-item" href="#" (click)="logout()">Logout</a>                     
+                     <a class="dropdown-item" href="/user/change-password">Change Password</a>
+                     </div>
+                </div>
+               </span>               
+                <span id="profile_add_listing" class="login-area">
+                  <!--<div class="profile-photo"><img src="./assets/images/profile.jpg" width="28" height="28"></div>
+		            <div class="profile-name">{{displayname | firstName | capitalizeFirst }}</div>-->
+                  <a href="{{addButtonUrl}}"  class="circular-button  btn-warning add-list-button">+ {{addButton}} </a> 
+               </span>               
                <!--<span style="padding-top: 2px;" class="lang">
                   <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                      <option value="Afrikaans">af</option>
@@ -54,6 +67,7 @@
                      </div>
                   </div>
                </span>-->
+               
 
                <span class="country">
                   <div class="dropdown coun-flag">

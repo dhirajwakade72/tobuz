@@ -1,5 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Defination } from 'src/app/definition/defination';
 import { ActiveUserDto } from 'src/app/dto/active-user-dto';
@@ -7,6 +8,7 @@ import { ApiResponse } from 'src/app/dto/api-response';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
 import { CommonService } from 'src/app/services/common.service';
 import { DataService } from 'src/app/services/data.service';
+import { SessionStorageService } from 'src/app/services/session-storage.service';
 
 
 @Component({
@@ -28,7 +30,7 @@ export class BusinessListingDetailsComponent {
   @ViewChild('phone') phone!: ElementRef;
   @ViewChild('email') email!: ElementRef;
 
-  constructor(private routerActive: ActivatedRoute,private dataService:DataService,private commonService:CommonService, private formBuilder: FormBuilder,private router: Router,private businessListingService:BusinessListingService,private renderer: Renderer2){
+  constructor(private meta: Meta, private title: Title,private routerActive: ActivatedRoute,private dataService:DataService,private commonService:CommonService, private formBuilder: FormBuilder,private router: Router,private businessListingService:BusinessListingService,private renderer: Renderer2,private sessionStorage:SessionStorageService){
     this.sellerContactForm = this.formBuilder.group({
       name: ['', Validators.required],
       countryCode: ['91', Validators.required],
@@ -40,18 +42,23 @@ export class BusinessListingDetailsComponent {
   this.activeUser=new ActiveUserDto();
    }
   ngOnInit() {
-    this.dataService.updateHeaderActiveMenu("BuyABusiness");
+    this.dataService.updateHeaderActiveMenu("BuyABusiness");   
     this.activeUser=this.dataService.getActiveUserDetails();
     this.routerActive.params.subscribe(params => {
       this.currentBusinessListingType = params['listingtype'];
-      this.currentBusinessListingId = +params['listing_id'];
-
-      console.log(this.currentBusinessListingType+" , "+this.currentBusinessListingId);
-      
-      this.getDetailsById();
+      this.currentBusinessListingId = +params['listing_id'];     
+      this.getDetailsById();     
       this.getCountries();
       
     });
+  }
+
+  updateSeoMetaTag()
+  {    
+    this.title.setTitle('Tobuz.com | '+this.businessListingDetails.title);
+    this.meta.updateTag({name: 'description', content: this.businessListingDetails.listingDescription});
+    this.meta.updateTag({name: 'title', content: this.businessListingDetails.title});
+    this.dataService.addCommanMeta(this.title,this.meta);  
   }
 
   public getCountries()
@@ -89,7 +96,8 @@ export class BusinessListingDetailsComponent {
   {
     this.businessListingService.getDetailsById(this.currentBusinessListingType,this.currentBusinessListingId,this.activeUser.userId).subscribe(
       (response) => {        
-        this.businessListingDetails=response.result;        
+        this.businessListingDetails=response.result; 
+         this.updateSeoMetaTag();
       },
       (error) => {
         console.error('Error:', error);
@@ -99,7 +107,7 @@ export class BusinessListingDetailsComponent {
 
   addToFavorite()
   {
-    const userId=sessionStorage.getItem("USER_ID");
+    const userId=this.sessionStorage.getItem("USER_ID");
     if(userId==undefined)
     {
       this.router.navigate(['/login']);

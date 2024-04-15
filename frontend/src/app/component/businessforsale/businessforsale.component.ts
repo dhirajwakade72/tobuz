@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 import { CommonService } from 'src/app/services/common.service';
 import { ActiveUserDto } from 'src/app/dto/active-user-dto';
 import { Defination } from 'src/app/definition/defination';
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-businessforsale',
   templateUrl: './businessforsale.component.html',
@@ -26,11 +27,12 @@ export class BusinessforsaleComponent {
   activeUser:ActiveUserDto;
   selectedCategoryForSearch:Number=0;
   searchFunctionEnable:any=true;
-  constructor(private router: ActivatedRoute,private routerac: Router,private renderer: Renderer2,private businessListingService:BusinessListingService,private dataService:DataService){
+  constructor(private meta: Meta, private title: Title,private router: ActivatedRoute,private routerac: Router,private renderer: Renderer2,private businessListingService:BusinessListingService,private dataService:DataService){
     this.activeUser=new ActiveUserDto();
   }
 
   ngOnInit() {
+    this.updateMeta();
     this.dataService.updateHeaderActiveMenu("BuyABusiness");
     this.activeUser=this.dataService.getActiveUserDetails();
     this.router.params.subscribe(params => {
@@ -39,8 +41,15 @@ export class BusinessforsaleComponent {
       this.setPageTitle();     
     });    
     this.updateFilter();    
-    this.subscribeData();    
-        
+    this.subscribeData();
+  }
+
+  updateMeta()
+  {
+    this.title.setTitle('Tobuz.com | Buy a Business');
+    this.meta.updateTag({name: 'description', content: 'Tobuz all business listing for buy'});
+    this.meta.updateTag({ name: 'title', content: "Business for Sale, Investment Opportunities- Buy, Sell, Transform Your Business | Tobuz" });    
+    this.dataService.addCommanMeta(this.title,this.meta);
   }
 
   updateFilter()
@@ -127,6 +136,7 @@ export class BusinessforsaleComponent {
 
   public search()
   {   
+    console.log("Search API called ......");
     if(this.activeUser.userId===0 || this.activeUser.userId===null) 
     {
       this.businessListingService.search(this.categoriesIds,this.countryIds,this.currentBusinessListingType,this.currentBusinessListingPage).subscribe(

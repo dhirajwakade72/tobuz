@@ -1,4 +1,15 @@
-.profile-name {font-size:14px; width:120px; float:left;line-height:30px; color:#fff;}
+.profile-name {font-size:14px; width: 50%; float:left;line-height:30px; color:#fff;}
 .black_color{
     color: black;
+}
+.switch {border-radius:20px; font-size:15px; line-height:12px; border:1px solid #fff; background:transparent;
+margin-top: 2px;
+}
+.switch:hover{background:transparent; border:1px solid #fff;}
+
+  
+  .switch-area {float:right; padding:2px 5px 5px 5px; width: 300px;}
+
+  .circular-button {
+    border-radius: 20px; 
 }

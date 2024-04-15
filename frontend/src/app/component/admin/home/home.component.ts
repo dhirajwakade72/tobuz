@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
+import { SessionStorageService } from 'src/app/services/session-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,11 @@ import { CommonService } from 'src/app/services/common.service';
 export class HomeComponent {
   userRole:string="";
   userMenu: any;
-  constructor(private router: ActivatedRoute,private commonService:CommonService){
+  constructor(private router: ActivatedRoute,private commonService:CommonService,private sessionStorage:SessionStorageService){
   }
   ngOnInit() {
-    this.userRole=sessionStorage.getItem("USER_ROLE")?? "";
+    this.userRole=this.sessionStorage.getItem("USER_ROLE")?? "";
+    console.log("ROLL="+this.userRole);
     this.getUserMenu();
     
   }

@@ -96,8 +96,39 @@ public class UserController {
 			return new ResponseEntity<ResponseDTO<?>>(response,HttpStatus.BAD_REQUEST);
 		}
 		
-		if (user.getPassword().equals(dto.getPassword())) {
-			response.setMessage(Constants.MSG_BOTH_PASSWORD_SAME);
+		AppUser userUopdated=userService.updatePassword(user,dto.getPassword());
+		if (userUopdated == null) {
+			response.setMessage(Constants.MSG_FAILED_ACTION);
+			response.setStatus(Constants.STATUS_FAILED);
+			return new ResponseEntity<ResponseDTO<?>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+			response.setMessage(Constants.MSG_PASSWORD_UPDATED);
+			response.setStatus(Constants.STATUS_SUCCESS);
+			return new ResponseEntity<ResponseDTO<?>>(response,HttpStatus.OK);
+		
+		}
+		catch (Exception e) {
+			response.setMessage(Constants.MSG_FAILED_ACTION);
+			response.setStatus(Constants.STATUS_FAILED);
+			return new ResponseEntity<ResponseDTO<?>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@RequestMapping(value = "/changePassword", method = RequestMethod.POST, headers = "Accept=application/json")
+	@ResponseBody
+	public ResponseEntity<ResponseDTO<?>> changePassword(@RequestBody ChangePasswordDTO dto) {
+		ResponseDTO<List<String>> response= new ResponseDTO<List<String>>();
+		try
+		{
+		AppUser user = businessService.findByEmail(dto.getEmail());
+		if (user == null) {
+			response.setMessage(Constants.MSG_USER_NOT_FOUND);
+			response.setStatus(Constants.STATUS_FAILED);
+			return new ResponseEntity<ResponseDTO<?>>(response,HttpStatus.BAD_REQUEST);
+		}		
+		if (!user.getPassword().equals(dto.getOldPassword())) {
+			response.setMessage("Old Password Incorrect");
 			response.setStatus(Constants.STATUS_FAILED);
 			return new ResponseEntity<ResponseDTO<?>>(response,HttpStatus.OK);
 		}

@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { ActiveUserDto } from '../dto/active-user-dto';
+import { DatePipe } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+import { SessionStorageService } from './session-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService {  
 
     activeUser: ActiveUserDto;
 
@@ -51,7 +54,7 @@ export class DataService {
   headerActiveMenuSubject= new BehaviorSubject(String);
   headerActiveMenu$ = this.headerActiveMenuSubject.asObservable();
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private sessionStorage:SessionStorageService){
     this.activeUser = new ActiveUserDto(); 
    }
 
@@ -116,7 +119,7 @@ export class DataService {
  
   checkUserLoginData()
   {    
-    const userId=sessionStorage.getItem("USER_ID");
+    const userId=this.sessionStorage.getItem("USER_ID");
 
     if(userId!==undefined && userId!==null && userId!=='null')
     { 
@@ -132,10 +135,10 @@ export class DataService {
 
   getActiveUserDetails():ActiveUserDto
   {  
-    const userId=sessionStorage.getItem("USER_ID");
-    const userMail=sessionStorage.getItem("USER_MAIL");
-    const userName=sessionStorage.getItem("USER_NAME");
-    const userRole=sessionStorage.getItem("USER_ROLE");
+    const userId=this.sessionStorage.getItem("USER_ID");
+    const userMail=this.sessionStorage.getItem("USER_MAIL");
+    const userName=this.sessionStorage.getItem("USER_NAME");
+    const userRole=this.sessionStorage.getItem("USER_ROLE");
     if(userId!==undefined && userId!==null && userId!=='null')
     { 
       this.activeUser.userMail=userMail??'';
@@ -145,6 +148,54 @@ export class DataService {
       return this.activeUser;
     }
     return this.activeUser; 
+  }
+
+  getCurrentTime()
+  {
+   return new Date();
+  }
+
+  addCommanMeta(title:Title,meta:Meta)
+  {
+     const descriptionTag = meta.getTag('name=description');
+     const descriptionContent = descriptionTag ? descriptionTag.content : '';    
+    meta.updateTag({charset: 'utf-8', content: 'Tobuz all business listing for buy'});
+    meta.updateTag({ name: 'title', content:  title.getTitle()});
+    meta.updateTag({name: 'keywords', content: 'Tobuz, Business, Commercial, Brokers, Buyers, Investors, Franchisors, Distress, Sales, Services, Adverts, Listing'});    
+    meta.updateTag({name: 'author', content: 'Tobuz'});
+    meta.updateTag({name: 'og:type', content: 'website'});
+    meta.updateTag({name: 'og:title', content: title.getTitle()});
+    meta.updateTag({name: 'og:image', content: './assets/images/tobuz.gif'});
+    meta.updateTag({name: 'og:description', content: descriptionContent});
+    meta.updateTag({name: 'og:locale', content: 'en_US'});
+    meta.updateTag({name: 'article:published_time', content: new Date().toDateString()});
+    meta.updateTag({name: 'article:modified_time', content: new Date().toDateString()});
+    meta.updateTag({name: 'og:updated_time', content: new Date().toDateString()});
+    meta.updateTag({name: 'twitter:card', content: 'summary'});
+    meta.updateTag({name: 'twitter:title', content: title.getTitle()});
+    meta.updateTag({name: 'twitter:site', content: 'https://tobuz.com'});
+    meta.updateTag({name: 'twitter:creator', content: new Date().toDateString()});
+    meta.updateTag({name: 'twitter:description', content: descriptionContent});
+    meta.updateTag({name: 'twitter:image', content: './assets/images/tobuz.gif'});
+    meta.updateTag({name: 'MobileOptimized', content: 'width'});
+    meta.updateTag({name: 'HandheldFriendly', content: 'true'});
+    meta.updateTag({name: 'theme-color', content: '#415b96'});
+    meta.updateTag({name: 'msapplication-navbutton-color', content: '#415b96'});
+    meta.updateTag({name: 'apple-mobile-web-app-status-bar-style', content: '#415b96'});
+    meta.updateTag({name: 'google-signin-client_id', content: '162231398540-89cts0fgh7ldfijnm19jfjlck961h7kf.apps.googleusercontent.com'});
+    meta.updateTag({name: 'og:site_name', content: 'Tobuz'});
+    meta.updateTag({name: 'msapplication-navbutton-color', content: '#415b96'}); 
+    meta.updateTag({name: 'ahrefs-site-verification', content: 'afcf5b1fa07293af83d5df99bf3765f3cb0ec7655d2b0f7d0b37e96b45a5dddb'});
+    meta.updateTag({name: 'google-site-verification', content: ''});
+    meta.updateTag({name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0'});
+    meta.updateTag({name: 'msvalidate.01', content: '7800CEB97C813DA3483E3D5DFB83C11C'});    
+    meta.updateTag({itemprop: 'position', content: '1'});
+    meta.updateTag({itemprop: 'position', content: '2'});
+    meta.updateTag({itemprop: 'position', content: '3'});
+    meta.updateTag({itemprop: 'position', content: '+position+'});
+
+
+
   }
 
 }

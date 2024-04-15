@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
+import { Defination } from 'src/app/definition/defination';
+import { Meta, Title } from '@angular/platform-browser';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-register',
@@ -31,11 +34,13 @@ export class RegisterComponent{
   @ViewChild('captcha') captcha!: ElementRef;
   
   constructor(
+    private meta: Meta, private title: Title,
     private formBuilder: FormBuilder,
     private router: Router,
     private el: ElementRef,
     private renderer: Renderer2,
-    private businessListingService: BusinessListingService)
+    private businessListingService: BusinessListingService,
+    private dataService:DataService)
   { 
   
     this.registerForm = this.formBuilder.group({
@@ -51,8 +56,14 @@ export class RegisterComponent{
 
 ngOnInit() {
   this.generateCaptcha();
+  this.updateMeta();
 }
-
+updateMeta()
+{
+  this.title.setTitle("Tobuz Register");
+  this.meta.updateTag({ name: Defination.META_NAME, content: "Tobuz.com Register"});
+  this.dataService.addCommanMeta(this.title,this.meta);
+}
   onSubmit() {
     this.submitted = true;
     if(this.validation())

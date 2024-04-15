@@ -1,9 +1,11 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Defination } from 'src/app/definition/defination';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
 import { DataService } from 'src/app/services/data.service';
+import { SessionStorageService } from 'src/app/services/session-storage.service';
 import { Utility } from 'src/app/util/utility';
 
 @Component({
@@ -20,12 +22,12 @@ export class BusinessServiceDetailsComponent {
   @ViewChild('email') email!: ElementRef;
   @ViewChild('message') message!: ElementRef;
   showMessage:string='';
-  constructor(private router: ActivatedRoute,private renderer: Renderer2,private businessListingService:BusinessListingService,private formBuilder: FormBuilder,private dataService:DataService){ }
+  constructor(private meta: Meta, private title: Title,private router: ActivatedRoute,private renderer: Renderer2,private businessListingService:BusinessListingService,private formBuilder: FormBuilder,private dataService:DataService,private sessionStorage:SessionStorageService){ }
   ngOnInit() {
     this.router.params.subscribe(params => {      
       this.advertId = +params['service_id'];   
-      this.getBusinessServiceById();
-      
+      this.getBusinessServiceById(); 
+      this.updateSeoMetaTag();     
     });
     this.dataService.updateHeaderActiveMenu("SellABusiness");
     this.sellerContactForm = this.formBuilder.group({
@@ -35,7 +37,14 @@ export class BusinessServiceDetailsComponent {
       email: ['', Validators.required],
       message: ['', Validators.required]
   });
-
+  }
+  
+  updateSeoMetaTag()
+  {    
+    this.title.setTitle('Tobuz.com | '+this.businessService.title);
+    this.meta.updateTag({name: 'description', content: this.businessService.listingDescription});
+    this.meta.updateTag({name: 'title', content: this.businessService.title});
+    this.dataService.addCommanMeta(this.title,this.meta);   
   }
 
   submitContactToseller()
@@ -80,7 +89,8 @@ export class BusinessServiceDetailsComponent {
     this.businessListingService.getBusinessServiceById(this.advertId).subscribe(
       (response) => { 
              
-        this.businessService=response.result;        
+        this.businessService=response.result; 
+        console.log(JSON.stringify(this.businessService));       
       },
       (error) => {
         console.error('Error:', error);
@@ -97,7 +107,7 @@ export class BusinessServiceDetailsComponent {
 
   addToFavorite()
   {
-    const userId=sessionStorage.getItem("USER_ID");
+    const userId=this.sessionStorage.getItem("USER_ID");
     if(userId==undefined)
     {
      // this.router.navigate(['/login']);

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-testmonal',
@@ -6,20 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./testmonal.component.css']
 })
 export class TestmonalComponent {
-  moreBoxes = [
-    { isHidden: false },
-    { isHidden: false },
-    { isHidden: false },    
-    
-  ];
-  visibleBoxes = 3;
+  constructor(private meta: Meta, private title: Title,private dataService:DataService) {
+
+  }
+
+  ngOnInit() {
+
+    this.updateMeta();
+  }
 
 
-  loadMore() {
-    this.visibleBoxes += 6; // Increase the number of visible boxes by 6
-    if (this.visibleBoxes >= this.moreBoxes.length) {
-      this.visibleBoxes = this.moreBoxes.length; 
-    }
+  updateMeta() {
+    this.title.setTitle("Tobuz terms and condition");
+    this.meta.updateTag({ name:'description', content: "Tobuz.com Register" });
+    this.dataService.addCommanMeta(this.title,this.meta);
   }
 
 }

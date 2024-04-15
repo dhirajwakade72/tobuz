@@ -72,6 +72,7 @@ const routes: Routes = [
   {path:'user/my-package',component:MyPackageComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'reset-password/:token',component:ResetPasswordComponent},
+  {path:'user/change-password',component:ChangePasswordComponent},
   {path:'blog/blog-inside-page',component:BlogInsidePageComponent},
   {path:'how-it-works',component:HowitworksComponent},
   {path:'user/create-adverts',component:CreateAdvertComponent}

@@ -170,6 +170,12 @@ export class BusinessListingService {
     return this.httpClient.post(Defination.HOST+Defination.POST_FORGOT_PASSWORD,requestBody);
   }
 
+  changePassword(email:string,password:string,oldPassword:string)
+  {        
+    const requestBody = {email:email,password:password,oldPassword:oldPassword};
+    return this.httpClient.post(Defination.HOST+Defination.POST_CHANGE_PASSWORD,requestBody);
+  }
+
   sendOpt(body:string)
   {        
     return this.httpClient.post(Defination.HOST+Defination.POST_SEND_OPT,body);

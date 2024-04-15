@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Defination } from '../definition/defination';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -41,8 +42,6 @@ export class CommonService {
   public uploadFile(formData: FormData): Observable<any> {
     return this.httpClient.post(Defination.HOST + Defination.POST_FILE_UPLOAD, formData);
   }
-
-  
 
 
 }

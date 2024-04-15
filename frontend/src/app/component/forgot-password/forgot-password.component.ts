@@ -1,7 +1,10 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Defination } from 'src/app/definition/defination';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -27,7 +30,7 @@ export class ForgotPasswordComponent {
   @ViewChild('password') password!: ElementRef;
   @ViewChild('cpassword') cpassword!: ElementRef;
 
-  constructor(private formBuilder: FormBuilder,private router: Router,private el: ElementRef,private renderer: Renderer2,private businessListingService: BusinessListingService)
+  constructor(private meta: Meta, private title: Title,private formBuilder: FormBuilder,private router: Router,private el: ElementRef,private renderer: Renderer2,private businessListingService: BusinessListingService,private dataService:DataService)
   {     
       this.forgotPassForm = this.formBuilder.group({
         email: ['', Validators.required],
@@ -38,7 +41,7 @@ export class ForgotPasswordComponent {
   }
 
   ngOnInit() {
-    
+    this.updateMeta();
   }
 
   public onSubmit()
@@ -225,5 +228,12 @@ export class ForgotPasswordComponent {
       }
   }
 
+
+updateMeta()
+{
+  this.title.setTitle("Tobuz Forgot Password");
+  this.meta.updateTag({ name: Defination.META_NAME, content: "Tobuz.com Forgot Password"});
+  this.dataService.addCommanMeta(this.title,this.meta);
+}
 
 }

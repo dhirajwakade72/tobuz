@@ -1,11 +1,13 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Defination } from 'src/app/definition/defination';
 import { ActiveUserDto } from 'src/app/dto/active-user-dto';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
 import { CommonService } from 'src/app/services/common.service';
 import { DataService } from 'src/app/services/data.service';
+import { SessionStorageService } from 'src/app/services/session-storage.service';
 import { Utility } from 'src/app/util/utility';
 
 @Component({
@@ -28,7 +30,7 @@ export class AdvertListingDetailsComponent {
   @ViewChild('email') email!: ElementRef;
   @ViewChild('message') message!: ElementRef;
 
-  constructor(private router: ActivatedRoute,private router1: Router,private dataService:DataService,private businessListingService:BusinessListingService,private routerActive: ActivatedRoute,private commonService:CommonService, private formBuilder: FormBuilder,private routers: Router,private renderer: Renderer2){ 
+  constructor(private meta: Meta, private title: Title,private router: ActivatedRoute,private router1: Router,private dataService:DataService,private businessListingService:BusinessListingService,private routerActive: ActivatedRoute,private commonService:CommonService, private formBuilder: FormBuilder,private routers: Router,private renderer: Renderer2,private sessionStorage:SessionStorageService){ 
     this.activeUser=new ActiveUserDto();
   }
     ngOnInit() 
@@ -53,6 +55,14 @@ export class AdvertListingDetailsComponent {
       this.getDetailsById();
     }
 
+    updateMeta()
+    {
+      this.title.setTitle('Tobuz.com | '+this.advertListingDetails.title);
+      this.meta.updateTag({name: 'description', content: this.advertListingDetails.advertDescription});
+      this.meta.updateTag({ name: 'title', content: this.advertListingDetails.title });
+      this.dataService.addCommanMeta(this.title,this.meta);
+    }
+
   public getCountries()
   {  
     this.commonService.getCountries().subscribe(
@@ -73,6 +83,7 @@ export class AdvertListingDetailsComponent {
       this.businessListingService.getDetailsById(this.currentBusinessListingType,this.currentBusinessListingId,0).subscribe(
         (response) => {        
           this.advertListingDetails=response.result;
+          this.updateMeta();
         },
         (error) => {
           console.error('Error:', error);
@@ -180,7 +191,7 @@ export class AdvertListingDetailsComponent {
 
   addToFavorite()
   {
-    const userId=sessionStorage.getItem("USER_ID");
+    const userId=this.sessionStorage.getItem("USER_ID");
     if(userId==undefined)
     {
       this.router1.navigate(['/login']);

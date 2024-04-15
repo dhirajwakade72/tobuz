@@ -4,6 +4,7 @@ import { ActiveUserDto } from 'src/app/dto/active-user-dto';
 
 import { CommonService } from 'src/app/services/common.service';
 import { DataService } from 'src/app/services/data.service';
+import { SessionStorageService } from 'src/app/services/session-storage.service';
 
 
 @Component({
@@ -27,50 +28,55 @@ export class HeaderComponent {
   addButtonUrl:string='';
   addButton:string='';
   activeUser:ActiveUserDto;
-  constructor(private commonService:CommonService,private router: Router,private dataService:DataService,private elementRef:ElementRef,private renderer: Renderer2){
+  constructor(private commonService:CommonService,private router: Router,private dataService:DataService,private elementRef:ElementRef,private renderer: Renderer2,private sessionStorage:SessionStorageService){
     this.activeUser=new ActiveUserDto();
   }
   ngOnInit() {
 
     this.activeUser=this.dataService.getActiveUserDetails();
-    this.changeButtonName();
-    this.checkUserLoginData();
+    this.checkUserLoginData();    
      this.subscribe();
      this.getCategories();
      this.getCountry();     
-     this.showUserData();    
+     this.showUserData();
+     if(this.activeUser.userId!==0)
+     { 
+     this.changeButtonName();
+     }     
     
   }
   
   changeButtonName()
   {
+    console.log("BUUS="+this.activeUser.userRole);
     if(this.activeUser.userRole==='BUYER')
     {
       this.addButtonUrl='user/create-adverts';
       this.addButton='Create Advert';
     }
-    else
-    {
+    else if(this.activeUser.userRole==='SELLER')
+    {      
       this.addButtonUrl='user/add-listing'
       this.addButton='Add Listing';
     }
-
   }
 
   checkUserLoginData()
   {    
-    const userId=sessionStorage.getItem("USER_ID");    
+    const userId=this.sessionStorage.getItem("USER_ID");    
     if(userId!==undefined || userId!==null)
     {
       this.isUSerLoggedIn=true;
+      this.activeUser=this.dataService.getActiveUserDetails();
+      this.changeButtonName();
     }
   }
 
   public logout()
   {
-    sessionStorage.removeItem("USER_NAME");
-    sessionStorage.removeItem("USER_ID");
-    sessionStorage.clear();
+    this.sessionStorage.removeItem("USER_NAME");
+    this.sessionStorage.removeItem("USER_ID");
+    this.sessionStorage.clear();
     this.router.navigate(['/login']);
     this.isUSerLoggedIn=false;
     this.showUserData();
@@ -82,7 +88,7 @@ export class HeaderComponent {
     if(this.isUSerLoggedIn)
     {      
       this.renderer.addClass(login_register_element, 'd-lg-none');  
-      this.displayname=sessionStorage.getItem("USER_NAME")??"";
+      this.displayname=this.sessionStorage.getItem("USER_NAME")??"";
       const profile_add_listing_element = document.getElementById('profile_add_listing');
       this.renderer.removeClass(profile_add_listing_element, 'd-lg-none');
     }
@@ -143,7 +149,9 @@ export class HeaderComponent {
     this.dataService.isUserLoggedInValue$.subscribe(
         data => {
           this.isUSerLoggedIn = data;
-          this.showUserData();          
+          this.activeUser=this.dataService.getActiveUserDetails();
+          this.showUserData();
+          this.changeButtonName();          
         }
       );
 

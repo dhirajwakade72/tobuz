@@ -1,4 +1,5 @@
 import { Component, Renderer2 } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Defination } from 'src/app/definition/defination';
 import { ActiveUserDto } from 'src/app/dto/active-user-dto';
@@ -22,21 +23,29 @@ export class InvestmentORBuyersComponent {
   searchFuntionEnable:any=false;
   activeUser:ActiveUserDto;
   pageTitle:string="";  
-  constructor(private router: ActivatedRoute,private renderer: Renderer2,private businessListingService:BusinessListingService,private dataService:DataService){
+  constructor(private meta: Meta, private title: Title,private router: ActivatedRoute,private renderer: Renderer2,private businessListingService:BusinessListingService,private dataService:DataService){
     this.activeUser=new ActiveUserDto();
   }
 
   ngOnInit() {
     this.activeUser=this.dataService.getActiveUserDetails();
+    this.updateMeta();
     this.dataService.updateHeaderActiveMenu("SellABusiness");
     this.dataService.updateInvestmentFilterVisible(true);
     this.dataService.updateBSTFilterVisible(false);
     this.subscribeData();
     this.searchFuntionEnable=true;    
-    this.searchAdverts();    
-    
+    this.searchAdverts();
 
   }
+  updateMeta()
+  {
+    this.title.setTitle('Tobuz.com | Investment Or Buyers');
+    this.meta.updateTag({ name: Defination.META_NAME, content: "Find Investment Or Buyers , For Your Business Or Sell It Online"});
+    this.meta.updateTag({ name: 'title', content: 'Tobuz.com | Investment Or Buyers'});
+    this.dataService.addCommanMeta(this.title,this.meta);
+  }
+
   public callEnableSearchFunction()
   {    
     this.currentBusinessListingPage=0;

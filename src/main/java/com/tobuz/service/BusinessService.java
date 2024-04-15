@@ -2465,7 +2465,7 @@ public List<MessageDTO> getUserMessages(){
 				+ "JOIN Business_Listing_Out_Let blo ON b.business_listing_out_let_id = blo.id \n"
 				+ "join country c on b.business_address_country_id =c.id \n"
 				+ "WHERE "+result+" f.business_listing_id IS NOT NULL AND blo.total_business_sale_price IS NOT NULL "+businessType+" OFFSET "+pageNo+" LIMIT 21;";
-		System.out.println("BSUNESS ZLsiting =SQL="+sql);
+		
 		Query query = entityManager.createNativeQuery(sql);
 		
 		List<Long>fId=new ArrayList<>();
@@ -2601,8 +2601,7 @@ public List<MessageDTO> getUserMessages(){
 				+ " inner join business_advert_subcategory_info ads on ads.business_advert_id=ba.id "
 				+ " where "+result+" business_advert_status  in ('PUBLISHED' ,'APPROVED','REJECTED','SOLD','UNDER_REVIEW')\n"
 				+ " ORDER BY ba.created_on desc OFFSET "+pageNo+" LIMIT 21;";
-		
-		//System.out.println("Advert Search SQL="+sql);
+				
 		Query query = entityManager.createNativeQuery(sql);		
 		
 		List<Long>fId=new ArrayList<>();

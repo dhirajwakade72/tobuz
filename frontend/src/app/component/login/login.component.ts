@@ -1,9 +1,12 @@
 import { Component, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Defination } from 'src/app/definition/defination';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
 import { CommonService } from 'src/app/services/common.service';
 import { DataService } from 'src/app/services/data.service';
+import { SessionStorageService } from 'src/app/services/session-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,7 @@ import { DataService } from 'src/app/services/data.service';
 export class LoginComponent {
   loginForm: FormGroup;
   showPassword:boolean=false;
-  constructor(private formBuilder: FormBuilder,private renderer: Renderer2,private router: Router,private businessListingService: BusinessListingService,private dataService:DataService)
+  constructor(private meta: Meta, private title: Title,private formBuilder: FormBuilder,private renderer: Renderer2,private router: Router,private businessListingService: BusinessListingService,private dataService:DataService,private sessionService:SessionStorageService)
   { 
       // redirect to home if already logged in
       /*if (this.authenticationService.currentUserValue) { 
@@ -25,7 +28,9 @@ export class LoginComponent {
         password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-
+  ngOnInit() {    
+    this.updateMeta();
+  }
 
 onSubmit() {  
   if(this.validation())
@@ -45,7 +50,7 @@ onSubmit() {
                         alert("Logined in successfully");
                         this.dataService.updateUserLoggedIn(true);
                         this.dataService.updateDisplayName(data.result.name);
-                        this.addUserSession(data.result);
+                        this.sessionService.addUserSession(data.result);
                         if("ADMIN"===data.result.userDefaultRole)
                         this.router.navigate(['/admin/home']);
                         else
@@ -74,18 +79,6 @@ validation():boolean
   return false;
 }
 
-addUserSession(data:any)
-{
-  console.log("User="+JSON.stringify(data));
-  if (data) {
-    sessionStorage.setItem("USER_MAIL", data.email);
-    sessionStorage.setItem("USER_ID", data.id);
-    sessionStorage.setItem("USER_NAME", data.name);
-    sessionStorage.setItem("USER_ROLE", data.userDefaultRole);
-  }
-  console.log("USER_NAME="+sessionStorage.getItem("USER_NAME"));
- 
-}
 
 togglePasswordVisibility()
   {    
@@ -103,5 +96,12 @@ togglePasswordVisibility()
       }
   }
 
+updateMeta()
+{
+  this.title.setTitle("Tobuz Login");
+  this.meta.updateTag({ name: Defination.META_NAME, content: "Tobuz.com Login"});
+  this.meta.updateTag({ name: 'title', content: this.title.getTitle() });
+  this.dataService.addCommanMeta(this.title,this.meta);
+}
 
 }

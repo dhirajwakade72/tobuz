@@ -1,8 +1,10 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Defination } from 'src/app/definition/defination';
 import { BusinessListingService } from 'src/app/services/business-listing.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-contact-business',
@@ -20,7 +22,7 @@ export class ContactBusinessComponent {
   businessListingType:any;
   showMessage:string='';
   isValidForm:boolean=true;
-  constructor(private router: ActivatedRoute,private router1: Router,private renderer: Renderer2,private formBuilder: FormBuilder,private businessListingService:BusinessListingService){ 
+  constructor(private meta: Meta, private title: Title,private dataService:DataService,private router: ActivatedRoute,private router1: Router,private renderer: Renderer2,private formBuilder: FormBuilder,private businessListingService:BusinessListingService){ 
     this.sellerContactForm = this.formBuilder.group({
       name: ['', Validators.required],
       city: ['', Validators.required],
@@ -36,8 +38,15 @@ export class ContactBusinessComponent {
       this.businessListingId = +params['listing_id'];   
       
     });
+    this.updateMeta();
   }
-
+  updateMeta()
+  {
+    this.title.setTitle('Tobuz.com | Contact US');
+    this.meta.updateTag({name: 'description', content: 'tobuz.com : Contact US'});
+    this.meta.updateTag({ name: 'title', content: this.title.getTitle() });
+    this.dataService.addCommanMeta(this.title,this.meta);
+  }
   submitContactToseller()
   {
     console.log("submitContactToseller");

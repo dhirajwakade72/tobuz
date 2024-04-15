@@ -75,7 +75,7 @@
                                 <!-- text finish -->
                                 <!-- Contact Business start -->
                                 <p>
-                                    <a href="/business/contact/{{currentBusinessListingType}}/{{listing.businessid}}"><span class="btn Business-btn">Contact Business</span></a>
+                                    <a href="/buy-a-business/{{currentBusinessListingType}}/{{listing.businessid}}"><span class="btn Business-btn">Contact Business</span></a>
                                     <!-- Contact Business finish -->
                                     <!-- wishlist start -->
                                     <a (click)="addLike(currentBusinessListingType,listing.businessid,listing.addedToFavourites)"><span id="{{currentBusinessListingType+'_'+listing.businessid}}" class="wishlist"><i id="{{currentBusinessListingType+'_'+listing.businessid+'i'}}" [style.color]="listing.likeCount > 0 ? 'red' : 'black'" [class]="listing.addedToFavourites ? 'fa fa-heart' : 'fa fa-heart-o'"> {{listing.likeCount}}</i></span></a>

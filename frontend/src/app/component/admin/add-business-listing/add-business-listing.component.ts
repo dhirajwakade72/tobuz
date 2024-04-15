@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { ActiveUserDto } from 'src/app/dto/active-user-dto';
 import { Defination } from 'src/app/definition/defination';
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-add-business-listing',
   templateUrl: './add-business-listing.component.html',
@@ -44,14 +45,23 @@ export class AddBusinessListingComponent {
 
   isfileDocUploadError:boolean=false;
   fileDocUploadError:string='';
-  constructor(private commonService:CommonService,private renderer: Renderer2,private dataService:DataService,private router: Router,private businessService:BusinessListingService){ 
+  constructor(private title:Title,private meta:Meta, private commonService:CommonService,private renderer: Renderer2,private dataService:DataService,private router: Router,private businessService:BusinessListingService){ 
     this.activeUser=new ActiveUserDto();
   }
   ngOnInit() {
    this.dataService.checkUserLoginData();
    this.activeUser=this.dataService.getActiveUserDetails();
+   this.updateMeta();
     this.getCategories();  
     this.getCountries();   
+  }
+
+  updateMeta()
+  {
+    this.title.setTitle('Tobuz.com | Add Listing');
+    this.meta.updateTag({name: 'description', content: 'tobuz.com : Add Listing page'});
+    this.meta.updateTag({ name: 'title', content: this.title.getTitle() });
+    this.dataService.addCommanMeta(this.title,this.meta);
   }
 
   public uploadListingFile(selectedListingFiles: File[],type:string): void {
